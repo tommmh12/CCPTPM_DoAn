@@ -19,7 +19,7 @@ Ung dung nay dung `Node.js + Express + MySQL`, giu nguyen bo HTML trong `html_re
 ```sql
 CREATE DATABASE zen_workspace CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
-4
+5
 3. Chay schema va seed:
 
 ```bash
