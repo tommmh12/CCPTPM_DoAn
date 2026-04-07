@@ -32,7 +32,7 @@ mysql -u root -p zen_workspace < db/patches/001_session_security.sql
 ```
 aass
 4. Cai package:
-
+ssss
 ```bash
 npm install
 ```
