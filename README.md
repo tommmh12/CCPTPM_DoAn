@@ -19,26 +19,26 @@ Ung dung nay dung `Node.js + Express + MySQL`, giu nguyen bo HTML trong `html_re
 ```sql
 CREATE DATABASE zen_workspace CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
-
+sdsdsd
 3. Chay schema va seed:
 
 ```bash
 mysql -u root -p zen_workspace < db/schema.sql
 mysql -u root -p zen_workspace < db/seed.sql
 ```
-
+aaa
 Neu database da ton tai tu truoc, chay them patch:
 
 ```bash
 mysql -u root -p zen_workspace < db/patches/001_session_security.sql
 ```
-
+aass
 4. Cai package:
-
+ssss
 ```bash
 npm install
 ```
-
+ss
 5. Chay app:
 
 ```bash
@@ -46,13 +46,13 @@ npm run dev
 ```
 
 ## Test
-
+saas
 Chay integration test:
-
+ss
 ```bash
 npm test
 ```
-
+...
 Test se tao mot user rieng trong database hien tai, sau do tu dong cleanup.
 
 ## Man hinh da noi logic
@@ -62,9 +62,9 @@ Test se tao mot user rieng trong database hien tai, sau do tu dong cleanup.
 - `/tasks`
 - `/tasks/new`
 - `/notes`
-
+ssss
 ## Tai khoan mau
 
 - Email: `julian@zenspace.local`
 - Password: `Password123!`
-.
+a
