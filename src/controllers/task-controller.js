@@ -217,6 +217,7 @@ async function create(req, res) {
   let taskId = null;
 
   try {
+    // Create the task, its checklist items, tags, and activity log as one atomic API operation.
     await connection.beginTransaction();
 
     const [result] = await connection.query(
