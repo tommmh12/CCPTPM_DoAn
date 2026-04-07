@@ -460,6 +460,7 @@ async function toggleSubtask(req, res) {
       SET is_completed = ?
       WHERE id = ?
     `,
+    // Flip the completion flag so the same endpoint can mark done and undo done.
     [subtask.is_completed ? 0 : 1, subtaskId]
   );
 
