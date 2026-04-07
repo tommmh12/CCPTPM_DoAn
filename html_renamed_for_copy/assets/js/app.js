@@ -3883,6 +3883,7 @@ async function initCreateTaskPage() {
 
   priorityButtons.forEach((button) => {
     button.addEventListener("click", () => {
+      // Track the currently selected priority so later saves can honor the user's filter choice.
       selectedPriority = button.dataset.priorityButton;
       priorityButtons.forEach((item) => {
         item.dataset.active = item === button ? "true" : "false";
