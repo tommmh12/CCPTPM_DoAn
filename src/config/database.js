@@ -10,8 +10,7 @@ const pool = mysql.createPool({
   password: env.dbPassword,
   waitForConnections: true,
   connectionLimit: 10,
-  namedPlaceholders: false
+  namedPlaceholders: false,
 });
-
+//
 module.exports = { pool };
-
