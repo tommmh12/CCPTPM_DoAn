@@ -580,6 +580,7 @@ async function remove(req, res) {
   const connection = await pool.getConnection();
 
   try {
+    // Delete the task and record the deletion event together so the activity log stays consistent.
     await connection.beginTransaction();
 
     const [tasks] = await connection.query(
