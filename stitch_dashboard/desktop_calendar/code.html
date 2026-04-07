@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#142f4f",
+                        "on-primary-fixed-variant": "#396355",
+                        "tertiary": "#486083",
+                        "inverse-on-surface": "#999d9f",
+                        "on-secondary-fixed": "#174550",
+                        "tertiary-fixed-dim": "#a4bde4",
+                        "on-error": "#fff7f6",
+                        "surface-tint": "#3d6758",
+                        "surface": "#f6fafb",
+                        "inverse-surface": "#0a0f10",
+                        "surface-container": "#e8eff2",
+                        "on-secondary": "#effbff",
+                        "surface-container-low": "#eff4f7",
+                        "secondary-fixed-dim": "#afdce9",
+                        "background": "#f6fafb",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#bdeaf8",
+                        "secondary-container": "#bdeaf8",
+                        "outline-variant": "#aab4b7",
+                        "error": "#a83836",
+                        "on-primary": "#e4fff3",
+                        "on-surface-variant": "#576164",
+                        "on-secondary-fixed-variant": "#37616d",
+                        "inverse-primary": "#cffeeb",
+                        "error-dim": "#67040d",
+                        "primary-container": "#beecda",
+                        "error-container": "#fa746f",
+                        "on-tertiary-container": "#2a4364",
+                        "on-primary-fixed": "#1c4739",
+                        "surface-bright": "#f6fafb",
+                        "primary": "#3d6758",
+                        "on-background": "#2b3437",
+                        "secondary": "#3a6571",
+                        "surface-dim": "#d2dcdf",
+                        "tertiary-container": "#b2cbf3",
+                        "on-surface": "#2b3437",
+                        "primary-fixed": "#beecda",
+                        "on-primary-container": "#2f594b",
+                        "tertiary-dim": "#3b5476",
+                        "outline": "#737c80",
+                        "on-tertiary-fixed-variant": "#334c6e",
+                        "on-error-container": "#6e0a12",
+                        "surface-container-highest": "#dae4e8",
+                        "surface-variant": "#dae4e8",
+                        "primary-fixed-dim": "#b1decc",
+                        "primary-dim": "#315b4d",
+                        "on-secondary-container": "#2c5863",
+                        "secondary-dim": "#2e5965",
+                        "tertiary-fixed": "#b2cbf3",
+                        "on-tertiary": "#f8f8ff",
+                        "surface-container-high": "#e1e9ed"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .glass-panel {
+            background: rgba(246, 250, 251, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- SideNavBar Anchor -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#e8eff2] flex flex-col py-8 z-50">
+<div class="px-8 mb-10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">spa</span>
+</div>
+<div>
+<h1 class="font-['Manrope'] text-lg font-extrabold text-[#3d6758]">The Canvas</h1>
+<p class="text-[10px] uppercase tracking-widest opacity-60">Zen Workspace</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center text-[#2b3437] px-8 py-3 hover:text-[#3d6758] hover:translate-x-1 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined mr-4">dashboard</span>
+<span class="font-medium text-sm">Dashboard</span>
+</a>
+<a class="flex items-center text-[#2b3437] px-8 py-3 hover:text-[#3d6758] hover:translate-x-1 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined mr-4">check_circle</span>
+<span class="font-medium text-sm">Tasks</span>
+</a>
+<a class="flex items-center text-[#2b3437] px-8 py-3 hover:text-[#3d6758] hover:translate-x-1 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined mr-4">description</span>
+<span class="font-medium text-sm">Notes</span>
+</a>
+<!-- Active Tab: Calendar -->
+<a class="flex items-center text-[#3d6758] font-bold bg-[#ffffff] rounded-l-full ml-4 pl-4 py-3 transition-all duration-300" href="#">
+<span class="material-symbols-outlined mr-4" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+<span class="font-medium text-sm">Calendar</span>
+</a>
+<a class="flex items-center text-[#2b3437] px-8 py-3 hover:text-[#3d6758] hover:translate-x-1 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined mr-4">view_kanban</span>
+<span class="font-medium text-sm">Kanban</span>
+</a>
+<a class="flex items-center text-[#2b3437] px-8 py-3 hover:text-[#3d6758] hover:translate-x-1 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined mr-4">settings</span>
+<span class="font-medium text-sm">Settings</span>
+</a>
+</nav>
+<div class="px-6 mb-8">
+<button class="w-full py-3 bg-primary text-on-primary rounded-full font-semibold text-sm flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-sm">add</span>
+                New Entry
+            </button>
+</div>
+<div class="border-t border-outline-variant/10 pt-4 space-y-1">
+<a class="flex items-center text-[#2b3437] px-8 py-2 opacity-70 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined mr-4 text-sm">help</span>
+<span class="font-medium text-xs">Help</span>
+</a>
+<a class="flex items-center text-[#2b3437] px-8 py-2 opacity-70 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined mr-4 text-sm">archive</span>
+<span class="font-medium text-xs">Archive</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen flex flex-col">
+<!-- TopAppBar Anchor -->
+<header class="flex justify-between items-center px-8 w-full h-16 bg-[#f6fafb] sticky top-0 z-40">
+<div class="flex items-center gap-6">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-lg">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full text-sm w-64 focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search your canvas..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:bg-[#e8eff2] rounded-full transition-colors duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-[#e8eff2] rounded-full transition-colors duration-200">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="h-8 w-px bg-outline-variant/20 mx-2"></div>
+<div class="flex items-center gap-3 pl-2">
+<span class="text-sm font-medium text-on-surface">Alex Rivera</span>
+<img alt="User profile" class="w-10 h-10 rounded-full object-cover border-2 border-primary-container" data-alt="portrait of a young professional man with a kind expression and short dark hair in a bright office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9BCUPYw3T8AuMT7HlaLyb2TG2FuxRPCK2-rl9ofaPfzm_Xqr8umgysxOH5kRoT81zGwu4_xtk4s-p5Gv69h08HKILUvwNpkdYPOq4PyYeRP26PkTz81HJoSiNJFcHu1CiiBFuALg5FuC1cEd57o9OVLPX2cMM5CuuTsHE9ExwwyqRILd3VpjA5fqqwtoVKteLLwAGiDI3gY2H35iOGR-n6E8OzVO9ZYASiGPvGDOdeOJP2Tbm2bZLtQNBXafZreQWIPtPIFkdo3sx"/>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<div class="flex-1 flex overflow-hidden p-8 gap-8">
+<!-- Full Month Grid Section -->
+<section class="flex-1 flex flex-col min-w-0">
+<div class="flex items-end justify-between mb-8">
+<div>
+<h2 class="text-4xl font-extrabold tracking-tight text-on-surface">September 2024</h2>
+<p class="text-on-surface-variant font-medium mt-1">You have 12 focused sessions scheduled this month.</p>
+</div>
+<div class="flex bg-surface-container rounded-full p-1">
+<button class="px-6 py-2 rounded-full text-sm font-semibold transition-all text-on-surface-variant hover:bg-surface-container-high">Week</button>
+<button class="px-6 py-2 rounded-full text-sm font-semibold transition-all bg-surface-container-lowest text-primary shadow-sm">Month</button>
+<button class="px-6 py-2 rounded-full text-sm font-semibold transition-all text-on-surface-variant hover:bg-surface-container-high">Year</button>
+</div>
+</div>
+<div class="flex-1 bg-surface-container-lowest rounded-[2rem] p-6 flex flex-col">
+<!-- Days Header -->
+<div class="grid grid-cols-7 mb-4">
+<div class="text-center text-xs font-bold uppercase tracking-widest text-on-surface-variant opacity-50">Sun</div>
+<div class="text-center text-xs font-bold uppercase tracking-widest text-on-surface-variant opacity-50">Mon</div>
+<div class="text-center text-xs font-bold uppercase tracking-widest text-on-surface-variant opacity-50">Tue</div>
+<div class="text-center text-xs font-bold uppercase tracking-widest text-on-surface-variant opacity-50">Wed</div>
+<div class="text-center text-xs font-bold uppercase tracking-widest text-on-surface-variant opacity-50">Thu</div>
+<div class="text-center text-xs font-bold uppercase tracking-widest text-on-surface-variant opacity-50">Fri</div>
+<div class="text-center text-xs font-bold uppercase tracking-widest text-on-surface-variant opacity-50">Sat</div>
+</div>
+<!-- Calendar Grid -->
+<div class="grid grid-cols-7 flex-1 gap-px bg-surface-container overflow-hidden rounded-xl">
+<!-- Last Month Days -->
+<div class="bg-surface-container-lowest p-3 opacity-30 cursor-not-allowed">
+<span class="text-sm font-medium">25</span>
+</div>
+<div class="bg-surface-container-lowest p-3 opacity-30 cursor-not-allowed">
+<span class="text-sm font-medium">26</span>
+</div>
+<div class="bg-surface-container-lowest p-3 opacity-30 cursor-not-allowed">
+<span class="text-sm font-medium">27</span>
+</div>
+<div class="bg-surface-container-lowest p-3 opacity-30 cursor-not-allowed">
+<span class="text-sm font-medium">28</span>
+</div>
+<div class="bg-surface-container-lowest p-3 opacity-30 cursor-not-allowed">
+<span class="text-sm font-medium">29</span>
+</div>
+<div class="bg-surface-container-lowest p-3 opacity-30 cursor-not-allowed">
+<span class="text-sm font-medium">30</span>
+</div>
+<div class="bg-surface-container-lowest p-3 opacity-30 cursor-not-allowed">
+<span class="text-sm font-medium">31</span>
+</div>
+<!-- Current Month -->
+<!-- Row 1 -->
+<div class="bg-surface-container-lowest p-3 group hover:bg-surface-container-low transition-colors cursor-pointer relative">
+<span class="text-sm font-medium">1</span>
+<div class="mt-2 space-y-1">
+<div class="text-[10px] py-1 px-2 bg-secondary-container text-on-secondary-container rounded-md truncate">Morning Yoga</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-3 group hover:bg-surface-container-low transition-colors cursor-pointer">
+<span class="text-sm font-medium">2</span>
+</div>
+<div class="bg-surface-container-lowest p-3 group hover:bg-surface-container-low transition-colors cursor-pointer">
+<span class="text-sm font-medium">3</span>
+<div class="mt-2 space-y-1">
+<div class="text-[10px] py-1 px-2 bg-primary-container text-on-primary-container rounded-md truncate">Review Canvas UI</div>
+<div class="text-[10px] py-1 px-2 bg-tertiary-container text-on-tertiary-container rounded-md truncate">Client Sync</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-3 group hover:bg-surface-container-low transition-colors cursor-pointer">
+<span class="text-sm font-medium">4</span>
+</div>
+<div class="bg-surface-container-lowest p-3 group hover:bg-surface-container-low transition-colors cursor-pointer">
+<span class="text-sm font-medium">5</span>
+</div>
+<div class="bg-surface-container-lowest p-3 group hover:bg-surface-container-low transition-colors cursor-pointer">
+<span class="text-sm font-medium">6</span>
+<div class="mt-2 space-y-1">
+<div class="text-[10px] py-1 px-2 bg-error-container text-on-error-container rounded-md truncate">Project Deadline</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-3 group hover:bg-surface-container-low transition-colors cursor-pointer">
+<span class="text-sm font-medium">7</span>
+</div>
+<!-- Row 2 -->
+<div class="bg-surface-container-lowest p-3 group hover:bg-surface-container-low transition-colors cursor-pointer">
+<span class="text-sm font-medium">8</span>
+</div>
+<div class="bg-surface-container-lowest p-3 group hover:bg-surface-container-low transition-colors cursor-pointer">
+<span class="text-sm font-medium">9</span>
+</div>
+<!-- Active Day -->
+<div class="bg-primary/5 p-3 group hover:bg-primary/10 transition-colors cursor-pointer border-2 border-primary-fixed ring-inset">
+<span class="text-sm font-bold text-primary flex items-center justify-between">
+                                10
+                                <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+</span>
+<div class="mt-2 space-y-1">
+<div class="text-[10px] py-1 px-2 bg-primary text-on-primary rounded-md truncate">Design Sprint</div>
+<div class="text-[10px] py-1 px-2 bg-secondary-container text-on-secondary-container rounded-md truncate">Weekly Sync</div>
+<div class="text-[10px] py-1 px-2 bg-surface-container-highest text-on-surface-variant rounded-md truncate font-medium">+2 more</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-3 group hover:bg-surface-container-low transition-colors cursor-pointer">
+<span class="text-sm font-medium">11</span>
+</div>
+<div class="bg-surface-container-lowest p-3 group hover:bg-surface-container-low transition-colors cursor-pointer">
+<span class="text-sm font-medium">12</span>
+</div>
+<div class="bg-surface-container-lowest p-3 group hover:bg-surface-container-low transition-colors cursor-pointer">
+<span class="text-sm font-medium">13</span>
+</div>
+<div class="bg-surface-container-lowest p-3 group hover:bg-surface-container-low transition-colors cursor-pointer">
+<span class="text-sm font-medium">14</span>
+</div>
+<!-- Row 3 & 4 (Simplified) -->
+<div class="bg-surface-container-lowest p-3 group hover:bg-surface-container-low transition-colors cursor-pointer"><span class="text-sm font-medium">15</span></div>
+<div class="bg-surface-container-lowest p-3 group hover:bg-surface-container-low transition-colors cursor-pointer"><span class="text-sm font-medium">16</span></div>
+<div class="bg-surface-container-lowest p-3 group hover:bg-surface-container-low transition-colors cursor-pointer"><span class="text-sm font-medium">17</span></div>
+<div class="bg-surface-container-lowest p-3 group hover:bg-surface-container-low transition-colors cursor-pointer"><span class="text-sm font-medium">18</span></div>
+<div class="bg-surface-container-lowest p-3 group hover:bg-surface-container-low transition-colors cursor-pointer"><span class="text-sm font-medium">19</span></div>
+<div class="bg-surface-container-lowest p-3 group hover:bg-surface-container-low transition-colors cursor-pointer"><span class="text-sm font-medium">20</span></div>
+<div class="bg-surface-container-lowest p-3 group hover:bg-surface-container-low transition-colors cursor-pointer"><span class="text-sm font-medium">21</span></div>
+<div class="bg-surface-container-lowest p-3 group hover:bg-surface-container-low transition-colors cursor-pointer"><span class="text-sm font-medium">22</span></div>
+<div class="bg-surface-container-lowest p-3 group hover:bg-surface-container-low transition-colors cursor-pointer"><span class="text-sm font-medium">23</span></div>
+<div class="bg-surface-container-lowest p-3 group hover:bg-surface-container-low transition-colors cursor-pointer"><span class="text-sm font-medium">24</span></div>
+<div class="bg-surface-container-lowest p-3 group hover:bg-surface-container-low transition-colors cursor-pointer"><span class="text-sm font-medium">25</span></div>
+<div class="bg-surface-container-lowest p-3 group hover:bg-surface-container-low transition-colors cursor-pointer"><span class="text-sm font-medium">26</span></div>
+<div class="bg-surface-container-lowest p-3 group hover:bg-surface-container-low transition-colors cursor-pointer"><span class="text-sm font-medium">27</span></div>
+<div class="bg-surface-container-lowest p-3 group hover:bg-surface-container-low transition-colors cursor-pointer"><span class="text-sm font-medium">28</span></div>
+<div class="bg-surface-container-lowest p-3 group hover:bg-surface-container-low transition-colors cursor-pointer"><span class="text-sm font-medium">29</span></div>
+<div class="bg-surface-container-lowest p-3 group hover:bg-surface-container-low transition-colors cursor-pointer"><span class="text-sm font-medium">30</span></div>
+<div class="bg-surface-container-lowest p-3 opacity-30 cursor-not-allowed"><span class="text-sm font-medium">1</span></div>
+<div class="bg-surface-container-lowest p-3 opacity-30 cursor-not-allowed"><span class="text-sm font-medium">2</span></div>
+<div class="bg-surface-container-lowest p-3 opacity-30 cursor-not-allowed"><span class="text-sm font-medium">3</span></div>
+<div class="bg-surface-container-lowest p-3 opacity-30 cursor-not-allowed"><span class="text-sm font-medium">4</span></div>
+<div class="bg-surface-container-lowest p-3 opacity-30 cursor-not-allowed"><span class="text-sm font-medium">5</span></div>
+</div>
+</div>
+</section>
+<!-- Focus Sidebar: Day Details -->
+<aside class="w-96 flex flex-col gap-6">
+<!-- Selected Day Card -->
+<div class="bg-surface-container-lowest rounded-[2rem] p-8 shadow-sm border border-outline-variant/10">
+<div class="flex justify-between items-start mb-6">
+<div>
+<p class="text-xs font-bold text-primary uppercase tracking-widest mb-1">Today's Focus</p>
+<h3 class="text-2xl font-extrabold text-on-surface">September 10</h3>
+</div>
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-primary-container hover:text-primary transition-all">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</div>
+<div class="space-y-6">
+<!-- Task Item -->
+<div class="relative pl-6 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-1 before:bg-primary before:rounded-full">
+<span class="text-xs font-medium text-on-surface-variant">09:00 - 11:30 AM</span>
+<h4 class="font-bold text-on-surface">Design Sprint: Canvas Core</h4>
+<p class="text-sm text-on-surface-variant mt-1">Refine the typography system and tonal shifts for the new Zen Workspace module.</p>
+<div class="flex gap-2 mt-3">
+<span class="px-2 py-0.5 bg-primary-container text-on-primary-container text-[10px] font-bold rounded-full uppercase">Work</span>
+<span class="px-2 py-0.5 bg-surface-container text-on-surface-variant text-[10px] font-bold rounded-full uppercase">Deep Focus</span>
+</div>
+</div>
+<!-- Task Item -->
+<div class="relative pl-6 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-1 before:bg-secondary before:rounded-full">
+<span class="text-xs font-medium text-on-surface-variant">02:00 - 03:00 PM</span>
+<h4 class="font-bold text-on-surface">Weekly Team Sync</h4>
+<div class="flex -space-x-2 mt-3 mb-1">
+<img class="w-6 h-6 rounded-full border-2 border-surface-container-lowest object-cover" data-alt="portrait of a woman smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgJa4cTpv-LFeFbJ1PwJCpJ85cYSnw4SLkg3qMapiCkltNaOMy38t-8vqwS1v7Uyc3kyQpZQyjazPxhWM2TPKW8D2PzsTzZL0ici_tFrxjVTPD9LQbOGyvrJ7nOtMVIPhgvahj4Rge1BWA8i7l--SOsKuwcVbWIGEFReBn4Vg2ui0AMWVXAjt4wsBFHvUPJHnMzwPyOD8cWTda1xa7n73zndFBMBaz-eqmmb6on72jobT5InKt_hRXk43Ap2GIWRztzLfw90_IWTkz"/>
+<img class="w-6 h-6 rounded-full border-2 border-surface-container-lowest object-cover" data-alt="portrait of a bearded man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFMoHFkJhlDOoDbgawUuD1o2xnPyZFUCcHSQQzSXhNR8ekFvbM3eYSXe9cr47r82d1OmCnw32_jd6RNeKI-8JOUccom9qZWmYQgKrQTOXi5ZfzXbKiAKiavV8V339v2DrOmJcw5EbLRzPlBWrwAZNQp36Y1AL4Zmr5ELIkF2fAjhuEPwYsfjqAcepeTjhQ4U3v3M9zUftmP5FN1Yumm77zG7Gnknf-M4KfzVotB9He67DwuG6b8rsDs_mQXEJDIuYU8JOL0E0Q3nIq"/>
+<div class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center text-[10px] font-bold border-2 border-surface-container-lowest">+2</div>
+</div>
+</div>
+<!-- Task Item -->
+<div class="relative pl-6 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-1 before:bg-tertiary before:rounded-full">
+<span class="text-xs font-medium text-on-surface-variant">04:30 - 05:30 PM</span>
+<h4 class="font-bold text-on-surface">Review Archive Data</h4>
+<div class="mt-2 p-3 bg-surface-container-low rounded-xl flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary">description</span>
+<span class="text-xs font-medium text-on-surface-variant">Q3_Projections.pdf</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Monthly Goals / Glassmorphism Feel -->
+<div class="flex-1 glass-panel rounded-[2rem] p-8 border border-white/40 flex flex-col">
+<h3 class="text-lg font-extrabold text-on-surface mb-6 flex items-center justify-between">
+                        September Intentions
+                        <span class="material-symbols-outlined text-primary">auto_awesome</span>
+</h3>
+<div class="space-y-4 flex-1">
+<div class="flex items-center gap-4 p-4 rounded-2xl bg-white/40 group hover:bg-white/80 transition-colors">
+<div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">mindfulness</span>
+</div>
+<div>
+<h5 class="text-sm font-bold text-on-surface">Daily Mindfulness</h5>
+<div class="w-32 h-1.5 bg-surface-container rounded-full mt-1.5 overflow-hidden">
+<div class="w-3/4 h-full bg-primary"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-2xl bg-white/40 group hover:bg-white/80 transition-colors">
+<div class="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">menu_book</span>
+</div>
+<div>
+<h5 class="text-sm font-bold text-on-surface">Finish Design Book</h5>
+<div class="w-32 h-1.5 bg-surface-container rounded-full mt-1.5 overflow-hidden">
+<div class="w-1/2 h-full bg-secondary"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-6 rounded-2xl overflow-hidden relative aspect-video group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="minimalist and bright creative office workspace with wooden desk and plants in soft natural morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM-zvYuD40ePIyqVbVuzkMMQ7nccDAYsja_HeIE-uAgmDFwyp41vM2QNOcdzXkxRP5yHNpiEO4pcPwhoTxT-ipWlauyH-Z9sMmM-_tlAiAAyu2JGP317ZxR9s9yiPJnV_rYk-qrsb0yBlUdL8wV7zkc-Y_vitRQ469gNngPaZRcNb2CkZu-R2K0pTGunUn5cLJUxAh3xaDdkQ0ZvyYIrclziZHvwfkZmeULVyD3-FhJJpJa54vTzUjduLPb6CRci3XOtVSzQbfnHxk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/60 to-transparent flex flex-col justify-end p-4">
+<p class="text-white text-[10px] font-bold uppercase tracking-widest opacity-80">Vision Board</p>
+<h4 class="text-white text-sm font-bold">Dream Workspace 2025</h4>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- FAB Suppression: Not rendered on focused calendar/desktop layouts per instructions -->
+</body></html>

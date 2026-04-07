@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#dae4e8",
+                    "on-primary-fixed": "#1c4739",
+                    "primary": "#3d6758",
+                    "outline-variant": "#aab4b7",
+                    "inverse-on-surface": "#999d9f",
+                    "secondary-fixed": "#bdeaf8",
+                    "surface-bright": "#f6fafb",
+                    "on-tertiary-container": "#2a4364",
+                    "surface-tint": "#3d6758",
+                    "error": "#a83836",
+                    "error-container": "#fa746f",
+                    "secondary-fixed-dim": "#afdce9",
+                    "secondary": "#3a6571",
+                    "surface-container-highest": "#dae4e8",
+                    "primary-container": "#beecda",
+                    "tertiary": "#486083",
+                    "on-tertiary-fixed-variant": "#334c6e",
+                    "on-secondary": "#effbff",
+                    "secondary-dim": "#2e5965",
+                    "primary-fixed": "#beecda",
+                    "surface-container-low": "#eff4f7",
+                    "tertiary-fixed": "#b2cbf3",
+                    "inverse-primary": "#cffeeb",
+                    "on-secondary-fixed-variant": "#37616d",
+                    "on-primary": "#e4fff3",
+                    "tertiary-fixed-dim": "#a4bde4",
+                    "inverse-surface": "#0a0f10",
+                    "tertiary-container": "#b2cbf3",
+                    "on-background": "#2b3437",
+                    "on-surface-variant": "#576164",
+                    "on-secondary-fixed": "#174550",
+                    "on-secondary-container": "#2c5863",
+                    "error-dim": "#67040d",
+                    "on-error-container": "#6e0a12",
+                    "on-tertiary": "#f8f8ff",
+                    "on-surface": "#2b3437",
+                    "on-tertiary-fixed": "#142f4f",
+                    "outline": "#737c80",
+                    "tertiary-dim": "#3b5476",
+                    "secondary-container": "#bdeaf8",
+                    "surface-container-high": "#e1e9ed",
+                    "surface-container": "#e8eff2",
+                    "primary-fixed-dim": "#b1decc",
+                    "on-primary-fixed-variant": "#396355",
+                    "surface": "#f6fafb",
+                    "surface-dim": "#d2dcdf",
+                    "on-error": "#fff7f6",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#f6fafb",
+                    "primary-dim": "#315b4d",
+                    "on-primary-container": "#2f594b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(246, 250, 251, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .global-glow {
+            box-shadow: 0px 12px 32px rgba(43, 52, 55, 0.06);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface" data-page="profile">
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#e8eff2] dark:bg-slate-900 flex flex-col h-full py-8 transition-all duration-300 z-50 hidden md:flex" style="box-shadow: 0px 12px 32px rgba(43,52,55,0.06);">
+<div class="px-8 mb-12">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined">spa</span>
+</div>
+<div>
+<h1 class="font-headline text-lg font-extrabold text-[#3d6758]">ZenWorkspace</h1>
+<p class="text-xs font-medium opacity-60">Shared Workspace</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- General Tab (Active) -->
+<a class="flex items-center gap-4 text-[#2b3437] dark:text-slate-400 px-8 py-3 transition-transform hover:text-[#3d6758] hover:translate-x-1" href="/dashboard">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 text-[#2b3437] dark:text-slate-400 px-8 py-3 transition-transform hover:text-[#3d6758] hover:translate-x-1" href="/tasks">
+<span class="material-symbols-outlined">check_circle</span>
+<span class="text-sm font-medium">Tasks</span>
+</a>
+<a class="flex items-center gap-4 text-[#2b3437] dark:text-slate-400 px-8 py-3 transition-transform hover:text-[#3d6758] hover:translate-x-1" href="/notes">
+<span class="material-symbols-outlined">description</span>
+<span class="text-sm font-medium">Notes</span>
+</a>
+<a class="flex items-center gap-4 text-[#3d6758] font-bold bg-[#ffffff] dark:bg-slate-800 rounded-l-full ml-4 pl-4 py-3 transition-transform hover:translate-x-1" href="/profile">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span>General</span>
+</a>
+<a class="flex items-center gap-4 text-[#2b3437] dark:text-slate-400 px-8 py-3 transition-transform hover:text-[#3d6758] hover:translate-x-1" href="/settings/preferences">
+<span class="material-symbols-outlined">tune</span>
+<span class="text-sm font-medium">Preferences</span>
+</a>
+<a class="flex items-center gap-4 text-[#2b3437] dark:text-slate-400 px-8 py-3 transition-transform hover:text-[#3d6758] hover:translate-x-1" href="/settings/security">
+<span class="material-symbols-outlined">shield</span>
+<span>Security</span>
+</a>
+</nav>
+<div class="px-8 mt-auto space-y-6">
+<button class="w-full py-4 bg-primary text-on-primary rounded-full font-bold flex items-center justify-center gap-2 hover:bg-primary-dim transition-colors" type="button">
+<span class="material-symbols-outlined">add</span>
+<span>New Entry</span>
+</button>
+<div class="pt-6 border-t border-outline-variant/15">
+<a class="flex items-center gap-4 text-[#2b3437] py-2 opacity-70 hover:opacity-100" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="text-sm">Help</span>
+</a>
+<a class="flex items-center gap-4 text-[#2b3437] py-2 opacity-70 hover:opacity-100" data-logout href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="text-sm">Sign Out</span>
+</a>
+</div>
+</div>
+</aside>
+<main class="md:ml-64 flex flex-col min-h-screen">
+<header class="w-full h-16 bg-[#f6fafb] dark:bg-slate-950 flex justify-between items-center px-8 z-40 sticky top-0">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold text-[#2b3437] dark:text-[#f6fafb] font-headline tracking-tight">Zen Workspace</span>
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full w-80 text-sm focus:ring-2 focus:ring-primary/20" placeholder="Search your canvas..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-[#2b3437] opacity-70 hover:bg-[#e8eff2] px-3 py-1 rounded-full transition-colors text-sm" href="/dashboard">Overview</a>
+<a class="text-[#3d6758] font-bold border-b-2 border-[#3d6758] py-5 px-1 text-sm" href="/profile">Profile</a>
+<a class="text-[#2b3437] opacity-70 hover:bg-[#e8eff2] px-3 py-1 rounded-full transition-colors text-sm" href="/settings/preferences">Settings</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-[#e8eff2] text-[#3d6758]"><span class="material-symbols-outlined">notifications</span></button>
+<button class="p-2 rounded-full hover:bg-[#e8eff2] text-[#3d6758]"><span class="material-symbols-outlined">help</span></button>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-high ml-2"></div>
+</div>
+</div>
+</header>
+<div class="p-8 max-w-[1600px] w-full mx-auto">
+<header class="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+<div>
+<h1 class="font-headline text-4xl font-extrabold tracking-tight text-on-surface mb-2">Profile</h1>
+<p class="text-on-surface-variant font-medium max-w-2xl">Review your account identity, visible profile details, and membership status from a cleaner dashboard.</p>
+</div>
+<button class="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold text-on-primary transition-colors hover:bg-primary-dim" data-go-edit-profile type="button">
+<span class="material-symbols-outlined text-base">edit</span>
+<span>Edit Profile</span>
+</button>
+</header>
+<div class="grid grid-cols-12 gap-8 items-start">
+<div class="col-span-12 xl:col-span-8 space-y-6">
+<section class="rounded-[2rem] bg-surface-container-lowest p-8 shadow-[0px_12px_32px_rgba(43,52,55,0.04)]">
+<div class="flex flex-col gap-8 md:flex-row md:items-start">
+<img alt="Profile avatar" class="h-28 w-28 rounded-[1.5rem] object-cover shadow-lg" id="profile-avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZ6C2yG0xY_3nNG3A5CnCUVpiMFYcnLgFj6JeR00lu6BEVA9zcFIBTVQ3iSE9QLwVlznSveKlVrZgzXAT7UDfsyc9DR1-Qn6clSn9aKJpQefQHFDp4yynDkP9EY5IAqofHiWGYNkCTXw51JLEgKXUYEeXnDAEw85AQNys3lzWXTxH5u7qDNcS-YmPbCLVsc-OOb5gLQim_X6JiRTpc0QOMRAC4GiTe68y5wfXYSE3sNRlEbYxt9ulKWVZfzfaR7lNRHzkrHue4YDDc"/>
+<div class="flex-1 space-y-5">
+<div>
+<p class="text-xs font-bold uppercase tracking-[0.2em] text-outline">Account Identity</p>
+<h2 class="mt-2 font-headline text-3xl font-bold text-on-surface" id="profile-name">Alex Rivera</h2>
+<p class="mt-1 text-base font-medium text-tertiary" id="profile-email">alex.rivera@zenworkspace.com</p>
+</div>
+<div class="rounded-[1.5rem] bg-surface-container-low p-5">
+<p class="text-xs font-bold uppercase tracking-[0.2em] text-outline mb-3">Biography</p>
+<p class="text-base leading-7 text-on-surface-variant" id="profile-bio">Architect of digital experiences and mindfulness practitioner. Currently exploring the intersection of creative flow and cognitive productivity.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="grid grid-cols-1 gap-5 md:grid-cols-2">
+<div class="rounded-[1.5rem] border border-outline-variant/15 bg-surface-container-low p-6">
+<p class="text-xs font-bold uppercase tracking-[0.18em] text-outline mb-2">Phone</p>
+<p class="text-lg font-semibold text-on-surface" id="profile-phone">+1 (555) 234-8901</p>
+</div>
+<div class="rounded-[1.5rem] border border-outline-variant/15 bg-surface-container-low p-6">
+<p class="text-xs font-bold uppercase tracking-[0.18em] text-outline mb-2">Location</p>
+<p class="text-lg font-semibold text-on-surface" id="profile-location">San Francisco, CA</p>
+</div>
+<div class="rounded-[1.5rem] border border-outline-variant/15 bg-surface-container-low p-6">
+<p class="text-xs font-bold uppercase tracking-[0.18em] text-outline mb-2">Language</p>
+<p class="text-lg font-semibold text-on-surface" id="profile-language">English (US)</p>
+</div>
+<div class="rounded-[1.5rem] border border-outline-variant/15 bg-surface-container-low p-6">
+<p class="text-xs font-bold uppercase tracking-[0.18em] text-outline mb-2">Timezone</p>
+<p class="text-lg font-semibold text-on-surface" id="profile-timezone">Pacific Time (PT)</p>
+</div>
+</section>
+</div>
+<div class="col-span-12 xl:col-span-4 space-y-6">
+<section class="overflow-hidden rounded-[2rem] bg-gradient-to-br from-primary-fixed via-primary-container to-secondary-fixed p-7 text-on-primary-fixed shadow-[0px_18px_40px_rgba(43,52,55,0.12)]">
+<div class="flex items-start justify-between">
+<div class="rounded-2xl bg-white/25 p-3 backdrop-blur-sm">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+</div>
+<div class="text-right">
+<p class="text-[10px] font-bold uppercase tracking-[0.22em] opacity-70">Workspace Passport</p>
+<p class="mt-1 font-headline text-lg font-extrabold">ZEN-294-XR</p>
+</div>
+</div>
+<div class="mt-10">
+<p class="text-xs font-bold uppercase tracking-[0.2em] opacity-70">Membership</p>
+<p class="mt-2 font-headline text-3xl font-extrabold" id="profile-membership">Premium Member</p>
+<div class="mt-6 flex items-center gap-2 text-sm font-medium opacity-80">
+<span class="material-symbols-outlined text-base">calendar_today</span>
+<span>Since October 2023</span>
+</div>
+</div>
+</section>
+<section class="rounded-[2rem] bg-surface-container-lowest p-7 shadow-[0px_12px_32px_rgba(43,52,55,0.04)]">
+<h3 class="font-headline text-xl font-bold text-on-surface mb-5">Quick Actions</h3>
+<div class="space-y-3">
+<button class="flex w-full items-center justify-between rounded-[1.25rem] bg-surface-container-low px-4 py-4 text-left text-sm font-medium text-on-surface transition-colors hover:bg-surface-container" type="button">
+<span class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">share</span><span>Share profile link</span></span>
+<span class="material-symbols-outlined text-outline">arrow_forward</span>
+</button>
+<button class="flex w-full items-center justify-between rounded-[1.25rem] bg-surface-container-low px-4 py-4 text-left text-sm font-medium text-on-surface transition-colors hover:bg-surface-container" type="button">
+<span class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">history</span><span>Review account activity</span></span>
+<span class="material-symbols-outlined text-outline">arrow_forward</span>
+</button>
+<button class="flex w-full items-center justify-between rounded-[1.25rem] bg-surface-container-low px-4 py-4 text-left text-sm font-medium text-on-surface transition-colors hover:bg-surface-container" type="button">
+<span class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">tune</span><span>Open workspace preferences</span></span>
+<span class="material-symbols-outlined text-outline">arrow_forward</span>
+</button>
+</div>
+</section>
+</div>
+</div>
+</div>
+</main>
+<p class="fixed bottom-4 left-1/2 -translate-x-1/2 text-sm font-medium text-primary z-50" id="page-feedback"></p>
+<script src="/assets/js/app.js"></script>
+</body></html>

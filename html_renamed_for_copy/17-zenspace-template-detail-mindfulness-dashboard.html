@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#576164",
+                    "surface-bright": "#f6fafb",
+                    "primary-fixed-dim": "#b1decc",
+                    "tertiary-fixed": "#b2cbf3",
+                    "secondary-container": "#bdeaf8",
+                    "error-dim": "#67040d",
+                    "primary": "#3d6758",
+                    "tertiary-dim": "#3b5476",
+                    "on-primary": "#e4fff3",
+                    "inverse-primary": "#cffeeb",
+                    "secondary": "#3a6571",
+                    "primary-fixed": "#beecda",
+                    "on-primary-container": "#2f594b",
+                    "outline": "#737c80",
+                    "secondary-fixed-dim": "#afdce9",
+                    "tertiary-container": "#b2cbf3",
+                    "on-error-container": "#6e0a12",
+                    "on-surface": "#2b3437",
+                    "on-primary-fixed": "#1c4739",
+                    "inverse-surface": "#0a0f10",
+                    "secondary-fixed": "#bdeaf8",
+                    "error-container": "#fa746f",
+                    "surface": "#f6fafb",
+                    "primary-dim": "#315b4d",
+                    "on-background": "#2b3437",
+                    "surface-variant": "#dae4e8",
+                    "on-secondary-fixed": "#174550",
+                    "on-secondary-container": "#2c5863",
+                    "surface-container": "#e8eff2",
+                    "tertiary-fixed-dim": "#a4bde4",
+                    "on-secondary": "#effbff",
+                    "on-tertiary": "#f8f8ff",
+                    "surface-container-low": "#eff4f7",
+                    "on-tertiary-container": "#2a4364",
+                    "surface-tint": "#3d6758",
+                    "secondary-dim": "#2e5965",
+                    "on-error": "#fff7f6",
+                    "surface-container-high": "#e1e9ed",
+                    "on-tertiary-fixed": "#142f4f",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#dae4e8",
+                    "on-primary-fixed-variant": "#396355",
+                    "tertiary": "#486083",
+                    "error": "#a83836",
+                    "surface-dim": "#d2dcdf",
+                    "outline-variant": "#aab4b7",
+                    "on-secondary-fixed-variant": "#37616d",
+                    "inverse-on-surface": "#999d9f",
+                    "background": "#f6fafb",
+                    "primary-container": "#beecda",
+                    "on-tertiary-fixed-variant": "#334c6e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-effect {
+            background: rgba(246, 250, 251, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 bg-[#f6fafb] dark:bg-slate-900 transition-opacity duration-200">
+<div class="flex items-center justify-between px-8 py-4 w-full max-w-[1920px] mx-auto">
+<div class="flex items-center gap-12">
+<span class="text-xl font-bold text-[#2b3437] dark:text-white tracking-tighter">ZenSpace Templates</span>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-manrope text-sm font-medium tracking-tight text-[#3d6758] dark:text-[#b1decc] font-bold border-b-2 border-[#3d6758] pb-1" href="#">Discover</a>
+<a class="font-manrope text-sm font-medium tracking-tight text-[#2b3437] dark:text-slate-400 opacity-70 hover:opacity-100 transition-opacity duration-200" href="#">Wishlist</a>
+<a class="font-manrope text-sm font-medium tracking-tight text-[#2b3437] dark:text-slate-400 opacity-70 hover:opacity-100 transition-opacity duration-200" href="#">My Assets</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center bg-surface-container rounded-full px-4 py-2 gap-2">
+<span class="material-symbols-outlined text-outline text-sm" data-icon="search">search</span>
+<input class="bg-transparent border-none outline-none text-sm placeholder:text-outline focus:ring-0" placeholder="Search templates..." type="text"/>
+</div>
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors scale-95 active:transition-transform">
+<span class="material-symbols-outlined text-on-surface" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors scale-95 active:transition-transform">
+<span class="material-symbols-outlined text-on-surface" data-icon="settings">settings</span>
+</button>
+<img alt="User profile" class="w-10 h-10 rounded-full object-cover border-2 border-surface-container" data-alt="Close up portrait of a professional woman with a calm expression, soft natural lighting and neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIs9i3gZIDiDsUe4SsfPdsAPmg0wx3gccXUiJOLq1kh0nTPspIBljeDmGreWFrWySZHVPjS2VAEe--_7a9-ad0cfxuw9Qs6U90xUPCJ9-FBkPEC7H8rrl1Df1UjYYrUGzL6SBgsvC57wkVYIHteqgVU8lEWpSC5dxa2YkP6HrOWLZCGKi9OU3V53rNnD9AQ2jyAZLkVkIIlWuhQZ7-JGT4Pi4180km1DBHEmDK4SsVcVo-FbdGW4m-bkY2FogYbhMnfA-4KRsFf88T"/>
+</div>
+</div>
+</header>
+<div class="flex max-w-[1920px] mx-auto min-h-screen">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 sticky left-0 hidden lg:block bg-[#e8eff2] dark:bg-slate-800/50">
+<div class="flex flex-col h-full py-8 pr-4">
+<div class="px-6 mb-8">
+<h3 class="text-on-surface font-headline font-bold text-lg">Categories</h3>
+<p class="text-on-surface-variant text-xs">Filter by workflow</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="font-inter text-sm font-medium text-[#2b3437] dark:text-slate-400 py-2 px-6 flex items-center gap-3 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+                        All Templates
+                    </a>
+<a class="font-inter text-sm font-medium text-[#3d6758] dark:text-[#b1decc] font-semibold bg-[#ffffff] dark:bg-slate-700/50 rounded-r-full py-2 px-6 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="self_improvement">self_improvement</span>
+                        Personal Growth
+                    </a>
+<a class="font-inter text-sm font-medium text-[#2b3437] dark:text-slate-400 py-2 px-6 flex items-center gap-3 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="trello">pinboard</span>
+                        Project Management
+                    </a>
+<a class="font-inter text-sm font-medium text-[#2b3437] dark:text-slate-400 py-2 px-6 flex items-center gap-3 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+                        Technical Writing
+                    </a>
+<a class="font-inter text-sm font-medium text-[#2b3437] dark:text-slate-400 py-2 px-6 flex items-center gap-3 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+                        Education
+                    </a>
+<a class="font-inter text-sm font-medium text-[#2b3437] dark:text-slate-400 py-2 px-6 flex items-center gap-3 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="palette">palette</span>
+                        Creative Studio
+                    </a>
+</nav>
+<div class="mt-auto flex flex-col gap-1">
+<a class="font-inter text-sm font-medium text-[#2b3437] py-2 px-6 flex items-center gap-3 hover:bg-slate-200 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+                        Support
+                    </a>
+<a class="font-inter text-sm font-medium text-[#2b3437] py-2 px-6 flex items-center gap-3 hover:bg-slate-200 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+                        Feedback
+                    </a>
+</div>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="flex-1 bg-surface px-12 py-10 overflow-y-auto">
+<!-- Breadcrumb -->
+<nav class="flex items-center gap-2 text-on-surface-variant text-sm mb-8 font-medium">
+<a class="hover:text-primary transition-colors" href="#">Personal Growth</a>
+<span class="material-symbols-outlined text-xs" data-icon="chevron_right">chevron_right</span>
+<span class="text-on-surface">Mindfulness Dashboard v2.0</span>
+</nav>
+<div class="grid grid-cols-12 gap-12">
+<!-- Left: Hero Content -->
+<div class="col-span-12 xl:col-span-8">
+<div class="relative group rounded-3xl overflow-hidden mb-12 surface-container-lowest">
+<img alt="Template Preview Banner" class="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Clean and minimalist workspace setup with a tablet showing a meditation app dashboard, surrounded by soft plants and natural sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALCVKP_lV73-rIsmFI5xfFUUHwlTq_2-TQdsP7r812GNiBXphYv8DfO-TG_xz89E0I2AwXE5XkGP-voaGRrqa7Qggpf5Hmo06BSYI5wCCdaI7XHXYEd4k-wAkvT_EAVgowzuIARZUtoZpIofbJgoc49BNqA4aeQ0hchxjID7o51mX4RmTvNB42gjIioaPufwvFE1xV8FSTKbw7G2vlhkBfI-VY8PcXPLO1L6f3SR0295QUc33khME_fXua2USxdijXKLAk3OQCv-c6"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<span class="bg-primary text-on-primary px-4 py-1 rounded-full text-xs font-bold tracking-widest uppercase">Editor's Choice</span>
+</div>
+</div>
+<!-- Title & Identity -->
+<div class="flex flex-col gap-4 mb-12">
+<div class="flex justify-between items-start">
+<div>
+<h1 class="text-4xl font-headline font-extrabold tracking-tight text-on-surface mb-2">Mindfulness Dashboard</h1>
+<p class="text-lg text-on-surface-variant max-w-2xl leading-relaxed">
+                                    A holistic workspace designed to help you balance your digital life with mental well-being. Includes habit trackers, focus timers, and journal prompts.
+                                </p>
+</div>
+<div class="flex gap-3">
+<button class="w-12 h-12 flex items-center justify-center rounded-full surface-container-low hover:surface-container-high transition-colors">
+<span class="material-symbols-outlined text-on-surface" data-icon="favorite">favorite</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center rounded-full surface-container-low hover:surface-container-high transition-colors">
+<span class="material-symbols-outlined text-on-surface" data-icon="share">share</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bento Grid Features -->
+<section class="mb-16">
+<h2 class="text-2xl font-headline font-bold text-on-surface mb-8">Core Features</h2>
+<div class="grid grid-cols-12 gap-6">
+<div class="col-span-6 p-8 rounded-[2rem] bg-surface-container-low">
+<span class="material-symbols-outlined text-primary text-3xl mb-4" data-icon="self_improvement">self_improvement</span>
+<h3 class="text-lg font-bold text-on-surface mb-2">Guided Habit Stacks</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Pre-built routines for morning and evening mindfulness based on proven cognitive behaviors.</p>
+</div>
+<div class="col-span-6 p-8 rounded-[2rem] bg-secondary-container">
+<span class="material-symbols-outlined text-secondary-dim text-3xl mb-4" data-icon="timer">timer</span>
+<h3 class="text-lg font-bold text-on-secondary-container mb-2">Integrated Focus Timers</h3>
+<p class="text-on-secondary-container opacity-80 text-sm leading-relaxed">Deep work sessions synced directly with your daily task list for seamless flow.</p>
+</div>
+<div class="col-span-12 lg:col-span-4 p-8 rounded-[2rem] bg-surface-container-high">
+<span class="material-symbols-outlined text-tertiary text-3xl mb-4" data-icon="bar_chart">bar_chart</span>
+<h4 class="font-bold text-on-surface mb-2">Mood Tracking</h4>
+<p class="text-on-surface-variant text-xs">Visualize your emotional trends over weeks and months.</p>
+</div>
+<div class="col-span-12 lg:col-span-8 p-8 rounded-[2rem] bg-tertiary-container/30">
+<div class="flex justify-between items-center h-full">
+<div>
+<h4 class="font-bold text-on-tertiary-container mb-2">Cloud Synced Journals</h4>
+<p class="text-on-tertiary-container opacity-80 text-xs">End-to-end encrypted reflection space for your private thoughts.</p>
+</div>
+<span class="material-symbols-outlined text-tertiary text-4xl" data-icon="lock_open">lock_open</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Reviews -->
+<section class="mb-16">
+<div class="flex justify-between items-end mb-8">
+<h2 class="text-2xl font-headline font-bold text-on-surface">User Reviews</h2>
+<button class="text-primary font-semibold text-sm hover:underline">Write a review</button>
+</div>
+<div class="space-y-6">
+<div class="p-8 rounded-3xl bg-surface-container-lowest">
+<div class="flex items-center gap-4 mb-4">
+<img alt="Reviewer" class="w-10 h-10 rounded-full object-cover" data-alt="Professional male portrait with a friendly smile, warm studio lighting and neutral gray background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvB-qQ5FnDl5ujvLkHI_e43KrNhtKFX7n2Rw_cSjbTSxHFw-u32fl74QI6m7fvb9GJ6l0_m0aQ0NNTBAje-DhIZ9L8avvNHll7GCm9z51aGi0lIe3uDx0O95y1hlq0at32DVra_bKiOmq1MzCkgG-mm3PJhvPNNtDDiTo0QvNnkGxReVwu4W8FPApv-vAebapfhVZvqugZ8b5osuMPmteMTI8otcxREwuCmXzjljLt1-LPHqV4B6bGFc6xWvd9DPEALMr-dzoUZrry"/>
+<div>
+<p class="font-bold text-on-surface text-sm">Marcus Chen</p>
+<div class="flex text-amber-500">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<span class="ml-auto text-xs text-outline font-medium">2 days ago</span>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed">The layout is incredibly calming. I've tried many templates, but this one actually feels like a physical sanctuary. Highly recommended for creative professionals.</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Right: Action Sidebar -->
+<div class="col-span-12 xl:col-span-4">
+<div class="sticky top-28 space-y-8">
+<!-- Purchase Card -->
+<div class="glass-effect rounded-[2.5rem] p-8 surface-container-lowest">
+<div class="flex justify-between items-center mb-6">
+<span class="text-3xl font-headline font-extrabold text-on-surface">$24.00</span>
+<div class="flex items-center gap-1 text-primary font-bold">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.9</span>
+<span class="text-on-surface-variant font-normal text-xs">(248)</span>
+</div>
+</div>
+<div class="space-y-4 mb-8">
+<button class="w-full py-4 bg-gradient-to-r from-primary to-primary-dim text-on-primary rounded-full font-bold text-lg hover:scale-[1.02] active:scale-95 transition-all">
+                                    Install Template
+                                </button>
+<button class="w-full py-4 bg-secondary-container text-on-secondary-container rounded-full font-bold text-lg hover:opacity-90 transition-opacity">
+                                    Try Preview
+                                </button>
+</div>
+<hr class="border-outline-variant/10 mb-8"/>
+<div class="space-y-4">
+<h4 class="text-xs font-bold text-on-surface-variant tracking-widest uppercase">Specifications</h4>
+<div class="flex justify-between text-sm py-2">
+<span class="text-on-surface-variant">Compatibility</span>
+<span class="text-on-surface font-semibold">Notion, Obsidian</span>
+</div>
+<div class="flex justify-between text-sm py-2">
+<span class="text-on-surface-variant">Version</span>
+<span class="text-on-surface font-semibold">2.0.4</span>
+</div>
+<div class="flex justify-between text-sm py-2">
+<span class="text-on-surface-variant">Last Update</span>
+<span class="text-on-surface font-semibold">Oct 12, 2023</span>
+</div>
+<div class="flex justify-between text-sm py-2">
+<span class="text-on-surface-variant">File Size</span>
+<span class="text-on-surface font-semibold">1.2 MB</span>
+</div>
+</div>
+</div>
+<!-- Related Templates -->
+<div class="space-y-6 px-4">
+<h3 class="font-headline font-bold text-on-surface text-lg">Related Templates</h3>
+<div class="space-y-4">
+<div class="flex gap-4 group cursor-pointer">
+<div class="w-20 h-20 rounded-2xl overflow-hidden flex-shrink-0">
+<img alt="Template thumbnail" class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-alt="Minimalist top-down view of a checklist and a pen on a clean white desk, with a soft green leaf in the corner" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDawfutqlxP4gRPCG33gSohdI2y-IDC0EBtLtyQdL3OkiTKyKGFIEFm9N0ZTvNgFjFpYUh2dbVwvd9qEKXCm16Y1SST9xYNCSTcx_yAQ03fGFYKh6O5ZuQikgr36wnB2YpNsjsZqsEloVnTtf-mvo4faa2OOfiZcpXlbUo5ExheRcpFME-TLgvrd8KFuRIVJtTfTi6LExgtFK71-yMh2gtUtbS4uQshACM5NqJf9ZkDlcyttBh4qV5ET9N3jMfw4IcrkWwzcPq972LA"/>
+</div>
+<div>
+<h4 class="text-sm font-bold text-on-surface group-hover:text-primary transition-colors">Daily Stoic Planner</h4>
+<p class="text-xs text-on-surface-variant mb-2">Philosophical task tracking</p>
+<span class="text-sm font-bold text-primary">$15</span>
+</div>
+</div>
+<div class="flex gap-4 group cursor-pointer">
+<div class="w-20 h-20 rounded-2xl overflow-hidden flex-shrink-0">
+<img alt="Template thumbnail" class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-alt="Team of three young professionals collaborating on a large wooden table with laptops and coffee cups, bright airy workspace" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAI4mIJzkEzeK6VeE_YYBjFkCtPF6pjGPMLHgCHR52CZdApt7vCCPeGORNuDJVbJDYJRFnZd5xnLz8byzX8avxxnvI8LfpPDs_PvK5XgTrq9E56vWaZVDSrCiOP4vdsVgAk12oUKLvMdcbx5UNrKHFyiSvdZTGcO2TECym7DdC4uT6ZnePDF-AualJE4hEcTX8KfpjsOi-uK8DxEdk76Bz_XNvMQBLZTJeriuviPWV-XNE0TPPc7fc1O-q3XDYHUdsGp25o2Qne_iNY"/>
+</div>
+<div>
+<h4 class="text-sm font-bold text-on-surface group-hover:text-primary transition-colors">Team Synchrony</h4>
+<p class="text-xs text-on-surface-variant mb-2">Project management hub</p>
+<span class="text-sm font-bold text-primary">$32</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer-like Section for More Details -->
+<section class="mt-24 border-t border-outline-variant/10 pt-16 mb-24">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+<div>
+<h4 class="font-bold mb-4 text-on-surface">Money-back Guarantee</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Not satisfied? We offer a 30-day no-questions-asked refund policy on all our digital templates.</p>
+</div>
+<div>
+<h4 class="font-bold mb-4 text-on-surface">Community Support</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Join our Slack community of 5,000+ ZenSpace users to share tips and customizations.</p>
+</div>
+<div>
+<h4 class="font-bold mb-4 text-on-surface">Instant Updates</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Purchase once and receive lifetime updates as we refine and add new features.</p>
+</div>
+</div>
+</section>
+</main>
+</div>
+</body></html>

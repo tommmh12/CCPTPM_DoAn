@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              outline: "#737c80",
+              "primary-dim": "#315b4d",
+              "surface-dim": "#d2dcdf",
+              "outline-variant": "#aab4b7",
+              "surface-tint": "#3d6758",
+              "surface-container": "#e8eff2",
+              "secondary-container": "#bdeaf8",
+              "on-primary-fixed": "#1c4739",
+              "surface-variant": "#dae4e8",
+              "surface-container-lowest": "#ffffff",
+              primary: "#3d6758",
+              tertiary: "#486083",
+              "secondary-fixed": "#bdeaf8",
+              "on-primary-container": "#2f594b",
+              "surface-container-low": "#eff4f7",
+              "surface-container-highest": "#dae4e8",
+              background: "#f6fafb",
+              "on-secondary-container": "#2c5863",
+              "tertiary-dim": "#3b5476",
+              "inverse-surface": "#0a0f10",
+              "on-error": "#fff7f6",
+              "on-tertiary-fixed-variant": "#334c6e",
+              "inverse-on-surface": "#999d9f",
+              "error-container": "#fa746f",
+              "primary-container": "#beecda",
+              "on-tertiary-fixed": "#142f4f",
+              "on-error-container": "#6e0a12",
+              "primary-fixed": "#beecda",
+              "on-secondary-fixed": "#174550",
+              "secondary-dim": "#2e5965",
+              "on-surface": "#2b3437",
+              "surface-container-high": "#e1e9ed",
+              "secondary-fixed-dim": "#afdce9",
+              "on-tertiary-container": "#2a4364",
+              "on-primary-fixed-variant": "#396355",
+              surface: "#f6fafb",
+              "tertiary-fixed-dim": "#a4bde4",
+              "on-surface-variant": "#576164",
+              "on-secondary-fixed-variant": "#37616d",
+              "inverse-primary": "#cffeeb",
+              "tertiary-fixed": "#b2cbf3",
+              "primary-fixed-dim": "#b1decc",
+              "on-background": "#2b3437",
+              "on-tertiary": "#f8f8ff",
+              "on-secondary": "#effbff",
+              "tertiary-container": "#b2cbf3",
+              "on-primary": "#e4fff3",
+              "error-dim": "#67040d",
+              secondary: "#3a6571",
+              error: "#a83836",
+              "surface-bright": "#f6fafb"
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem"
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Inter"],
+              label: ["Inter"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased overflow-x-hidden" data-page="login">
+<header class="fixed top-0 z-50 w-full bg-[#f6fafb] font-['Manrope'] text-sm">
+<div class="mx-auto flex w-full max-w-[1440px] items-center justify-between px-12 py-6">
+<div class="h-6 w-28" aria-hidden="true"></div>
+<nav class="hidden items-center gap-8 md:flex">
+<a class="text-[#2b3437]/60 transition-colors duration-300 hover:text-[#3d6758]" href="#">Support</a>
+<a class="text-[#2b3437]/60 transition-colors duration-300 hover:text-[#3d6758]" href="#">Help Center</a>
+<a class="rounded-full bg-primary px-6 py-2 font-semibold text-on-primary transition-all active:opacity-70 hover:opacity-90" href="/register">Get Started</a>
+</nav>
+</div>
+</header>
+<main class="flex min-h-screen w-full pt-20 pb-10">
+<section class="relative hidden overflow-hidden bg-surface-container-low p-12 lg:flex lg:w-1/2">
+<div class="relative z-10 flex h-full w-full flex-col justify-between">
+<div class="max-w-md">
+<span class="mb-6 inline-block rounded-full bg-primary-fixed-dim px-3 py-1 text-xs font-semibold uppercase tracking-wider text-on-primary-fixed">Zen Workspace</span>
+<h1 class="mb-6 text-5xl font-extrabold leading-tight text-on-surface">Experience the art of focused work.</h1>
+<p class="mb-8 text-lg leading-relaxed text-on-surface-variant">
+            A digital sanctuary designed to lower your heart rate and elevate your productivity through intentional design and tonal depth.
+          </p>
+<div class="mt-8 grid grid-cols-2 gap-4">
+<div class="flex h-48 flex-col justify-end rounded-xl bg-surface-container-highest p-6">
+<span class="material-symbols-outlined mb-4 text-primary">auto_awesome</span>
+<div class="text-sm font-semibold">Smart Context</div>
+</div>
+<div class="flex h-48 flex-col justify-end rounded-xl bg-secondary-container p-6">
+<span class="material-symbols-outlined mb-4 text-secondary">ink_pen</span>
+<div class="text-sm font-semibold">Editorial Flow</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 text-xs font-label text-on-surface-variant/60">
+<span class="material-symbols-outlined text-base">verified</span>
+<span>Trusted by 50,000+ creative professionals</span>
+</div>
+</div>
+<div class="absolute inset-0 z-0">
+<div class="absolute right-[-10%] top-[-10%] h-[80%] w-[80%] rounded-full bg-gradient-to-br from-secondary-fixed/30 to-primary-fixed/20 blur-[120px]"></div>
+<div class="absolute bottom-[-15%] left-[-5%] h-[60%] w-[60%] rounded-full bg-gradient-to-tr from-tertiary-fixed/20 to-surface-container-highest/40 blur-[100px]"></div>
+<img alt="" class="absolute bottom-0 right-0 h-3/4 w-3/4 rounded-tl-[100px] object-cover object-left-top opacity-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDI_7uG2UvpovJSN7q-Yz3Fke-5bhwxoddXnWGrGQO7GJk6dKUNRZHVldEQh833wG35DLC6BJJGyleA6KoIfxebdoSaE8AJUqiQGIcsBSdmvruqd7erFta0hACpLmTQZm5eU5b5CyCcl-KqePpC1LSKyqzjCWKj_ox1yPGklanffk5Hx2duJuhCGymoX-cHt-t3YvoiTvrr79Z2b1amxevq0U923H6G88mwDd9mP9c7KbTOUHsom6N7E3F-Vtue23NAKyPBI3M_rao"/>
+</div>
+</section>
+<section class="flex w-full items-center justify-center bg-surface-container-lowest px-6 md:px-12 lg:w-1/2 lg:px-24">
+<div class="w-full max-w-[440px]">
+<div class="mb-12">
+<h2 class="mb-2 text-3xl font-bold tracking-tight text-on-surface">Welcome back</h2>
+<p class="text-on-surface-variant">Sign in to your digital sanctuary</p>
+</div>
+<form class="space-y-6" id="login-form">
+<div class="space-y-2">
+<label class="ml-1 text-xs font-semibold uppercase tracking-wider text-on-surface-variant" for="email">Email Address</label>
+<input class="w-full rounded-xl border-none bg-surface-container-low px-4 py-4 text-on-surface placeholder:text-outline-variant transition-all duration-300 focus:bg-surface-container-highest focus:ring-2 focus:ring-primary/20" id="email" name="email" placeholder="name@company.com" type="email"/>
+</div>
+<div class="space-y-2">
+<div class="flex items-center justify-between px-1">
+<label class="text-xs font-semibold uppercase tracking-wider text-on-surface-variant" for="password">Password</label>
+<a class="text-xs font-semibold text-primary transition-colors hover:text-primary-dim" href="/forgot-password">Forgot Password?</a>
+</div>
+<input class="w-full rounded-xl border-none bg-surface-container-low px-4 py-4 text-on-surface placeholder:text-outline-variant transition-all duration-300 focus:bg-surface-container-highest focus:ring-2 focus:ring-primary/20" id="password" name="password" placeholder="••••••••" type="password"/>
+</div>
+<div class="ml-1 flex items-center space-x-3">
+<input class="h-5 w-5 cursor-pointer rounded border-none bg-surface-container-high text-primary focus:ring-primary/20" id="remember" name="remember" type="checkbox"/>
+<label class="cursor-pointer select-none text-sm text-on-surface-variant" for="remember">Remember Me</label>
+</div>
+<div class="pt-4">
+<button class="flex w-full items-center justify-center gap-2 rounded-full bg-primary py-4 text-lg font-bold text-on-primary shadow-[0_12px_32px_rgba(61,103,88,0.15)] transition-all duration-200 hover:opacity-95 active:scale-[0.98]" type="submit">
+<span>Sign In</span>
+<span class="material-symbols-outlined text-xl">arrow_right_alt</span>
+</button>
+</div>
+<p class="min-h-6 text-sm font-medium text-error" id="login-error"></p>
+<div class="relative py-4">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-surface-variant"></div>
+</div>
+<div class="relative flex justify-center text-xs uppercase">
+<span class="bg-surface-container-lowest px-4 font-medium tracking-widest text-on-surface-variant">Or continue with</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-2 rounded-full bg-surface-container-low py-3 transition-colors duration-200 hover:bg-surface-container-high" type="button">
+<img alt="" class="h-5 w-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCZszGrTVyNV-qHJHiwlT-lF4m8FAqeIsqsJghAJcQaBQWAY0MAe0PxNzBOLSXHB64ujY67h7plp-lesrsX1W8Ex78OAr9PFgueYdc99E4kRB0ZRBmN2_SlVizQzAW2icBRTeczla23Ic53V9h_1N0ARgnJVaUdvv79fXaW-i-cBntyCLarxNbsoFc7mypivnwXMHb18LJTFQEimb7AE12QcM8hlSwEKpaH5sni8eBsbYnVQZl8ehyskwrMjTygRHfDIXtWcc2e58r"/>
+<span class="text-sm font-semibold text-on-surface">Google</span>
+</button>
+<button class="flex items-center justify-center gap-2 rounded-full bg-surface-container-low py-3 transition-colors duration-200 hover:bg-surface-container-high" type="button">
+<span class="material-symbols-outlined text-xl">ios</span>
+<span class="text-sm font-semibold text-on-surface">Apple</span>
+</button>
+</div>
+</form>
+<div class="mt-12 text-center">
+<p class="text-sm text-on-surface-variant">
+            Don't have an account?
+            <a class="ml-1 font-bold text-primary hover:underline underline-offset-4" href="/register">Sign up</a>
+</p>
+</div>
+</div>
+</section>
+</main>
+<script src="/assets/js/app.js"></script>
+</body></html>

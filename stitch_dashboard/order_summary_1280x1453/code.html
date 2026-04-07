@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order Summary - The Ethereal Canvas</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-on-surface": "#999d9f",
+            "on-surface-variant": "#576164",
+            "on-secondary-fixed-variant": "#37616d",
+            "on-secondary-fixed": "#174550",
+            "secondary-fixed-dim": "#afdce9",
+            "on-tertiary-fixed": "#142f4f",
+            "error-container": "#fa746f",
+            "surface-container-highest": "#dae4e8",
+            "surface-bright": "#f6fafb",
+            "error": "#a83836",
+            "secondary-fixed": "#bdeaf8",
+            "surface-container-high": "#e1e9ed",
+            "on-secondary": "#effbff",
+            "secondary-dim": "#2e5965",
+            "on-primary-fixed": "#1c4739",
+            "tertiary-fixed-dim": "#a4bde4",
+            "on-secondary-container": "#2c5863",
+            "surface": "#f6fafb",
+            "tertiary-dim": "#3b5476",
+            "surface-container": "#e8eff2",
+            "surface-tint": "#3d6758",
+            "tertiary-fixed": "#b2cbf3",
+            "background": "#f6fafb",
+            "on-error": "#fff7f6",
+            "on-error-container": "#6e0a12",
+            "on-primary-container": "#2f594b",
+            "primary-fixed-dim": "#b1decc",
+            "outline-variant": "#aab4b7",
+            "primary": "#3d6758",
+            "outline": "#737c80",
+            "error-dim": "#67040d",
+            "on-surface": "#2b3437",
+            "on-tertiary-container": "#2a4364",
+            "inverse-primary": "#cffeeb",
+            "on-primary": "#e4fff3",
+            "primary-container": "#beecda",
+            "primary-fixed": "#beecda",
+            "secondary-container": "#bdeaf8",
+            "secondary": "#3a6571",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary": "#f8f8ff",
+            "on-background": "#2b3437",
+            "surface-dim": "#d2dcdf",
+            "inverse-surface": "#0a0f10",
+            "primary-dim": "#315b4d",
+            "on-primary-fixed-variant": "#396355",
+            "surface-variant": "#dae4e8",
+            "on-tertiary-fixed-variant": "#334c6e",
+            "tertiary-container": "#b2cbf3",
+            "surface-container-low": "#eff4f7",
+            "tertiary": "#486083"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "fontFamily": {
+            "headline": ["Manrope"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-effect {
+      background: rgba(246, 250, 251, 0.8);
+      backdrop-filter: blur(20px);
+    }
+    .primary-gradient {
+      background: linear-gradient(135deg, #3d6758 0%, #315b4d 100%);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed-dim selection:text-on-primary-fixed">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 bg-[#f6fafb] dark:bg-slate-900">
+<div class="flex justify-between items-center w-full px-12 py-6 max-w-[1440px] mx-auto">
+<div class="font-manrope text-2xl font-bold text-[#3d6758] dark:text-[#b1decc]">
+        The Ethereal Canvas
+      </div>
+<nav class="hidden md:flex items-center gap-8 font-inter text-sm tracking-wide">
+<a class="text-[#2b3437] dark:text-slate-400 font-medium hover:text-[#3d6758] transition-colors" href="#">Dashboard</a>
+<a class="text-[#2b3437] dark:text-slate-400 font-medium hover:text-[#3d6758] transition-colors" href="#">Template Store</a>
+<a class="text-[#2b3437] dark:text-slate-400 font-medium hover:text-[#3d6758] transition-colors" href="#">My Library</a>
+<a class="text-[#2b3437] dark:text-slate-400 font-medium hover:text-[#3d6758] transition-colors" href="#">Support</a>
+</nav>
+<div class="flex items-center gap-6">
+<button class="p-2 rounded-full hover:bg-[#e8eff2]/50 transition-colors">
+<span class="material-symbols-outlined text-[#3d6758]">shopping_cart</span>
+</button>
+<button class="p-2 rounded-full hover:bg-[#e8eff2]/50 transition-colors">
+<span class="material-symbols-outlined text-[#3d6758]">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-12 py-12 min-h-screen">
+<!-- Editorial Header Section -->
+<section class="mb-16">
+<h1 class="font-headline text-5xl font-extrabold text-on-surface tracking-tight mb-4">Review Your Selection</h1>
+<p class="font-body text-lg text-on-surface-variant max-w-2xl">A digital sanctuary for your thoughts is just one step away. Please verify your order details before completing the purchase.</p>
+</section>
+<!-- Main Order Layout: Bento Grid Style -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Left Column: Template List & Customer Info -->
+<div class="col-span-8 flex flex-col gap-8">
+<!-- Cart Items Section -->
+<div class="bg-surface-container-lowest p-8 rounded-[2rem] shadow-[0px_12px_32px_rgba(43,52,55,0.06)]">
+<h2 class="font-headline text-2xl font-bold mb-8 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">auto_awesome_motion</span>
+            Template Cart
+          </h2>
+<div class="space-y-6">
+<!-- Item 1 -->
+<div class="flex items-center gap-6 group">
+<div class="w-32 h-32 rounded-xl overflow-hidden bg-surface-container-high flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Modern minimalist workspace template preview with neutral tones and soft shadows on a digital tablet" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVM_sIPyCCj1X_fI7qdesxb94LGo5FR9AlrsPcflZ1Mn23p6oco1WheVmQLeajQpkNLXtKTy8n9hals3dSX0WU7RPEOII56BQ3lsWYdwzCT3Cq4HN3o_WbQQCO5JUaCnTOOgu5j08DqZAohLhoogRg1Nn6womzB9b_Yw1qYfvud7C6KKUT5dXf8E7BJllVcDLq7p5NEB6zoCHPigea89PgsZPwKMIklXp3oJBg1sF9KOHtJ1rWJOS3SM0gTJ2wqSzB0Ck90aMiKwa7"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-xl font-bold text-on-surface">Minimalist Zen Studio</h3>
+<p class="text-on-surface-variant text-sm mt-1">Professional Productivity Kit</p>
+</div>
+<span class="font-headline text-lg font-bold text-primary">$49.00</span>
+</div>
+<div class="mt-4 flex gap-2">
+<span class="px-3 py-1 bg-tertiary-container text-on-tertiary-container rounded-full text-xs font-semibold tracking-wider">WORKSPACE</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-semibold tracking-wider">LIFETIME</span>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center gap-6 group pt-6">
+<div class="w-32 h-32 rounded-xl overflow-hidden bg-surface-container-high flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Aerial view of a digital journal template with botanical illustrations and hand-drawn elements" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCevDUvBcTd0FyM4ATrM5XjmD7MJILmW4M6DZzxsWOqz2-TAg5IzGnzMDYHSONLXbWxpJvtShFz4prFsaxskGe88LiMOE3JMUOJ_DBqhMtCHNRmnYEJQ7m_mUC_XR2KbcJnhGnRxjN50odPCP4Y4MdWJ19Apa2fdq4Ips9c-jsZJIPmv9q6oy7ooVIniJ87G8PT9wroFVo0yirxINMJTtk7mdzSNYyk1XvnrPOSu7WZDxt_5oATvpXmFaZw3aa_mAeD0LSIxPb-USha"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-xl font-bold text-on-surface">Botanical Journal Bundle</h3>
+<p class="text-on-surface-variant text-sm mt-1">Creative Writing &amp; Reflection</p>
+</div>
+<span class="font-headline text-lg font-bold text-primary">$32.00</span>
+</div>
+<div class="mt-4 flex gap-2">
+<span class="px-3 py-1 bg-tertiary-container text-on-tertiary-container rounded-full text-xs font-semibold tracking-wider">PERSONAL</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-semibold tracking-wider">ASSETS INCLUDED</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Customer Info Bento Card -->
+<div class="grid grid-cols-2 gap-8">
+<!-- Billing Details -->
+<div class="bg-surface-container p-8 rounded-[2rem]">
+<h2 class="font-headline text-xl font-bold mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">contact_mail</span>
+              Billing Address
+            </h2>
+<div class="space-y-1">
+<p class="font-bold text-on-surface">Julianne Sterling</p>
+<p class="text-on-surface-variant">4822 Ethereal Way, Apt 4C</p>
+<p class="text-on-surface-variant">San Francisco, CA 94105</p>
+<p class="text-on-surface-variant">United States</p>
+</div>
+<button class="mt-6 text-primary font-bold text-sm hover:underline flex items-center gap-1">
+              Edit Details <span class="material-symbols-outlined text-sm">edit</span>
+</button>
+</div>
+<!-- Payment Method -->
+<div class="bg-surface-container p-8 rounded-[2rem]">
+<h2 class="font-headline text-xl font-bold mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">credit_card</span>
+              Payment Method
+            </h2>
+<div class="flex items-center gap-4 p-4 bg-surface-container-lowest rounded-xl">
+<span class="material-symbols-outlined text-primary text-3xl">payments</span>
+<div>
+<p class="font-bold text-on-surface">Visa ending in 4242</p>
+<p class="text-xs text-on-surface-variant tracking-widest uppercase">Expires 12/26</p>
+</div>
+</div>
+<button class="mt-6 text-primary font-bold text-sm hover:underline flex items-center gap-1">
+              Change Method <span class="material-symbols-outlined text-sm">sync</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right Column: Summary Sticky Card -->
+<div class="col-span-4">
+<div class="sticky top-32 bg-surface-container-highest/40 border border-outline-variant/15 p-10 rounded-[2.5rem] glass-effect">
+<h2 class="font-headline text-2xl font-bold mb-10 text-on-surface">Total Breakdown</h2>
+<div class="space-y-6">
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>Subtotal</span>
+<span class="font-medium text-on-surface">$81.00</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant flex items-center gap-2">
+                Discount
+                <span class="bg-primary-fixed-dim text-on-primary-fixed text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">ZEN2024</span>
+</span>
+<span class="font-medium text-error">- $12.15</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>Platform Fee</span>
+<span class="font-medium text-on-surface">$2.49</span>
+</div>
+<div class="pt-6 mt-6 border-t border-outline-variant/20">
+<div class="flex justify-between items-end">
+<div>
+<p class="text-xs uppercase font-bold tracking-widest text-on-surface-variant mb-1">Total to Pay</p>
+<p class="font-headline text-4xl font-extrabold text-primary">$71.34</p>
+</div>
+<p class="text-xs text-on-surface-variant text-right max-w-[120px]">Includes applicable digital taxes</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-12 primary-gradient py-6 rounded-full text-on-primary font-headline font-bold text-lg shadow-lg hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center justify-center gap-3">
+            Confirm and Pay
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">lock</span>
+</button>
+<p class="text-center mt-6 text-xs text-on-surface-variant font-medium">
+            Secure checkout powered by Stripe. Your templates will be instantly available in <span class="text-primary font-bold">My Library</span>.
+          </p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-[#aab4b7]/15 bg-[#f6fafb] dark:bg-slate-950">
+<div class="flex justify-between items-center w-full px-12 py-8 max-w-[1440px] mx-auto font-inter text-sm tracking-wide">
+<div class="font-manrope font-semibold text-[#3d6758] dark:text-[#b1decc]">
+        © 2024 The Ethereal Canvas. All rights reserved.
+      </div>
+<div class="flex gap-10">
+<a class="text-[#2b3437]/70 dark:text-slate-500 hover:text-[#3d6758] dark:hover:text-[#b1decc] transition-colors" href="#">Privacy Policy</a>
+<a class="text-[#2b3437]/70 dark:text-slate-500 hover:text-[#3d6758] dark:hover:text-[#b1decc] transition-colors" href="#">Terms of Service</a>
+<a class="text-[#2b3437]/70 dark:text-slate-500 hover:text-[#3d6758] dark:hover:text-[#b1decc] transition-colors" href="#">License Agreement</a>
+<a class="text-[#2b3437]/70 dark:text-slate-500 hover:text-[#3d6758] dark:hover:text-[#b1decc] transition-colors" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+</body></html>

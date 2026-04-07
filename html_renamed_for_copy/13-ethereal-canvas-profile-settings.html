@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed": "#1c4739",
+                      "on-error": "#fff7f6",
+                      "surface-container-high": "#e1e9ed",
+                      "secondary-dim": "#2e5965",
+                      "on-secondary-container": "#2c5863",
+                      "outline-variant": "#aab4b7",
+                      "on-error-container": "#6e0a12",
+                      "tertiary": "#486083",
+                      "on-secondary-fixed": "#174550",
+                      "surface-tint": "#3d6758",
+                      "on-tertiary-container": "#2a4364",
+                      "on-tertiary": "#f8f8ff",
+                      "error": "#a83836",
+                      "primary-container": "#beecda",
+                      "surface-container-highest": "#dae4e8",
+                      "secondary": "#3a6571",
+                      "tertiary-fixed": "#b2cbf3",
+                      "on-surface-variant": "#576164",
+                      "on-primary-fixed-variant": "#396355",
+                      "tertiary-dim": "#3b5476",
+                      "inverse-surface": "#0a0f10",
+                      "on-tertiary-fixed-variant": "#334c6e",
+                      "primary-dim": "#315b4d",
+                      "primary": "#3d6758",
+                      "on-secondary-fixed-variant": "#37616d",
+                      "surface-container-low": "#eff4f7",
+                      "on-background": "#2b3437",
+                      "surface-variant": "#dae4e8",
+                      "secondary-fixed": "#bdeaf8",
+                      "inverse-on-surface": "#999d9f",
+                      "on-surface": "#2b3437",
+                      "background": "#f6fafb",
+                      "on-primary-container": "#2f594b",
+                      "tertiary-fixed-dim": "#a4bde4",
+                      "tertiary-container": "#b2cbf3",
+                      "outline": "#737c80",
+                      "secondary-fixed-dim": "#afdce9",
+                      "error-dim": "#67040d",
+                      "secondary-container": "#bdeaf8",
+                      "surface-dim": "#d2dcdf",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-fixed": "#142f4f",
+                      "error-container": "#fa746f",
+                      "surface-bright": "#f6fafb",
+                      "primary-fixed": "#beecda",
+                      "surface-container": "#e8eff2",
+                      "primary-fixed-dim": "#b1decc",
+                      "on-secondary": "#effbff",
+                      "inverse-primary": "#cffeeb",
+                      "surface": "#f6fafb",
+                      "on-primary": "#e4fff3"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Manrope"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-headline { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen selection:bg-primary-fixed">
+<header class="w-full top-0 sticky z-50 bg-[#f6fafb] dark:bg-slate-950">
+<div class="flex justify-between items-center h-16 px-12 w-full max-w-[1280px] mx-auto">
+<div class="text-xl font-bold text-[#3d6758] dark:text-[#b1decc] tracking-tighter font-headline">Ethereal Canvas</div>
+<nav class="hidden md:flex items-center gap-8 font-headline font-semibold text-sm tracking-tight">
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#3d6758] dark:hover:text-[#b1decc] transition-colors cursor-pointer active:opacity-70" href="#">Dashboard</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#3d6758] dark:hover:text-[#b1decc] transition-colors cursor-pointer active:opacity-70" href="#">Notes</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#3d6758] dark:hover:text-[#b1decc] transition-colors cursor-pointer active:opacity-70" href="#">Tasks</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#3d6758] dark:hover:text-[#b1decc] transition-colors cursor-pointer active:opacity-70" href="#">Archive</a>
+</nav>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer p-2 hover:bg-surface-container-high rounded-full transition-all">settings</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer p-2 hover:bg-surface-container-high rounded-full transition-all">help</span>
+<div class="w-8 h-8 rounded-full overflow-hidden ml-2 ring-2 ring-primary-fixed">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="close-up portrait of a serene woman with natural lighting and a soft blurred botanical background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd_QU8Z-FTE-u8zncD0VjdNFeNB5TZ_LaF0vRWhT3EvlncffIVNMUXc5WW6G8Q89UMuM45LGJUGBmHpSczzhqX1E3EvN6U1QpWs_wfxynQCEbndujUCFXFP28H19BIaWvikDoK58Vb8NjVe_jCMybseXZT3FjwqppVVs-1sW6hlqkAuZ1UgGZhFYvXRlXDZLczjyWYXQCduBOYpHgSx-O8gTTTq1INXfB4YNpMndq54BDKMvIHI0z6gBoTyyPtsBg46lfIbDvDfjts"/>
+</div>
+</div>
+</div>
+</header>
+<div class="max-w-[1280px] mx-auto flex min-h-[calc(1453px-64px)]">
+<aside class="h-screen w-64 sticky top-16 flex flex-col py-8 pr-4 bg-[#e8eff2] dark:bg-slate-900 transition-all duration-300 ease-in-out">
+<div class="px-6 mb-8">
+<h2 class="text-lg font-bold text-[#3d6758] font-headline">Settings</h2>
+<p class="text-xs text-on-surface-variant font-medium">Manage your sanctuary</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-6 py-3 font-medium text-sm hover:bg-[#f6fafb]/50 dark:hover:bg-slate-800/50 transition-all" href="#">
+<span class="material-symbols-outlined text-lg">settings</span> General
+                </a>
+<a class="flex items-center gap-3 bg-white dark:bg-slate-800 text-[#3d6758] dark:text-[#b1decc] rounded-r-full font-bold shadow-sm px-6 py-3 text-sm transition-all" href="#">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">person</span> Profile
+                </a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-6 py-3 font-medium text-sm hover:bg-[#f6fafb]/50 dark:hover:bg-slate-800/50 transition-all" href="#">
+<span class="material-symbols-outlined text-lg">palette</span> Appearance
+                </a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-6 py-3 font-medium text-sm hover:bg-[#f6fafb]/50 dark:hover:bg-slate-800/50 transition-all" href="#">
+<span class="material-symbols-outlined text-lg">notifications</span> Notifications
+                </a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-6 py-3 font-medium text-sm hover:bg-[#f6fafb]/50 dark:hover:bg-slate-800/50 transition-all" href="#">
+<span class="material-symbols-outlined text-lg">shield</span> Security
+                </a>
+</nav>
+<div class="mt-auto px-4">
+<div class="bg-primary-container p-4 rounded-xl">
+<p class="text-on-primary-container text-xs font-bold mb-2">Pro Plan</p>
+<p class="text-[10px] text-on-primary-container opacity-80 mb-3">Unlock cloud sync and advanced typography.</p>
+<button class="w-full py-2 px-4 bg-primary text-on-primary rounded-full text-xs font-bold hover:shadow-lg transition-all">Upgrade to Pro</button>
+</div>
+</div>
+</aside>
+<main class="flex-1 bg-surface-container-lowest px-16 py-12">
+<div class="max-w-3xl">
+<header class="mb-12">
+<h1 class="text-4xl font-headline font-extrabold text-on-surface mb-2">Profile</h1>
+<p class="text-on-surface-variant font-medium">Update your digital presence and identity.</p>
+</header>
+<section class="mb-16">
+<div class="flex items-center gap-8 mb-10">
+<div class="relative group">
+<div class="w-24 h-24 rounded-full overflow-hidden ring-4 ring-surface-container shadow-sm transition-all group-hover:opacity-90">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="close-up portrait of a serene woman with natural lighting and a soft blurred botanical background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuBE1ALD_BNwOvzWRmKR19HN11y1mPtJbakAvP_gRu7S0XSg03g4BeHkevRwHJRaFby86HEOSllVRR4LYjyaEc5w8jOZA253jTAFqspUbsA04dafRc4Zsrj-92N9eFWOuG54KOY6IAxphzJHak9V4jQLh2KoDznlYAkHf9Kt8FqtKXMOQ4J142DjxVEwa91LtDqXK3YQfw61oCFXgIbM8e6XcnXXPyYxdHXju72wSnfqMvgzkwf2UQIpdLYeCOOBK1iO76_1c3yocR"/>
+</div>
+<button class="absolute bottom-0 right-0 bg-primary text-on-primary p-2 rounded-full shadow-lg border-2 border-surface-container-lowest hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-sm">photo_camera</span>
+</button>
+</div>
+<div>
+<h3 class="text-lg font-headline font-bold text-on-surface">Avatar Image</h3>
+<p class="text-sm text-on-surface-variant mb-3">Min 400x400px. JPG or PNG.</p>
+<div class="flex gap-3">
+<button class="px-4 py-2 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold hover:bg-secondary-fixed transition-colors">Upload New</button>
+<button class="px-4 py-2 bg-surface-container text-on-surface-variant rounded-full text-xs font-bold hover:bg-surface-container-high transition-colors">Remove</button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-6 mb-6">
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-widest px-1">Full Name</label>
+<input class="bg-surface-container-low border-none rounded-xl px-4 py-3 text-on-surface focus:bg-surface-container-highest focus:ring-1 focus:ring-primary transition-all font-medium" type="text" value="Elena Vance"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-widest px-1">Email Address</label>
+<input class="bg-surface-container-low border-none rounded-xl px-4 py-3 text-on-surface focus:bg-surface-container-highest focus:ring-1 focus:ring-primary transition-all font-medium" type="email" value="elena.vance@ethereal.so"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-widest px-1">Biography</label>
+<textarea class="bg-surface-container-low border-none rounded-xl px-4 py-3 text-on-surface focus:bg-surface-container-highest focus:ring-1 focus:ring-primary transition-all font-medium resize-none" rows="4">Capturing the quiet moments between thoughts. Digital designer &amp; aspiring horticulturalist based in the PNW. Focusing on cognitive ease and the beauty of whitespace.</textarea>
+<p class="text-[10px] text-on-surface-variant text-right px-1">156 / 300 characters</p>
+</div>
+</section>
+<div class="h-px bg-surface-container w-full mb-16"></div>
+<section class="mb-16">
+<header class="mb-8">
+<h2 class="text-2xl font-headline font-bold text-on-surface mb-1">Appearance</h2>
+<p class="text-sm text-on-surface-variant">Customize the visual atmosphere of your workspace.</p>
+</header>
+<div class="grid grid-cols-3 gap-6 mb-10">
+<div class="cursor-pointer group">
+<div class="aspect-video bg-white rounded-xl border-4 border-primary ring-2 ring-primary-fixed shadow-sm mb-3 flex items-center justify-center relative overflow-hidden">
+<div class="w-full h-full p-2 bg-[#f6fafb]">
+<div class="w-1/2 h-2 bg-slate-200 rounded-full mb-1"></div>
+<div class="w-3/4 h-2 bg-slate-200 rounded-full"></div>
+</div>
+<span class="material-symbols-outlined absolute top-2 right-2 text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<p class="text-sm font-bold text-on-surface text-center">Light Sanctuary</p>
+</div>
+<div class="cursor-pointer group">
+<div class="aspect-video bg-slate-900 rounded-xl hover:ring-2 hover:ring-outline-variant transition-all mb-3 flex items-center justify-center overflow-hidden">
+<div class="w-full h-full p-2 bg-slate-800">
+<div class="w-1/2 h-2 bg-slate-700 rounded-full mb-1"></div>
+<div class="w-3/4 h-2 bg-slate-700 rounded-full"></div>
+</div>
+</div>
+<p class="text-sm font-bold text-on-surface-variant text-center">Deep Obsidian</p>
+</div>
+<div class="cursor-pointer group">
+<div class="aspect-video bg-slate-100 rounded-xl hover:ring-2 hover:ring-outline-variant transition-all mb-3 flex items-center justify-center overflow-hidden">
+<div class="w-full h-full p-2 bg-slate-200 flex flex-col justify-end">
+<div class="h-1/2 bg-white rounded-t-lg"></div>
+</div>
+</div>
+<p class="text-sm font-bold text-on-surface-variant text-center">System Sync</p>
+</div>
+</div>
+<div class="space-y-10">
+<div class="flex items-center justify-between">
+<div>
+<h4 class="text-sm font-bold text-on-surface">Accent Color</h4>
+<p class="text-xs text-on-surface-variant">The soul of your UI interaction.</p>
+</div>
+<div class="flex gap-3">
+<button class="w-8 h-8 rounded-full bg-[#3d6758] ring-2 ring-offset-2 ring-[#3d6758]"></button>
+<button class="w-8 h-8 rounded-full bg-[#486083] hover:scale-110 transition-transform"></button>
+<button class="w-8 h-8 rounded-full bg-[#a83836] hover:scale-110 transition-transform"></button>
+<button class="w-8 h-8 rounded-full bg-secondary hover:scale-110 transition-transform"></button>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<h4 class="text-sm font-bold text-on-surface">Base Typography</h4>
+<p class="text-xs text-on-surface-variant">Optimal reading scale for your eyes.</p>
+</div>
+<div class="flex bg-surface-container rounded-full p-1">
+<button class="px-4 py-1.5 text-xs font-bold text-on-surface-variant hover:text-on-surface transition-colors">Compact</button>
+<button class="px-6 py-1.5 text-xs font-bold bg-white text-primary rounded-full shadow-sm">Default</button>
+<button class="px-4 py-1.5 text-xs font-bold text-on-surface-variant hover:text-on-surface transition-colors">Serif Mode</button>
+</div>
+</div>
+</div>
+</section>
+<div class="h-px bg-surface-container w-full mb-16"></div>
+<section class="mb-16">
+<header class="mb-8">
+<h2 class="text-2xl font-headline font-bold text-on-surface mb-1">Notifications</h2>
+<p class="text-sm text-on-surface-variant">Control when and how you are gently interrupted.</p>
+</header>
+<div class="space-y-6">
+<div class="flex items-center justify-between p-4 rounded-2xl hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">alternate_email</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-on-surface">Email Digests</h4>
+<p class="text-xs text-on-surface-variant">Weekly summaries of your notes and progress.</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex items-center justify-between p-4 rounded-2xl hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-secondary-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">cell_tower</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-on-surface">Push Notifications</h4>
+<p class="text-xs text-on-surface-variant">Real-time alerts for shared canvas edits.</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex items-center justify-between p-4 rounded-2xl hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-tertiary-container flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">laptop_mac</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-on-surface">Desktop Banner</h4>
+<p class="text-xs text-on-surface-variant">System-level notifications for task reminders.</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</section>
+<footer class="flex justify-end gap-4 pt-12 pb-24">
+<button class="px-8 py-3 bg-surface-container text-on-surface-variant rounded-full font-bold text-sm hover:bg-surface-container-high transition-colors">Discard Changes</button>
+<button class="px-10 py-3 bg-primary text-on-primary rounded-full font-bold text-sm shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5 transition-all">Save Sanctuary Settings</button>
+</footer>
+</div>
+</main>
+<aside class="w-80 border-l-0 bg-[#f6fafb] p-10 space-y-12">
+<div>
+<h4 class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-6 px-1">Storage Usage</h4>
+<div class="bg-white p-6 rounded-3xl shadow-[0px_12px_32px_rgba(43,52,55,0.06)] border border-outline-variant/10">
+<div class="flex justify-between items-end mb-4">
+<div>
+<p class="text-3xl font-headline font-extrabold text-primary">4.2<span class="text-sm font-bold text-on-surface-variant ml-1">GB</span></p>
+<p class="text-[10px] font-bold text-on-surface-variant uppercase">Of 50GB Used</p>
+</div>
+<div class="w-12 h-12 rounded-full bg-primary-container/30 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">cloud</span>
+</div>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="w-[8.4%] h-full bg-primary rounded-full"></div>
+</div>
+</div>
+</div>
+<div>
+<h4 class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-6 px-1">Integrations</h4>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-3 bg-white rounded-2xl border border-outline-variant/5 shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-[#4285F4]/10 flex items-center justify-center">
+<img alt="Google logo" class="w-4 h-4" data-alt="minimalist google logo icon on a white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMVGmBF4YSY5_pCJh1_XWmYZYT8GlNn_gPcs552PIVtpqzpw_eNXED8cqbHhBPj2oHxVtkxc7Zrhr08sFe-e_wbDIKs0ikXYwR6Sb3Xr0R3vQcvZjrp6iIZF5BoBPTgls8if5porWMKkQ0M9lOSE1Vj6wN88cYbHV0fiiEtr-i53iYQJmrGTwo6r3UAYQpdlMCXV1gxT36C-MLd1hjOlyTnUsBU4XxETL57qJapx_BEO7IqcnhYoIF3dOCxbPWsBOLilpyaXXM4xdt"/>
+</div>
+<span class="text-xs font-bold">Google Calendar</span>
+</div>
+<span class="text-[10px] font-bold text-primary bg-primary-container px-2 py-0.5 rounded-full">Connected</span>
+</div>
+<div class="flex items-center justify-between p-3 bg-white rounded-2xl border border-outline-variant/5 shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-[#0061FF]/10 flex items-center justify-center">
+<img alt="Spotify logo" class="w-4 h-4" data-alt="minimalist spotify logo icon on a white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEIxMd_CLonsfnXrhJWFzCC21fZu3VSyCPa5XcgCvZ-sjL8AIwsqHK7fhHgmFFFUB8d4Fr3vTy_1iqNTX_EhSo5xPIhGIh-pH4mLGft_2dk5yv1QaMCBUTRzxdq4R5DOfG6oqX3ibYfuduzIbY1XJrXU3a-CL0DLJLrbyGtG-qMhh31s9YiNRbF1p3ZVNgjO_rAx6HsbV1HO8K7Cb_guFwySQ7E0j0zHWL45q9vhxJRwqwYn35Ey09bMkVXVpEIopXCyGuvU9OfCdk"/>
+</div>
+<span class="text-xs font-bold">Spotify Focus</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-sm cursor-pointer">add</span>
+</div>
+</div>
+</div>
+<div class="bg-tertiary-container/20 p-6 rounded-3xl border border-tertiary-container/40">
+<div class="flex items-start gap-3 mb-3">
+<span class="material-symbols-outlined text-tertiary">tips_and_updates</span>
+<h5 class="text-xs font-bold text-tertiary uppercase tracking-tight">Zen Tip</h5>
+</div>
+<p class="text-sm text-on-tertiary-container font-medium italic">"Deep focus thrives in environments with 20% whitespace. Your current Canvas layout achieves 24% – well done."</p>
+</div>
+</aside>
+</div>
+</body></html>

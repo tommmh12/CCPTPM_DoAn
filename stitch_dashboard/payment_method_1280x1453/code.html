@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "inverse-on-surface": "#999d9f",
+                "on-surface-variant": "#576164",
+                "on-secondary-fixed-variant": "#37616d",
+                "on-secondary-fixed": "#174550",
+                "secondary-fixed-dim": "#afdce9",
+                "on-tertiary-fixed": "#142f4f",
+                "error-container": "#fa746f",
+                "surface-container-highest": "#dae4e8",
+                "surface-bright": "#f6fafb",
+                "error": "#a83836",
+                "secondary-fixed": "#bdeaf8",
+                "surface-container-high": "#e1e9ed",
+                "on-secondary": "#effbff",
+                "secondary-dim": "#2e5965",
+                "on-primary-fixed": "#1c4739",
+                "tertiary-fixed-dim": "#a4bde4",
+                "on-secondary-container": "#2c5863",
+                "surface": "#f6fafb",
+                "tertiary-dim": "#3b5476",
+                "surface-container": "#e8eff2",
+                "surface-tint": "#3d6758",
+                "tertiary-fixed": "#b2cbf3",
+                "background": "#f6fafb",
+                "on-error": "#fff7f6",
+                "on-error-container": "#6e0a12",
+                "on-primary-container": "#2f594b",
+                "primary-fixed-dim": "#b1decc",
+                "outline-variant": "#aab4b7",
+                "primary": "#3d6758",
+                "outline": "#737c80",
+                "error-dim": "#67040d",
+                "on-surface": "#2b3437",
+                "on-tertiary-container": "#2a4364",
+                "inverse-primary": "#cffeeb",
+                "on-primary": "#e4fff3",
+                "primary-container": "#beecda",
+                "primary-fixed": "#beecda",
+                "secondary-container": "#bdeaf8",
+                "secondary": "#3a6571",
+                "surface-container-lowest": "#ffffff",
+                "on-tertiary": "#f8f8ff",
+                "on-background": "#2b3437",
+                "surface-dim": "#d2dcdf",
+                "inverse-surface": "#0a0f10",
+                "primary-dim": "#315b4d",
+                "on-primary-fixed-variant": "#396355",
+                "surface-variant": "#dae4e8",
+                "on-tertiary-fixed-variant": "#334c6e",
+                "tertiary-container": "#b2cbf3",
+                "surface-container-low": "#eff4f7",
+                "tertiary": "#486083"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "fontFamily": {
+                "headline": ["Manrope"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .headline-md { font-family: 'Manrope', sans-serif; font-size: 2rem; line-height: 2.75rem; font-weight: 700; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen">
+<!-- TopAppBar Section -->
+<header class="w-full top-0 sticky bg-[#f6fafb] dark:bg-slate-900 z-50">
+<div class="flex justify-between items-center w-full px-12 py-6 max-w-[1440px] mx-auto">
+<div class="text-2xl font-bold text-[#3d6758] dark:text-[#b1decc] font-manrope">
+                The Ethereal Canvas
+            </div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#2b3437] dark:text-slate-400 font-medium hover:text-[#3d6758] transition-colors" href="#">Dashboard</a>
+<a class="text-[#2b3437] dark:text-slate-400 font-medium hover:text-[#3d6758] transition-colors" href="#">Template Store</a>
+<a class="text-[#2b3437] dark:text-slate-400 font-medium hover:text-[#3d6758] transition-colors" href="#">My Library</a>
+<a class="text-[#2b3437] dark:text-slate-400 font-medium hover:text-[#3d6758] transition-colors" href="#">Support</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-[#e8eff2]/50 dark:hover:bg-slate-800/50 transition-colors">
+<span class="material-symbols-outlined text-[#3d6758] dark:text-[#b1decc]">shopping_cart</span>
+</button>
+<button class="p-2 rounded-full hover:bg-[#e8eff2]/50 dark:hover:bg-slate-800/50 transition-colors">
+<span class="material-symbols-outlined text-[#3d6758] dark:text-[#b1decc]">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-12 py-12 flex flex-col md:flex-row gap-12">
+<!-- Payment Selection & Details -->
+<div class="flex-1 space-y-12">
+<section>
+<h1 class="font-headline headline-md tracking-tight mb-2">Secure Checkout</h1>
+<p class="text-on-surface-variant body-lg mb-8">Finalize your premium subscription to the Zen Workspace.</p>
+<div class="space-y-4">
+<h2 class="font-headline font-bold text-xl text-on-surface">Choose Payment Method</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Card Selection -->
+<button class="flex flex-col items-center justify-center p-6 bg-surface-container-lowest rounded-full border-2 border-primary shadow-sm hover:translate-y-[-2px] transition-transform duration-200">
+<span class="material-symbols-outlined text-primary text-3xl mb-2">credit_card</span>
+<span class="font-bold text-primary">Credit/Debit</span>
+</button>
+<!-- PayPal Selection -->
+<button class="flex flex-col items-center justify-center p-6 bg-surface-container-low rounded-full hover:bg-surface-container-high transition-colors hover:translate-y-[-2px] transition-transform duration-200">
+<span class="material-symbols-outlined text-on-surface-variant text-3xl mb-2">account_balance_wallet</span>
+<span class="font-medium text-on-surface">PayPal</span>
+</button>
+<!-- Apple Pay Selection -->
+<button class="flex flex-col items-center justify-center p-6 bg-surface-container-low rounded-full hover:bg-surface-container-high transition-colors hover:translate-y-[-2px] transition-transform duration-200">
+<span class="material-symbols-outlined text-on-surface-variant text-3xl mb-2">ios</span>
+<span class="font-medium text-on-surface">Apple Pay</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Card Input Fields (Bento Style Layout) -->
+<section class="bg-surface-container-lowest p-8 rounded-full shadow-[0px_12px_32px_rgba(43,52,55,0.06)] space-y-8">
+<div class="flex items-center justify-between">
+<h3 class="font-headline font-bold text-lg">Card Details</h3>
+<div class="flex gap-2">
+<img alt="Visa" class="h-6 opacity-60" data-alt="minimalist visa card logo icon in monochromatic grey tone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4ZKSA_gbgHZeFBTI9ShN-LrMBLsJQag8IFZ_qsN_CwcWrj_O2BDjs1kaj3LK91r0h0XaFPsoVy6OgAABYAhwsfPvSDiAUGIkwQl__8lBw3Mtbs_TPK1_Tqc6aFW4LFuMbDogaCfWEfAvQPNEMuL_kOGfqCPOzsr24jJWDQy5RXHqLMj8qn7MyT2qogbv-3wCXmbMKV5qRVvzBH2VoVBfQ1eFLn5-pHDgypk7Ff2yYnCkY33erk17658MAdKSW9z1TGDZeZY-U8UD_"/>
+<img alt="Mastercard" class="h-6 opacity-60" data-alt="minimalist mastercard logo icon in monochromatic grey tone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxeihG3c_GHRfWOxwfTw_3DFzv4ahJ35t01sJAwlEnxHNaZ5hMqscr0OrkPMcealSnCxafTS5Id7iAYcFIW255r7sbBTXdXM42dAXn67o7gasT7go-uCDXOkgXCltaw2zQL6Fz9biV1utWm7xNn2rv61E41A5pN3M7q_bppyl6Sv4JWq-VE6mbhwtkrhhRxZMNW4lMFIrGVZ-gWPmGwlvwkcHPn1O61LIpPPLS8xzP06JFaMuQwaidOcw5gP4f18qZJWBYB_T_5paK"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="col-span-2 space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-2">Card Number</label>
+<div class="relative group">
+<input class="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary-container focus:bg-surface-container-highest transition-all" placeholder="0000 0000 0000 0000" type="text"/>
+<span class="material-symbols-outlined absolute right-4 top-4 text-on-surface-variant">lock</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-2">Expiry Date</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary-container focus:bg-surface-container-highest transition-all" placeholder="MM / YY" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-2">CVV</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary-container focus:bg-surface-container-highest transition-all" placeholder="***" type="password"/>
+<span class="material-symbols-outlined absolute right-4 top-4 text-on-surface-variant text-sm">help_outline</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3 ml-2">
+<input class="rounded-lg text-primary focus:ring-primary border-outline-variant/30 w-5 h-5" id="save_card" type="checkbox"/>
+<label class="text-sm text-on-surface-variant font-medium" for="save_card">Save card for future zen sessions</label>
+</div>
+</section>
+<button class="w-full py-5 bg-primary text-on-primary rounded-full font-bold text-lg hover:bg-primary-dim transition-colors shadow-lg active:scale-[0.98] duration-150">
+                Complete Payment — $24.00
+            </button>
+</div>
+<!-- Order Summary Sidebar (Editorial Feel) -->
+<aside class="w-full md:w-96 space-y-8">
+<div class="bg-surface-container p-8 rounded-full flex flex-col gap-6">
+<h3 class="font-headline font-bold text-xl">Order Summary</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-bold text-on-surface">Ethereal Pro Plan</p>
+<p class="text-xs text-on-surface-variant">Monthly subscription</p>
+</div>
+<span class="font-bold">$19.00</span>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="font-bold text-on-surface">Premium Assets Bundle</p>
+<p class="text-xs text-on-surface-variant">One-time expansion</p>
+</div>
+<span class="font-bold">$5.00</span>
+</div>
+</div>
+<div class="pt-6 border-t border-outline-variant/20 flex justify-between items-center">
+<span class="text-on-surface-variant font-medium">Total</span>
+<span class="text-2xl font-extrabold text-primary">$24.00</span>
+</div>
+<div class="bg-surface-bright/50 p-4 rounded-xl space-y-2">
+<div class="flex items-center gap-2 text-primary font-bold text-sm">
+<span class="material-symbols-outlined text-sm">verified</span>
+                        Zen Security Guaranteed
+                    </div>
+<p class="text-[10px] text-on-surface-variant leading-relaxed">
+                        Your transaction is encrypted with military-grade 256-bit SSL. We never store your full CVV on our servers.
+                    </p>
+</div>
+</div>
+<!-- Aesthetic Placeholder Card -->
+<div class="relative overflow-hidden rounded-full aspect-[4/3] group cursor-pointer shadow-lg">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="minimalist desk setup with a sleek laptop and a small green plant in a white ceramic pot, soft natural window light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXUkD_vMoQCkJ-QplIh3KioQTXrDyk-3a-yoR48GDjM5ahhudFnbZ2keeQ9FnKuphkvKjtmsGE8MkW2HZn3X_RptAED6fhN6DEksjJdm27zyEG5R0SBqHPNNPvqkpnKh2s_gA8XGapDC0FyjFzFCA3bRJ4es-8V_JLj57rd-4V4ki_samrcCQEbM5zZGQQVzUfx4kFe7tDdxDB9zwIAmlccv2f-lm2kE5Uu-DoRfk5V58HSffKyOB8NjnHX05W6TxUrtkVq6gqX12Z"/>
+<div class="absolute bottom-6 left-8 z-20">
+<p class="text-white/80 text-xs font-bold uppercase tracking-widest">Workspace Inspiration</p>
+<p class="text-white font-headline font-bold text-lg">Organize your mind.</p>
+</div>
+</div>
+</aside>
+</main>
+<!-- Footer Section -->
+<footer class="w-full border-t border-[#aab4b7]/15 bg-[#f6fafb] dark:bg-slate-950 mt-12">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-8 max-w-[1440px] mx-auto gap-6">
+<div class="font-manrope font-semibold text-[#3d6758]">© 2024 The Ethereal Canvas. All rights reserved.</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-[#2b3437]/70 dark:text-slate-500 font-inter text-sm tracking-wide hover:text-[#3d6758] transition-colors" href="#">Privacy Policy</a>
+<a class="text-[#2b3437]/70 dark:text-slate-500 font-inter text-sm tracking-wide hover:text-[#3d6758] transition-colors" href="#">Terms of Service</a>
+<a class="text-[#2b3437]/70 dark:text-slate-500 font-inter text-sm tracking-wide hover:text-[#3d6758] transition-colors" href="#">License Agreement</a>
+<a class="text-[#2b3437]/70 dark:text-slate-500 font-inter text-sm tracking-wide hover:text-[#3d6758] transition-colors" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+</body></html>

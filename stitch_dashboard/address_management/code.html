@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Address Management | ZenWorkspace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#dae4e8",
+                    "on-primary-fixed": "#1c4739",
+                    "primary": "#3d6758",
+                    "outline-variant": "#aab4b7",
+                    "inverse-on-surface": "#999d9f",
+                    "secondary-fixed": "#bdeaf8",
+                    "surface-bright": "#f6fafb",
+                    "on-tertiary-container": "#2a4364",
+                    "surface-tint": "#3d6758",
+                    "error": "#a83836",
+                    "error-container": "#fa746f",
+                    "secondary-fixed-dim": "#afdce9",
+                    "secondary": "#3a6571",
+                    "surface-container-highest": "#dae4e8",
+                    "primary-container": "#beecda",
+                    "tertiary": "#486083",
+                    "on-tertiary-fixed-variant": "#334c6e",
+                    "on-secondary": "#effbff",
+                    "secondary-dim": "#2e5965",
+                    "primary-fixed": "#beecda",
+                    "surface-container-low": "#eff4f7",
+                    "tertiary-fixed": "#b2cbf3",
+                    "inverse-primary": "#cffeeb",
+                    "on-secondary-fixed-variant": "#37616d",
+                    "on-primary": "#e4fff3",
+                    "tertiary-fixed-dim": "#a4bde4",
+                    "inverse-surface": "#0a0f10",
+                    "tertiary-container": "#b2cbf3",
+                    "on-background": "#2b3437",
+                    "on-surface-variant": "#576164",
+                    "on-secondary-fixed": "#174550",
+                    "on-secondary-container": "#2c5863",
+                    "error-dim": "#67040d",
+                    "on-error-container": "#6e0a12",
+                    "on-tertiary": "#f8f8ff",
+                    "on-surface": "#2b3437",
+                    "on-tertiary-fixed": "#142f4f",
+                    "outline": "#737c80",
+                    "tertiary-dim": "#3b5476",
+                    "secondary-container": "#bdeaf8",
+                    "surface-container-high": "#e1e9ed",
+                    "surface-container": "#e8eff2",
+                    "primary-fixed-dim": "#b1decc",
+                    "on-primary-fixed-variant": "#396355",
+                    "surface": "#f6fafb",
+                    "surface-dim": "#d2dcdf",
+                    "on-error": "#fff7f6",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#f6fafb",
+                    "primary-dim": "#315b4d",
+                    "on-primary-container": "#2f594b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .glass-effect {
+            background: rgba(246, 250, 251, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .global-glow {
+            box-shadow: 0px 12px 32px rgba(43, 52, 55, 0.06);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen">
+<!-- TopAppBar -->
+<header class="w-full h-16 sticky top-0 bg-[#f6fafb] dark:bg-slate-950 z-50 flex justify-between items-center px-12 font-manrope text-sm tracking-tight">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold text-[#3d6758] dark:text-[#b1decc]">ZenWorkspace</span>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-[#3d6758] dark:hover:text-[#b1decc] transition-colors duration-200 ease-in-out" href="#">Dashboard</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-[#3d6758] dark:hover:text-[#b1decc] transition-colors duration-200 ease-in-out" href="#">Projects</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-[#3d6758] dark:hover:text-[#b1decc] transition-colors duration-200 ease-in-out" href="#">Team</a>
+</nav>
+</div>
+<div class="flex items-center space-x-6">
+<div class="hidden md:flex items-center bg-surface-container-low px-4 py-2 rounded-full border-none focus-within:bg-surface-container-highest transition-all duration-200">
+<span class="material-symbols-outlined text-outline text-lg mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-48 text-on-surface" placeholder="Search workspace..." type="text"/>
+</div>
+<button class="material-symbols-outlined text-outline hover:text-primary transition-colors">notifications</button>
+<button class="material-symbols-outlined text-outline hover:text-primary transition-colors">settings</button>
+<div class="h-8 w-8 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="professional headshot of a smiling man with a neat beard in a bright studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL9i3XjhxlnInWVhOEnveAsuPQxxFtfsMF2DxmCN6kVbZtRIeOS-qg7SIQMERxQGgjfzANzzbhzEOIQ_Yj6EmSJUX8ToL2B6tJezdjPpKrXYqQlJgtrN88lgXEbKF9cIsaeLyihqu-TQPaUfHbivfYsiaxzPTBqGU0sirRoetB8Vc0n1Qx6tDkn71BehoqBhimTa0uuU6k1C9ZfNE0WavnWXII8tTXKMp5Ah3iJ-NhYmcANSYLj7-CZSRA3VKGS_1-XH4XGOYBem6f"/>
+</div>
+</div>
+</header>
+<div class="flex">
+<!-- SideNavBar -->
+<aside class="h-[calc(100vh-4rem)] w-64 fixed left-0 top-16 bg-[#e8eff2] dark:bg-slate-900 font-inter text-sm antialiased flex flex-col py-8 px-6 space-y-4">
+<div class="mb-8 px-2">
+<h3 class="font-manrope font-bold text-[#2b3437] dark:text-slate-100 text-base">Alex Rivera</h3>
+<p class="text-xs text-secondary opacity-70">Premium Member</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center space-x-3 px-3 py-2 text-[#2b3437] dark:text-slate-400 hover:bg-[#d1dde3] dark:hover:bg-slate-800 rounded-xl transition-all scale-98 active:scale-95 duration-150 group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">person</span>
+<span>General</span>
+</a>
+<a class="flex items-center space-x-3 px-3 py-2 text-[#2b3437] dark:text-slate-400 hover:bg-[#d1dde3] dark:hover:bg-slate-800 rounded-xl transition-all scale-98 active:scale-95 duration-150 group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">shield</span>
+<span>Security</span>
+</a>
+<a class="flex items-center space-x-3 px-3 py-2 text-[#2b3437] dark:text-slate-400 hover:bg-[#d1dde3] dark:hover:bg-slate-800 rounded-xl transition-all scale-98 active:scale-95 duration-150 group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">shopping_bag</span>
+<span>Orders</span>
+</a>
+<!-- Active Tab -->
+<a class="flex items-center space-x-3 px-3 py-2 text-[#3d6758] dark:text-[#b1decc] font-bold bg-surface-container-lowest rounded-xl transition-all scale-98 active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined">location_on</span>
+<span>Addresses</span>
+</a>
+<a class="flex items-center space-x-3 px-3 py-2 text-[#2b3437] dark:text-slate-400 hover:bg-[#d1dde3] dark:hover:bg-slate-800 rounded-xl transition-all scale-98 active:scale-95 duration-150 group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">payments</span>
+<span>Payments</span>
+</a>
+</nav>
+<div class="pt-4 border-t border-outline-variant/10 space-y-4">
+<button class="w-full bg-primary text-on-primary py-2.5 px-4 rounded-full font-semibold text-sm hover:opacity-90 transition-opacity">Upgrade Plan</button>
+<div class="space-y-1">
+<a class="flex items-center space-x-3 px-3 py-2 text-[#2b3437] dark:text-slate-400 hover:bg-[#d1dde3] dark:hover:bg-slate-800 rounded-xl transition-all scale-98 active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span>Help</span>
+</a>
+<a class="flex items-center space-x-3 px-3 py-2 text-[#2b3437] dark:text-slate-400 hover:bg-[#d1dde3] dark:hover:bg-slate-800 rounded-xl transition-all scale-98 active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span>Sign Out</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-64 p-12 bg-background min-h-screen">
+<div class="max-w-6xl mx-auto">
+<header class="mb-12">
+<h1 class="text-4xl font-extrabold text-on-surface tracking-tight mb-2">Saved Addresses</h1>
+<p class="text-on-surface-variant font-medium">Manage your delivery and billing locations for a seamless checkout experience.</p>
+</header>
+<!-- Bento Grid Layout for Addresses -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Add New Address Card (Glassmorphism & Primary Action) -->
+<div class="group relative h-64 border-2 border-dashed border-outline-variant/30 rounded-full flex flex-col items-center justify-center cursor-pointer hover:border-primary transition-all duration-300 hover:bg-surface-container-low">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-3xl">add</span>
+</div>
+<span class="mt-4 font-headline font-bold text-primary">Add New Address</span>
+</div>
+<!-- Home Address Card -->
+<div class="h-64 bg-surface-container-lowest rounded-full p-8 global-glow flex flex-col justify-between group hover:bg-surface-container transition-all duration-300">
+<div class="flex justify-between items-start">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container">home</span>
+</div>
+<span class="font-headline font-bold text-lg">Home</span>
+</div>
+<div class="flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 rounded-full hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-outline text-xl">edit</span>
+</button>
+<button class="p-2 rounded-full hover:bg-error-container/20 transition-colors">
+<span class="material-symbols-outlined text-error text-xl">delete</span>
+</button>
+</div>
+</div>
+<div>
+<p class="text-on-surface font-semibold">Alex Rivera</p>
+<p class="text-on-surface-variant text-sm mt-1 leading-relaxed">4287 Redwood Avenue, Suite 12<br/>Palo Alto, CA 94306<br/>United States</p>
+</div>
+<div class="flex items-center text-xs font-bold text-primary">
+<span class="material-symbols-outlined text-sm mr-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            DEFAULT SHIPPING
+                        </div>
+</div>
+<!-- Office Address Card -->
+<div class="h-64 bg-surface-container-lowest rounded-full p-8 global-glow flex flex-col justify-between group hover:bg-surface-container transition-all duration-300">
+<div class="flex justify-between items-start">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-full bg-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-container">business</span>
+</div>
+<span class="font-headline font-bold text-lg">Office</span>
+</div>
+<div class="flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 rounded-full hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-outline text-xl">edit</span>
+</button>
+<button class="p-2 rounded-full hover:bg-error-container/20 transition-colors">
+<span class="material-symbols-outlined text-error text-xl">delete</span>
+</button>
+</div>
+</div>
+<div>
+<p class="text-on-surface font-semibold">ZenWorkspace Inc.</p>
+<p class="text-on-surface-variant text-sm mt-1 leading-relaxed">800 Market St, Floor 14<br/>San Francisco, CA 94102<br/>United States</p>
+</div>
+<div class="flex items-center text-xs font-bold text-tertiary opacity-60 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-sm mr-1">radio_button_unchecked</span>
+                            SET AS DEFAULT
+                        </div>
+</div>
+<!-- Studio Address Card (Asymmetric detail) -->
+<div class="h-64 bg-surface-container-lowest rounded-full p-8 global-glow flex flex-col justify-between group hover:bg-surface-container transition-all duration-300">
+<div class="flex justify-between items-start">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed-dim flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container">palette</span>
+</div>
+<span class="font-headline font-bold text-lg">Studio</span>
+</div>
+<div class="flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 rounded-full hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-outline text-xl">edit</span>
+</button>
+<button class="p-2 rounded-full hover:bg-error-container/20 transition-colors">
+<span class="material-symbols-outlined text-error text-xl">delete</span>
+</button>
+</div>
+</div>
+<div>
+<p class="text-on-surface font-semibold">Alex Rivera</p>
+<p class="text-on-surface-variant text-sm mt-1 leading-relaxed">120 Art District Way, #304<br/>Oakland, CA 94607<br/>United States</p>
+</div>
+<div class="flex items-center text-xs font-bold text-tertiary opacity-60 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-sm mr-1">radio_button_unchecked</span>
+                            SET AS DEFAULT
+                        </div>
+</div>
+<!-- Map/Visual Decoration Card -->
+<div class="lg:col-span-2 h-64 rounded-full overflow-hidden relative group">
+<img class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" data-alt="minimalist map graphic of San Francisco bay area with muted sage and slate color palette" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC68tlSZRg5rYraNQovNipLYKRQt6KaPus0W4hQwHo9DTxVke5u-Tpg3-jQCPJ809hP0XaNB_x_9hGpupAqwevAXUtnAMWYbhXIG95Wr6JgVcQqv54UZxwftVQwqpt4BKrlpNny3n5Xb_Dm6kHHeBzdNuw38P5m-hzi2yaBr2yajffJ-Cn8LoOr9dU07rpuACK3cJ2D0y2kgIFeogpyOJQ-FsoH___fhy_6TdaQ1AoK-4b_MVCVp7CxgalXm6aawZVW35YKi2G1hmry"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent flex items-end p-8">
+<div class="glass-effect p-4 rounded-xl">
+<p class="text-primary font-bold flex items-center">
+<span class="material-symbols-outlined mr-2">explore</span>
+                                    3 Total Active Addresses
+                                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Address History / Inactive -->
+<section class="mt-20">
+<div class="flex items-center justify-between mb-8">
+<h2 class="text-2xl font-bold tracking-tight">Recent Activity</h2>
+<button class="text-sm font-semibold text-primary hover:underline">View archive</button>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-6 bg-surface-container-low rounded-xl group hover:bg-surface-container-high transition-colors">
+<div class="flex items-center space-x-4">
+<span class="material-symbols-outlined text-outline">history</span>
+<div>
+<p class="font-semibold text-on-surface">Address Updated: Office</p>
+<p class="text-sm text-on-surface-variant">Modified 2 days ago</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
+</div>
+<div class="flex items-center justify-between p-6 bg-surface-container-low rounded-xl group hover:bg-surface-container-high transition-colors">
+<div class="flex items-center space-x-4">
+<span class="material-symbols-outlined text-outline">add_location</span>
+<div>
+<p class="font-semibold text-on-surface">New Address Added: Studio</p>
+<p class="text-sm text-on-surface-variant">Added 1 week ago</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+<!-- Floating Action Button (Supressed as per logic for Addresses sub-page, but added if it was a primary task focus elsewhere. Here we prioritize the grid card) -->
+</body></html>

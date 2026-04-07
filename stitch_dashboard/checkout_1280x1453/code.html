@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#999d9f",
+                    "on-surface-variant": "#576164",
+                    "on-secondary-fixed-variant": "#37616d",
+                    "on-secondary-fixed": "#174550",
+                    "secondary-fixed-dim": "#afdce9",
+                    "on-tertiary-fixed": "#142f4f",
+                    "error-container": "#fa746f",
+                    "surface-container-highest": "#dae4e8",
+                    "surface-bright": "#f6fafb",
+                    "error": "#a83836",
+                    "secondary-fixed": "#bdeaf8",
+                    "surface-container-high": "#e1e9ed",
+                    "on-secondary": "#effbff",
+                    "secondary-dim": "#2e5965",
+                    "on-primary-fixed": "#1c4739",
+                    "tertiary-fixed-dim": "#a4bde4",
+                    "on-secondary-container": "#2c5863",
+                    "surface": "#f6fafb",
+                    "tertiary-dim": "#3b5476",
+                    "surface-container": "#e8eff2",
+                    "surface-tint": "#3d6758",
+                    "tertiary-fixed": "#b2cbf3",
+                    "background": "#f6fafb",
+                    "on-error": "#fff7f6",
+                    "on-error-container": "#6e0a12",
+                    "on-primary-container": "#2f594b",
+                    "primary-fixed-dim": "#b1decc",
+                    "outline-variant": "#aab4b7",
+                    "primary": "#3d6758",
+                    "outline": "#737c80",
+                    "error-dim": "#67040d",
+                    "on-surface": "#2b3437",
+                    "on-tertiary-container": "#2a4364",
+                    "inverse-primary": "#cffeeb",
+                    "on-primary": "#e4fff3",
+                    "primary-container": "#beecda",
+                    "primary-fixed": "#beecda",
+                    "secondary-container": "#bdeaf8",
+                    "secondary": "#3a6571",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary": "#f8f8ff",
+                    "on-background": "#2b3437",
+                    "surface-dim": "#d2dcdf",
+                    "inverse-surface": "#0a0f10",
+                    "primary-dim": "#315b4d",
+                    "on-primary-fixed-variant": "#396355",
+                    "surface-variant": "#dae4e8",
+                    "on-tertiary-fixed-variant": "#334c6e",
+                    "tertiary-container": "#b2cbf3",
+                    "surface-container-low": "#eff4f7",
+                    "tertiary": "#486083"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-[#f6fafb] dark:bg-slate-900 w-full top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-12 py-6 max-w-[1440px] mx-auto">
+<div class="text-2xl font-bold text-[#3d6758] dark:text-[#b1decc] font-manrope tracking-tight">The Ethereal Canvas</div>
+<nav class="hidden md:flex gap-8">
+<a class="text-[#2b3437] dark:text-slate-400 font-medium hover:text-[#3d6758] transition-colors" href="#">Dashboard</a>
+<a class="text-[#2b3437] dark:text-slate-400 font-medium hover:text-[#3d6758] transition-colors" href="#">Template Store</a>
+<a class="text-[#2b3437] dark:text-slate-400 font-medium hover:text-[#3d6758] transition-colors" href="#">My Library</a>
+<a class="text-[#2b3437] dark:text-slate-400 font-medium hover:text-[#3d6758] transition-colors" href="#">Support</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-[#e8eff2]/50 dark:hover:bg-slate-800/50 transition-colors rounded-full">
+<span class="material-symbols-outlined text-[#3d6758] dark:text-[#b1decc]">shopping_cart</span>
+</button>
+<button class="p-2 hover:bg-[#e8eff2]/50 dark:hover:bg-slate-800/50 transition-colors rounded-full">
+<span class="material-symbols-outlined text-[#3d6758] dark:text-[#b1decc]">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-12 py-12 flex flex-col gap-12">
+<!-- Progress Stepper -->
+<section class="w-full flex justify-center">
+<div class="flex items-center w-full max-w-4xl">
+<!-- Step 1: Cart -->
+<div class="flex flex-col items-center gap-3 relative flex-1">
+<div class="w-10 h-10 rounded-full bg-primary-fixed-dim text-primary flex items-center justify-center font-bold">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="text-sm font-semibold text-on-surface">Cart</span>
+<div class="absolute top-5 left-1/2 w-full h-[2px] bg-primary-fixed-dim -z-10"></div>
+</div>
+<!-- Step 2: Checkout (Active) -->
+<div class="flex flex-col items-center gap-3 relative flex-1">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold">2</div>
+<span class="text-sm font-bold text-primary">Checkout</span>
+<div class="absolute top-5 left-1/2 w-full h-[2px] bg-surface-container-highest -z-10"></div>
+</div>
+<!-- Step 3: Payment -->
+<div class="flex flex-col items-center gap-3 relative flex-1">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-bold">3</div>
+<span class="text-sm font-medium text-on-surface-variant">Payment</span>
+<div class="absolute top-5 left-1/2 w-full h-[2px] bg-surface-container-highest -z-10"></div>
+</div>
+<!-- Step 4: Review -->
+<div class="flex flex-col items-center gap-3 relative">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-bold">4</div>
+<span class="text-sm font-medium text-on-surface-variant">Review</span>
+</div>
+</div>
+</section>
+<!-- Content Shell: Asymmetric Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Left Column: Checkout Form -->
+<div class="lg:col-span-7 flex flex-col gap-10">
+<header>
+<h1 class="text-4xl font-extrabold tracking-tight text-on-surface mb-2">Finalize your selection</h1>
+<p class="text-on-surface-variant body-lg">Secure your creative assets and begin your journey.</p>
+</header>
+<div class="bg-surface-container-lowest p-10 rounded-[2rem] shadow-[0px_12px_32px_rgba(43,52,55,0.06)] border border-outline-variant/10">
+<form class="flex flex-col gap-8">
+<!-- Contact Section -->
+<div class="space-y-6">
+<h2 class="text-xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">contact_mail</span>
+                                Contact Information
+                            </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-2">Full Name</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-highest transition-all outline-none" placeholder="Julian A. Thorne" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-2">Email Address</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-highest transition-all outline-none" placeholder="julian@ethereal.co" type="email"/>
+</div>
+</div>
+</div>
+<!-- Billing Section -->
+<div class="space-y-6 pt-4">
+<h2 class="text-xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">location_on</span>
+                                Billing Address
+                            </h2>
+<div class="flex flex-col gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-2">Street Address</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-highest transition-all outline-none" placeholder="1280 Serenity Plaza, Suite 400" type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-2">City</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-highest transition-all outline-none" placeholder="San Francisco" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-2">State</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-highest transition-all outline-none" placeholder="CA" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-2">ZIP</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-highest transition-all outline-none" placeholder="94103" type="text"/>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-6">
+<button class="w-full bg-primary text-on-primary font-bold py-5 rounded-full hover:bg-primary-dim transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/10" type="submit">
+                                Continue to Payment
+                                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Right Column: Order Summary (Glassmorphism Bento) -->
+<div class="lg:col-span-5 flex flex-col gap-6">
+<div class="bg-surface-container p-8 rounded-[2rem] flex flex-col gap-8 sticky top-28">
+<h3 class="text-2xl font-bold">Order Summary</h3>
+<!-- Item List -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-4 p-4 bg-surface-container-lowest rounded-2xl group transition-all hover:translate-x-1">
+<div class="w-16 h-16 rounded-xl bg-primary-fixed-dim flex items-center justify-center">
+<img alt="Template Preview" class="w-full h-full object-cover rounded-xl" data-alt="minimalist abstract geometric art piece with soft teal and sage green flowing shapes on a white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbRo8yinYE43EWZThmmheL_MFp8tmZCco25PhHSNj5fiyDHYaC1MtLQglU_GjPfNz_N03Gw3Hs-gI_4VZ4NNmpetT7vqa_CbSJskfkwUAt4-8anNRd36l7Yo0kioDsxd9zD-KFIKE0ovL82KLp-IN_i-u4GNcQT7NdxvTpnEbvuroG8jN7fjQKKg7Dpxu79WNJPiSi-rEfTfgu_HmO3YCnZie0oa_YaW5-i3n9tkKROfhVGnXFeB44zN1QSONXNld_Wfrri1N9GtfE"/>
+</div>
+<div class="flex-1">
+<p class="font-bold text-on-surface">Ethereal Pro Bundle</p>
+<p class="text-sm text-on-surface-variant">Lifetime License</p>
+</div>
+<span class="font-bold text-primary">$129.00</span>
+</div>
+<div class="flex items-center gap-4 p-4 bg-surface-container-lowest rounded-2xl group transition-all hover:translate-x-1">
+<div class="w-16 h-16 rounded-xl bg-secondary-fixed-dim flex items-center justify-center overflow-hidden">
+<img alt="Addon Preview" class="w-full h-full object-cover rounded-xl" data-alt="soft aesthetic background with iridescent glass spheres floating in a foggy mint-green digital space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcuncpteven-fZTeBZK3eEfAT7Od2uLeR70lJT2QAnpA-zRdalJlsOEt9aqjNeCblaoE09EjxA0Xz_EnnL3MONMUTc8xgGnHM-hkbp0eui9U2xkiNN-skRgaple-uuhTLOKFhh6qs3-5RJf5uc6no3Uqe-tutyMQ7jFwlCKHEGwm5WIn030NJtGUbgBD6QuPkiTR0YV58gFiOiQsP98gA5zhnqkGmNLn3wKgiuS6sutVS112hkND_k6iZa3OWOMaYTdPVg8Z7OCp13"/>
+</div>
+<div class="flex-1">
+<p class="font-bold text-on-surface">Cloud Sync Pack</p>
+<p class="text-sm text-on-surface-variant">Monthly Add-on</p>
+</div>
+<span class="font-bold text-primary">$12.00</span>
+</div>
+</div>
+<!-- Totals -->
+<div class="space-y-3 pt-4 border-t border-outline-variant/20">
+<div class="flex justify-between text-sm text-on-surface-variant">
+<span>Subtotal</span>
+<span>$141.00</span>
+</div>
+<div class="flex justify-between text-sm text-on-surface-variant">
+<span>Processing Fee</span>
+<span>$0.00</span>
+</div>
+<div class="flex justify-between text-xl font-bold text-on-surface pt-4">
+<span>Total Due</span>
+<span class="text-primary">$141.00</span>
+</div>
+</div>
+<!-- Secure Badge -->
+<div class="bg-primary-container/30 p-4 rounded-xl flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+<div class="text-xs text-on-primary-container">
+<p class="font-bold">Bank-grade Encryption</p>
+<p>Your connection is secured with 256-bit SSL</p>
+</div>
+</div>
+</div>
+<!-- Assistance Card -->
+<div class="bg-tertiary-container/20 p-8 rounded-[2rem] border border-tertiary-container/30">
+<p class="text-sm font-bold text-tertiary mb-2 uppercase tracking-widest">Need help?</p>
+<p class="text-on-surface-variant mb-4">Our concierge team is available 24/7 to assist with your checkout process.</p>
+<button class="flex items-center gap-2 text-primary font-bold hover:underline">
+<span class="material-symbols-outlined">forum</span>
+                        Open Live Chat
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f6fafb] dark:bg-slate-950 w-full border-t border-[#aab4b7]/15 mt-20">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-8 max-w-[1440px] mx-auto gap-6">
+<div class="font-manrope font-semibold text-[#3d6758] text-lg">The Ethereal Canvas</div>
+<nav class="flex flex-wrap justify-center gap-8 text-sm font-inter tracking-wide">
+<a class="text-[#2b3437]/70 dark:text-slate-500 hover:text-[#3d6758] transition-colors" href="#">Privacy Policy</a>
+<a class="text-[#2b3437]/70 dark:text-slate-500 hover:text-[#3d6758] transition-colors" href="#">Terms of Service</a>
+<a class="text-[#2b3437]/70 dark:text-slate-500 hover:text-[#3d6758] transition-colors" href="#">License Agreement</a>
+<a class="text-[#2b3437]/70 dark:text-slate-500 hover:text-[#3d6758] transition-colors" href="#">Contact Support</a>
+</nav>
+<p class="text-[#2b3437]/70 dark:text-slate-500 text-sm font-inter">© 2024 The Ethereal Canvas. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

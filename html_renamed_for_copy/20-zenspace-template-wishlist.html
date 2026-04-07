@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#576164",
+                    "surface-bright": "#f6fafb",
+                    "primary-fixed-dim": "#b1decc",
+                    "tertiary-fixed": "#b2cbf3",
+                    "secondary-container": "#bdeaf8",
+                    "error-dim": "#67040d",
+                    "primary": "#3d6758",
+                    "tertiary-dim": "#3b5476",
+                    "on-primary": "#e4fff3",
+                    "inverse-primary": "#cffeeb",
+                    "secondary": "#3a6571",
+                    "primary-fixed": "#beecda",
+                    "on-primary-container": "#2f594b",
+                    "outline": "#737c80",
+                    "secondary-fixed-dim": "#afdce9",
+                    "tertiary-container": "#b2cbf3",
+                    "on-error-container": "#6e0a12",
+                    "on-surface": "#2b3437",
+                    "on-primary-fixed": "#1c4739",
+                    "inverse-surface": "#0a0f10",
+                    "secondary-fixed": "#bdeaf8",
+                    "error-container": "#fa746f",
+                    "surface": "#f6fafb",
+                    "primary-dim": "#315b4d",
+                    "on-background": "#2b3437",
+                    "surface-variant": "#dae4e8",
+                    "on-secondary-fixed": "#174550",
+                    "on-secondary-container": "#2c5863",
+                    "surface-container": "#e8eff2",
+                    "tertiary-fixed-dim": "#a4bde4",
+                    "on-secondary": "#effbff",
+                    "on-tertiary": "#f8f8ff",
+                    "surface-container-low": "#eff4f7",
+                    "on-tertiary-container": "#2a4364",
+                    "surface-tint": "#3d6758",
+                    "secondary-dim": "#2e5965",
+                    "on-error": "#fff7f6",
+                    "surface-container-high": "#e1e9ed",
+                    "on-tertiary-fixed": "#142f4f",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#dae4e8",
+                    "on-primary-fixed-variant": "#396355",
+                    "tertiary": "#486083",
+                    "error": "#a83836",
+                    "surface-dim": "#d2dcdf",
+                    "outline-variant": "#aab4b7",
+                    "on-secondary-fixed-variant": "#37616d",
+                    "inverse-on-surface": "#999d9f",
+                    "background": "#f6fafb",
+                    "primary-container": "#beecda",
+                    "on-tertiary-fixed-variant": "#334c6e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(246, 250, 251, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .global-glow {
+            box-shadow: 0px 12px 32px rgba(43, 52, 55, 0.06);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar Component -->
+<header class="w-full sticky top-0 z-50 bg-[#f6fafb] dark:bg-slate-900 flex items-center justify-between px-8 py-4 w-full max-w-[1920px] mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold text-[#2b3437] dark:text-white tracking-tighter">ZenSpace Templates</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="font-manrope text-sm font-medium tracking-tight text-[#2b3437] dark:text-slate-400 opacity-70 hover:opacity-100 transition-opacity duration-200" href="#">Discover</a>
+<a class="font-manrope text-sm font-medium tracking-tight text-[#3d6758] dark:text-[#b1decc] font-bold border-b-2 border-[#3d6758] pb-1 hover:opacity-100 transition-opacity duration-200" href="#">Wishlist</a>
+<a class="font-manrope text-sm font-medium tracking-tight text-[#2b3437] dark:text-slate-400 opacity-70 hover:opacity-100 transition-opacity duration-200" href="#">My Assets</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 transition-transform scale-95 active:transition-transform text-[#3d6758] dark:text-[#b1decc]">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 transition-transform scale-95 active:transition-transform text-[#3d6758] dark:text-[#b1decc]">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container overflow-hidden">
+<img alt="User profile" data-alt="close-up portrait of a professional person with a friendly expression against a soft-focus studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6w7PFQdCujbM77v_vhD_VV4GJhQevVDGZAAdqE7Wih41P65i1XHzQx7yYajV50nB4Zl9IFhL-q_lTqdbjBSh-wyhHtKIH5XJl5EGXY2SbIWJ5xVIwZUfSCUdiyE4639wqNcwMxjrd1h2Uraz8O6uBppAkSCR-psazfGSg_-L-gXEX6pxPTl8i9DfYgfHSZ7tLze1CYvp4RW6AOGvvfny7YlJEDfJt5fK0GW8Aj4yUkzZfNiEz6Q2qkw9k6v62bsz3MsLzOp1h4u4U"/>
+</div>
+</div>
+</header>
+<div class="flex min-h-screen">
+<!-- SideNavBar Component -->
+<aside class="h-screen w-64 sticky left-0 bg-[#e8eff2] dark:bg-slate-800/50 flex flex-col py-8 pr-4">
+<div class="px-6 mb-8">
+<h2 class="font-headline text-lg font-bold text-on-surface tracking-tight">Categories</h2>
+<p class="text-xs text-on-surface-variant font-medium opacity-70">Filter by workflow</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 py-2 px-6 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors ease-in-out duration-150" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-inter text-sm font-medium">All Templates</span>
+</a>
+<a class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 py-2 px-6 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors ease-in-out duration-150" href="#">
+<span class="material-symbols-outlined">pinboard</span>
+<span class="font-inter text-sm font-medium">Project Management</span>
+</a>
+<a class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 py-2 px-6 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors ease-in-out duration-150" href="#">
+<span class="material-symbols-outlined">self_improvement</span>
+<span class="font-inter text-sm font-medium">Personal Growth</span>
+</a>
+<a class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 py-2 px-6 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors ease-in-out duration-150" href="#">
+<span class="material-symbols-outlined">edit_note</span>
+<span class="font-inter text-sm font-medium">Technical Writing</span>
+</a>
+<a class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 py-2 px-6 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors ease-in-out duration-150" href="#">
+<span class="material-symbols-outlined">school</span>
+<span class="font-inter text-sm font-medium">Education</span>
+</a>
+<a class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 py-2 px-6 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors ease-in-out duration-150" href="#">
+<span class="material-symbols-outlined">palette</span>
+<span class="font-inter text-sm font-medium">Creative Studio</span>
+</a>
+</nav>
+<div class="mt-auto space-y-1 border-t border-outline-variant/10 pt-4">
+<a class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 py-2 px-6 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-inter text-sm font-medium">Support</span>
+</a>
+<a class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 py-2 px-6 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-inter text-sm font-medium">Feedback</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 p-12 max-w-7xl mx-auto">
+<header class="mb-12">
+<h1 class="font-headline text-4xl font-extrabold text-on-surface tracking-tight mb-2">My Wishlist</h1>
+<p class="text-on-surface-variant max-w-xl body-lg">A curated collection of your future workspaces. These templates are held here until you're ready to bring them into your flow.</p>
+</header>
+<!-- Wishlist Grid: Asymmetrical/Bento Feel -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Featured Wishlist Item (Large Card) -->
+<div class="lg:col-span-8 group relative bg-surface-container-lowest rounded-xl overflow-hidden global-glow transition-all hover:translate-y-[-4px]">
+<div class="aspect-[16/9] w-full overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="clean minimal office workspace with a large window, indoor plants, and soft morning sunlight on a white desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCprLj8tdJA8FVPQkAA_wZ9HdcqKpAplq15cDgnHH6vK5GqGvFl7GE28u4B9682v18PfXP0d6lrTiuSqgvTgg323dBzkBnOcKzCG0wLKgsYEwXAukehd-aIhQR3v5rfavIrpl4qBevVEFqJk1PMzmL666rgXrgRIi1vdFzf12uS9jDut587_MjC4Qd-pgfvbZMLgXfWSvgDX9Oc1i7FeqziwJWweAFM3cX3r3AmnwSLeIRgo40CRXyBgZJeQHiGqAAuEJMmSuKl88Jv"/>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-semibold tracking-wide uppercase mb-3 inline-block">Productivity</span>
+<h3 class="font-headline text-2xl font-bold text-on-surface">Deep Focus Studio</h3>
+</div>
+<button class="p-2 text-error hover:bg-error-container/20 rounded-full transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+<p class="text-on-surface-variant mb-8 line-clamp-2">The ultimate sanctuary for deep work. Includes pomodoro integration, soundscape modules, and distraction-free writing modes designed for complex cognitive tasks.</p>
+<div class="flex items-center gap-4">
+<button class="flex-1 bg-primary text-on-primary py-3 px-6 rounded-full font-semibold transition-all hover:bg-primary-dim active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">add_circle</span>
+                                Add to Workspace
+                            </button>
+<button class="px-6 py-3 text-secondary font-semibold hover:bg-secondary-container/30 rounded-full transition-colors">
+                                View Preview
+                            </button>
+</div>
+</div>
+</div>
+<!-- Secondary Item -->
+<div class="lg:col-span-4 flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden global-glow transition-all hover:translate-y-[-4px]">
+<div class="aspect-square w-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="abstract peaceful yoga studio with wooden floors and soft neutral curtains catching the breeze" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2ICsm6-gr9RfmdGhDbkxNA6JVoAvAQOnqTz2tiqRBeFQ_y3w_TE9iO0XA796_rzvCz6BZQqnhazN_HTe-uzAySiY_N2s69Aa3DH2xe1oVqolT04MTMaurBqY6xtkmy377coWHPZMpJJTUy2nYjEgMToXrInh6gBWVfxRCD7nW6BwulK_5toZccENceIHSPrLpWKvXoY_HFQq-NtRqn4zqXqXEt6e8wLA0FKQXTE_AwZUh9WlRiwcuPss6Hv6zDK9GYk57jjmeiANm"/>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<h3 class="font-headline text-xl font-bold text-on-surface mb-2">Mindful Journal</h3>
+<p class="text-on-surface-variant text-sm mb-6 flex-1">A gentle space for reflection and daily gratitude. Features mood tracking and guided prompts.</p>
+<div class="space-y-3">
+<button class="w-full bg-primary text-on-primary py-2.5 rounded-full text-sm font-semibold transition-all hover:bg-primary-dim">
+                                Add to Workspace
+                            </button>
+<button class="w-full text-on-surface-variant text-xs font-medium hover:text-error transition-colors text-center">
+                                Remove from Wishlist
+                            </button>
+</div>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="lg:col-span-4 flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden global-glow transition-all hover:translate-y-[-4px]">
+<div class="aspect-video w-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="minimalist notepad and pencil on a clean surface with soft shadows and neutral colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrIEoVY2WYPDhP52H6KtTaF8_9MB7sDEHfUmvm3ERUJWh275pKn9qY3H0oK_ccvlltIjFZrUPNyp1235SYZDlZwhDyHgvcGy6khnSwwOuLzWvd0VypLjWeZr4wu3tEv_DMzmNOMrt4svDjB-_ar4j_0tyL0H6XWAQTFtnPoSovT9Dtsvamv3ONyfnuzT93bwq4WYVrD0t2d2VW8kzbY-qotZ1zdmBX5zZuNRKbwP4OHnmUEqBwo38bszBGr83H_GQFfpn9qEy6jGJA"/>
+</div>
+<div class="p-6">
+<h3 class="font-headline text-xl font-bold text-on-surface mb-2">Tech Doc Hub</h3>
+<p class="text-on-surface-variant text-sm mb-6">Optimized for API documentation and internal wikis with markdown support.</p>
+<div class="flex items-center justify-between gap-4">
+<button class="bg-primary/10 text-primary p-2.5 rounded-full hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="flex-1 bg-surface-container-high text-on-surface-variant py-2.5 rounded-full text-sm font-semibold hover:bg-surface-container-highest transition-colors">
+                                Remove
+                            </button>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden global-glow transition-all hover:translate-y-[-4px]">
+<div class="aspect-video w-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="digital representation of data and networks with soft blue and green glowing lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkU-HICfmEgXZs6UtEGmZydSMs_kWdKy48V0qD82M6vizR04ox_8SAEaLQLLudqMza1UJpAzNprbUdLlKw8GLPjECms-J_J1YkrjpOAzq4rDSTqmmEtbI8pg6AeSdXqb7VRW3hYygpHIUSysg4ht8NZJHhOBIEAeHo8SNDvF68U5tqJGlXkXskwMuFydSeKDDTpTRqIftu7IdFPG9Ueow_zOUoTYTmx3shgSFv2DXSGO3fXS4E4VyIlF-wA6re8Rw9_99Vs9zcgyhQ"/>
+</div>
+<div class="p-6">
+<h3 class="font-headline text-xl font-bold text-on-surface mb-2">Project Canvas</h3>
+<p class="text-on-surface-variant text-sm mb-6">Agile project management for small teams. Visual boards and deadline tracking.</p>
+<div class="flex items-center justify-between gap-4">
+<button class="bg-primary/10 text-primary p-2.5 rounded-full hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="flex-1 bg-surface-container-high text-on-surface-variant py-2.5 rounded-full text-sm font-semibold hover:bg-surface-container-highest transition-colors">
+                                Remove
+                            </button>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden global-glow transition-all hover:translate-y-[-4px]">
+<div class="aspect-video w-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="neatly organized desk with a cup of tea and books under warm evening lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHgR6sAxM4vYvOuntHovraLTxwRTGM98XaUgwbuqc6ISwxZNq10Fyc19Kuyej80sQ9iMeQfg5T7yxbANUxS72BLDXMp3kOkDJ0pAqS4WlZ-OVQuS9RkZ6-P913G1Q7H04_jQ2CQ3VuNe3TT3UCDuw5qAPrfZa8yWbC0UjSpl4oEF8eICyfXE_DFzMEGetsm6g1S99RIDgsWwJmgyqKt5sRdqxj1LhwL_f8OV1f_j7yBzS43ml6YUjw-bjwJ2OMWkufYtq_98gY1bEv"/>
+</div>
+<div class="p-6">
+<h3 class="font-headline text-xl font-bold text-on-surface mb-2">Learning Path</h3>
+<p class="text-on-surface-variant text-sm mb-6">Structure your curriculum, track progress, and store research materials.</p>
+<div class="flex items-center justify-between gap-4">
+<button class="bg-primary/10 text-primary p-2.5 rounded-full hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="flex-1 bg-surface-container-high text-on-surface-variant py-2.5 rounded-full text-sm font-semibold hover:bg-surface-container-highest transition-colors">
+                                Remove
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Empty State Suggestion (Subtle) -->
+<div class="mt-20 p-12 rounded-xl border-2 border-dashed border-outline-variant/20 flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">auto_awesome</span>
+</div>
+<h4 class="font-headline text-xl font-bold text-on-surface mb-2">Need more inspiration?</h4>
+<p class="text-on-surface-variant max-w-sm mb-8">Our community is constantly creating new ways to work. Explore the latest templates from top creators.</p>
+<button class="bg-secondary text-on-secondary px-8 py-3 rounded-full font-semibold transition-all hover:opacity-90">
+                    Explore Marketplace
+                </button>
+</div>
+</main>
+</div>
+<!-- Mobile Navigation (Bottom Bar) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 glass-panel border-t-0 flex justify-around items-center py-4 px-6 z-50">
+<button class="flex flex-col items-center gap-1 text-[#2b3437] opacity-70">
+<span class="material-symbols-outlined">explore</span>
+<span class="text-[10px] font-medium">Discover</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#3d6758]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="text-[10px] font-bold">Wishlist</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#2b3437] opacity-70">
+<span class="material-symbols-outlined">folder</span>
+<span class="text-[10px] font-medium">Assets</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#2b3437] opacity-70">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</button>
+</nav>
+</body></html>

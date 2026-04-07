@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ZenSpace Templates - Search Results</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#576164",
+                    "surface-bright": "#f6fafb",
+                    "primary-fixed-dim": "#b1decc",
+                    "tertiary-fixed": "#b2cbf3",
+                    "secondary-container": "#bdeaf8",
+                    "error-dim": "#67040d",
+                    "primary": "#3d6758",
+                    "tertiary-dim": "#3b5476",
+                    "on-primary": "#e4fff3",
+                    "inverse-primary": "#cffeeb",
+                    "secondary": "#3a6571",
+                    "primary-fixed": "#beecda",
+                    "on-primary-container": "#2f594b",
+                    "outline": "#737c80",
+                    "secondary-fixed-dim": "#afdce9",
+                    "tertiary-container": "#b2cbf3",
+                    "on-error-container": "#6e0a12",
+                    "on-surface": "#2b3437",
+                    "on-primary-fixed": "#1c4739",
+                    "inverse-surface": "#0a0f10",
+                    "secondary-fixed": "#bdeaf8",
+                    "error-container": "#fa746f",
+                    "surface": "#f6fafb",
+                    "primary-dim": "#315b4d",
+                    "on-background": "#2b3437",
+                    "surface-variant": "#dae4e8",
+                    "on-secondary-fixed": "#174550",
+                    "on-secondary-container": "#2c5863",
+                    "surface-container": "#e8eff2",
+                    "tertiary-fixed-dim": "#a4bde4",
+                    "on-secondary": "#effbff",
+                    "on-tertiary": "#f8f8ff",
+                    "surface-container-low": "#eff4f7",
+                    "on-tertiary-container": "#2a4364",
+                    "surface-tint": "#3d6758",
+                    "secondary-dim": "#2e5965",
+                    "on-error": "#fff7f6",
+                    "surface-container-high": "#e1e9ed",
+                    "on-tertiary-fixed": "#142f4f",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#dae4e8",
+                    "on-primary-fixed-variant": "#396355",
+                    "tertiary": "#486083",
+                    "error": "#a83836",
+                    "surface-dim": "#d2dcdf",
+                    "outline-variant": "#aab4b7",
+                    "on-secondary-fixed-variant": "#37616d",
+                    "inverse-on-surface": "#999d9f",
+                    "background": "#f6fafb",
+                    "primary-container": "#beecda",
+                    "on-tertiary-fixed-variant": "#334c6e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": [
+                            "Manrope"
+                    ],
+                    "body": [
+                            "Inter"
+                    ],
+                    "label": [
+                            "Inter"
+                    ]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .glass-effect {
+            background: rgba(246, 250, 251, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopAppBar -->
+<nav class="w-full sticky top-0 z-50 bg-[#f6fafb] dark:bg-slate-900 flex items-center justify-between px-8 py-4 w-full max-w-[1920px] mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold text-[#2b3437] dark:text-white tracking-tighter">ZenSpace Templates</span>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-[#3d6758] dark:text-[#b1decc] font-bold border-b-2 border-[#3d6758] pb-1 font-manrope text-sm font-medium tracking-tight hover:opacity-100 transition-opacity duration-200" href="#">Discover</a>
+<a class="text-[#2b3437] dark:text-slate-400 opacity-70 font-manrope text-sm font-medium tracking-tight hover:opacity-100 transition-opacity duration-200" href="#">Wishlist</a>
+<a class="text-[#2b3437] dark:text-slate-400 opacity-70 font-manrope text-sm font-medium tracking-tight hover:opacity-100 transition-opacity duration-200" href="#">My Assets</a>
+</div>
+</div>
+<div class="flex-1 max-w-xl mx-8">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-xl py-2.5 pl-12 pr-4 focus:bg-surface-container-highest focus:ring-0 text-sm transition-all" placeholder="Search templates..." type="text" value="Minimalist Planner"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<img alt="User profile" class="w-8 h-8 rounded-full object-cover ml-2" data-alt="close-up portrait of a professional woman with a friendly expression in a brightly lit modern office environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDN54xQ2vya6k6IQHB7EufRRj0ikH1oPxzuunC6Ikl9Y9Wqqts9uGb_fAHNvuKlpY5fqHQWQNEAKXEfDw1sP8hfoMakSrPS_lLwWJ2Qp5ioJo7SDz2ADhgfZVhtH6ahyZNU4I4_-6nIHCn0lho70UIXHtlMq1QQk26Se2LGelLI5pkB41hYz5mXPO8kuHTqOLPsd-osFUhB-dX3Ecn9T3fCWby2-LIXie1ezylg9MG3ZrGBH1AGr8VzdKn22O3AF-TjDirVg3np16jH"/>
+</div>
+</nav>
+<div class="flex">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 sticky left-0 bg-[#e8eff2] dark:bg-slate-800/50 flex flex-col py-8 pr-4 hidden lg:flex">
+<div class="px-6 mb-8">
+<h3 class="text-on-surface font-headline font-bold text-lg tracking-tight">Categories</h3>
+<p class="text-on-surface-variant text-xs font-medium">Filter by workflow</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 py-2 px-4 font-inter text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="grid_view">grid_view</span>
+<span>All Templates</span>
+</a>
+<a class="flex items-center gap-3 text-[#3d6758] dark:text-[#b1decc] font-semibold bg-[#ffffff] dark:bg-slate-700/50 rounded-r-full py-2 px-4 font-inter text-sm" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="trello">pinboard</span>
+<span>Project Management</span>
+</a>
+<a class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 py-2 px-4 font-inter text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="self_improvement">self_improvement</span>
+<span>Personal Growth</span>
+</a>
+<a class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 py-2 px-4 font-inter text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="edit_note">edit_note</span>
+<span>Technical Writing</span>
+</a>
+<a class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 py-2 px-4 font-inter text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="school">school</span>
+<span>Education</span>
+</a>
+<a class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 py-2 px-4 font-inter text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="palette">palette</span>
+<span>Creative Studio</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-outline-variant/10 pt-4 space-y-1">
+<a class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 py-2 px-4 font-inter text-sm font-medium hover:bg-slate-200 transition-colors" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="help">help</span>
+<span>Support</span>
+</a>
+<a class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 py-2 px-4 font-inter text-sm font-medium hover:bg-slate-200 transition-colors" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="chat_bubble">chat_bubble</span>
+<span>Feedback</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 p-8 md:p-12">
+<!-- Search Stats & Suggestions -->
+<div class="mb-10 max-w-5xl">
+<div class="flex items-baseline gap-2 mb-2">
+<h1 class="text-3xl font-bold tracking-tight text-on-surface">Search results for "Minimalist Planner"</h1>
+<span class="text-on-surface-variant text-sm font-medium opacity-70">(128 results)</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-6">
+                    Did you mean: <a class="text-primary font-semibold underline decoration-primary/30 hover:decoration-primary" href="#">Minimalist Productivity</a>, <a class="text-primary font-semibold underline decoration-primary/30 hover:decoration-primary" href="#">Weekly Planner</a>
+</p>
+<!-- Filters Row -->
+<div class="flex flex-wrap gap-4 items-center">
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-low rounded-full">
+<span class="text-xs font-bold text-on-surface-variant">PRICE:</span>
+<select class="bg-transparent border-none text-xs font-semibold focus:ring-0 p-0 pr-6 text-on-surface cursor-pointer">
+<option>All Prices</option>
+<option>Free</option>
+<option>$1 - $10</option>
+<option>$10+</option>
+</select>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-low rounded-full">
+<span class="text-xs font-bold text-on-surface-variant">RATING:</span>
+<select class="bg-transparent border-none text-xs font-semibold focus:ring-0 p-0 pr-6 text-on-surface cursor-pointer">
+<option>4.5 &amp; Up</option>
+<option>4.0 &amp; Up</option>
+<option>All Ratings</option>
+</select>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-low rounded-full">
+<span class="text-xs font-bold text-on-surface-variant">SORT BY:</span>
+<select class="bg-transparent border-none text-xs font-semibold focus:ring-0 p-0 pr-6 text-on-surface cursor-pointer">
+<option>Most Relevant</option>
+<option>Newest</option>
+<option>Price: Low to High</option>
+</select>
+</div>
+<button class="ml-auto text-primary font-bold text-xs flex items-center gap-1 hover:opacity-80">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+                        ADVANCED FILTERS
+                    </button>
+</div>
+</div>
+<!-- Bento Results Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-[1400px]">
+<!-- Result Card 1 (Large Featured) -->
+<div class="md:col-span-2 xl:col-span-2 group bg-surface-container-lowest rounded-xl overflow-hidden hover:bg-surface-container-high transition-all duration-300">
+<div class="flex flex-col md:flex-row h-full">
+<div class="md:w-3/5 h-64 md:h-auto overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="clean top-down view of a minimalist digital planner on a tablet screen surrounded by stationery and a coffee cup on a white desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAg0CrFiAtblBDKmKhT3JRPWo_21iNgIjNsyKvyQqpU7B2f582rr1vH3w8jgXQM0LOr578PDmH1ryq4O858looYcjNmNaQWP4H9nolmWJikxEv09L8pVKAUkT4ArGGAd2Yh5zhKvbpe7pq-kQgCHWOqMT8wsDkErdphBQ9iSNL6XfDvldjoHDMGEDYy8Nl2ZQHkYkZh8GCUf8w6TNOzbKhCw80ruPJsxMEDYZjI1sGjPuTAxEs1wzqsE1LNAdQqMvsjss7b0P2KhwMP"/>
+</div>
+<div class="flex-1 p-8 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="px-3 py-1 bg-primary-container text-on-primary-container text-[10px] font-bold rounded-full tracking-wider uppercase">Best Seller</span>
+<span class="text-secondary font-bold text-lg">$12.00</span>
+</div>
+<h3 class="text-2xl font-bold text-on-surface mb-2">ZenSpace Executive Core</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">A high-performance workspace designed for deep work and multi-project coordination. Features intentional asymmetry and breathability.</p>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-bold">4.9 (2.1k reviews)</span>
+</div>
+<button class="px-6 py-2 bg-primary text-on-primary rounded-full text-xs font-bold hover:bg-primary-dim transition-colors shadow-sm">View Template</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Result Card 2 (Standard) -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden hover:bg-surface-container-high transition-all duration-300 group">
+<div class="h-48 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="artistic close-up of a paper notebook with clean typography and soft shadows on a light teal background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgYj_1WPO7nIJh5w6d7aSmm0ICkeG3VDAUxoqQDqcqin3P5VaYprqSX1XUfN5YT-EoBBeO51S2-09ZYllLlYPrPJHHYZxtJNYh4fzTHfdzMr6XqK1FGDreKPVi-kp4MTcTjBMiVbpSrtpnKMf0Bbsw-PVpVHwfBjUZ5SlKYrjenTl_YwLn02tWsA66cF8TybXe0wrLXz2PHwEMzOK21TXlIo4IBu_yUxGBllHDG_LO4pDcVqAuut8Yb3z3t2v78XWpCYfffVSljgFM"/>
+<button class="absolute top-4 right-4 p-2 glass-effect rounded-full text-primary hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-lg">favorite</span>
+</button>
+</div>
+<div class="p-6">
+<div class="flex justify-between mb-3">
+<h3 class="font-bold text-on-surface">Daily Mindset Tracker</h3>
+<span class="text-secondary font-bold">$0.00</span>
+</div>
+<p class="text-on-surface-variant text-xs mb-6 line-clamp-2">Focus on mental clarity with this morning ritual and habit tracking system.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[10px] font-bold opacity-70">4.7</span>
+</div>
+<button class="text-primary text-xs font-bold hover:underline">Preview</button>
+</div>
+</div>
+</div>
+<!-- Result Card 3 (Standard) -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden hover:bg-surface-container-high transition-all duration-300 group">
+<div class="h-48 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="modern home office setup with minimalist desk, laptop, and organized workspace accessories in soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDINGJbc4GShhibJ1iX4A3EG0QLsi232jLcFz1RUOR3inXoddKSIAxqFNQ6rpiUm44IXfl61xT76_xWIIzOU8Nr2okWbr9If_OjJY_L50EIiNz75QrKp47HG7K7jQ95gK4-kCV0RGx53p0xqzM6L99OyYDki3PPyTw3NIg-rDeidf9qtIoHOCheySiRWCeWfK3xL0xXBm7LWN1GIoTp7fvV6cQglZpDW-Dxz3Uh95OpV9SDpDPI9lRmpYVEmZcyN6ubbdm6i3GMcHoJ"/>
+<button class="absolute top-4 right-4 p-2 glass-effect rounded-full text-primary">
+<span class="material-symbols-outlined text-lg">favorite</span>
+</button>
+</div>
+<div class="p-6">
+<div class="flex justify-between mb-3">
+<h3 class="font-bold text-on-surface">Agile Studio OS</h3>
+<span class="text-secondary font-bold">$18.00</span>
+</div>
+<p class="text-on-surface-variant text-xs mb-6 line-clamp-2">The ultimate hub for creative agencies. Project timelines, client portals, and invoicing.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[10px] font-bold opacity-70">4.9</span>
+</div>
+<button class="text-primary text-xs font-bold hover:underline">Preview</button>
+</div>
+</div>
+</div>
+<!-- Result Card 4 (Glassmorphism Variant) -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden hover:bg-surface-container-high transition-all duration-300 group">
+<div class="h-48 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="minimalist white desk with a pen, pencil and single small green succulent plant in a white pot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLJaOWdkJ-2OY69UopQxXKrt1qJjfPib-LM7ru9jiD9oB5GW3pHDML0jJaDLipo8jXmqjmA1ANzjpGfpcvmvkQ-ZA5twu_0adAvageFZ82Iwu2StUiWxG0oZNinRA428-gsEwYRJKVKeYQUAlZRircjxaaL91TxZzc2rT-PS6p_mi9wsTvJnEDTMSO57z6zLomdptLAgznC8mA0bTvo_w5kq7NuzY4Hqd_jn3ZyouNCLWbVm1VhXJfrknEiuyxRDiBfLRU8235ZvY3"/>
+<button class="absolute top-4 right-4 p-2 glass-effect rounded-full text-primary">
+<span class="material-symbols-outlined text-lg">favorite</span>
+</button>
+</div>
+<div class="p-6">
+<div class="flex justify-between mb-3">
+<h3 class="font-bold text-on-surface">Minimal Life Wiki</h3>
+<span class="text-secondary font-bold">$5.00</span>
+</div>
+<p class="text-on-surface-variant text-xs mb-6 line-clamp-2">A clean second brain for organizing your personal knowledge and resources.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[10px] font-bold opacity-70">4.5</span>
+</div>
+<button class="text-primary text-xs font-bold hover:underline">Preview</button>
+</div>
+</div>
+</div>
+<!-- Result Card 5 (Standard) -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden hover:bg-surface-container-high transition-all duration-300 group">
+<div class="h-48 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="top view of a black journal with white handwritten notes and coffee cup on a rustic wood surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6MgH64i9hAyA7Jy5vttXtONTWEEvfH0I8dO3dkc6K6W3L6w-9MXMmIC-HGVvCJwDNH9QW2fd2bSyNbe6e_kJvIB8SoAVf_OFSfIiyKupGBtcFoZgix__Rx3sWqQtFa6dvNaaws5rfGr-CqY6VmO7BPTmKRe7UKksooQyavhWWnYqvdZ72IdrHk2EpChcclppgJUgdrJUaWRfVPegHOTkrdcwcQ0wcoDGZtQZryw6g0EdeCWwTAeUnNvcTItVhyYH3BYSE7V9xQHd-"/>
+<button class="absolute top-4 right-4 p-2 glass-effect rounded-full text-primary">
+<span class="material-symbols-outlined text-lg">favorite</span>
+</button>
+</div>
+<div class="p-6">
+<div class="flex justify-between mb-3">
+<h3 class="font-bold text-on-surface">Deep Work Dashboard</h3>
+<span class="text-secondary font-bold">$9.00</span>
+</div>
+<p class="text-on-surface-variant text-xs mb-6 line-clamp-2">Remove distractions with a dedicated dashboard for your most important tasks.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[10px] font-bold opacity-70">4.8</span>
+</div>
+<button class="text-primary text-xs font-bold hover:underline">Preview</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Empty State / Promotion Section (Asymmetric) -->
+<div class="mt-20 flex flex-col md:flex-row gap-12 items-center bg-tertiary-container/20 rounded-3xl p-12 overflow-hidden relative">
+<div class="flex-1 z-10">
+<h2 class="text-3xl font-bold text-on-tertiary-container mb-4">Can't find the perfect template?</h2>
+<p class="text-on-tertiary-container/80 mb-8 max-w-md leading-relaxed">Our designers can craft a custom ZenSpace workflow tailored specifically to your unique creative process.</p>
+<button class="px-8 py-3 bg-tertiary text-on-tertiary rounded-full font-bold text-sm hover:opacity-90 shadow-lg shadow-tertiary/20">Request Custom Build</button>
+</div>
+<div class="flex-1 relative h-64 w-full md:w-auto">
+<div class="absolute -top-12 -right-12 w-80 h-80 bg-primary-container rounded-full blur-3xl opacity-30"></div>
+<div class="absolute top-0 right-0 w-full h-full flex justify-center items-center">
+<span class="material-symbols-outlined text-[120px] text-tertiary/20 select-none">draw</span>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-20 flex justify-center items-center gap-4">
+<button class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-container transition-colors text-outline">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-primary text-on-primary font-bold text-sm">1</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-container transition-colors font-bold text-sm text-on-surface-variant">2</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-container transition-colors font-bold text-sm text-on-surface-variant">3</button>
+<span class="text-on-surface-variant opacity-40">...</span>
+<button class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-container transition-colors font-bold text-sm text-on-surface-variant">12</button>
+</div>
+<button class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-container transition-colors text-outline">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</main>
+</div>
+<!-- Mobile Bottom Navigation (Hidden on desktop) -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 glass-effect p-4 flex justify-around items-center z-50">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="text-[10px] font-bold">Discover</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant opacity-60">
+<span class="material-symbols-outlined">favorite</span>
+<span class="text-[10px] font-bold">Wishlist</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant opacity-60">
+<span class="material-symbols-outlined">category</span>
+<span class="text-[10px] font-bold">Categories</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant opacity-60">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold">Account</span>
+</button>
+</div>
+</body></html>

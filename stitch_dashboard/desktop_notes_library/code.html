@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#142f4f",
+                        "on-primary-fixed-variant": "#396355",
+                        "tertiary": "#486083",
+                        "inverse-on-surface": "#999d9f",
+                        "on-secondary-fixed": "#174550",
+                        "tertiary-fixed-dim": "#a4bde4",
+                        "on-error": "#fff7f6",
+                        "surface-tint": "#3d6758",
+                        "surface": "#f6fafb",
+                        "inverse-surface": "#0a0f10",
+                        "surface-container": "#e8eff2",
+                        "on-secondary": "#effbff",
+                        "surface-container-low": "#eff4f7",
+                        "secondary-fixed-dim": "#afdce9",
+                        "background": "#f6fafb",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#bdeaf8",
+                        "secondary-container": "#bdeaf8",
+                        "outline-variant": "#aab4b7",
+                        "error": "#a83836",
+                        "on-primary": "#e4fff3",
+                        "on-surface-variant": "#576164",
+                        "on-secondary-fixed-variant": "#37616d",
+                        "inverse-primary": "#cffeeb",
+                        "error-dim": "#67040d",
+                        "primary-container": "#beecda",
+                        "error-container": "#fa746f",
+                        "on-tertiary-container": "#2a4364",
+                        "on-primary-fixed": "#1c4739",
+                        "surface-bright": "#f6fafb",
+                        "primary": "#3d6758",
+                        "on-background": "#2b3437",
+                        "secondary": "#3a6571",
+                        "surface-dim": "#d2dcdf",
+                        "tertiary-container": "#b2cbf3",
+                        "on-surface": "#2b3437",
+                        "primary-fixed": "#beecda",
+                        "on-primary-container": "#2f594b",
+                        "tertiary-dim": "#3b5476",
+                        "outline": "#737c80",
+                        "on-tertiary-fixed-variant": "#334c6e",
+                        "on-error-container": "#6e0a12",
+                        "surface-container-highest": "#dae4e8",
+                        "surface-variant": "#dae4e8",
+                        "primary-fixed-dim": "#b1decc",
+                        "primary-dim": "#315b4d",
+                        "on-secondary-container": "#2c5863",
+                        "secondary-dim": "#2e5965",
+                        "tertiary-fixed": "#b2cbf3",
+                        "on-tertiary": "#f8f8ff",
+                        "surface-container-high": "#e1e9ed"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased flex overflow-hidden h-screen">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#e8eff2] dark:bg-slate-900 flex flex-col py-8 z-50 font-['Inter'] text-sm font-medium shadow-[0px_12px_32px_rgba(43,52,55,0.06)]">
+<div class="px-8 mb-10 flex items-center gap-3">
+<div class="w-8 h-8 bg-primary rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-lg">spa</span>
+</div>
+<div>
+<h2 class="font-['Manrope'] text-lg font-extrabold text-[#3d6758]">The Canvas</h2>
+<p class="text-[10px] uppercase tracking-widest opacity-60">Zen Workspace</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<div class="px-8 py-3 text-[#2b3437] dark:text-slate-400 hover:text-[#3d6758] hover:translate-x-1 transition-transform cursor-pointer flex items-center gap-4">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</div>
+<div class="px-8 py-3 text-[#2b3437] dark:text-slate-400 hover:text-[#3d6758] hover:translate-x-1 transition-transform cursor-pointer flex items-center gap-4">
+<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+<span>Tasks</span>
+</div>
+<!-- Active Tab: Notes -->
+<div class="text-[#3d6758] font-bold bg-[#ffffff] dark:bg-slate-800 rounded-l-full ml-4 pl-4 py-3 flex items-center gap-4 transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span>Notes</span>
+</div>
+<div class="px-8 py-3 text-[#2b3437] dark:text-slate-400 hover:text-[#3d6758] hover:translate-x-1 transition-transform cursor-pointer flex items-center gap-4">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span>Calendar</span>
+</div>
+<div class="px-8 py-3 text-[#2b3437] dark:text-slate-400 hover:text-[#3d6758] hover:translate-x-1 transition-transform cursor-pointer flex items-center gap-4">
+<span class="material-symbols-outlined" data-icon="view_kanban">view_kanban</span>
+<span>Kanban</span>
+</div>
+<div class="px-8 py-3 text-[#2b3437] dark:text-slate-400 hover:text-[#3d6758] hover:translate-x-1 transition-transform cursor-pointer flex items-center gap-4">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</div>
+</nav>
+<div class="mt-auto pt-6 space-y-1">
+<div class="px-8 mb-6">
+<button class="w-full py-3 bg-primary text-on-primary rounded-full font-bold flex items-center justify-center gap-2 hover:bg-primary-dim transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+<span>New Entry</span>
+</button>
+</div>
+<div class="px-8 py-3 text-[#2b3437] dark:text-slate-400 hover:text-[#3d6758] hover:translate-x-1 transition-transform cursor-pointer flex items-center gap-4">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span>Help</span>
+</div>
+<div class="px-8 py-3 text-[#2b3437] dark:text-slate-400 hover:text-[#3d6758] hover:translate-x-1 transition-transform cursor-pointer flex items-center gap-4">
+<span class="material-symbols-outlined" data-icon="archive">archive</span>
+<span>Archive</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 ml-64 flex flex-col h-screen overflow-hidden">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-8 w-full h-16 bg-[#f6fafb] dark:bg-slate-950 font-['Manrope'] font-semibold tracking-tight z-40">
+<div class="flex items-center gap-8">
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-lg">search</span>
+</div>
+<input class="bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 w-64 focus:ring-2 focus:ring-primary-container text-sm transition-all" placeholder="Search notes..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-6">
+<a class="text-[#3d6758] font-bold border-b-2 border-[#3d6758] py-5" href="#">All Notes</a>
+<a class="text-[#2b3437] opacity-70 hover:bg-[#e8eff2] dark:hover:bg-slate-800 transition-colors px-2 py-5 rounded-t-lg" href="#">Shared</a>
+<a class="text-[#2b3437] opacity-70 hover:bg-[#e8eff2] dark:hover:bg-slate-800 transition-colors px-2 py-5 rounded-t-lg" href="#">Favorites</a>
+</nav>
+<div class="flex items-center gap-4 ml-4">
+<button class="p-2 hover:bg-[#e8eff2] dark:hover:bg-slate-800 rounded-full transition-colors text-[#3d6758]">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 hover:bg-[#e8eff2] dark:hover:bg-slate-800 rounded-full transition-colors text-[#3d6758]">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-primary-fixed ring-2 ring-surface-container ml-2">
+<img alt="User profile" data-alt="professional headshot of a smiling woman with a creative and focused look in a bright office environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPAabKiEmHQ_ghAb_Sbl46pKiHlAal5Tznvo1T9Xq9Ps2W3RvhJlemwI-zK_mIya-vpz5qONaF8YQsqCesHQgggBHxOFfxOWXmGDPOLbMaoPanyTsChUZLIQRdoRo1kn39sfSpf7Mb2OtzKgdFchx2hF7Q34UPsbta2jp5DFnrDUlFLgOn7qO2HxTmEpbmGFlV_gcuJ7W4xjELgnbTTeidz-89zXtyEFjhKfIF8I0WdgckJE9TiJ9m-3-Er0LnYVmRgr6kohGRnAAQ"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Dynamic Note View Section -->
+<div class="flex-1 flex overflow-hidden p-8 gap-8">
+<!-- Notes Grid (Multi-Column Layout) -->
+<div class="flex-1 flex flex-col overflow-y-auto pr-4 custom-scrollbar">
+<div class="flex items-end justify-between mb-8">
+<div>
+<h1 class="text-3xl font-bold text-on-background tracking-tight">Recent Notes</h1>
+<p class="text-on-surface-variant">Manage your creative thoughts and workspace archives.</p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 bg-surface-container rounded-lg hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+<button class="p-2 bg-surface-container rounded-lg hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">grid_view</span>
+</button>
+</div>
+</div>
+<!-- Bento-ish Grid of Note Cards -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 pb-8">
+<!-- Note Card 1 (Active/Selected) -->
+<div class="group bg-surface-container-lowest border-2 border-primary-fixed p-6 rounded-full flex flex-col gap-4 shadow-sm hover:translate-y-[-2px] transition-all duration-300 relative overflow-hidden">
+<div class="flex justify-between items-start">
+<span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-container rounded-full text-[10px] font-bold uppercase tracking-wider">Work</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">push_pin</span>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-2">Q4 Strategic Overview</h3>
+<p class="text-sm text-on-surface-variant line-clamp-3 leading-relaxed">The primary focus for the upcoming quarter should revolve around scaling the workspace interface for enterprise clients. We need to ensure that the "Zen" aesthetic is maintained...</p>
+</div>
+<div class="mt-auto pt-4 flex items-center justify-between border-t border-surface-container text-[11px] font-medium text-outline">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-xs">schedule</span>
+<span>Updated 2 hours ago</span>
+</div>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">open_in_new</span>
+</div>
+</div>
+<!-- Note Card 2 -->
+<div class="group bg-surface-container-lowest p-6 rounded-full flex flex-col gap-4 hover:bg-surface-container-high transition-all duration-300 shadow-[0px_4px_12px_rgba(43,52,55,0.03)] border border-transparent">
+<div class="flex justify-between items-start">
+<span class="px-3 py-1 bg-secondary-fixed text-on-secondary-container rounded-full text-[10px] font-bold uppercase tracking-wider">Personal</span>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-2">Morning Meditation Routine</h3>
+<p class="text-sm text-on-surface-variant line-clamp-3 leading-relaxed">1. Deep breathing for 5 minutes. 2. Visualization of the day's successes. 3. Gratitude journaling. Focus on the breath and let the thoughts drift like clouds...</p>
+</div>
+<div class="mt-auto pt-4 flex items-center justify-between border-t border-surface-container text-[11px] font-medium text-outline">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-xs">schedule</span>
+<span>Updated yesterday</span>
+</div>
+</div>
+</div>
+<!-- Note Card 3 (Ideas) -->
+<div class="group bg-surface-container-lowest p-6 rounded-full flex flex-col gap-4 hover:bg-surface-container-high transition-all duration-300 shadow-[0px_4px_12px_rgba(43,52,55,0.03)] border border-transparent">
+<div class="flex justify-between items-start">
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-container rounded-full text-[10px] font-bold uppercase tracking-wider">Ideas</span>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-2">Sustainable Garden Plan</h3>
+<p class="text-sm text-on-surface-variant line-clamp-3 leading-relaxed">Consider hydroponics for the rooftop deck. Using recycled rainwater and solar-powered pump systems. Need to research which herbs thrive in indirect morning light...</p>
+</div>
+<div class="mt-auto pt-4 flex items-center justify-between border-t border-surface-container text-[11px] font-medium text-outline">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-xs">schedule</span>
+<span>Updated 3 days ago</span>
+</div>
+</div>
+</div>
+<!-- Note Card 4 -->
+<div class="group bg-surface-container-lowest p-6 rounded-full flex flex-col gap-4 hover:bg-surface-container-high transition-all duration-300 shadow-[0px_4px_12px_rgba(43,52,55,0.03)] border border-transparent">
+<div class="flex justify-between items-start">
+<span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-container rounded-full text-[10px] font-bold uppercase tracking-wider">Work</span>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-2">UI Audit Feedback</h3>
+<p class="text-sm text-on-surface-variant line-clamp-3 leading-relaxed">The user testing group mentioned that the navigation labels were a bit small on mobile devices. Recommendation: increase tap targets and font-size for accessibility...</p>
+</div>
+<div class="mt-auto pt-4 flex items-center justify-between border-t border-surface-container text-[11px] font-medium text-outline">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-xs">schedule</span>
+<span>Updated 1 week ago</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Preview Pane / Focus Mode View (Glassmorphism Sidebar) -->
+<aside class="w-[420px] bg-surface-bright/80 backdrop-blur-xl rounded-[2rem] flex flex-col shadow-[0px_12px_32px_rgba(43,52,55,0.06)] border border-outline-variant/15 overflow-hidden">
+<div class="h-48 w-full relative">
+<img class="w-full h-full object-cover" data-alt="minimalist office setup with a plant and natural sunlight casting soft shadows on a white desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkrbvDlXNWo6L2ual6pgqSVg-dhaZo7pttiu04_po1NzJg1uXXJyQFFUIpAhGcIQRzEVWGjUJiUU-uoCE4CYEWbVHsMAJITfZEG5su7voHQV8tZbK1tGFVPZC5Xrf-uSwplBKJ0na-97KI36ZwgGLICbFtGXZRWZJ1jNWQJP6dhhNLLu8Eyeg4bkt72ULdI3NwEdTUtuEXl86gO4hrwPMxoS00vGvGXotZnOCnHkYrEqpJISFyPlSgg7oWLNib-tYcXwzD7vJ_odE6"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-bright to-transparent"></div>
+<button class="absolute top-4 right-4 p-2 bg-surface-container-lowest/80 backdrop-blur-md rounded-full shadow-lg">
+<span class="material-symbols-outlined text-primary">fullscreen</span>
+</button>
+</div>
+<div class="p-8 flex-1 flex flex-col gap-6 overflow-y-auto custom-scrollbar">
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-container rounded-full text-[10px] font-bold uppercase">Work</span>
+<span class="px-3 py-1 bg-surface-container-highest text-on-surface-variant rounded-full text-[10px] font-bold uppercase tracking-wider">Strategy</span>
+</div>
+<div>
+<h2 class="text-3xl font-extrabold text-on-background leading-tight mb-4">Q4 Strategic Overview</h2>
+<div class="flex items-center gap-4 text-xs text-outline mb-6">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">person</span>
+<span>Alex Rivera</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+<span>Oct 24, 2023</span>
+</div>
+</div>
+<div class="prose prose-sm text-on-surface-variant leading-loose space-y-4">
+<p>The primary focus for the upcoming quarter should revolve around scaling the workspace interface for enterprise clients. We need to ensure that the "Zen" aesthetic is maintained even when handling large datasets and complex team hierarchies.</p>
+<p>Key pillars for development:</p>
+<ul class="list-disc pl-5 space-y-2">
+<li>Enhanced collaborative real-time editing.</li>
+<li>Deep integration with 3rd party calendar services.</li>
+<li>Advanced focus-mode presets for deep work.</li>
+</ul>
+<p>Current feedback from beta users suggests that the minimal aesthetic is a significant competitive advantage. We must protect the "breathability" of the canvas above all else.</p>
+</div>
+</div>
+<div class="mt-auto pt-8 flex gap-3">
+<button class="flex-1 py-3 bg-primary text-on-primary rounded-full font-bold hover:bg-primary-dim transition-all shadow-lg shadow-primary/10">Edit Note</button>
+<button class="p-3 bg-surface-container text-primary rounded-full hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">share</span>
+</button>
+<button class="p-3 bg-surface-container text-primary rounded-full hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- FAB for focused task -->
+<div class="fixed bottom-8 right-8 z-50">
+<button class="w-14 h-14 bg-gradient-to-br from-primary to-primary-dim text-on-primary rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform active:scale-95 group">
+<span class="material-symbols-outlined text-2xl group-hover:rotate-90 transition-transform duration-300">add</span>
+</button>
+</div>
+<style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #d2dcdf;
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #aab4b7;
+        }
+    </style>
+</body></html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Register</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              outline: "#737c80",
+              "primary-dim": "#315b4d",
+              "surface-dim": "#d2dcdf",
+              "outline-variant": "#aab4b7",
+              "surface-tint": "#3d6758",
+              "surface-container": "#e8eff2",
+              "secondary-container": "#bdeaf8",
+              "on-primary-fixed": "#1c4739",
+              "surface-variant": "#dae4e8",
+              "surface-container-lowest": "#ffffff",
+              primary: "#3d6758",
+              tertiary: "#486083",
+              "secondary-fixed": "#bdeaf8",
+              "on-primary-container": "#2f594b",
+              "surface-container-low": "#eff4f7",
+              "surface-container-highest": "#dae4e8",
+              background: "#f6fafb",
+              "on-secondary-container": "#2c5863",
+              "tertiary-dim": "#3b5476",
+              "inverse-surface": "#0a0f10",
+              "on-error": "#fff7f6",
+              "on-tertiary-fixed-variant": "#334c6e",
+              "inverse-on-surface": "#999d9f",
+              "error-container": "#fa746f",
+              "primary-container": "#beecda",
+              "on-tertiary-fixed": "#142f4f",
+              "on-error-container": "#6e0a12",
+              "primary-fixed": "#beecda",
+              "on-secondary-fixed": "#174550",
+              "secondary-dim": "#2e5965",
+              "on-surface": "#2b3437",
+              "surface-container-high": "#e1e9ed",
+              "secondary-fixed-dim": "#afdce9",
+              "on-tertiary-container": "#2a4364",
+              "on-primary-fixed-variant": "#396355",
+              surface: "#f6fafb",
+              "tertiary-fixed-dim": "#a4bde4",
+              "on-surface-variant": "#576164",
+              "on-secondary-fixed-variant": "#37616d",
+              "inverse-primary": "#cffeeb",
+              "tertiary-fixed": "#b2cbf3",
+              "primary-fixed-dim": "#b1decc",
+              "on-background": "#2b3437",
+              "on-tertiary": "#f8f8ff",
+              "on-secondary": "#effbff",
+              "tertiary-container": "#b2cbf3",
+              "on-primary": "#e4fff3",
+              "error-dim": "#67040d",
+              secondary: "#3a6571",
+              error: "#a83836",
+              "surface-bright": "#f6fafb"
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem"
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Inter"],
+              label: ["Inter"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .auth-photo::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(145deg, rgba(255,255,255,0.26), rgba(255,255,255,0.02) 42%, rgba(43,52,55,0.08));
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-[#f6f6f2] text-on-surface antialiased overflow-x-hidden" data-page="register">
+<header class="w-full bg-[#f6f6f2] font-['Manrope'] text-sm">
+<div class="mx-auto flex w-full max-w-[1440px] items-center justify-between px-6 py-6 md:px-12">
+<div class="h-6 w-28" aria-hidden="true"></div>
+<nav class="hidden items-center gap-8 md:flex">
+<a class="text-[#2b3437]/60 transition-colors duration-300 hover:text-[#3d6758]" href="/login">Login</a>
+<a class="text-[#2b3437]/60 transition-colors duration-300 hover:text-[#3d6758]" href="/forgot-password">Forgot password</a>
+<a class="rounded-full bg-primary px-6 py-2 font-semibold text-on-primary transition-all hover:opacity-90" href="/login">Sign In</a>
+</nav>
+</div>
+</header>
+<main class="w-full px-4 pb-10 sm:px-6 lg:px-10">
+<div class="mx-auto max-w-[1280px]">
+<section class="grid min-h-[calc(100vh-7rem)] grid-cols-1 overflow-hidden rounded-[2rem] bg-white shadow-[0_24px_80px_rgba(43,52,55,0.08)] lg:grid-cols-[1.02fr_0.98fr]">
+<div class="auth-photo relative hidden min-h-[740px] overflow-hidden bg-[#d8d0c1] lg:block">
+<img alt="Decorative calm interior with potted plant and soft diagonal sunlight" class="h-full w-full object-cover" src="/uploads/anh%20%C4%91%C4%83ng%20k%C3%AD.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#d7d1c5]/30 via-transparent to-white/10"></div>
+<div class="absolute bottom-14 left-10 max-w-[23rem] rounded-[1.6rem] bg-white/88 p-8 shadow-[0_24px_55px_rgba(43,52,55,0.12)] backdrop-blur-sm">
+<h2 class="text-[2.15rem] font-extrabold leading-tight text-[#222b2d]">Your journey to clarity starts here.</h2>
+<p class="mt-5 text-[1.05rem] leading-8 text-[#596365]">
+            Join a community of focused thinkers who prioritize cognitive ease and beautiful organization.
+          </p>
+<div class="mt-8 flex items-center gap-4">
+<div class="flex -space-x-3">
+<span class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-white bg-[#d9b49b] text-xs font-bold text-white">A</span>
+<span class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-white bg-[#6e7f62] text-xs font-bold text-white">J</span>
+<span class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-white bg-[#2f4b57] text-xs font-bold text-white">K</span>
+</div>
+<p class="text-sm font-semibold text-[#596365]">Over 10,000+ creators already inside.</p>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-center bg-white px-6 py-12 sm:px-10 lg:px-16 xl:px-20">
+<div class="w-full max-w-[430px]">
+<div class="mb-10">
+<h2 class="text-[2rem] font-bold tracking-tight text-[#2b3437]">Create an account</h2>
+<p class="mt-2 text-[1rem] text-[#7b8386]">Start building a calmer workspace today.</p>
+</div>
+<form class="space-y-6" id="register-form">
+<div class="space-y-2">
+<label class="ml-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#6f777a]" for="register-full-name">Full Name</label>
+<input class="w-full rounded-xl border border-[#edf0f2] bg-[#f5f8fb] px-5 py-4 text-[#2b3437] placeholder:text-[#c2c8cc] transition-all duration-200 focus:border-[#b3cec0] focus:bg-white focus:ring-2 focus:ring-primary/10" id="register-full-name" name="fullName" placeholder="John Doe" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="ml-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#6f777a]" for="register-email">Email Address</label>
+<input class="w-full rounded-xl border border-[#edf0f2] bg-[#f5f8fb] px-5 py-4 text-[#2b3437] placeholder:text-[#c2c8cc] transition-all duration-200 focus:border-[#b3cec0] focus:bg-white focus:ring-2 focus:ring-primary/10" id="register-email" name="email" placeholder="name@domain.com" type="email"/>
+</div>
+<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+<div class="space-y-2">
+<label class="ml-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#6f777a]" for="register-password">Password</label>
+<input class="w-full rounded-xl border border-[#edf0f2] bg-[#f5f8fb] px-5 py-4 text-[#2b3437] placeholder:text-[#c2c8cc] transition-all duration-200 focus:border-[#b3cec0] focus:bg-white focus:ring-2 focus:ring-primary/10" id="register-password" name="password" placeholder="••••••••" type="password"/>
+</div>
+<div class="space-y-2">
+<label class="ml-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#6f777a]" for="register-confirm-password">Confirm Password</label>
+<input class="w-full rounded-xl border border-[#edf0f2] bg-[#f5f8fb] px-5 py-4 text-[#2b3437] placeholder:text-[#c2c8cc] transition-all duration-200 focus:border-[#b3cec0] focus:bg-white focus:ring-2 focus:ring-primary/10" id="register-confirm-password" name="confirmPassword" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<div class="rounded-2xl bg-[#f7faf8] px-5 py-4 text-sm leading-relaxed text-[#667072]">
+          Passwords must include an uppercase letter, lowercase letter, number, and special character.
+        </div>
+<div class="ml-1 flex items-center space-x-3">
+<input class="h-5 w-5 cursor-pointer rounded border-[#d4d9de] text-primary focus:ring-primary/20" id="register-remember" name="remember" type="checkbox"/>
+<label class="cursor-pointer select-none text-sm text-[#5e676a]" for="register-remember">Keep me signed in on this device</label>
+</div>
+<div class="ml-1 flex items-start gap-3">
+<input class="mt-1 h-5 w-5 cursor-pointer rounded border-[#d4d9de] text-primary focus:ring-primary/20" id="register-terms" name="acceptTerms" type="checkbox"/>
+<label class="cursor-pointer select-none text-sm leading-relaxed text-[#5e676a]" for="register-terms">
+            I agree to the Terms and Conditions and Privacy Policy.
+          </label>
+</div>
+<div class="pt-2">
+<button class="w-full rounded-2xl bg-primary py-4 text-lg font-bold text-on-primary shadow-[0_16px_36px_rgba(61,103,88,0.18)] transition-all duration-200 hover:opacity-95 active:scale-[0.98]" type="submit">Create Account</button>
+</div>
+<p class="min-h-6 text-sm font-medium text-error" id="register-error"></p>
+<div class="pt-2 text-center text-sm text-[#7f888b]">
+<p>
+            Already have an account?
+            <a class="ml-1 font-bold text-primary hover:underline underline-offset-4" href="/login">Log in</a>
+</p>
+</div>
+<div class="pt-6">
+<p class="text-center text-[11px] font-bold uppercase tracking-[0.34em] text-[#a0a8ac]">Or Register With</p>
+<div class="mt-5 grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-3 rounded-2xl border border-[#eef1f3] bg-[#f6f9fb] px-4 py-3 text-sm font-semibold text-[#445053] transition-colors hover:bg-white" type="button">
+<span class="flex h-5 w-5 items-center justify-center rounded-full bg-white text-[11px] font-bold text-[#3574e5]">G</span>
+<span>Google</span>
+</button>
+<button class="flex items-center justify-center gap-3 rounded-2xl border border-[#eef1f3] bg-[#f6f9fb] px-4 py-3 text-sm font-semibold text-[#445053] transition-colors hover:bg-white" type="button">
+<span class="material-symbols-outlined text-lg">ios</span>
+<span>Apple</span>
+</button>
+</div>
+</div>
+</form>
+<div class="mt-8 text-center text-sm text-[#7f888b]">
+<p>
+            Need help recovering access?
+            <a class="ml-1 font-bold text-primary hover:underline underline-offset-4" href="/forgot-password">Reset password</a>
+</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<script src="/assets/js/app.js"></script>
+</body></html>
