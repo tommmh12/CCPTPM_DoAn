@@ -50,7 +50,6 @@ const state = {
     tags: []
   }
 };
-<<<<<<< HEAD
 let googleIdentityScriptPromise = null;
 const runtimeConfig = {
   apiBaseUrl: ""
@@ -89,8 +88,6 @@ function buildApiUrl(url) {
 
   return `${runtimeConfig.apiBaseUrl}${url.startsWith("/") ? url : `/${url}`}`;
 }
-=======
->>>>>>> 0bc4cf3cbaefa3effd59dd40fcec691490a60326
 
 function defaultTaskComposerDraft() {
   return {

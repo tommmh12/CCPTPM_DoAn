@@ -10,12 +10,12 @@ const { env } = require("./config/env");
 
 const app = express();
 const frontendDir = path.join(__dirname, "..", "html_renamed_for_copy");
-<<<<<<< HEAD
 const trustProxyValue = String(env.trustProxy).trim().toLowerCase();
 const corsAllowedOrigins = String(env.corsAllowedOrigins)
   .split(",")
   .map((value) => value.trim())
   .filter(Boolean);
+const uploadsDir = path.join(__dirname, "..", "uploads");
 
 function appendVaryHeader(res, value) {
   const currentValue = res.getHeader("Vary");
@@ -39,9 +39,6 @@ function appendVaryHeader(res, value) {
 function isOriginAllowed(origin) {
   return corsAllowedOrigins.includes("*") || corsAllowedOrigins.includes(origin);
 }
-=======
-const uploadsDir = path.join(__dirname, "..", "uploads");
->>>>>>> 0bc4cf3cbaefa3effd59dd40fcec691490a60326
 
 app.disable("x-powered-by");
 
