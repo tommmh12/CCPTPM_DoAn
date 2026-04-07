@@ -140,6 +140,7 @@ async function detail(req, res) {
     throw httpError(404, "Task not found");
   }
 
+  // Load the related task detail fragments in parallel for the detail API response.
   const [[subtasks], [activity], [tags]] = await Promise.all([
     pool.query(
       `
