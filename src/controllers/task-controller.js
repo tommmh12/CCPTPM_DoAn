@@ -313,6 +313,7 @@ async function update(req, res) {
   const connection = await pool.getConnection();
 
   try {
+    // Persist the edited task fields and refresh its nested relations inside one transaction.
     await connection.beginTransaction();
 
     const [tasks] = await connection.query(
