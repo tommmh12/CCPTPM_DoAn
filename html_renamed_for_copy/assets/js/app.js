@@ -50,7 +50,6 @@ const state = {
     tags: []
   }
 };
-<<<<<<< HEAD
 let googleIdentityScriptPromise = null;
 const runtimeConfig = {
   apiBaseUrl: ""
@@ -89,8 +88,6 @@ function buildApiUrl(url) {
 
   return `${runtimeConfig.apiBaseUrl}${url.startsWith("/") ? url : `/${url}`}`;
 }
-=======
->>>>>>> 0bc4cf3cbaefa3effd59dd40fcec691490a60326
 
 function defaultTaskComposerDraft() {
   return {
@@ -3974,7 +3971,7 @@ async function initCreateTaskPage() {
         priority: selectedPriority,
         dueAt: dueInput.value ? toSqlDateTime(dueInput.value) : null,
         reminderAt: dueInput.value ? toSqlDateTime(dueInput.value) : null,
-        projectId: Number(projectSelect.value),
+        projectId: projectSelect.value ? Number(projectSelect.value) : null,
         tagIds: Array.from(selectedTagIds),
         subtasks: Array.from(document.querySelectorAll("[data-subtask-input]"))
           .map((input) => input.value.trim())
