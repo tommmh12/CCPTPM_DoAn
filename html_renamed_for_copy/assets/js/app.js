@@ -2676,6 +2676,7 @@ function bindTaskEditorModal() {
       description: descriptionInput.value.trim(),
       projectId: projectSelect.value ? Number(projectSelect.value) : null,
       priority: state.taskEditorPriority,
+      // Keep the deadline and reminder aligned when the editor saves a scheduled task.
       dueAt: dueAtInput.value ? toSqlDateTime(dueAtInput.value) : null,
       reminderAt: dueAtInput.value ? toSqlDateTime(dueAtInput.value) : null,
       tagIds: Array.from(state.taskEditorTagIds),
