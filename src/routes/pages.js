@@ -3,7 +3,7 @@ const path = require("path");
 
 function pageRouter(frontendDir) {
   const router = express.Router();
-
+  //
   const pages = {
     "/": "07-ethereal-canvas-login.html",
     "/login": "07-ethereal-canvas-login.html",
@@ -18,7 +18,7 @@ function pageRouter(frontendDir) {
     "/profile/edit": "22-zen-workspace-edit-profile.html",
     "/settings": "24-zen-workspace-settings-preferences.html",
     "/settings/preferences": "24-zen-workspace-settings-preferences.html",
-    "/settings/security": "23-zen-workspace-change-password.html"
+    "/settings/security": "23-zen-workspace-change-password.html",
   };
 
   for (const [routePath, fileName] of Object.entries(pages)) {

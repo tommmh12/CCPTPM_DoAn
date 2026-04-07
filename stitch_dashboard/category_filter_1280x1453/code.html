@@ -1,89 +1,103 @@
-<!DOCTYPE html>
-
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>ZenSpace Templates - Project Management</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<!doctype html>
+//
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>ZenSpace Templates - Project Management</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
-            "colors": {
-                    "on-surface-variant": "#576164",
-                    "surface-bright": "#f6fafb",
-                    "primary-fixed-dim": "#b1decc",
-                    "tertiary-fixed": "#b2cbf3",
-                    "secondary-container": "#bdeaf8",
-                    "error-dim": "#67040d",
-                    "primary": "#3d6758",
-                    "tertiary-dim": "#3b5476",
-                    "on-primary": "#e4fff3",
-                    "inverse-primary": "#cffeeb",
-                    "secondary": "#3a6571",
-                    "primary-fixed": "#beecda",
-                    "on-primary-container": "#2f594b",
-                    "outline": "#737c80",
-                    "secondary-fixed-dim": "#afdce9",
-                    "tertiary-container": "#b2cbf3",
-                    "on-error-container": "#6e0a12",
-                    "on-surface": "#2b3437",
-                    "on-primary-fixed": "#1c4739",
-                    "inverse-surface": "#0a0f10",
-                    "secondary-fixed": "#bdeaf8",
-                    "error-container": "#fa746f",
-                    "surface": "#f6fafb",
-                    "primary-dim": "#315b4d",
-                    "on-background": "#2b3437",
-                    "surface-variant": "#dae4e8",
-                    "on-secondary-fixed": "#174550",
-                    "on-secondary-container": "#2c5863",
-                    "surface-container": "#e8eff2",
-                    "tertiary-fixed-dim": "#a4bde4",
-                    "on-secondary": "#effbff",
-                    "on-tertiary": "#f8f8ff",
-                    "surface-container-low": "#eff4f7",
-                    "on-tertiary-container": "#2a4364",
-                    "surface-tint": "#3d6758",
-                    "secondary-dim": "#2e5965",
-                    "on-error": "#fff7f6",
-                    "surface-container-high": "#e1e9ed",
-                    "on-tertiary-fixed": "#142f4f",
-                    "surface-container-lowest": "#ffffff",
-                    "surface-container-highest": "#dae4e8",
-                    "on-primary-fixed-variant": "#396355",
-                    "tertiary": "#486083",
-                    "error": "#a83836",
-                    "surface-dim": "#d2dcdf",
-                    "outline-variant": "#aab4b7",
-                    "on-secondary-fixed-variant": "#37616d",
-                    "inverse-on-surface": "#999d9f",
-                    "background": "#f6fafb",
-                    "primary-container": "#beecda",
-                    "on-tertiary-fixed-variant": "#334c6e"
+            colors: {
+              "on-surface-variant": "#576164",
+              "surface-bright": "#f6fafb",
+              "primary-fixed-dim": "#b1decc",
+              "tertiary-fixed": "#b2cbf3",
+              "secondary-container": "#bdeaf8",
+              "error-dim": "#67040d",
+              primary: "#3d6758",
+              "tertiary-dim": "#3b5476",
+              "on-primary": "#e4fff3",
+              "inverse-primary": "#cffeeb",
+              secondary: "#3a6571",
+              "primary-fixed": "#beecda",
+              "on-primary-container": "#2f594b",
+              outline: "#737c80",
+              "secondary-fixed-dim": "#afdce9",
+              "tertiary-container": "#b2cbf3",
+              "on-error-container": "#6e0a12",
+              "on-surface": "#2b3437",
+              "on-primary-fixed": "#1c4739",
+              "inverse-surface": "#0a0f10",
+              "secondary-fixed": "#bdeaf8",
+              "error-container": "#fa746f",
+              surface: "#f6fafb",
+              "primary-dim": "#315b4d",
+              "on-background": "#2b3437",
+              "surface-variant": "#dae4e8",
+              "on-secondary-fixed": "#174550",
+              "on-secondary-container": "#2c5863",
+              "surface-container": "#e8eff2",
+              "tertiary-fixed-dim": "#a4bde4",
+              "on-secondary": "#effbff",
+              "on-tertiary": "#f8f8ff",
+              "surface-container-low": "#eff4f7",
+              "on-tertiary-container": "#2a4364",
+              "surface-tint": "#3d6758",
+              "secondary-dim": "#2e5965",
+              "on-error": "#fff7f6",
+              "surface-container-high": "#e1e9ed",
+              "on-tertiary-fixed": "#142f4f",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-highest": "#dae4e8",
+              "on-primary-fixed-variant": "#396355",
+              tertiary: "#486083",
+              error: "#a83836",
+              "surface-dim": "#d2dcdf",
+              "outline-variant": "#aab4b7",
+              "on-secondary-fixed-variant": "#37616d",
+              "inverse-on-surface": "#999d9f",
+              background: "#f6fafb",
+              "primary-container": "#beecda",
+              "on-tertiary-fixed-variant": "#334c6e",
             },
-            "borderRadius": {
-                    "DEFAULT": "0.125rem",
-                    "lg": "0.25rem",
-                    "xl": "0.5rem",
-                    "full": "0.75rem"
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
             },
-            "fontFamily": {
-                    "headline": ["Manrope"],
-                    "body": ["Inter"],
-                    "label": ["Inter"]
-            }
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
           },
         },
-      }
+      };
     </script>
-<style>
+    <style>
       .material-symbols-outlined {
-        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
       }
       .glass-card {
         background: rgba(255, 255, 255, 0.8);
@@ -91,252 +105,532 @@
         -webkit-backdrop-filter: blur(20px);
       }
       body {
-        font-family: 'Inter', sans-serif;
+        font-family: "Inter", sans-serif;
         background-color: #f6fafb;
       }
-      h1, h2, h3 {
-        font-family: 'Manrope', sans-serif;
+      h1,
+      h2,
+      h3 {
+        font-family: "Manrope", sans-serif;
       }
     </style>
-</head>
-<body class="bg-background text-on-surface overflow-x-hidden">
-<!-- TopAppBar -->
-<header class="w-full sticky top-0 z-50 bg-[#f6fafb] dark:bg-slate-900 no-border">
-<div class="flex items-center justify-between px-8 py-4 w-full max-w-[1920px] mx-auto">
-<div class="flex items-center gap-12">
-<span class="text-xl font-bold text-[#2b3437] dark:text-white tracking-tighter">ZenSpace Templates</span>
-<nav class="hidden md:flex gap-8 items-center">
-<a class="text-[#3d6758] dark:text-[#b1decc] font-bold border-b-2 border-[#3d6758] pb-1 font-manrope text-sm tracking-tight hover:opacity-100 transition-opacity duration-200" href="#">Discover</a>
-<a class="text-[#2b3437] dark:text-slate-400 opacity-70 font-manrope text-sm font-medium tracking-tight hover:opacity-100 transition-opacity duration-200" href="#">Wishlist</a>
-<a class="text-[#2b3437] dark:text-slate-400 opacity-70 font-manrope text-sm font-medium tracking-tight hover:opacity-100 transition-opacity duration-200" href="#">My Assets</a>
-</nav>
-</div>
-<div class="flex items-center gap-6">
-<div class="hidden lg:flex items-center bg-surface-container-low px-4 py-2 rounded-full w-64">
-<span class="material-symbols-outlined text-outline text-lg mr-2" data-icon="search">search</span>
-<input class="bg-transparent border-none focus:ring-0 text-sm w-full font-body" placeholder="Search templates..." type="text"/>
-</div>
-<div class="flex items-center gap-4">
-<button class="text-on-surface-variant hover:opacity-100 transition-opacity scale-95 active:transition-transform">
-<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
-</button>
-<button class="text-on-surface-variant hover:opacity-100 transition-opacity scale-95 active:transition-transform">
-<span class="material-symbols-outlined" data-icon="settings">settings</span>
-</button>
-<div class="h-8 w-8 rounded-full overflow-hidden">
-<img alt="User profile" data-alt="professional headshot of a creative professional woman with soft studio lighting and neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfHHtO0IbvArK-OhOApy46UgXDnZKfkysMtJNm125Yk9-JTEo4C_ZZKfOtvGKaEDba-4UHLJTK6xax4ukfsTjsMkRrvw5v6RPfqDGntjC7oz_dAvMxf88XPYGYN5uZ_aDbqyeCFdA70Jh-YMCKbC7AEL12YO5W_FRAWGt5B8ynnAZG9WTntNLNrhAqhp7CCPaHPnluTbT55FPyAV_hdMSEq7Z980Z-7clMPQ9OC_YWQYZkmyHC1wHaMFzUXRRQKRkXH3QCmzjzfqgY"/>
-</div>
-</div>
-</div>
-</div>
-</header>
-<div class="flex max-w-[1920px] mx-auto min-h-screen">
-<!-- SideNavBar -->
-<aside class="h-screen w-64 sticky left-0 bg-[#e8eff2] dark:bg-slate-800/50 flex flex-col h-full py-8 pr-4">
-<div class="px-6 mb-8">
-<h3 class="text-on-surface font-headline font-bold text-lg">Categories</h3>
-<p class="text-on-surface-variant text-xs font-body opacity-70">Filter by workflow</p>
-</div>
-<nav class="flex-grow space-y-1">
-<a class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 py-2 px-6 font-inter text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors ease-in-out duration-150" href="#">
-<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
-<span>All Templates</span>
-</a>
-<a class="flex items-center gap-3 text-[#3d6758] dark:text-[#b1decc] font-semibold bg-[#ffffff] dark:bg-slate-700/50 rounded-r-full py-2 px-6 font-inter text-sm transition-colors ease-in-out duration-150" href="#">
-<span class="material-symbols-outlined" data-icon="trello">pinboard</span>
-<span>Project Management</span>
-</a>
-<a class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 py-2 px-6 font-inter text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors ease-in-out duration-150" href="#">
-<span class="material-symbols-outlined" data-icon="self_improvement">self_improvement</span>
-<span>Personal Growth</span>
-</a>
-<a class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 py-2 px-6 font-inter text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors ease-in-out duration-150" href="#">
-<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
-<span>Technical Writing</span>
-</a>
-<a class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 py-2 px-6 font-inter text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors ease-in-out duration-150" href="#">
-<span class="material-symbols-outlined" data-icon="school">school</span>
-<span>Education</span>
-</a>
-<a class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 py-2 px-6 font-inter text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors ease-in-out duration-150" href="#">
-<span class="material-symbols-outlined" data-icon="palette">palette</span>
-<span>Creative Studio</span>
-</a>
-</nav>
-<div class="mt-auto px-2 space-y-1">
-<a class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 py-2 px-6 font-inter text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors ease-in-out duration-150" href="#">
-<span class="material-symbols-outlined" data-icon="help">help</span>
-<span>Support</span>
-</a>
-<a class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 py-2 px-6 font-inter text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors ease-in-out duration-150" href="#">
-<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
-<span>Feedback</span>
-</a>
-</div>
-</aside>
-<!-- Main Content Area -->
-<main class="flex-grow p-12 bg-background">
-<!-- Category Header -->
-<header class="mb-12 flex items-end justify-between">
-<div class="max-w-2xl">
-<div class="flex items-center gap-2 mb-4">
-<span class="px-3 py-1 bg-primary-container text-on-primary-container rounded-full text-xs font-bold tracking-widest uppercase">Premium Library</span>
-</div>
-<h2 class="text-4xl font-headline font-extrabold text-on-surface mb-4 tracking-tight">Project Management</h2>
-<p class="text-lg text-on-surface-variant font-body leading-relaxed max-w-xl">Streamline your workflow with curated frameworks designed for efficiency. From agile sprints to strategic roadmaps, build with clarity.</p>
-</div>
-<div class="flex gap-4">
-<button class="flex items-center gap-2 px-6 py-3 bg-white text-on-surface rounded-full font-label font-semibold text-sm hover:bg-surface-container-high transition-colors">
-<span class="material-symbols-outlined text-xl" data-icon="sort">sort</span>
-                        Latest
-                    </button>
-<button class="flex items-center gap-2 px-6 py-3 bg-primary text-on-primary rounded-full font-label font-semibold text-sm hover:opacity-90 transition-opacity">
-<span class="material-symbols-outlined text-xl" data-icon="filter_list">filter_list</span>
-                        Filters
-                    </button>
-</div>
-</header>
-<!-- Grid Content (Asymmetric Bento Style) -->
-<div class="grid grid-cols-12 gap-6">
-<!-- Large Featured Card -->
-<div class="col-span-8 group">
-<div class="relative h-[480px] rounded-3xl overflow-hidden bg-surface-container-lowest transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5">
-<img alt="Agile workspace" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="clean minimal designer workspace with apple monitor showing project boards and a small green plant in soft daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH_CifUiEuhce43HSCFfSebSvsv0Krz7Ojj5ug_vOCTXRRt2xxKZwh3Y6Wl3eqqBdeOuYptcBmvNEHUzyWS4oio4PhzpthyaKjA6luhVHQ9Xxrd6E_eNtWHHG4_NqRFUPOqGm_6DlhT9GJT1BbcSvUgU7O8icOuXY6ENP2HyCPi0k48Dv-rAg4DbNQV4npSHEMmV-rEz14HggnvaLodE8VliLA3tPs_WAh9hUBYHl8tsf3uS8WxGUwiWfx_WM8R2ckkILDVItxwjPE"/>
-<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-on-surface/20 to-transparent"></div>
-<div class="absolute bottom-0 left-0 p-10 w-full">
-<div class="flex gap-2 mb-4">
-<span class="px-3 py-1 bg-tertiary text-on-tertiary rounded-full text-xs font-medium">Agile Framework</span>
-<span class="px-3 py-1 bg-white/20 backdrop-blur-md text-white rounded-full text-xs font-medium">Masterclass</span>
-</div>
-<h3 class="text-3xl font-headline font-bold text-white mb-2">The Ultimate Sprint Operating System</h3>
-<p class="text-white/80 font-body mb-6 max-w-lg">A comprehensive dashboard for high-performing product teams. Includes backlog grooming, velocity tracking, and retrospective templates.</p>
-<button class="px-8 py-3 bg-white text-on-surface rounded-full font-label font-bold text-sm hover:scale-105 active:scale-95 transition-all">Download Template</button>
-</div>
-</div>
-</div>
-<!-- Vertical Featured Card -->
-<div class="col-span-4 space-y-6">
-<div class="h-[230px] rounded-3xl bg-secondary-container p-8 flex flex-col justify-between hover:bg-secondary-fixed transition-colors">
-<div>
-<span class="material-symbols-outlined text-3xl text-on-secondary-container mb-4" data-icon="auto_awesome">auto_awesome</span>
-<h4 class="text-xl font-headline font-bold text-on-secondary-container">Strategic Roadmap 2024</h4>
-</div>
-<p class="text-on-secondary-container/70 text-sm font-body">Visualize your long-term goals with our executive-ready template.</p>
-</div>
-<div class="h-[226px] rounded-3xl bg-surface-container-low p-8 border border-outline-variant/15 flex flex-col justify-between hover:bg-surface-container-high transition-colors">
-<div>
-<span class="material-symbols-outlined text-3xl text-primary mb-4" data-icon="account_tree">account_tree</span>
-<h4 class="text-xl font-headline font-bold text-on-surface">Client Portal Kit</h4>
-</div>
-<p class="text-on-surface-variant text-sm font-body">A professional bridge between your agency and its stakeholders.</p>
-</div>
-</div>
-<!-- Secondary Row -->
-<div class="col-span-4 group">
-<div class="bg-surface-container-lowest rounded-3xl p-6 transition-all hover:bg-surface-container-high">
-<div class="aspect-video rounded-2xl overflow-hidden mb-6">
-<img alt="Checklist" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="close up of a neat leather-bound planner with focus on a checklist and elegant silver pen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX23Ak96DemHi-UEg6F1_KsS7aDEHaOolXfxq5OMeBAqJ48wzTveK-VPgZAq5In3WaSy2z9_9CrKi6SGEVe9FN_-baBnJ6TMA-TSSMkEmgX_wUuVsAhsV_FwboxZZ15DChJ5zzSD-RU5-czWfCuAy63bBMXijaXKWPPd7VfgkKjYwds7nHAQgjwByz5kPoDik-YvnH20v3uNOkau7gI8AqIAvyN4tkzkEo4cGglr3v0rkBd1EIEU2NnTvMHTlGCDCuqk9u6ztQVRZL"/>
-</div>
-<h4 class="text-lg font-headline font-bold text-on-surface mb-2">Daily Standup Logger</h4>
-<div class="flex flex-wrap gap-2 mb-4">
-<span class="text-[10px] uppercase font-bold tracking-tighter text-on-surface-variant">Management</span>
-<span class="text-[10px] uppercase font-bold tracking-tighter text-on-surface-variant">•</span>
-<span class="text-[10px] uppercase font-bold tracking-tighter text-on-surface-variant">Workflow</span>
-</div>
-<p class="text-sm text-on-surface-variant font-body mb-6">Never lose track of blockers again. Optimized for asynchronous teams.</p>
-<div class="flex items-center justify-between">
-<span class="text-primary font-bold">$12</span>
-<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-white transition-all">
-<span class="material-symbols-outlined" data-icon="add">add</span>
-</button>
-</div>
-</div>
-</div>
-<div class="col-span-4 group">
-<div class="bg-surface-container-lowest rounded-3xl p-6 transition-all hover:bg-surface-container-high">
-<div class="aspect-video rounded-2xl overflow-hidden mb-6">
-<img alt="Team meeting" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="modern glass walled office with diverse group of people collaborating around a wooden table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvhhyuqyQuWAgi8EMF_w32NdlizkVuwMF4YMh2F3udIndNmi2MYq9OB0nzCKiot5e5OgE2043YfNPQybN13KiGszysFbpPIIJWWlqe88ZkK3v06K3LtPf9EUCl1p6CtAf3I42DP6R6iLOh93X0mfRe9F9xpDwlFQX0fv2XNOBconsEFXha5tRn-7vvunyGWiX8nLz9rLTaaAkF0RHageFlu_Ulhkl-YvRJTcdru316fABAh4qntLN6bCCiyXA1N8ocNJTQeK9NE6YN"/>
-</div>
-<h4 class="text-lg font-headline font-bold text-on-surface mb-2">Resource Planner Pro</h4>
-<div class="flex flex-wrap gap-2 mb-4">
-<span class="text-[10px] uppercase font-bold tracking-tighter text-on-surface-variant">HR</span>
-<span class="text-[10px] uppercase font-bold tracking-tighter text-on-surface-variant">•</span>
-<span class="text-[10px] uppercase font-bold tracking-tighter text-on-surface-variant">Budgeting</span>
-</div>
-<p class="text-sm text-on-surface-variant font-body mb-6">Allocating talent across multiple projects without the burnout.</p>
-<div class="flex items-center justify-between">
-<span class="text-primary font-bold">Free</span>
-<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-white transition-all">
-<span class="material-symbols-outlined" data-icon="add">add</span>
-</button>
-</div>
-</div>
-</div>
-<div class="col-span-4 group">
-<div class="bg-surface-container-lowest rounded-3xl p-6 transition-all hover:bg-surface-container-high">
-<div class="aspect-video rounded-2xl overflow-hidden mb-6">
-<img alt="Data dashboard" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="close up of a screen showing clean colorful data charts and analytics visualizations" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDF-kB1KJWkZfrGJg2ZBwiDY96BiyUBtjpxTGdmvW7usZht6aLutLQtBgYAUsNH6SXxZVjfHgtuoRwO9CnNuUl66w-6sogZ7Qdt0G4qSjCLW2EQijE6RZ1_mJ3ubaHi6ojNwMQ-JjLhizqvMhcbGTzV9Ag_1jgJ0CxQ8oapaP5wYpdk3puxmPaIFTWP7nfHJf-04uFrgbPkkAxAzKOUL0StGi_0J2t3ydmKm78qyB87cVPtgI1Pkk4Pbwqo8o3--JwlrV6_ZaHYvpyp"/>
-</div>
-<h4 class="text-lg font-headline font-bold text-on-surface mb-2">OKR Tracker Hub</h4>
-<div class="flex flex-wrap gap-2 mb-4">
-<span class="text-[10px] uppercase font-bold tracking-tighter text-on-surface-variant">Strategy</span>
-<span class="text-[10px] uppercase font-bold tracking-tighter text-on-surface-variant">•</span>
-<span class="text-[10px] uppercase font-bold tracking-tighter text-on-surface-variant">Growth</span>
-</div>
-<p class="text-sm text-on-surface-variant font-body mb-6">Align your team's output with top-level company objectives effortlessly.</p>
-<div class="flex items-center justify-between">
-<span class="text-primary font-bold">$19</span>
-<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-white transition-all">
-<span class="material-symbols-outlined" data-icon="add">add</span>
-</button>
-</div>
-</div>
-</div>
-</div>
-<!-- Pagination/Load More (Zen Style) -->
-<div class="mt-20 flex flex-col items-center">
-<div class="w-full h-[1px] bg-outline-variant/15 mb-8"></div>
-<button class="group flex flex-col items-center gap-2 text-on-surface-variant hover:text-primary transition-colors">
-<span class="text-xs font-bold uppercase tracking-widest">Discover More</span>
-<span class="material-symbols-outlined animate-bounce" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
-</button>
-</div>
-</main>
-<!-- Focus Drawer (Contextual Meta-data) -->
-<aside class="hidden xl:block w-80 sticky right-0 h-screen bg-surface-bright/80 backdrop-blur-xl border-l border-outline-variant/10 p-8">
-<div class="mb-10">
-<h4 class="text-xs font-bold uppercase tracking-[0.2em] text-on-surface-variant mb-6">Top Authors</h4>
-<div class="space-y-6">
-<div class="flex items-center gap-4">
-<img class="w-10 h-10 rounded-full object-cover" data-alt="headshot of a man with glasses and creative aesthetic in soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLo08FHLHeEKYfiXH7XW7olw44UhEHPSGSpLBNmBEN28gYW9KlCbwMJIFo8JQ-cZ67RLh3q-lGe19QCTFXv7XpiseOvcwDjobJ5V6w4-H5nw5WVlR2zPoeE9kJWeJCdLplwaaghrhRNXwIU_5zcb45TPfq0McU8Wfwdi3FzDOyXRyJK91iOjdILCspzza8vccL5V06EfIVlI5vWKRUllv4gZumJoCN3EdH2UlBFKIQLkrLoYZg-ukKNAeiHZ7FF9rP7UgBgT5HPwjH"/>
-<div>
-<p class="text-sm font-bold">Liam Chen</p>
-<p class="text-xs text-on-surface-variant">Agile Specialist</p>
-</div>
-</div>
-<div class="flex items-center gap-4">
-<img class="w-10 h-10 rounded-full object-cover" data-alt="smiling woman with vibrant energy and professional studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKpo9vFCaM4qV8eGz7oLa36zFsYwbSsLCrH86NlP33JM91kWZX6lunCc4Cz9n1FdFeZMkeLEPsDvA0qUqCAqlx85k3U_QDPsYxaBlfrpARDfAZnjZOZeZoimi18_lkR8kxKTPtgP75WIuaDuEOA2ekG7KXyNPsRk-yPJln2xT8-Ig4Rqb5oL4SSIN3HZOYolCd3O556tp3uZgcHJdIB2dJCwxI3lAa6WorOvFPIX1dcmytL2SYo2-wtqXYXdyc0BDZ8N2b-x1t2D8V"/>
-<div>
-<p class="text-sm font-bold">Elena Rodriguez</p>
-<p class="text-xs text-on-surface-variant">Operations Lead</p>
-</div>
-</div>
-</div>
-</div>
-<div class="mb-10">
-<h4 class="text-xs font-bold uppercase tracking-[0.2em] text-on-surface-variant mb-4">Trending Tags</h4>
-<div class="flex flex-wrap gap-2">
-<span class="px-3 py-1 bg-surface-container text-on-surface-variant rounded-md text-[11px] font-medium hover:bg-primary-fixed-dim transition-colors cursor-pointer">#NotionAgile</span>
-<span class="px-3 py-1 bg-surface-container text-on-surface-variant rounded-md text-[11px] font-medium hover:bg-primary-fixed-dim transition-colors cursor-pointer">#GTD</span>
-<span class="px-3 py-1 bg-surface-container text-on-surface-variant rounded-md text-[11px] font-medium hover:bg-primary-fixed-dim transition-colors cursor-pointer">#ScrumMaster</span>
-<span class="px-3 py-1 bg-surface-container text-on-surface-variant rounded-md text-[11px] font-medium hover:bg-primary-fixed-dim transition-colors cursor-pointer">#ProductivityHacks</span>
-</div>
-</div>
-<div class="p-6 bg-primary-container rounded-2xl">
-<h5 class="font-headline font-bold text-on-primary-container mb-2">Request a Template</h5>
-<p class="text-xs text-on-primary-container/80 mb-4 leading-relaxed">Can't find the specific workflow you need? Let our designers build it for you.</p>
-<button class="w-full py-2 bg-on-primary-container text-white rounded-xl text-xs font-bold">Get Started</button>
-</div>
-</aside>
-</div>
-</body></html>
+  </head>
+  <body class="bg-background text-on-surface overflow-x-hidden">
+    <!-- TopAppBar -->
+    <header
+      class="w-full sticky top-0 z-50 bg-[#f6fafb] dark:bg-slate-900 no-border"
+    >
+      <div
+        class="flex items-center justify-between px-8 py-4 w-full max-w-[1920px] mx-auto"
+      >
+        <div class="flex items-center gap-12">
+          <span
+            class="text-xl font-bold text-[#2b3437] dark:text-white tracking-tighter"
+            >ZenSpace Templates</span
+          >
+          <nav class="hidden md:flex gap-8 items-center">
+            <a
+              class="text-[#3d6758] dark:text-[#b1decc] font-bold border-b-2 border-[#3d6758] pb-1 font-manrope text-sm tracking-tight hover:opacity-100 transition-opacity duration-200"
+              href="#"
+              >Discover</a
+            >
+            <a
+              class="text-[#2b3437] dark:text-slate-400 opacity-70 font-manrope text-sm font-medium tracking-tight hover:opacity-100 transition-opacity duration-200"
+              href="#"
+              >Wishlist</a
+            >
+            <a
+              class="text-[#2b3437] dark:text-slate-400 opacity-70 font-manrope text-sm font-medium tracking-tight hover:opacity-100 transition-opacity duration-200"
+              href="#"
+              >My Assets</a
+            >
+          </nav>
+        </div>
+        <div class="flex items-center gap-6">
+          <div
+            class="hidden lg:flex items-center bg-surface-container-low px-4 py-2 rounded-full w-64"
+          >
+            <span
+              class="material-symbols-outlined text-outline text-lg mr-2"
+              data-icon="search"
+              >search</span
+            >
+            <input
+              class="bg-transparent border-none focus:ring-0 text-sm w-full font-body"
+              placeholder="Search templates..."
+              type="text"
+            />
+          </div>
+          <div class="flex items-center gap-4">
+            <button
+              class="text-on-surface-variant hover:opacity-100 transition-opacity scale-95 active:transition-transform"
+            >
+              <span class="material-symbols-outlined" data-icon="notifications"
+                >notifications</span
+              >
+            </button>
+            <button
+              class="text-on-surface-variant hover:opacity-100 transition-opacity scale-95 active:transition-transform"
+            >
+              <span class="material-symbols-outlined" data-icon="settings"
+                >settings</span
+              >
+            </button>
+            <div class="h-8 w-8 rounded-full overflow-hidden">
+              <img
+                alt="User profile"
+                data-alt="professional headshot of a creative professional woman with soft studio lighting and neutral background"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfHHtO0IbvArK-OhOApy46UgXDnZKfkysMtJNm125Yk9-JTEo4C_ZZKfOtvGKaEDba-4UHLJTK6xax4ukfsTjsMkRrvw5v6RPfqDGntjC7oz_dAvMxf88XPYGYN5uZ_aDbqyeCFdA70Jh-YMCKbC7AEL12YO5W_FRAWGt5B8ynnAZG9WTntNLNrhAqhp7CCPaHPnluTbT55FPyAV_hdMSEq7Z980Z-7clMPQ9OC_YWQYZkmyHC1wHaMFzUXRRQKRkXH3QCmzjzfqgY"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="flex max-w-[1920px] mx-auto min-h-screen">
+      <!-- SideNavBar -->
+      <aside
+        class="h-screen w-64 sticky left-0 bg-[#e8eff2] dark:bg-slate-800/50 flex flex-col h-full py-8 pr-4"
+      >
+        <div class="px-6 mb-8">
+          <h3 class="text-on-surface font-headline font-bold text-lg">
+            Categories
+          </h3>
+          <p class="text-on-surface-variant text-xs font-body opacity-70">
+            Filter by workflow
+          </p>
+        </div>
+        <nav class="flex-grow space-y-1">
+          <a
+            class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 py-2 px-6 font-inter text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors ease-in-out duration-150"
+            href="#"
+          >
+            <span class="material-symbols-outlined" data-icon="grid_view"
+              >grid_view</span
+            >
+            <span>All Templates</span>
+          </a>
+          <a
+            class="flex items-center gap-3 text-[#3d6758] dark:text-[#b1decc] font-semibold bg-[#ffffff] dark:bg-slate-700/50 rounded-r-full py-2 px-6 font-inter text-sm transition-colors ease-in-out duration-150"
+            href="#"
+          >
+            <span class="material-symbols-outlined" data-icon="trello"
+              >pinboard</span
+            >
+            <span>Project Management</span>
+          </a>
+          <a
+            class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 py-2 px-6 font-inter text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors ease-in-out duration-150"
+            href="#"
+          >
+            <span class="material-symbols-outlined" data-icon="self_improvement"
+              >self_improvement</span
+            >
+            <span>Personal Growth</span>
+          </a>
+          <a
+            class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 py-2 px-6 font-inter text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors ease-in-out duration-150"
+            href="#"
+          >
+            <span class="material-symbols-outlined" data-icon="edit_note"
+              >edit_note</span
+            >
+            <span>Technical Writing</span>
+          </a>
+          <a
+            class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 py-2 px-6 font-inter text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors ease-in-out duration-150"
+            href="#"
+          >
+            <span class="material-symbols-outlined" data-icon="school"
+              >school</span
+            >
+            <span>Education</span>
+          </a>
+          <a
+            class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 py-2 px-6 font-inter text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors ease-in-out duration-150"
+            href="#"
+          >
+            <span class="material-symbols-outlined" data-icon="palette"
+              >palette</span
+            >
+            <span>Creative Studio</span>
+          </a>
+        </nav>
+        <div class="mt-auto px-2 space-y-1">
+          <a
+            class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 py-2 px-6 font-inter text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors ease-in-out duration-150"
+            href="#"
+          >
+            <span class="material-symbols-outlined" data-icon="help">help</span>
+            <span>Support</span>
+          </a>
+          <a
+            class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 py-2 px-6 font-inter text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors ease-in-out duration-150"
+            href="#"
+          >
+            <span class="material-symbols-outlined" data-icon="chat_bubble"
+              >chat_bubble</span
+            >
+            <span>Feedback</span>
+          </a>
+        </div>
+      </aside>
+      <!-- Main Content Area -->
+      <main class="flex-grow p-12 bg-background">
+        <!-- Category Header -->
+        <header class="mb-12 flex items-end justify-between">
+          <div class="max-w-2xl">
+            <div class="flex items-center gap-2 mb-4">
+              <span
+                class="px-3 py-1 bg-primary-container text-on-primary-container rounded-full text-xs font-bold tracking-widest uppercase"
+                >Premium Library</span
+              >
+            </div>
+            <h2
+              class="text-4xl font-headline font-extrabold text-on-surface mb-4 tracking-tight"
+            >
+              Project Management
+            </h2>
+            <p
+              class="text-lg text-on-surface-variant font-body leading-relaxed max-w-xl"
+            >
+              Streamline your workflow with curated frameworks designed for
+              efficiency. From agile sprints to strategic roadmaps, build with
+              clarity.
+            </p>
+          </div>
+          <div class="flex gap-4">
+            <button
+              class="flex items-center gap-2 px-6 py-3 bg-white text-on-surface rounded-full font-label font-semibold text-sm hover:bg-surface-container-high transition-colors"
+            >
+              <span class="material-symbols-outlined text-xl" data-icon="sort"
+                >sort</span
+              >
+              Latest
+            </button>
+            <button
+              class="flex items-center gap-2 px-6 py-3 bg-primary text-on-primary rounded-full font-label font-semibold text-sm hover:opacity-90 transition-opacity"
+            >
+              <span
+                class="material-symbols-outlined text-xl"
+                data-icon="filter_list"
+                >filter_list</span
+              >
+              Filters
+            </button>
+          </div>
+        </header>
+        <!-- Grid Content (Asymmetric Bento Style) -->
+        <div class="grid grid-cols-12 gap-6">
+          <!-- Large Featured Card -->
+          <div class="col-span-8 group">
+            <div
+              class="relative h-[480px] rounded-3xl overflow-hidden bg-surface-container-lowest transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5"
+            >
+              <img
+                alt="Agile workspace"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                data-alt="clean minimal designer workspace with apple monitor showing project boards and a small green plant in soft daylight"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH_CifUiEuhce43HSCFfSebSvsv0Krz7Ojj5ug_vOCTXRRt2xxKZwh3Y6Wl3eqqBdeOuYptcBmvNEHUzyWS4oio4PhzpthyaKjA6luhVHQ9Xxrd6E_eNtWHHG4_NqRFUPOqGm_6DlhT9GJT1BbcSvUgU7O8icOuXY6ENP2HyCPi0k48Dv-rAg4DbNQV4npSHEMmV-rEz14HggnvaLodE8VliLA3tPs_WAh9hUBYHl8tsf3uS8WxGUwiWfx_WM8R2ckkILDVItxwjPE"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-on-surface/20 to-transparent"
+              ></div>
+              <div class="absolute bottom-0 left-0 p-10 w-full">
+                <div class="flex gap-2 mb-4">
+                  <span
+                    class="px-3 py-1 bg-tertiary text-on-tertiary rounded-full text-xs font-medium"
+                    >Agile Framework</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-white/20 backdrop-blur-md text-white rounded-full text-xs font-medium"
+                    >Masterclass</span
+                  >
+                </div>
+                <h3 class="text-3xl font-headline font-bold text-white mb-2">
+                  The Ultimate Sprint Operating System
+                </h3>
+                <p class="text-white/80 font-body mb-6 max-w-lg">
+                  A comprehensive dashboard for high-performing product teams.
+                  Includes backlog grooming, velocity tracking, and
+                  retrospective templates.
+                </p>
+                <button
+                  class="px-8 py-3 bg-white text-on-surface rounded-full font-label font-bold text-sm hover:scale-105 active:scale-95 transition-all"
+                >
+                  Download Template
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Vertical Featured Card -->
+          <div class="col-span-4 space-y-6">
+            <div
+              class="h-[230px] rounded-3xl bg-secondary-container p-8 flex flex-col justify-between hover:bg-secondary-fixed transition-colors"
+            >
+              <div>
+                <span
+                  class="material-symbols-outlined text-3xl text-on-secondary-container mb-4"
+                  data-icon="auto_awesome"
+                  >auto_awesome</span
+                >
+                <h4
+                  class="text-xl font-headline font-bold text-on-secondary-container"
+                >
+                  Strategic Roadmap 2024
+                </h4>
+              </div>
+              <p class="text-on-secondary-container/70 text-sm font-body">
+                Visualize your long-term goals with our executive-ready
+                template.
+              </p>
+            </div>
+            <div
+              class="h-[226px] rounded-3xl bg-surface-container-low p-8 border border-outline-variant/15 flex flex-col justify-between hover:bg-surface-container-high transition-colors"
+            >
+              <div>
+                <span
+                  class="material-symbols-outlined text-3xl text-primary mb-4"
+                  data-icon="account_tree"
+                  >account_tree</span
+                >
+                <h4 class="text-xl font-headline font-bold text-on-surface">
+                  Client Portal Kit
+                </h4>
+              </div>
+              <p class="text-on-surface-variant text-sm font-body">
+                A professional bridge between your agency and its stakeholders.
+              </p>
+            </div>
+          </div>
+          <!-- Secondary Row -->
+          <div class="col-span-4 group">
+            <div
+              class="bg-surface-container-lowest rounded-3xl p-6 transition-all hover:bg-surface-container-high"
+            >
+              <div class="aspect-video rounded-2xl overflow-hidden mb-6">
+                <img
+                  alt="Checklist"
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  data-alt="close up of a neat leather-bound planner with focus on a checklist and elegant silver pen"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX23Ak96DemHi-UEg6F1_KsS7aDEHaOolXfxq5OMeBAqJ48wzTveK-VPgZAq5In3WaSy2z9_9CrKi6SGEVe9FN_-baBnJ6TMA-TSSMkEmgX_wUuVsAhsV_FwboxZZ15DChJ5zzSD-RU5-czWfCuAy63bBMXijaXKWPPd7VfgkKjYwds7nHAQgjwByz5kPoDik-YvnH20v3uNOkau7gI8AqIAvyN4tkzkEo4cGglr3v0rkBd1EIEU2NnTvMHTlGCDCuqk9u6ztQVRZL"
+                />
+              </div>
+              <h4 class="text-lg font-headline font-bold text-on-surface mb-2">
+                Daily Standup Logger
+              </h4>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="text-[10px] uppercase font-bold tracking-tighter text-on-surface-variant"
+                  >Management</span
+                >
+                <span
+                  class="text-[10px] uppercase font-bold tracking-tighter text-on-surface-variant"
+                  >•</span
+                >
+                <span
+                  class="text-[10px] uppercase font-bold tracking-tighter text-on-surface-variant"
+                  >Workflow</span
+                >
+              </div>
+              <p class="text-sm text-on-surface-variant font-body mb-6">
+                Never lose track of blockers again. Optimized for asynchronous
+                teams.
+              </p>
+              <div class="flex items-center justify-between">
+                <span class="text-primary font-bold">$12</span>
+                <button
+                  class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-white transition-all"
+                >
+                  <span class="material-symbols-outlined" data-icon="add"
+                    >add</span
+                  >
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-4 group">
+            <div
+              class="bg-surface-container-lowest rounded-3xl p-6 transition-all hover:bg-surface-container-high"
+            >
+              <div class="aspect-video rounded-2xl overflow-hidden mb-6">
+                <img
+                  alt="Team meeting"
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  data-alt="modern glass walled office with diverse group of people collaborating around a wooden table"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvhhyuqyQuWAgi8EMF_w32NdlizkVuwMF4YMh2F3udIndNmi2MYq9OB0nzCKiot5e5OgE2043YfNPQybN13KiGszysFbpPIIJWWlqe88ZkK3v06K3LtPf9EUCl1p6CtAf3I42DP6R6iLOh93X0mfRe9F9xpDwlFQX0fv2XNOBconsEFXha5tRn-7vvunyGWiX8nLz9rLTaaAkF0RHageFlu_Ulhkl-YvRJTcdru316fABAh4qntLN6bCCiyXA1N8ocNJTQeK9NE6YN"
+                />
+              </div>
+              <h4 class="text-lg font-headline font-bold text-on-surface mb-2">
+                Resource Planner Pro
+              </h4>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="text-[10px] uppercase font-bold tracking-tighter text-on-surface-variant"
+                  >HR</span
+                >
+                <span
+                  class="text-[10px] uppercase font-bold tracking-tighter text-on-surface-variant"
+                  >•</span
+                >
+                <span
+                  class="text-[10px] uppercase font-bold tracking-tighter text-on-surface-variant"
+                  >Budgeting</span
+                >
+              </div>
+              <p class="text-sm text-on-surface-variant font-body mb-6">
+                Allocating talent across multiple projects without the burnout.
+              </p>
+              <div class="flex items-center justify-between">
+                <span class="text-primary font-bold">Free</span>
+                <button
+                  class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-white transition-all"
+                >
+                  <span class="material-symbols-outlined" data-icon="add"
+                    >add</span
+                  >
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-4 group">
+            <div
+              class="bg-surface-container-lowest rounded-3xl p-6 transition-all hover:bg-surface-container-high"
+            >
+              <div class="aspect-video rounded-2xl overflow-hidden mb-6">
+                <img
+                  alt="Data dashboard"
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  data-alt="close up of a screen showing clean colorful data charts and analytics visualizations"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDF-kB1KJWkZfrGJg2ZBwiDY96BiyUBtjpxTGdmvW7usZht6aLutLQtBgYAUsNH6SXxZVjfHgtuoRwO9CnNuUl66w-6sogZ7Qdt0G4qSjCLW2EQijE6RZ1_mJ3ubaHi6ojNwMQ-JjLhizqvMhcbGTzV9Ag_1jgJ0CxQ8oapaP5wYpdk3puxmPaIFTWP7nfHJf-04uFrgbPkkAxAzKOUL0StGi_0J2t3ydmKm78qyB87cVPtgI1Pkk4Pbwqo8o3--JwlrV6_ZaHYvpyp"
+                />
+              </div>
+              <h4 class="text-lg font-headline font-bold text-on-surface mb-2">
+                OKR Tracker Hub
+              </h4>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="text-[10px] uppercase font-bold tracking-tighter text-on-surface-variant"
+                  >Strategy</span
+                >
+                <span
+                  class="text-[10px] uppercase font-bold tracking-tighter text-on-surface-variant"
+                  >•</span
+                >
+                <span
+                  class="text-[10px] uppercase font-bold tracking-tighter text-on-surface-variant"
+                  >Growth</span
+                >
+              </div>
+              <p class="text-sm text-on-surface-variant font-body mb-6">
+                Align your team's output with top-level company objectives
+                effortlessly.
+              </p>
+              <div class="flex items-center justify-between">
+                <span class="text-primary font-bold">$19</span>
+                <button
+                  class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-white transition-all"
+                >
+                  <span class="material-symbols-outlined" data-icon="add"
+                    >add</span
+                  >
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Pagination/Load More (Zen Style) -->
+        <div class="mt-20 flex flex-col items-center">
+          <div class="w-full h-[1px] bg-outline-variant/15 mb-8"></div>
+          <button
+            class="group flex flex-col items-center gap-2 text-on-surface-variant hover:text-primary transition-colors"
+          >
+            <span class="text-xs font-bold uppercase tracking-widest"
+              >Discover More</span
+            >
+            <span
+              class="material-symbols-outlined animate-bounce"
+              data-icon="keyboard_arrow_down"
+              >keyboard_arrow_down</span
+            >
+          </button>
+        </div>
+      </main>
+      <!-- Focus Drawer (Contextual Meta-data) -->
+      <aside
+        class="hidden xl:block w-80 sticky right-0 h-screen bg-surface-bright/80 backdrop-blur-xl border-l border-outline-variant/10 p-8"
+      >
+        <div class="mb-10">
+          <h4
+            class="text-xs font-bold uppercase tracking-[0.2em] text-on-surface-variant mb-6"
+          >
+            Top Authors
+          </h4>
+          <div class="space-y-6">
+            <div class="flex items-center gap-4">
+              <img
+                class="w-10 h-10 rounded-full object-cover"
+                data-alt="headshot of a man with glasses and creative aesthetic in soft natural light"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLo08FHLHeEKYfiXH7XW7olw44UhEHPSGSpLBNmBEN28gYW9KlCbwMJIFo8JQ-cZ67RLh3q-lGe19QCTFXv7XpiseOvcwDjobJ5V6w4-H5nw5WVlR2zPoeE9kJWeJCdLplwaaghrhRNXwIU_5zcb45TPfq0McU8Wfwdi3FzDOyXRyJK91iOjdILCspzza8vccL5V06EfIVlI5vWKRUllv4gZumJoCN3EdH2UlBFKIQLkrLoYZg-ukKNAeiHZ7FF9rP7UgBgT5HPwjH"
+              />
+              <div>
+                <p class="text-sm font-bold">Liam Chen</p>
+                <p class="text-xs text-on-surface-variant">Agile Specialist</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <img
+                class="w-10 h-10 rounded-full object-cover"
+                data-alt="smiling woman with vibrant energy and professional studio lighting"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKpo9vFCaM4qV8eGz7oLa36zFsYwbSsLCrH86NlP33JM91kWZX6lunCc4Cz9n1FdFeZMkeLEPsDvA0qUqCAqlx85k3U_QDPsYxaBlfrpARDfAZnjZOZeZoimi18_lkR8kxKTPtgP75WIuaDuEOA2ekG7KXyNPsRk-yPJln2xT8-Ig4Rqb5oL4SSIN3HZOYolCd3O556tp3uZgcHJdIB2dJCwxI3lAa6WorOvFPIX1dcmytL2SYo2-wtqXYXdyc0BDZ8N2b-x1t2D8V"
+              />
+              <div>
+                <p class="text-sm font-bold">Elena Rodriguez</p>
+                <p class="text-xs text-on-surface-variant">Operations Lead</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mb-10">
+          <h4
+            class="text-xs font-bold uppercase tracking-[0.2em] text-on-surface-variant mb-4"
+          >
+            Trending Tags
+          </h4>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="px-3 py-1 bg-surface-container text-on-surface-variant rounded-md text-[11px] font-medium hover:bg-primary-fixed-dim transition-colors cursor-pointer"
+              >#NotionAgile</span
+            >
+            <span
+              class="px-3 py-1 bg-surface-container text-on-surface-variant rounded-md text-[11px] font-medium hover:bg-primary-fixed-dim transition-colors cursor-pointer"
+              >#GTD</span
+            >
+            <span
+              class="px-3 py-1 bg-surface-container text-on-surface-variant rounded-md text-[11px] font-medium hover:bg-primary-fixed-dim transition-colors cursor-pointer"
+              >#ScrumMaster</span
+            >
+            <span
+              class="px-3 py-1 bg-surface-container text-on-surface-variant rounded-md text-[11px] font-medium hover:bg-primary-fixed-dim transition-colors cursor-pointer"
+              >#ProductivityHacks</span
+            >
+          </div>
+        </div>
+        <div class="p-6 bg-primary-container rounded-2xl">
+          <h5 class="font-headline font-bold text-on-primary-container mb-2">
+            Request a Template
+          </h5>
+          <p class="text-xs text-on-primary-container/80 mb-4 leading-relaxed">
+            Can't find the specific workflow you need? Let our designers build
+            it for you.
+          </p>
+          <button
+            class="w-full py-2 bg-on-primary-container text-white rounded-xl text-xs font-bold"
+          >
+            Get Started
+          </button>
+        </div>
+      </aside>
+    </div>
+  </body>
+</html>

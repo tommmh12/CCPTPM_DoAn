@@ -1,343 +1,617 @@
-<!DOCTYPE html>
-
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Zen Workspace - Activity History</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<!doctype html>
+//
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Zen Workspace - Activity History</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
-            "colors": {
-                    "on-tertiary-fixed": "#142f4f",
-                    "on-primary-fixed-variant": "#396355",
-                    "tertiary": "#486083",
-                    "inverse-on-surface": "#999d9f",
-                    "on-secondary-fixed": "#174550",
-                    "tertiary-fixed-dim": "#a4bde4",
-                    "on-error": "#fff7f6",
-                    "surface-tint": "#3d6758",
-                    "surface": "#f6fafb",
-                    "inverse-surface": "#0a0f10",
-                    "surface-container": "#e8eff2",
-                    "on-secondary": "#effbff",
-                    "surface-container-low": "#eff4f7",
-                    "secondary-fixed-dim": "#afdce9",
-                    "background": "#f6fafb",
-                    "surface-container-lowest": "#ffffff",
-                    "secondary-fixed": "#bdeaf8",
-                    "secondary-container": "#bdeaf8",
-                    "outline-variant": "#aab4b7",
-                    "error": "#a83836",
-                    "on-primary": "#e4fff3",
-                    "on-surface-variant": "#576164",
-                    "on-secondary-fixed-variant": "#37616d",
-                    "inverse-primary": "#cffeeb",
-                    "error-dim": "#67040d",
-                    "primary-container": "#beecda",
-                    "error-container": "#fa746f",
-                    "on-tertiary-container": "#2a4364",
-                    "on-primary-fixed": "#1c4739",
-                    "surface-bright": "#f6fafb",
-                    "primary": "#3d6758",
-                    "on-background": "#2b3437",
-                    "secondary": "#3a6571",
-                    "surface-dim": "#d2dcdf",
-                    "tertiary-container": "#b2cbf3",
-                    "on-surface": "#2b3437",
-                    "primary-fixed": "#beecda",
-                    "on-primary-container": "#2f594b",
-                    "tertiary-dim": "#3b5476",
-                    "outline": "#737c80",
-                    "on-tertiary-fixed-variant": "#334c6e",
-                    "on-error-container": "#6e0a12",
-                    "surface-container-highest": "#dae4e8",
-                    "surface-variant": "#dae4e8",
-                    "primary-fixed-dim": "#b1decc",
-                    "primary-dim": "#315b4d",
-                    "on-secondary-container": "#2c5863",
-                    "secondary-dim": "#2e5965",
-                    "tertiary-fixed": "#b2cbf3",
-                    "on-tertiary": "#f8f8ff",
-                    "surface-container-high": "#e1e9ed"
+            colors: {
+              "on-tertiary-fixed": "#142f4f",
+              "on-primary-fixed-variant": "#396355",
+              tertiary: "#486083",
+              "inverse-on-surface": "#999d9f",
+              "on-secondary-fixed": "#174550",
+              "tertiary-fixed-dim": "#a4bde4",
+              "on-error": "#fff7f6",
+              "surface-tint": "#3d6758",
+              surface: "#f6fafb",
+              "inverse-surface": "#0a0f10",
+              "surface-container": "#e8eff2",
+              "on-secondary": "#effbff",
+              "surface-container-low": "#eff4f7",
+              "secondary-fixed-dim": "#afdce9",
+              background: "#f6fafb",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed": "#bdeaf8",
+              "secondary-container": "#bdeaf8",
+              "outline-variant": "#aab4b7",
+              error: "#a83836",
+              "on-primary": "#e4fff3",
+              "on-surface-variant": "#576164",
+              "on-secondary-fixed-variant": "#37616d",
+              "inverse-primary": "#cffeeb",
+              "error-dim": "#67040d",
+              "primary-container": "#beecda",
+              "error-container": "#fa746f",
+              "on-tertiary-container": "#2a4364",
+              "on-primary-fixed": "#1c4739",
+              "surface-bright": "#f6fafb",
+              primary: "#3d6758",
+              "on-background": "#2b3437",
+              secondary: "#3a6571",
+              "surface-dim": "#d2dcdf",
+              "tertiary-container": "#b2cbf3",
+              "on-surface": "#2b3437",
+              "primary-fixed": "#beecda",
+              "on-primary-container": "#2f594b",
+              "tertiary-dim": "#3b5476",
+              outline: "#737c80",
+              "on-tertiary-fixed-variant": "#334c6e",
+              "on-error-container": "#6e0a12",
+              "surface-container-highest": "#dae4e8",
+              "surface-variant": "#dae4e8",
+              "primary-fixed-dim": "#b1decc",
+              "primary-dim": "#315b4d",
+              "on-secondary-container": "#2c5863",
+              "secondary-dim": "#2e5965",
+              "tertiary-fixed": "#b2cbf3",
+              "on-tertiary": "#f8f8ff",
+              "surface-container-high": "#e1e9ed",
             },
-            "borderRadius": {
-                    "DEFAULT": "0.125rem",
-                    "lg": "0.25rem",
-                    "xl": "0.5rem",
-                    "full": "0.75rem"
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
             },
-            "fontFamily": {
-                    "headline": ["Manrope"],
-                    "body": ["Inter"],
-                    "label": ["Inter"]
-            }
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
           },
         },
-      }
+      };
     </script>
-<style>
-        body { font-family: 'Inter', sans-serif; }
-        .font-headline { font-family: 'Manrope', sans-serif; }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: #d2dcdf; border-radius: 10px; }
-        .timeline-line::before {
-            content: '';
-            position: absolute;
-            left: 20px;
-            top: 40px;
-            bottom: 0;
-            width: 2px;
-            background: #dae4e8;
-        }
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .font-headline {
+        font-family: "Manrope", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #d2dcdf;
+        border-radius: 10px;
+      }
+      .timeline-line::before {
+        content: "";
+        position: absolute;
+        left: 20px;
+        top: 40px;
+        bottom: 0;
+        width: 2px;
+        background: #dae4e8;
+      }
     </style>
-</head>
-<body class="bg-background text-on-background antialiased">
-<!-- SideNavBar -->
-<aside class="h-screen w-64 fixed left-0 top-0 bg-[#e8eff2] dark:bg-slate-900 flex flex-col py-8 z-50">
-<div class="px-8 mb-10 flex items-center gap-3">
-<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary">
-<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
-</div>
-<div>
-<h1 class="font-['Manrope'] text-lg font-extrabold text-[#3d6758]">The Canvas</h1>
-<p class="text-[10px] opacity-60 font-medium tracking-widest uppercase">Zen Workspace</p>
-</div>
-</div>
-<button class="mx-6 mb-8 bg-primary text-on-primary font-bold py-3 px-6 rounded-full flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-lg">
-<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
-<span>New Entry</span>
-</button>
-<nav class="flex-1 space-y-1">
-<a class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 px-8 py-3 hover:text-[#3d6758] hover:translate-x-1 transition-transform" href="#">
-<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
-<span class="font-medium text-sm">Dashboard</span>
-</a>
-<!-- Active state: Tasks/Activity is current context -->
-<a class="flex items-center gap-3 text-[#3d6758] font-bold bg-[#ffffff] dark:bg-slate-800 rounded-l-full ml-4 pl-4 py-3 transition-all duration-300" href="#">
-<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
-<span class="font-medium text-sm">Tasks</span>
-</a>
-<a class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 px-8 py-3 hover:text-[#3d6758] hover:translate-x-1 transition-transform" href="#">
-<span class="material-symbols-outlined" data-icon="description">description</span>
-<span class="font-medium text-sm">Notes</span>
-</a>
-<a class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 px-8 py-3 hover:text-[#3d6758] hover:translate-x-1 transition-transform" href="#">
-<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
-<span class="font-medium text-sm">Calendar</span>
-</a>
-<a class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 px-8 py-3 hover:text-[#3d6758] hover:translate-x-1 transition-transform" href="#">
-<span class="material-symbols-outlined" data-icon="view_kanban">view_kanban</span>
-<span class="font-medium text-sm">Kanban</span>
-</a>
-<a class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 px-8 py-3 hover:text-[#3d6758] hover:translate-x-1 transition-transform" href="#">
-<span class="material-symbols-outlined" data-icon="settings">settings</span>
-<span class="font-medium text-sm">Settings</span>
-</a>
-</nav>
-<div class="mt-auto border-t border-outline-variant border-opacity-10 pt-4">
-<a class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 px-8 py-3 hover:text-[#3d6758] transition-colors" href="#">
-<span class="material-symbols-outlined" data-icon="help">help</span>
-<span class="font-medium text-sm">Help</span>
-</a>
-<a class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 px-8 py-3 hover:text-[#3d6758] transition-colors" href="#">
-<span class="material-symbols-outlined" data-icon="archive">archive</span>
-<span class="font-medium text-sm">Archive</span>
-</a>
-</div>
-</aside>
-<!-- Main Content Area -->
-<main class="pl-64 min-h-screen">
-<!-- TopAppBar -->
-<header class="flex justify-between items-center px-8 w-full h-16 bg-[#f6fafb] dark:bg-slate-950 sticky top-0 z-40">
-<div class="flex items-center flex-1 max-w-xl">
-<div class="relative w-full group">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline opacity-50" data-icon="search">search</span>
-<input class="w-full bg-surface-container-low border-none rounded-xl pl-11 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary-container transition-all" placeholder="Search activity, notes, or files..." type="text"/>
-</div>
-</div>
-<div class="flex items-center gap-6 ml-8">
-<div class="hidden md:flex items-center gap-8 mr-8">
-<a class="text-[#3d6758] font-bold border-b-2 border-[#3d6758] text-sm py-1 font-headline tracking-tight" href="#">Timeline</a>
-<a class="text-[#2b3437] opacity-70 text-sm py-1 font-headline tracking-tight hover:opacity-100 transition-opacity" href="#">Insights</a>
-<a class="text-[#2b3437] opacity-70 text-sm py-1 font-headline tracking-tight hover:opacity-100 transition-opacity" href="#">Export</a>
-</div>
-<button class="p-2 rounded-full hover:bg-[#e8eff2] transition-colors text-[#3d6758]">
-<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
-</button>
-<button class="p-2 rounded-full hover:bg-[#e8eff2] transition-colors text-[#3d6758]">
-<span class="material-symbols-outlined" data-icon="help">help</span>
-</button>
-<div class="w-8 h-8 rounded-full overflow-hidden border-2 border-primary-container">
-<img alt="User profile" data-alt="professional portrait of a woman in minimalist clothing against a clean soft studio background with gentle lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrSGEMKxKVaXs2w2vhsnx8EJoj_5TYaVhwZ5JB4lfWYvkZKPE3Ep1ox83KtyeVGDzblCGEXH1sQEp0256RRrQ9bJdeAE_tHdD0nmAoDRko7mxz3bdZlq1Yc_v0j4iVrPyvU-uvY2EBsympb9fD8MNqnvXIoMdRwt4QGMH5D2z2kqePeI9VuGWsEzzkLWWiZX1G9jmP1wyJC8I8UBHD01NsfwT11blkiNbQOv4vTz6OJp2G5jKzbwdxbnyChvzSgRyh7B3kTXeBePeo"/>
-</div>
-</div>
-</header>
-<!-- Page Content -->
-<div class="p-12 max-w-7xl mx-auto">
-<!-- Page Header & Filters -->
-<section class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
-<div>
-<h2 class="font-headline text-4xl font-bold text-on-background mb-3 tracking-tight">Activity History</h2>
-<p class="text-on-surface-variant font-medium">Tracking your journey through deep work and reflection.</p>
-</div>
-<div class="flex items-center gap-3">
-<div class="flex bg-surface-container rounded-full p-1">
-<button class="px-6 py-2 rounded-full bg-surface-container-lowest text-primary font-bold shadow-sm text-sm">All</button>
-<button class="px-6 py-2 rounded-full text-on-surface-variant hover:text-primary font-medium text-sm transition-colors">Work</button>
-<button class="px-6 py-2 rounded-full text-on-surface-variant hover:text-primary font-medium text-sm transition-colors">Health</button>
-</div>
-<button class="flex items-center gap-2 bg-surface-container-low px-5 py-3 rounded-xl text-on-surface-variant font-semibold text-sm hover:bg-surface-container-high transition-colors">
-<span class="material-symbols-outlined text-lg" data-icon="calendar_month">calendar_month</span>
-<span>This Week</span>
-<span class="material-symbols-outlined text-lg" data-icon="expand_more">expand_more</span>
-</button>
-<button class="flex items-center justify-center p-3 rounded-xl bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-colors">
-<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
-</button>
-</div>
-</section>
-<!-- Activity Grid & Timeline -->
-<div class="grid grid-cols-12 gap-10">
-<!-- Timeline Column -->
-<div class="col-span-12 lg:col-span-8 space-y-12">
-<!-- Day Group -->
-<div class="relative timeline-line">
-<div class="flex items-center gap-4 mb-8 sticky top-20 bg-background py-2 z-10">
-<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-bold z-20">
-                                12
-                            </div>
-<h3 class="font-headline text-xl font-bold">Today, Oct 12</h3>
-</div>
-<div class="ml-14 space-y-6">
-<!-- Activity Item 1 -->
-<div class="group relative flex items-start gap-6 bg-surface-container-lowest p-6 rounded-[1.5rem] transition-all duration-300 hover:shadow-[0px_12px_32px_rgba(43,52,55,0.06)]">
-<div class="w-12 h-12 rounded-2xl bg-tertiary-container/30 flex items-center justify-center text-tertiary">
-<span class="material-symbols-outlined" data-icon="description">description</span>
-</div>
-<div class="flex-1">
-<div class="flex justify-between items-start mb-2">
-<h4 class="font-bold text-lg">Product Strategy Q4 Refinement</h4>
-<span class="text-xs font-semibold text-on-surface-variant/60 bg-surface-container px-3 py-1 rounded-full">09:15 AM</span>
-</div>
-<p class="text-on-surface-variant text-sm leading-relaxed mb-4">Updated the core value propositions and added competitive analysis for the upcoming launch cycle. Shared with the design team.</p>
-<div class="flex gap-2">
-<span class="px-3 py-1 rounded-full bg-tertiary/10 text-tertiary text-[10px] font-bold uppercase tracking-wider">Strategy</span>
-<span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider">Draft</span>
-</div>
-</div>
-</div>
-<!-- Activity Item 2 -->
-<div class="group relative flex items-start gap-6 bg-surface-container-lowest p-6 rounded-[1.5rem] transition-all duration-300 hover:shadow-[0px_12px_32px_rgba(43,52,55,0.06)]">
-<div class="w-12 h-12 rounded-2xl bg-primary-container/30 flex items-center justify-center text-primary">
-<span class="material-symbols-outlined" data-icon="task_alt">task_alt</span>
-</div>
-<div class="flex-1">
-<div class="flex justify-between items-start mb-2">
-<h4 class="font-bold text-lg">Completed: Mobile UI Review</h4>
-<span class="text-xs font-semibold text-on-surface-variant/60 bg-surface-container px-3 py-1 rounded-full">11:40 AM</span>
-</div>
-<p class="text-on-surface-variant text-sm leading-relaxed">All accessibility concerns addressed. Finalized the token mapping for dark mode transitions.</p>
-</div>
-</div>
-</div>
-</div>
-<!-- Day Group -->
-<div class="relative timeline-line">
-<div class="flex items-center gap-4 mb-8 sticky top-20 bg-background py-2 z-10">
-<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant font-bold z-20">
-                                11
-                            </div>
-<h3 class="font-headline text-xl font-bold opacity-70">Yesterday, Oct 11</h3>
-</div>
-<div class="ml-14 space-y-6">
-<!-- Activity Item 3 -->
-<div class="group relative flex items-start gap-6 bg-surface-container-lowest p-6 rounded-[1.5rem] transition-all duration-300 hover:shadow-[0px_12px_32px_rgba(43,52,55,0.06)] border border-transparent hover:border-outline-variant/10">
-<div class="w-12 h-12 rounded-2xl bg-secondary-container/30 flex items-center justify-center text-secondary">
-<span class="material-symbols-outlined" data-icon="self_improvement">self_improvement</span>
-</div>
-<div class="flex-1">
-<div class="flex justify-between items-start mb-2">
-<h4 class="font-bold text-lg">Mid-day Focus Session</h4>
-<span class="text-xs font-semibold text-on-surface-variant/60 bg-surface-container px-3 py-1 rounded-full">02:30 PM</span>
-</div>
-<div class="flex items-center gap-6 mt-4">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-secondary" data-icon="timer">timer</span>
-<span class="text-sm font-semibold">45 min</span>
-</div>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-secondary" data-icon="heart_active">heart_plus</span>
-<span class="text-sm font-semibold">72 bpm</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Right Side Widgets -->
-<div class="hidden lg:col-span-4 lg:flex flex-col gap-8">
-<!-- Insights Card -->
-<div class="bg-primary text-on-primary p-8 rounded-[2rem] overflow-hidden relative">
-<div class="relative z-10">
-<h4 class="font-headline text-xl font-bold mb-2">Weekly Momentum</h4>
-<p class="text-on-primary/70 text-sm mb-8 leading-relaxed">You've completed 15% more focused tasks this week compared to last.</p>
-<div class="flex items-end gap-2 h-24 mb-6">
-<div class="w-full bg-on-primary/20 rounded-t-lg h-1/2"></div>
-<div class="w-full bg-on-primary/20 rounded-t-lg h-3/4"></div>
-<div class="w-full bg-on-primary/20 rounded-t-lg h-2/3"></div>
-<div class="w-full bg-on-primary/60 rounded-t-lg h-full"></div>
-<div class="w-full bg-on-primary/20 rounded-t-lg h-1/2"></div>
-<div class="w-full bg-on-primary/20 rounded-t-lg h-1/3"></div>
-<div class="w-full bg-on-primary/20 rounded-t-lg h-2/3"></div>
-</div>
-<button class="w-full bg-on-primary text-primary font-bold py-3 rounded-2xl text-sm">View Full Report</button>
-</div>
-<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-on-primary/10 rounded-full blur-3xl"></div>
-</div>
-<!-- Category Cloud -->
-<div class="bg-surface-container-low p-8 rounded-[2rem]">
-<h4 class="font-headline font-bold text-lg mb-6">Popular Categories</h4>
-<div class="flex flex-wrap gap-2">
-<span class="bg-surface-container-lowest border border-outline-variant/20 px-4 py-2 rounded-full text-xs font-bold text-on-surface">DEVELOPMENT</span>
-<span class="bg-surface-container-lowest border border-outline-variant/20 px-4 py-2 rounded-full text-xs font-bold text-on-surface">PRODUCT</span>
-<span class="bg-tertiary text-on-tertiary px-4 py-2 rounded-full text-xs font-bold">DESIGN</span>
-<span class="bg-surface-container-lowest border border-outline-variant/20 px-4 py-2 rounded-full text-xs font-bold text-on-surface">RESEARCH</span>
-<span class="bg-surface-container-lowest border border-outline-variant/20 px-4 py-2 rounded-full text-xs font-bold text-on-surface">PERSONAL</span>
-<span class="bg-secondary text-on-secondary px-4 py-2 rounded-full text-xs font-bold">MINDFULNESS</span>
-</div>
-</div>
-<!-- Media Attachment Preview (Asymmetric Card) -->
-<div class="bg-surface-container-lowest p-4 rounded-[2rem] shadow-sm">
-<div class="rounded-[1.5rem] overflow-hidden mb-4 h-48 bg-slate-200">
-<img alt="Code snippet" class="w-full h-full object-cover" data-alt="clean macro shot of high-quality computer code on a high-resolution dark mode monitor with soft focus and bokeh background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLeufJznmwQxCxzc6nNK7cVNouUYwCsokopIm9p84HcVAOaqQpKoUQoVC-dRM0u2EinilhG2IhNGwtHYmXUOM0VVYNJujSShTwfwnmKlWYHa8trYgszpKekf_G0dXDCGRwipr_Bd2OMave2-xT8hBhkXZwXiruS40FKxhB1AhGFse8y8p68P9XsJSv_osSiGUtJr0ohd9S0G2dYjcFxl5GX9A_4ZLOpk0knQ0kHaKGCH6MpaG0r9kSne0rCI4NDluwIacyML2Rk3y3"/>
-</div>
-<div class="px-2 pb-2">
-<div class="flex items-center gap-2 mb-2">
-<span class="material-symbols-outlined text-primary text-sm" data-icon="attachment">attachment</span>
-<span class="text-xs font-bold opacity-60">LATEST ATTACHMENT</span>
-</div>
-<h5 class="font-bold text-sm">Auth_Refactor_Notes.md</h5>
-<p class="text-[10px] text-on-surface-variant mt-1">Edited 2 hours ago • 4.2 KB</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</main>
-<!-- FAB (Suppressed on this deep historical view based on rules, but included if user expects standard "new entry" capability across dashboard context) -->
-<!-- Rule says suppress on Details screens, but this is a primary Activity Dashboard. Including discreetly. -->
-<button class="fixed bottom-10 right-10 w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform z-50">
-<span class="material-symbols-outlined text-3xl" data-icon="edit">edit</span>
-</button>
-</body></html>
+  </head>
+  <body class="bg-background text-on-background antialiased">
+    <!-- SideNavBar -->
+    <aside
+      class="h-screen w-64 fixed left-0 top-0 bg-[#e8eff2] dark:bg-slate-900 flex flex-col py-8 z-50"
+    >
+      <div class="px-8 mb-10 flex items-center gap-3">
+        <div
+          class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary"
+        >
+          <span class="material-symbols-outlined" data-icon="auto_awesome"
+            >auto_awesome</span
+          >
+        </div>
+        <div>
+          <h1 class="font-['Manrope'] text-lg font-extrabold text-[#3d6758]">
+            The Canvas
+          </h1>
+          <p
+            class="text-[10px] opacity-60 font-medium tracking-widest uppercase"
+          >
+            Zen Workspace
+          </p>
+        </div>
+      </div>
+      <button
+        class="mx-6 mb-8 bg-primary text-on-primary font-bold py-3 px-6 rounded-full flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-lg"
+      >
+        <span class="material-symbols-outlined text-sm" data-icon="add"
+          >add</span
+        >
+        <span>New Entry</span>
+      </button>
+      <nav class="flex-1 space-y-1">
+        <a
+          class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 px-8 py-3 hover:text-[#3d6758] hover:translate-x-1 transition-transform"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="dashboard"
+            >dashboard</span
+          >
+          <span class="font-medium text-sm">Dashboard</span>
+        </a>
+        <!-- Active state: Tasks/Activity is current context -->
+        <a
+          class="flex items-center gap-3 text-[#3d6758] font-bold bg-[#ffffff] dark:bg-slate-800 rounded-l-full ml-4 pl-4 py-3 transition-all duration-300"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="check_circle"
+            >check_circle</span
+          >
+          <span class="font-medium text-sm">Tasks</span>
+        </a>
+        <a
+          class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 px-8 py-3 hover:text-[#3d6758] hover:translate-x-1 transition-transform"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="description"
+            >description</span
+          >
+          <span class="font-medium text-sm">Notes</span>
+        </a>
+        <a
+          class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 px-8 py-3 hover:text-[#3d6758] hover:translate-x-1 transition-transform"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="calendar_today"
+            >calendar_today</span
+          >
+          <span class="font-medium text-sm">Calendar</span>
+        </a>
+        <a
+          class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 px-8 py-3 hover:text-[#3d6758] hover:translate-x-1 transition-transform"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="view_kanban"
+            >view_kanban</span
+          >
+          <span class="font-medium text-sm">Kanban</span>
+        </a>
+        <a
+          class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 px-8 py-3 hover:text-[#3d6758] hover:translate-x-1 transition-transform"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="settings"
+            >settings</span
+          >
+          <span class="font-medium text-sm">Settings</span>
+        </a>
+      </nav>
+      <div
+        class="mt-auto border-t border-outline-variant border-opacity-10 pt-4"
+      >
+        <a
+          class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 px-8 py-3 hover:text-[#3d6758] transition-colors"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="help">help</span>
+          <span class="font-medium text-sm">Help</span>
+        </a>
+        <a
+          class="flex items-center gap-3 text-[#2b3437] dark:text-slate-400 px-8 py-3 hover:text-[#3d6758] transition-colors"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="archive"
+            >archive</span
+          >
+          <span class="font-medium text-sm">Archive</span>
+        </a>
+      </div>
+    </aside>
+    <!-- Main Content Area -->
+    <main class="pl-64 min-h-screen">
+      <!-- TopAppBar -->
+      <header
+        class="flex justify-between items-center px-8 w-full h-16 bg-[#f6fafb] dark:bg-slate-950 sticky top-0 z-40"
+      >
+        <div class="flex items-center flex-1 max-w-xl">
+          <div class="relative w-full group">
+            <span
+              class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline opacity-50"
+              data-icon="search"
+              >search</span
+            >
+            <input
+              class="w-full bg-surface-container-low border-none rounded-xl pl-11 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary-container transition-all"
+              placeholder="Search activity, notes, or files..."
+              type="text"
+            />
+          </div>
+        </div>
+        <div class="flex items-center gap-6 ml-8">
+          <div class="hidden md:flex items-center gap-8 mr-8">
+            <a
+              class="text-[#3d6758] font-bold border-b-2 border-[#3d6758] text-sm py-1 font-headline tracking-tight"
+              href="#"
+              >Timeline</a
+            >
+            <a
+              class="text-[#2b3437] opacity-70 text-sm py-1 font-headline tracking-tight hover:opacity-100 transition-opacity"
+              href="#"
+              >Insights</a
+            >
+            <a
+              class="text-[#2b3437] opacity-70 text-sm py-1 font-headline tracking-tight hover:opacity-100 transition-opacity"
+              href="#"
+              >Export</a
+            >
+          </div>
+          <button
+            class="p-2 rounded-full hover:bg-[#e8eff2] transition-colors text-[#3d6758]"
+          >
+            <span class="material-symbols-outlined" data-icon="notifications"
+              >notifications</span
+            >
+          </button>
+          <button
+            class="p-2 rounded-full hover:bg-[#e8eff2] transition-colors text-[#3d6758]"
+          >
+            <span class="material-symbols-outlined" data-icon="help">help</span>
+          </button>
+          <div
+            class="w-8 h-8 rounded-full overflow-hidden border-2 border-primary-container"
+          >
+            <img
+              alt="User profile"
+              data-alt="professional portrait of a woman in minimalist clothing against a clean soft studio background with gentle lighting"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrSGEMKxKVaXs2w2vhsnx8EJoj_5TYaVhwZ5JB4lfWYvkZKPE3Ep1ox83KtyeVGDzblCGEXH1sQEp0256RRrQ9bJdeAE_tHdD0nmAoDRko7mxz3bdZlq1Yc_v0j4iVrPyvU-uvY2EBsympb9fD8MNqnvXIoMdRwt4QGMH5D2z2kqePeI9VuGWsEzzkLWWiZX1G9jmP1wyJC8I8UBHD01NsfwT11blkiNbQOv4vTz6OJp2G5jKzbwdxbnyChvzSgRyh7B3kTXeBePeo"
+            />
+          </div>
+        </div>
+      </header>
+      <!-- Page Content -->
+      <div class="p-12 max-w-7xl mx-auto">
+        <!-- Page Header & Filters -->
+        <section
+          class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-8"
+        >
+          <div>
+            <h2
+              class="font-headline text-4xl font-bold text-on-background mb-3 tracking-tight"
+            >
+              Activity History
+            </h2>
+            <p class="text-on-surface-variant font-medium">
+              Tracking your journey through deep work and reflection.
+            </p>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="flex bg-surface-container rounded-full p-1">
+              <button
+                class="px-6 py-2 rounded-full bg-surface-container-lowest text-primary font-bold shadow-sm text-sm"
+              >
+                All
+              </button>
+              <button
+                class="px-6 py-2 rounded-full text-on-surface-variant hover:text-primary font-medium text-sm transition-colors"
+              >
+                Work
+              </button>
+              <button
+                class="px-6 py-2 rounded-full text-on-surface-variant hover:text-primary font-medium text-sm transition-colors"
+              >
+                Health
+              </button>
+            </div>
+            <button
+              class="flex items-center gap-2 bg-surface-container-low px-5 py-3 rounded-xl text-on-surface-variant font-semibold text-sm hover:bg-surface-container-high transition-colors"
+            >
+              <span
+                class="material-symbols-outlined text-lg"
+                data-icon="calendar_month"
+                >calendar_month</span
+              >
+              <span>This Week</span>
+              <span
+                class="material-symbols-outlined text-lg"
+                data-icon="expand_more"
+                >expand_more</span
+              >
+            </button>
+            <button
+              class="flex items-center justify-center p-3 rounded-xl bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-colors"
+            >
+              <span class="material-symbols-outlined" data-icon="filter_list"
+                >filter_list</span
+              >
+            </button>
+          </div>
+        </section>
+        <!-- Activity Grid & Timeline -->
+        <div class="grid grid-cols-12 gap-10">
+          <!-- Timeline Column -->
+          <div class="col-span-12 lg:col-span-8 space-y-12">
+            <!-- Day Group -->
+            <div class="relative timeline-line">
+              <div
+                class="flex items-center gap-4 mb-8 sticky top-20 bg-background py-2 z-10"
+              >
+                <div
+                  class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-bold z-20"
+                >
+                  12
+                </div>
+                <h3 class="font-headline text-xl font-bold">Today, Oct 12</h3>
+              </div>
+              <div class="ml-14 space-y-6">
+                <!-- Activity Item 1 -->
+                <div
+                  class="group relative flex items-start gap-6 bg-surface-container-lowest p-6 rounded-[1.5rem] transition-all duration-300 hover:shadow-[0px_12px_32px_rgba(43,52,55,0.06)]"
+                >
+                  <div
+                    class="w-12 h-12 rounded-2xl bg-tertiary-container/30 flex items-center justify-center text-tertiary"
+                  >
+                    <span
+                      class="material-symbols-outlined"
+                      data-icon="description"
+                      >description</span
+                    >
+                  </div>
+                  <div class="flex-1">
+                    <div class="flex justify-between items-start mb-2">
+                      <h4 class="font-bold text-lg">
+                        Product Strategy Q4 Refinement
+                      </h4>
+                      <span
+                        class="text-xs font-semibold text-on-surface-variant/60 bg-surface-container px-3 py-1 rounded-full"
+                        >09:15 AM</span
+                      >
+                    </div>
+                    <p
+                      class="text-on-surface-variant text-sm leading-relaxed mb-4"
+                    >
+                      Updated the core value propositions and added competitive
+                      analysis for the upcoming launch cycle. Shared with the
+                      design team.
+                    </p>
+                    <div class="flex gap-2">
+                      <span
+                        class="px-3 py-1 rounded-full bg-tertiary/10 text-tertiary text-[10px] font-bold uppercase tracking-wider"
+                        >Strategy</span
+                      >
+                      <span
+                        class="px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider"
+                        >Draft</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <!-- Activity Item 2 -->
+                <div
+                  class="group relative flex items-start gap-6 bg-surface-container-lowest p-6 rounded-[1.5rem] transition-all duration-300 hover:shadow-[0px_12px_32px_rgba(43,52,55,0.06)]"
+                >
+                  <div
+                    class="w-12 h-12 rounded-2xl bg-primary-container/30 flex items-center justify-center text-primary"
+                  >
+                    <span class="material-symbols-outlined" data-icon="task_alt"
+                      >task_alt</span
+                    >
+                  </div>
+                  <div class="flex-1">
+                    <div class="flex justify-between items-start mb-2">
+                      <h4 class="font-bold text-lg">
+                        Completed: Mobile UI Review
+                      </h4>
+                      <span
+                        class="text-xs font-semibold text-on-surface-variant/60 bg-surface-container px-3 py-1 rounded-full"
+                        >11:40 AM</span
+                      >
+                    </div>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">
+                      All accessibility concerns addressed. Finalized the token
+                      mapping for dark mode transitions.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Day Group -->
+            <div class="relative timeline-line">
+              <div
+                class="flex items-center gap-4 mb-8 sticky top-20 bg-background py-2 z-10"
+              >
+                <div
+                  class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant font-bold z-20"
+                >
+                  11
+                </div>
+                <h3 class="font-headline text-xl font-bold opacity-70">
+                  Yesterday, Oct 11
+                </h3>
+              </div>
+              <div class="ml-14 space-y-6">
+                <!-- Activity Item 3 -->
+                <div
+                  class="group relative flex items-start gap-6 bg-surface-container-lowest p-6 rounded-[1.5rem] transition-all duration-300 hover:shadow-[0px_12px_32px_rgba(43,52,55,0.06)] border border-transparent hover:border-outline-variant/10"
+                >
+                  <div
+                    class="w-12 h-12 rounded-2xl bg-secondary-container/30 flex items-center justify-center text-secondary"
+                  >
+                    <span
+                      class="material-symbols-outlined"
+                      data-icon="self_improvement"
+                      >self_improvement</span
+                    >
+                  </div>
+                  <div class="flex-1">
+                    <div class="flex justify-between items-start mb-2">
+                      <h4 class="font-bold text-lg">Mid-day Focus Session</h4>
+                      <span
+                        class="text-xs font-semibold text-on-surface-variant/60 bg-surface-container px-3 py-1 rounded-full"
+                        >02:30 PM</span
+                      >
+                    </div>
+                    <div class="flex items-center gap-6 mt-4">
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="material-symbols-outlined text-secondary"
+                          data-icon="timer"
+                          >timer</span
+                        >
+                        <span class="text-sm font-semibold">45 min</span>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="material-symbols-outlined text-secondary"
+                          data-icon="heart_active"
+                          >heart_plus</span
+                        >
+                        <span class="text-sm font-semibold">72 bpm</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Right Side Widgets -->
+          <div class="hidden lg:col-span-4 lg:flex flex-col gap-8">
+            <!-- Insights Card -->
+            <div
+              class="bg-primary text-on-primary p-8 rounded-[2rem] overflow-hidden relative"
+            >
+              <div class="relative z-10">
+                <h4 class="font-headline text-xl font-bold mb-2">
+                  Weekly Momentum
+                </h4>
+                <p class="text-on-primary/70 text-sm mb-8 leading-relaxed">
+                  You've completed 15% more focused tasks this week compared to
+                  last.
+                </p>
+                <div class="flex items-end gap-2 h-24 mb-6">
+                  <div class="w-full bg-on-primary/20 rounded-t-lg h-1/2"></div>
+                  <div class="w-full bg-on-primary/20 rounded-t-lg h-3/4"></div>
+                  <div class="w-full bg-on-primary/20 rounded-t-lg h-2/3"></div>
+                  <div
+                    class="w-full bg-on-primary/60 rounded-t-lg h-full"
+                  ></div>
+                  <div class="w-full bg-on-primary/20 rounded-t-lg h-1/2"></div>
+                  <div class="w-full bg-on-primary/20 rounded-t-lg h-1/3"></div>
+                  <div class="w-full bg-on-primary/20 rounded-t-lg h-2/3"></div>
+                </div>
+                <button
+                  class="w-full bg-on-primary text-primary font-bold py-3 rounded-2xl text-sm"
+                >
+                  View Full Report
+                </button>
+              </div>
+              <div
+                class="absolute -bottom-10 -right-10 w-40 h-40 bg-on-primary/10 rounded-full blur-3xl"
+              ></div>
+            </div>
+            <!-- Category Cloud -->
+            <div class="bg-surface-container-low p-8 rounded-[2rem]">
+              <h4 class="font-headline font-bold text-lg mb-6">
+                Popular Categories
+              </h4>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-surface-container-lowest border border-outline-variant/20 px-4 py-2 rounded-full text-xs font-bold text-on-surface"
+                  >DEVELOPMENT</span
+                >
+                <span
+                  class="bg-surface-container-lowest border border-outline-variant/20 px-4 py-2 rounded-full text-xs font-bold text-on-surface"
+                  >PRODUCT</span
+                >
+                <span
+                  class="bg-tertiary text-on-tertiary px-4 py-2 rounded-full text-xs font-bold"
+                  >DESIGN</span
+                >
+                <span
+                  class="bg-surface-container-lowest border border-outline-variant/20 px-4 py-2 rounded-full text-xs font-bold text-on-surface"
+                  >RESEARCH</span
+                >
+                <span
+                  class="bg-surface-container-lowest border border-outline-variant/20 px-4 py-2 rounded-full text-xs font-bold text-on-surface"
+                  >PERSONAL</span
+                >
+                <span
+                  class="bg-secondary text-on-secondary px-4 py-2 rounded-full text-xs font-bold"
+                  >MINDFULNESS</span
+                >
+              </div>
+            </div>
+            <!-- Media Attachment Preview (Asymmetric Card) -->
+            <div
+              class="bg-surface-container-lowest p-4 rounded-[2rem] shadow-sm"
+            >
+              <div
+                class="rounded-[1.5rem] overflow-hidden mb-4 h-48 bg-slate-200"
+              >
+                <img
+                  alt="Code snippet"
+                  class="w-full h-full object-cover"
+                  data-alt="clean macro shot of high-quality computer code on a high-resolution dark mode monitor with soft focus and bokeh background"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLeufJznmwQxCxzc6nNK7cVNouUYwCsokopIm9p84HcVAOaqQpKoUQoVC-dRM0u2EinilhG2IhNGwtHYmXUOM0VVYNJujSShTwfwnmKlWYHa8trYgszpKekf_G0dXDCGRwipr_Bd2OMave2-xT8hBhkXZwXiruS40FKxhB1AhGFse8y8p68P9XsJSv_osSiGUtJr0ohd9S0G2dYjcFxl5GX9A_4ZLOpk0knQ0kHaKGCH6MpaG0r9kSne0rCI4NDluwIacyML2Rk3y3"
+                />
+              </div>
+              <div class="px-2 pb-2">
+                <div class="flex items-center gap-2 mb-2">
+                  <span
+                    class="material-symbols-outlined text-primary text-sm"
+                    data-icon="attachment"
+                    >attachment</span
+                  >
+                  <span class="text-xs font-bold opacity-60"
+                    >LATEST ATTACHMENT</span
+                  >
+                </div>
+                <h5 class="font-bold text-sm">Auth_Refactor_Notes.md</h5>
+                <p class="text-[10px] text-on-surface-variant mt-1">
+                  Edited 2 hours ago • 4.2 KB
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- FAB (Suppressed on this deep historical view based on rules, but included if user expects standard "new entry" capability across dashboard context) -->
+    <!-- Rule says suppress on Details screens, but this is a primary Activity Dashboard. Including discreetly. -->
+    <button
+      class="fixed bottom-10 right-10 w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform z-50"
+    >
+      <span class="material-symbols-outlined text-3xl" data-icon="edit"
+        >edit</span
+      >
+    </button>
+  </body>
+</html>
