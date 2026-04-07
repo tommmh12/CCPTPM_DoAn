@@ -2316,6 +2316,7 @@ async function initTasksPage() {
   filterButtons.forEach((button) => {
     button.addEventListener("click", async () => {
       state.taskFilter = normalizeTaskFilter(button.dataset.taskFilter);
+      // Re-run the current search term whenever the status filter changes.
       await loadTasks(searchInput ? searchInput.value : "");
     });
   });
