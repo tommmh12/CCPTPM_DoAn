@@ -36,7 +36,7 @@ ssss
 ```bash
 npm install
 ```
-
+ss
 5. Chay app:
 
 ```bash
