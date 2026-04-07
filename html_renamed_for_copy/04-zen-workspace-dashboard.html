@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Zen Workspace - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#142f4f",
+                        "on-primary-fixed-variant": "#396355",
+                        "tertiary": "#486083",
+                        "inverse-on-surface": "#999d9f",
+                        "on-secondary-fixed": "#174550",
+                        "tertiary-fixed-dim": "#a4bde4",
+                        "on-error": "#fff7f6",
+                        "surface-tint": "#3d6758",
+                        "surface": "#f6fafb",
+                        "inverse-surface": "#0a0f10",
+                        "surface-container": "#e8eff2",
+                        "on-secondary": "#effbff",
+                        "surface-container-low": "#eff4f7",
+                        "secondary-fixed-dim": "#afdce9",
+                        "background": "#f6fafb",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#bdeaf8",
+                        "secondary-container": "#bdeaf8",
+                        "outline-variant": "#aab4b7",
+                        "error": "#a83836",
+                        "on-primary": "#e4fff3",
+                        "on-surface-variant": "#576164",
+                        "on-secondary-fixed-variant": "#37616d",
+                        "inverse-primary": "#cffeeb",
+                        "error-dim": "#67040d",
+                        "primary-container": "#beecda",
+                        "error-container": "#fa746f",
+                        "on-tertiary-container": "#2a4364",
+                        "on-primary-fixed": "#1c4739",
+                        "surface-bright": "#f6fafb",
+                        "primary": "#3d6758",
+                        "on-background": "#2b3437",
+                        "secondary": "#3a6571",
+                        "surface-dim": "#d2dcdf",
+                        "tertiary-container": "#b2cbf3",
+                        "on-surface": "#2b3437",
+                        "primary-fixed": "#beecda",
+                        "on-primary-container": "#2f594b",
+                        "tertiary-dim": "#3b5476",
+                        "outline": "#737c80",
+                        "on-tertiary-fixed-variant": "#334c6e",
+                        "on-error-container": "#6e0a12",
+                        "surface-container-highest": "#dae4e8",
+                        "surface-variant": "#dae4e8",
+                        "primary-fixed-dim": "#b1decc",
+                        "primary-dim": "#315b4d",
+                        "on-secondary-container": "#2c5863",
+                        "secondary-dim": "#2e5965",
+                        "tertiary-fixed": "#b2cbf3",
+                        "on-tertiary": "#f8f8ff",
+                        "surface-container-high": "#e1e9ed"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .brand { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        @keyframes dashboardPulseFade {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes dashboardPulseStroke {
+            from {
+                stroke-dashoffset: 220;
+            }
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface" data-page="dashboard">
+<!-- SideNavBar (Authority: JSON) -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#e8eff2] dark:bg-slate-900 flex flex-col h-full py-8 transition-all duration-300 z-50 hidden md:flex" style="box-shadow: 0px 12px 32px rgba(43,52,55,0.06);">
+<div class="px-8 mb-12">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" data-icon="spa">spa</span>
+</div>
+<div>
+<h1 class="font-['Manrope'] text-lg font-extrabold text-[#3d6758]">The Canvas</h1>
+<p class="text-xs font-medium opacity-60">Zen Workspace</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Dashboard Active -->
+<a class="flex items-center gap-4 text-[#3d6758] font-bold bg-[#ffffff] dark:bg-slate-800 rounded-l-full ml-4 pl-4 py-3 transition-transform hover:translate-x-1" href="/dashboard">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Inter'] text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 text-[#2b3437] dark:text-slate-400 px-8 py-3 transition-transform hover:text-[#3d6758] hover:translate-x-1" href="/tasks">
+<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+<span class="font-['Inter'] text-sm font-medium">Tasks</span>
+</a>
+<a class="flex items-center gap-4 text-[#2b3437] dark:text-slate-400 px-8 py-3 transition-transform hover:text-[#3d6758] hover:translate-x-1" href="/notes">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-['Inter'] text-sm font-medium">Notes</span>
+</a>
+<a class="flex items-center gap-4 text-[#2b3437] dark:text-slate-400 px-8 py-3 transition-transform hover:text-[#3d6758] hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-['Inter'] text-sm font-medium">Calendar</span>
+</a>
+<a class="flex items-center gap-4 text-[#2b3437] dark:text-slate-400 px-8 py-3 transition-transform hover:text-[#3d6758] hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="view_kanban">view_kanban</span>
+<span class="font-['Inter'] text-sm font-medium">Kanban</span>
+</a>
+<a class="flex items-center gap-4 text-[#2b3437] dark:text-slate-400 px-8 py-3 transition-transform hover:text-[#3d6758] hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Inter'] text-sm font-medium">Settings</span>
+</a>
+</nav>
+<div class="px-8 mt-auto space-y-6">
+<button class="w-full py-4 bg-primary text-on-primary rounded-full font-bold flex items-center justify-center gap-2 hover:bg-primary-dim transition-colors" data-go-create-task type="button">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                New Entry
+            </button>
+<div class="pt-6 border-t border-outline-variant/15">
+<a class="flex items-center gap-4 text-[#2b3437] py-2 opacity-70 hover:opacity-100" href="/notes">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="text-sm">Help</span>
+</a>
+<a class="flex items-center gap-4 text-[#2b3437] py-2 opacity-70 hover:opacity-100" href="#">
+<span class="material-symbols-outlined" data-icon="archive">archive</span>
+<span class="text-sm">Archive</span>
+</a>
+</div>
+</div>
+</aside>
+<main class="md:ml-64 flex flex-col min-h-screen">
+<!-- TopAppBar (Authority: JSON) -->
+<header class="w-full h-16 bg-[#f6fafb] dark:bg-slate-950 flex justify-between items-center px-8 w-full z-40 sticky top-0">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold text-[#2b3437] dark:text-[#f6fafb] font-['Manrope'] tracking-tight">Zen Workspace</span>
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full w-80 text-sm focus:ring-2 focus:ring-primary/20 bg-surface-container" placeholder="Search your canvas..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-[#3d6758] font-bold border-b-2 border-[#3d6758] py-5 px-1 font-['Manrope'] text-sm" href="#">Overview</a>
+<a class="text-[#2b3437] opacity-70 hover:bg-[#e8eff2] px-3 py-1 rounded-full transition-colors font-['Manrope'] text-sm" href="#">Analytics</a>
+<a class="text-[#2b3437] opacity-70 hover:bg-[#e8eff2] px-3 py-1 rounded-full transition-colors font-['Manrope'] text-sm" href="#">Community</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-[#e8eff2] text-[#3d6758]">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-[#e8eff2] text-[#3d6758]">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-high ml-2">
+<img alt="User profile" data-alt="professional portrait of a young woman with a calm expression in a bright minimalist office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApOpgl7A1kJVJ0jC0NFwmNrwtwYmbc2-ks3nSJqstdLhbsQSqtRLz32EAkWvgGI0l3L_ih6yuDsw3FpRUxJ2mrdOJmimKC4-w8-kUk1eHuD9on-vmussag3u2_T-Bqd-c1vb2slIk25Gf9z9OapdUFF7pW1Qe9UZNpFhLdKB1IzEo3vT7VgS2KvWUajSoiXGEaum5DQg5Fd8XlMrEU4R6p39mUO3KreasD1kMCmI10ezBIgypDmhBPSoDazvSNZ2RSQEHJTVDdmMIB"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="p-8 max-w-[1600px] w-full mx-auto">
+<header class="mb-12">
+<h2 class="text-4xl font-extrabold text-on-surface mb-2">Good morning, <span id="dashboard-user-name">Julian</span>.</h2>
+<p class="text-on-surface-variant font-medium">Your creative flow is at 84% today. Ready to dive back in?</p>
+</header>
+<div class="grid grid-cols-12 gap-8">
+<!-- Main Activity Column -->
+<div class="col-span-12 lg:col-span-8 space-y-8">
+<!-- Weekly Pulse (Bento Grid Style) -->
+<section>
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-4 flex-wrap">
+<h3 class="text-xl font-bold" id="dashboard-pulse-heading">Weekly Pulse</h3>
+<div class="flex items-center gap-2 rounded-full bg-surface-container-low p-1" id="dashboard-pulse-filters">
+<button class="rounded-full bg-primary px-4 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-on-primary transition-colors" data-dashboard-pulse-period="day" type="button">Day</button>
+<button class="rounded-full px-4 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-on-surface-variant transition-colors hover:bg-surface-container-high" data-dashboard-pulse-period="week" type="button">Week</button>
+<button class="rounded-full px-4 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-on-surface-variant transition-colors hover:bg-surface-container-high" data-dashboard-pulse-period="month" type="button">Month</button>
+<button class="rounded-full px-4 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-on-surface-variant transition-colors hover:bg-surface-container-high" data-dashboard-pulse-period="year" type="button">Year</button>
+</div>
+</div>
+<button class="text-sm font-semibold text-primary flex items-center gap-1">
+                                View Full Report <span class="material-symbols-outlined text-xs" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Focus Time Card -->
+<div class="md:col-span-2 bg-surface-container-lowest p-8 rounded-full flex flex-col justify-between group transition-all hover:bg-surface-container-high shadow-sm">
+<div class="flex justify-between items-start mb-8">
+<div class="p-3 bg-primary-container text-on-primary-container rounded-full">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+</div>
+<span class="text-xs font-bold text-primary px-3 py-1 bg-primary/10 rounded-full" id="dashboard-pulse-delta">+12% vs last week</span>
+</div>
+<div class="mb-6 flex flex-wrap gap-2">
+<button class="rounded-full bg-primary px-4 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-on-primary transition-colors" data-dashboard-pulse-metric="completed" type="button">Tasks Closed</button>
+<button class="rounded-full px-4 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-on-surface-variant transition-colors hover:bg-surface-container-high" data-dashboard-pulse-metric="created" type="button">Tasks Created</button>
+<button class="rounded-full px-4 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-on-surface-variant transition-colors hover:bg-surface-container-high" data-dashboard-pulse-metric="focus" type="button">Focus Score</button>
+</div>
+<div>
+<p class="text-sm font-medium text-on-surface-variant mb-1" id="dashboard-pulse-label">Deep Work Sessions</p>
+<h4 class="text-4xl font-extrabold"><span id="dashboard-pulse-value">24.5</span><span class="text-xl font-medium opacity-40 ml-1" id="dashboard-pulse-unit">hrs</span></h4>
+<p class="mt-2 text-sm text-on-surface-variant" id="dashboard-pulse-caption">A clean snapshot of your execution rhythm in the selected period.</p>
+</div>
+<div class="mt-8 grid grid-cols-3 gap-3" id="dashboard-pulse-summary">
+<div class="rounded-[1.25rem] bg-surface-container-low p-4">
+<p class="text-[10px] font-bold uppercase tracking-[0.16em] text-outline">Created</p>
+<p class="mt-2 text-2xl font-extrabold text-on-surface" id="dashboard-pulse-created">0</p>
+</div>
+<div class="rounded-[1.25rem] bg-surface-container-low p-4">
+<p class="text-[10px] font-bold uppercase tracking-[0.16em] text-outline">Completed</p>
+<p class="mt-2 text-2xl font-extrabold text-on-surface" id="dashboard-pulse-completed">0</p>
+</div>
+<div class="rounded-[1.25rem] bg-surface-container-low p-4">
+<p class="text-[10px] font-bold uppercase tracking-[0.16em] text-outline">Carry-over</p>
+<p class="mt-2 text-2xl font-extrabold text-on-surface" id="dashboard-pulse-carry-over">0</p>
+</div>
+</div>
+<div class="mt-8">
+<div class="relative h-32 w-full" id="dashboard-pulse-chart-wrapper">
+<div class="pointer-events-none absolute z-10 hidden text-xs font-medium" id="dashboard-pulse-tooltip"></div>
+<div class="h-32 w-full" id="dashboard-pulse-chart"></div>
+</div>
+<div class="mt-3 flex items-center justify-between gap-2 text-[10px] font-bold uppercase tracking-[0.14em] text-outline" id="dashboard-pulse-chart-labels"></div>
+<div class="mt-4 flex flex-wrap items-center gap-3 text-[11px] font-semibold text-on-surface-variant" id="dashboard-pulse-legend"></div>
+</div>
+</div>
+<!-- Small Stat Card -->
+<div class="bg-secondary-container p-8 rounded-full flex flex-col justify-between text-on-secondary-container">
+<div class="p-3 bg-white/30 rounded-full w-fit">
+<span class="material-symbols-outlined" data-icon="checklist">checklist</span>
+</div>
+<div>
+<p class="text-sm font-medium opacity-80 mb-1" id="dashboard-pulse-secondary-label">Completion Rate</p>
+<h4 class="text-4xl font-extrabold" id="dashboard-pulse-secondary-value">142</h4>
+<p class="text-xs mt-2 font-medium" id="dashboard-pulse-secondary-caption">89% of weekly goal</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Stay Flowing (Activity Feed) -->
+<section>
+<h3 class="text-xl font-bold mb-6">Stay Flowing</h3>
+<div class="bg-surface-container-lowest rounded-full p-2" id="dashboard-activity">
+<!-- Activity Item 1 -->
+<div class="flex items-center gap-6 p-6 rounded-full hover:bg-surface-container-low transition-colors group">
+<div class="w-12 h-12 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+</div>
+<div class="flex-1">
+<h5 class="font-bold">Brainstorming: Project Nebula</h5>
+<p class="text-sm text-on-surface-variant">Last edited 14 minutes ago</p>
+</div>
+<div class="hidden md:flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-white overflow-hidden bg-slate-200">
+<img alt="Team member" data-alt="close-up of a smiling young man in a creative studio environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp9_B0cfTgWKWevwPdhut3KMTce1avua-E8Xu8o-4Q7n0lyk0KUo9GUf--COKvhAtHpVP094xL-1Eh9etdKFVfuVSRIYXuwBywrvA99noILsJar-nF-1HrJ8X5f_GR__ePcC_9h3XiNQuQDIfya65SEb0fMx7-SfUrmGGjl7SnXiB6hmt_Qdm6HT0vTi9Xr3o3R2kSCMcxd5LAnisEf7iEzSQBxEHqAxbWrVuDvSjL_6M6Lz8O8KhxvUTXFfAcbHv9_1Ofvej7VIi9"/>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-primary flex items-center justify-center text-[10px] text-white font-bold">
+                                        +2
+                                    </div>
+</div>
+<button class="p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<!-- Activity Item 2 -->
+<div class="flex items-center gap-6 p-6 rounded-full hover:bg-surface-container-low transition-colors group">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" data-icon="task_alt">task_alt</span>
+</div>
+<div class="flex-1">
+<h5 class="font-bold">Design Audit Complete</h5>
+<p class="text-sm text-on-surface-variant">Marked as finished by Sarah</p>
+</div>
+<span class="text-xs font-semibold px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full">Design</span>
+<button class="p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<!-- Activity Item 3 -->
+<div class="flex items-center gap-6 p-6 rounded-full hover:bg-surface-container-low transition-colors group">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+</div>
+<div class="flex-1">
+<h5 class="font-bold">Feedback on "Q3 Roadmap"</h5>
+<p class="text-sm text-on-surface-variant">3 new comments waiting for review</p>
+</div>
+<span class="text-xs font-semibold px-3 py-1 bg-tertiary-container text-on-tertiary-container rounded-full">Planning</span>
+<button class="p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+<!-- Side Info Column -->
+<div class="col-span-12 lg:col-span-4 space-y-8">
+<!-- Upcoming Tasks -->
+<section class="bg-surface-container rounded-full p-8">
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-xl font-bold">Upcoming</h3>
+<button class="p-2 bg-white rounded-full text-primary shadow-sm">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+</button>
+</div>
+<div class="space-y-6" id="dashboard-upcoming-list">
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<span class="text-xs font-bold text-primary uppercase">Mon</span>
+<span class="text-lg font-extrabold">12</span>
+</div>
+<div class="flex-1 p-4 bg-white rounded-full border-l-4 border-primary shadow-sm">
+<h6 class="font-bold text-sm">Product Sync</h6>
+<p class="text-xs opacity-60">10:00 AM - 11:30 AM</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<span class="text-xs font-bold text-on-surface-variant opacity-60 uppercase">Mon</span>
+<span class="text-lg font-extrabold opacity-60">12</span>
+</div>
+<div class="flex-1 p-4 bg-white/60 rounded-full shadow-sm">
+<h6 class="font-bold text-sm">Draft Newsletter</h6>
+<p class="text-xs opacity-60">02:00 PM</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<span class="text-xs font-bold text-on-surface-variant opacity-60 uppercase">Tue</span>
+<span class="text-lg font-extrabold opacity-60">13</span>
+</div>
+<div class="flex-1 p-4 bg-white/60 rounded-full shadow-sm">
+<h6 class="font-bold text-sm">Client Presentation</h6>
+<p class="text-xs opacity-60">09:00 AM</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-8 py-3 rounded-full border-2 border-primary/20 text-primary font-bold hover:bg-primary/5 transition-colors" data-go-create-task type="button">
+                            Add Task
+                        </button>
+</section>
+<!-- Recent Notes -->
+<section>
+<h3 class="text-xl font-bold mb-6">Recent Notes</h3>
+<div class="space-y-4" id="dashboard-recent-notes">
+<div class="p-6 bg-surface-container-lowest rounded-full group cursor-pointer transition-all hover:translate-x-1 border border-outline-variant/10">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-tertiary" data-icon="article">article</span>
+<div class="flex-1">
+<h6 class="font-bold text-sm leading-tight">Meeting with the Creative Team</h6>
+<p class="text-xs text-on-surface-variant mt-1">2 hours ago • Work</p>
+</div>
+</div>
+</div>
+<div class="p-6 bg-surface-container-lowest rounded-full group cursor-pointer transition-all hover:translate-x-1 border border-outline-variant/10">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary" data-icon="lightbulb">lightbulb</span>
+<div class="flex-1">
+<h6 class="font-bold text-sm leading-tight">New App Ideas (V2)</h6>
+<p class="text-xs text-on-surface-variant mt-1">Yesterday • Personal</p>
+</div>
+</div>
+</div>
+<div class="p-6 bg-surface-container-lowest rounded-full group cursor-pointer transition-all hover:translate-x-1 border border-outline-variant/10">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="book">book</span>
+<div class="flex-1">
+<h6 class="font-bold text-sm leading-tight">Reading List: Design Systems</h6>
+<p class="text-xs text-on-surface-variant mt-1">3 days ago • Learning</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Inspiration Widget -->
+<div class="relative overflow-hidden rounded-full aspect-square flex items-center justify-center p-8 text-center group">
+<img alt="Inspiration" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="minimalist macro shot of a green leaf with dew drops and soft ethereal sunlight bokeh" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKVkTuT18e3N6y3Gy44RpdgRpGWnu_gpFKifkqyYPp_ZteVAk7n2VTA_bxbT6VkgFLqPcdN7zpQaOteiGa3aI249N5ucev8eaXfBi5wWg-Q5SOeW77RL1uUR_B4yDTokbOmHep7durqmmk3LvkxX4PHH2qHGOalMmk3axpTGaYlkAElfSupsQ3J8Bx5tJTDSJxTS3iv4l83ATNXoStrosrC8BSKe0X3bfwBc2EE29_Ujah9G818BKP1Zz5yGzo7q4TtV52A5mJpiNi"/>
+<div class="absolute inset-0 bg-primary/40 backdrop-blur-[2px]"></div>
+<div class="relative z-10 text-on-primary">
+<span class="material-symbols-outlined mb-2 block" data-icon="format_quote">format_quote</span>
+<p class="text-lg font-bold leading-tight italic">"Simplicity is the ultimate sophistication."</p>
+<p class="text-xs mt-4 opacity-80 font-medium">Leonardo da Vinci</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Contextual FAB (Suppressed on certain screens but relevant for Dashboard) -->
+<button class="fixed bottom-10 right-10 w-16 h-16 rounded-full bg-primary text-on-primary shadow-2xl flex items-center justify-center hover:scale-110 transition-transform z-50 md:hidden" data-go-create-task type="button">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+<div class="fixed inset-0 z-[80] hidden items-center justify-center bg-on-surface/45 px-4 backdrop-blur-sm" id="dashboard-activity-modal">
+<div class="w-full max-w-2xl overflow-hidden rounded-[2rem] bg-surface-container-lowest shadow-[0_28px_80px_rgba(43,52,55,0.24)]">
+<div class="flex items-start justify-between gap-4 border-b border-outline-variant/20 px-6 py-5">
+<div>
+<p class="text-[11px] font-bold uppercase tracking-[0.18em] text-primary" id="dashboard-activity-modal-kicker">Recent Activity</p>
+<h3 class="mt-2 text-2xl font-extrabold text-on-surface" id="dashboard-activity-modal-title">Activity detail</h3>
+<p class="mt-1 text-sm text-on-surface-variant" id="dashboard-activity-modal-meta"></p>
+</div>
+<button class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-surface-container-low text-on-surface-variant transition-colors hover:bg-surface-container-high hover:text-on-surface" data-close-dashboard-activity-modal type="button">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="max-h-[70vh] overflow-y-auto px-6 py-6" id="dashboard-activity-modal-body"></div>
+</div>
+</div>
+<p class="fixed bottom-4 left-1/2 -translate-x-1/2 text-sm font-medium text-primary" id="page-feedback"></p>
+<script src="/assets/js/app.js"></script>
+</body></html>
