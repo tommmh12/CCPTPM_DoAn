@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#999d9f",
+                    "on-surface-variant": "#576164",
+                    "on-secondary-fixed-variant": "#37616d",
+                    "on-secondary-fixed": "#174550",
+                    "secondary-fixed-dim": "#afdce9",
+                    "on-tertiary-fixed": "#142f4f",
+                    "error-container": "#fa746f",
+                    "surface-container-highest": "#dae4e8",
+                    "surface-bright": "#f6fafb",
+                    "error": "#a83836",
+                    "secondary-fixed": "#bdeaf8",
+                    "surface-container-high": "#e1e9ed",
+                    "on-secondary": "#effbff",
+                    "secondary-dim": "#2e5965",
+                    "on-primary-fixed": "#1c4739",
+                    "tertiary-fixed-dim": "#a4bde4",
+                    "on-secondary-container": "#2c5863",
+                    "surface": "#f6fafb",
+                    "tertiary-dim": "#3b5476",
+                    "surface-container": "#e8eff2",
+                    "surface-tint": "#3d6758",
+                    "tertiary-fixed": "#b2cbf3",
+                    "background": "#f6fafb",
+                    "on-error": "#fff7f6",
+                    "on-error-container": "#6e0a12",
+                    "on-primary-container": "#2f594b",
+                    "primary-fixed-dim": "#b1decc",
+                    "outline-variant": "#aab4b7",
+                    "primary": "#3d6758",
+                    "outline": "#737c80",
+                    "error-dim": "#67040d",
+                    "on-surface": "#2b3437",
+                    "on-tertiary-container": "#2a4364",
+                    "inverse-primary": "#cffeeb",
+                    "on-primary": "#e4fff3",
+                    "primary-container": "#beecda",
+                    "primary-fixed": "#beecda",
+                    "secondary-container": "#bdeaf8",
+                    "secondary": "#3a6571",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary": "#f8f8ff",
+                    "on-background": "#2b3437",
+                    "surface-dim": "#d2dcdf",
+                    "inverse-surface": "#0a0f10",
+                    "primary-dim": "#315b4d",
+                    "on-primary-fixed-variant": "#396355",
+                    "surface-variant": "#dae4e8",
+                    "on-tertiary-fixed-variant": "#334c6e",
+                    "tertiary-container": "#b2cbf3",
+                    "surface-container-low": "#eff4f7",
+                    "tertiary": "#486083"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(246, 250, 251, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-[#f6fafb] dark:bg-slate-900 z-50">
+<div class="flex justify-between items-center w-full px-12 py-6 max-w-[1440px] mx-auto">
+<div class="font-manrope text-2xl font-bold text-[#3d6758] dark:text-[#b1decc]">
+                The Ethereal Canvas
+            </div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#2b3437] dark:text-slate-400 font-medium hover:text-[#3d6758] transition-colors" href="#">Dashboard</a>
+<a class="text-[#2b3437] dark:text-slate-400 font-medium hover:text-[#3d6758] transition-colors" href="#">Template Store</a>
+<a class="text-[#2b3437] dark:text-slate-400 font-medium hover:text-[#3d6758] transition-colors" href="#">My Library</a>
+<a class="text-[#2b3437] dark:text-slate-400 font-medium hover:text-[#3d6758] transition-colors" href="#">Support</a>
+</nav>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-[#e8eff2]/50 p-2 rounded-full transition-colors" data-icon="shopping_cart">shopping_cart</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-[#e8eff2]/50 p-2 rounded-full transition-colors" data-icon="account_circle">account_circle</button>
+</div>
+</div>
+</header>
+<main class="min-h-[calc(1453px-160px)] flex items-center justify-center px-6 py-12">
+<div class="max-w-[1100px] w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Left Side: Visual & Context -->
+<div class="lg:col-span-5 space-y-10">
+<div class="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-[0px_12px_32px_rgba(43,52,55,0.06)]">
+<img alt="Abstract digital art" class="w-full h-full object-cover" data-alt="Abstract fluid shapes in shades of deep forest green and soft seafoam blue with grainy texture and elegant composition" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLI0DaZqfdIPHl44E1ljbQZ-LKvuAq6OZnHv_kRT5frPbd8Z44MbJqva0XXitZeI8Ua_dQeFYiR7RnttdNisRExvwlY1Sdt4EdfNYg-aJEfgmzOfLNwUQfFyqvPiejWhcMaBfj6k5UzCQxXgFjwJ3eXlsWutTsMoKdY9AdzO11V62Sp1KMyivfHyi_XKFfpfxQsui7-59fdi4GPrg-SjCsn9056mV2_T4ZEodGz8vaflIhs8xGaQCDNoQew7Bs0UvY_IUAh6dfVxAZ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#3d6758]/40 to-transparent"></div>
+<div class="absolute bottom-8 left-8 right-8 glass-panel p-6 rounded-2xl">
+<p class="font-headline font-bold text-lg text-primary mb-1">Secure Checkout</p>
+<p class="text-sm text-on-surface-variant">Your transaction is encrypted and protected by ZenSecurity protocols.</p>
+</div>
+</div>
+<div class="pl-4">
+<h2 class="font-headline text-headline-md font-extrabold text-on-surface tracking-tight leading-tight mb-4">
+                        We couldn't process your payment.
+                    </h2>
+<p class="text-body-lg text-on-surface-variant max-w-md">
+                        Your workspace subscription is currently on hold. Let's get you back to your creative flow.
+                    </p>
+</div>
+</div>
+<!-- Right Side: Error & Troubleshooting (The Canvas) -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-[2.5rem] p-10 lg:p-16 shadow-[0px_12px_32px_rgba(43,52,55,0.06)]">
+<div class="flex items-center gap-4 mb-12">
+<div class="w-14 h-14 rounded-full bg-error-container/20 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">error</span>
+</div>
+<div>
+<span class="text-error font-bold tracking-widest text-xs uppercase">Transaction Failed</span>
+<h3 class="font-headline text-2xl font-bold text-on-surface">Error Code: E-1042</h3>
+</div>
+</div>
+<!-- Troubleshooting Steps: Bento Style -->
+<div class="space-y-8 mb-12">
+<p class="font-headline font-semibold text-on-surface-variant">Recommended steps to resolve this:</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Step 1 -->
+<div class="p-6 rounded-2xl bg-surface-container-low hover:bg-surface-container-high transition-colors group cursor-default">
+<span class="material-symbols-outlined text-primary mb-4 block" data-icon="credit_card">credit_card</span>
+<h4 class="font-bold text-on-surface mb-2">Check card details</h4>
+<p class="text-sm text-on-surface-variant">Ensure your card number, expiry date, and CVV are entered correctly.</p>
+</div>
+<!-- Step 2 -->
+<div class="p-6 rounded-2xl bg-surface-container-low hover:bg-surface-container-high transition-colors group cursor-default">
+<span class="material-symbols-outlined text-primary mb-4 block" data-icon="account_balance">account_balance</span>
+<h4 class="font-bold text-on-surface mb-2">Insufficient funds</h4>
+<p class="text-sm text-on-surface-variant">Verify that your account has enough balance for the current plan.</p>
+</div>
+<!-- Step 3 -->
+<div class="p-6 rounded-2xl bg-surface-container-low hover:bg-surface-container-high transition-colors group cursor-default">
+<span class="material-symbols-outlined text-primary mb-4 block" data-icon="payments">payments</span>
+<h4 class="font-bold text-on-surface mb-2">Try another method</h4>
+<p class="text-sm text-on-surface-variant">Switch to PayPal, Apple Pay, or a different credit card to continue.</p>
+</div>
+<!-- Step 4 -->
+<div class="p-6 rounded-2xl bg-surface-container-low hover:bg-surface-container-high transition-colors group cursor-default">
+<span class="material-symbols-outlined text-primary mb-4 block" data-icon="contact_support">contact_support</span>
+<h4 class="font-bold text-on-surface mb-2">Bank restriction</h4>
+<p class="text-sm text-on-surface-variant">Sometimes banks block international or high-value digital transactions.</p>
+</div>
+</div>
+</div>
+<!-- Action Bar -->
+<div class="flex flex-col sm:flex-row items-center gap-4 pt-8 border-t border-outline-variant/15">
+<button class="w-full sm:w-auto px-10 py-4 rounded-full bg-primary text-on-primary font-bold shadow-sm hover:shadow-lg transition-all hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-2">
+                        Back to Payment
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button class="w-full sm:w-auto px-8 py-4 rounded-full bg-secondary-container text-on-secondary-container font-semibold hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-2">
+                        Contact Support
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-[#aab4b7]/15 bg-[#f6fafb] dark:bg-slate-950">
+<div class="flex justify-between items-center w-full px-12 py-8 max-w-[1440px] mx-auto">
+<div class="font-manrope font-semibold text-[#3d6758] dark:text-[#b1decc]">
+                © 2024 The Ethereal Canvas. All rights reserved.
+            </div>
+<div class="flex gap-8">
+<a class="text-[#2b3437]/70 dark:text-slate-500 font-inter text-sm tracking-wide hover:text-[#3d6758] transition-colors" href="#">Privacy Policy</a>
+<a class="text-[#2b3437]/70 dark:text-slate-500 font-inter text-sm tracking-wide hover:text-[#3d6758] transition-colors" href="#">Terms of Service</a>
+<a class="text-[#2b3437]/70 dark:text-slate-500 font-inter text-sm tracking-wide hover:text-[#3d6758] transition-colors" href="#">License Agreement</a>
+<a class="text-[#2b3437]/70 dark:text-slate-500 font-inter text-sm tracking-wide hover:text-[#3d6758] transition-colors" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+</body></html>

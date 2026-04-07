@@ -7,6 +7,8 @@ function pageRouter(frontendDir) {
   const pages = {
     "/": "07-ethereal-canvas-login.html",
     "/login": "07-ethereal-canvas-login.html",
+    "/register": "11-ethereal-canvas-register.html",
+    "/forgot-password": "05-ethereal-canvas-forgot-password.html",
     "/dashboard": "04-zen-workspace-dashboard.html",
     "/schedule": "03-zen-workspace-calendar.html",
     "/tasks": "14-zen-workspace-tasks-overview.html",

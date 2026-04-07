@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#dae4e8",
+                    "on-primary-fixed": "#1c4739",
+                    "primary": "#3d6758",
+                    "outline-variant": "#aab4b7",
+                    "inverse-on-surface": "#999d9f",
+                    "secondary-fixed": "#bdeaf8",
+                    "surface-bright": "#f6fafb",
+                    "on-tertiary-container": "#2a4364",
+                    "surface-tint": "#3d6758",
+                    "error": "#a83836",
+                    "error-container": "#fa746f",
+                    "secondary-fixed-dim": "#afdce9",
+                    "secondary": "#3a6571",
+                    "surface-container-highest": "#dae4e8",
+                    "primary-container": "#beecda",
+                    "tertiary": "#486083",
+                    "on-tertiary-fixed-variant": "#334c6e",
+                    "on-secondary": "#effbff",
+                    "secondary-dim": "#2e5965",
+                    "primary-fixed": "#beecda",
+                    "surface-container-low": "#eff4f7",
+                    "tertiary-fixed": "#b2cbf3",
+                    "inverse-primary": "#cffeeb",
+                    "on-secondary-fixed-variant": "#37616d",
+                    "on-primary": "#e4fff3",
+                    "tertiary-fixed-dim": "#a4bde4",
+                    "inverse-surface": "#0a0f10",
+                    "tertiary-container": "#b2cbf3",
+                    "on-background": "#2b3437",
+                    "on-surface-variant": "#576164",
+                    "on-secondary-fixed": "#174550",
+                    "on-secondary-container": "#2c5863",
+                    "error-dim": "#67040d",
+                    "on-error-container": "#6e0a12",
+                    "on-tertiary": "#f8f8ff",
+                    "on-surface": "#2b3437",
+                    "on-tertiary-fixed": "#142f4f",
+                    "outline": "#737c80",
+                    "tertiary-dim": "#3b5476",
+                    "secondary-container": "#bdeaf8",
+                    "surface-container-high": "#e1e9ed",
+                    "surface-container": "#e8eff2",
+                    "primary-fixed-dim": "#b1decc",
+                    "on-primary-fixed-variant": "#396355",
+                    "surface": "#f6fafb",
+                    "surface-dim": "#d2dcdf",
+                    "on-error": "#fff7f6",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#f6fafb",
+                    "primary-dim": "#315b4d",
+                    "on-primary-container": "#2f594b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .glass-panel {
+            background: rgba(246, 250, 251, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen">
+<!-- TopAppBar Navigation Shell -->
+<header class="w-full h-16 sticky top-0 bg-[#f6fafb] dark:bg-slate-950 flex justify-between items-center px-12 w-full max-w-full z-50">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold text-[#3d6758] dark:text-[#b1decc] font-manrope">ZenWorkspace</span>
+<nav class="hidden md:flex items-center space-x-8 font-manrope text-sm tracking-tight">
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-[#3d6758] transition-colors duration-200" href="#">Dashboard</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-[#3d6758] transition-colors duration-200" href="#">Projects</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-[#3d6758] transition-colors duration-200" href="#">Team</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-slate-500 hover:text-primary transition-colors duration-200">notifications</button>
+<button class="material-symbols-outlined text-slate-500 hover:text-primary transition-colors duration-200">settings</button>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container ml-2">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="professional headshot of a smiling man with a neutral blurred background in soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBnWJqz2k9eFBy9RMTq0xj3_bkiluLFoXZSqcVZNsa5zjbOF4pgvOl7peMRRaRiYpqyaHxPTDonDEfixQ9pxwwMZ9vkyaX-SDhxcmT0X00zQvLOZDCESSKi7fA0jCWo8efF2TXo5fme-v7oyTEZ6-h-fyUdJy-YUTjvaTe-J_k0bCcgeboggoAzLmTlOcQYM08pOm9SFpxiuE62F8ej2CVlPSQiV_I2d9M3W3NM-e9KKcWxMbs7Xj0dVABQD6dDAqNTwbDcdn1Md93"/>
+</div>
+</div>
+</header>
+<div class="flex">
+<!-- SideNavBar Navigation Shell -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#e8eff2] dark:bg-slate-900 flex flex-col py-8 px-6 space-y-4 pt-24 z-40">
+<div class="flex flex-col mb-8">
+<span class="font-manrope font-bold text-[#2b3437] dark:text-slate-100 text-lg">Alex Rivera</span>
+<span class="font-inter text-xs text-on-surface-variant">Premium Member</span>
+</div>
+<nav class="flex flex-col space-y-2 flex-grow">
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-[#2b3437] dark:text-slate-400 hover:bg-[#d1dde3] dark:hover:bg-slate-800 transition-all font-inter text-sm" href="#">
+<span class="material-symbols-outlined">person</span> General
+                </a>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-[#2b3437] dark:text-slate-400 hover:bg-[#d1dde3] dark:hover:bg-slate-800 transition-all font-inter text-sm" href="#">
+<span class="material-symbols-outlined">shield</span> Security
+                </a>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-[#3d6758] dark:text-[#b1decc] font-bold hover:bg-[#d1dde3] dark:hover:bg-slate-800 transition-all font-inter text-sm" href="#">
+<span class="material-symbols-outlined">shopping_bag</span> Orders
+                </a>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-[#2b3437] dark:text-slate-400 hover:bg-[#d1dde3] dark:hover:bg-slate-800 transition-all font-inter text-sm" href="#">
+<span class="material-symbols-outlined">location_on</span> Addresses
+                </a>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-[#2b3437] dark:text-slate-400 hover:bg-[#d1dde3] dark:hover:bg-slate-800 transition-all font-inter text-sm" href="#">
+<span class="material-symbols-outlined">payments</span> Payments
+                </a>
+</nav>
+<div class="mt-auto space-y-4">
+<button class="w-full bg-primary text-on-primary py-2 px-4 rounded-full font-inter text-sm font-semibold hover:opacity-90 transition-opacity">Upgrade Plan</button>
+<div class="border-t border-outline-variant/10 pt-4 space-y-2">
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-on-surface-variant font-inter text-sm hover:bg-[#d1dde3] transition-all" href="#">
+<span class="material-symbols-outlined">help_outline</span> Help
+                    </a>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-on-surface-variant font-inter text-sm hover:bg-[#d1dde3] transition-all" href="#">
+<span class="material-symbols-outlined">logout</span> Sign Out
+                    </a>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 flex-grow px-12 py-12">
+<!-- Header Section with Asymmetric Layout -->
+<div class="flex flex-col md:flex-row justify-between items-start mb-12 gap-6">
+<div class="max-w-2xl">
+<div class="flex items-center gap-4 text-on-surface-variant mb-2">
+<a class="hover:text-primary transition-colors" href="#">Orders</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-on-surface font-medium">Order #ZW-29840</span>
+</div>
+<h1 class="text-4xl font-extrabold text-on-surface leading-tight font-headline">Order Details</h1>
+<p class="text-on-surface-variant mt-2 max-w-lg">Placed on October 24, 2023 at 2:15 PM. Currently being processed for dispatch from our Berlin logistics center.</p>
+</div>
+<div class="flex gap-4">
+<button class="bg-surface-container-highest text-on-surface-variant px-6 py-2.5 rounded-full font-semibold flex items-center gap-2 hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-xl">share</span> Share
+                    </button>
+<button class="bg-primary text-on-primary px-8 py-2.5 rounded-full font-semibold flex items-center gap-2 hover:opacity-95 transition-all shadow-lg shadow-primary/10">
+<span class="material-symbols-outlined text-xl">download</span> Download Invoice
+                    </button>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Order Status Timeline (Col 1-4) -->
+<div class="col-span-12 lg:col-span-4 space-y-8">
+<section class="bg-surface-container-low rounded-[2rem] p-8">
+<h3 class="text-xl font-bold font-headline mb-8 flex items-center gap-2">
+<span class="w-2 h-6 bg-primary rounded-full"></span>
+                            Order Status
+                        </h3>
+<div class="relative space-y-10 pl-4 border-l border-outline-variant/30 ml-3">
+<div class="relative">
+<span class="absolute -left-[2.1rem] top-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check</span>
+</span>
+<p class="font-bold text-on-surface">Order Confirmed</p>
+<p class="text-xs text-on-surface-variant">Oct 24, 2023 • 2:15 PM</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[2.1rem] top-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check</span>
+</span>
+<p class="font-bold text-on-surface">Payment Verified</p>
+<p class="text-xs text-on-surface-variant">Oct 24, 2023 • 2:18 PM</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[2.1rem] top-0 w-8 h-8 rounded-full bg-primary-container border-2 border-primary flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm animate-pulse">local_shipping</span>
+</span>
+<p class="font-bold text-primary">Processing</p>
+<p class="text-xs text-on-surface-variant">Oct 25, 2023 • In Progress</p>
+</div>
+<div class="relative opacity-40">
+<span class="absolute -left-[2.1rem] top-0 w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-sm">inventory_2</span>
+</span>
+<p class="font-bold text-on-surface">Shipped</p>
+<p class="text-xs text-on-surface-variant italic">Pending</p>
+</div>
+<div class="relative opacity-40">
+<span class="absolute -left-[2.1rem] top-0 w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-sm">home</span>
+</span>
+<p class="font-bold text-on-surface">Delivered</p>
+<p class="text-xs text-on-surface-variant italic">Estimated Oct 28</p>
+</div>
+</div>
+</section>
+<section class="bg-surface-container rounded-[2rem] p-8">
+<h3 class="text-xl font-bold font-headline mb-6">Shipping Address</h3>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<div class="text-on-surface font-inter">
+<p class="font-bold">Alex Rivera</p>
+<p class="text-sm">Schönhauser Allee 103</p>
+<p class="text-sm">Prenzlauer Berg, 10439</p>
+<p class="text-sm">Berlin, Germany</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Items & Summary (Col 5-12) -->
+<div class="col-span-12 lg:col-span-8 space-y-8">
+<!-- Items Section -->
+<section class="bg-surface-container-lowest rounded-[2rem] p-10">
+<h3 class="text-2xl font-bold font-headline mb-8">Items in Order (3)</h3>
+<div class="space-y-6">
+<!-- Item 1 -->
+<div class="flex items-center justify-between group hover:bg-surface-container-low transition-colors p-4 rounded-xl -mx-4">
+<div class="flex items-center gap-6">
+<div class="w-24 h-24 rounded-2xl overflow-hidden bg-surface-container">
+<img alt="Tablet Device" class="w-full h-full object-cover" data-alt="close-up of a sleek minimalist digital tablet with a stylus resting on its side on a clean white surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-jRIo9ezCIX66kIVZmuxqsKou_gwp8NdL29VUb9gA5KlhYmqUvuZ05Zch0vUeFKttBR_jzYTG7fL8XovThBBMuT-9lB2yGOkzB8ot1t-Y01JLxMQC1znf-H2R2L3GkxnG4fzZCtUugk3nYwj0mL_F8dLOtI26BnnKD98AMOIfW44-aOz1ZZ9qLnqS7fOnrnf-W4OdqXZGuSg0WZGR0PAGB5W7_kN8JNN_UWKYUjkrsTc2_BENoj_zT9c7G6LBHApAphucg6yxXrAn"/>
+</div>
+<div>
+<h4 class="font-bold text-on-surface text-lg">ZenTab Ultra 12.9"</h4>
+<p class="text-on-surface-variant text-sm">Space Gray • 256GB • Wi-Fi</p>
+<p class="text-primary font-bold mt-1">1 × $1,099.00</p>
+</div>
+</div>
+<span class="text-xl font-bold text-on-surface">$1,099.00</span>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between group hover:bg-surface-container-low transition-colors p-4 rounded-xl -mx-4">
+<div class="flex items-center gap-6">
+<div class="w-24 h-24 rounded-2xl overflow-hidden bg-surface-container">
+<img alt="Premium Headphones" class="w-full h-full object-cover" data-alt="professional studio headphones with matte finish and leather ear cushions in dramatic moody lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2y-3MxY0RC-gimhnp18wVONeMqXrTPrteArCWYIZLOQQQyl_EoQlHdrJ2d5tu6utKD59c3hDRvTxyyUwlKtmpGh5UEhYP7a4FjbQwPFRiwoctSouh-wZCwFMdV_644jok2IA1Q5ZsGcI92QOGc3ccy8mzyI53S_fVHyrL45gUPYqJI6e290NJ0oQPzkGOL-EssyXFuESvxGBsKFWiuKi9aVOr4ya8IsvVH2UDXQ9PgH_MqJs1NcDtPFakFkYXuIHN2NewSQfkdRyb"/>
+</div>
+<div>
+<h4 class="font-bold text-on-surface text-lg">Acoustic Pro Headphones</h4>
+<p class="text-on-surface-variant text-sm">Forest Green • Active Noise Canceling</p>
+<p class="text-primary font-bold mt-1">1 × $349.00</p>
+</div>
+</div>
+<span class="text-xl font-bold text-on-surface">$349.00</span>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center justify-between group hover:bg-surface-container-low transition-colors p-4 rounded-xl -mx-4">
+<div class="flex items-center gap-6">
+<div class="w-24 h-24 rounded-2xl overflow-hidden bg-surface-container">
+<img alt="Wooden Desk Organizer" class="w-full h-full object-cover" data-alt="elegant wooden desk organizer holding premium pens and a small notebook on a clean walnut desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABJiFSwwBZJWHi92_p52ewHUPJSCe9CKdpruHgOioOB1CHxvUCDCjKzoRM5s-1hPNB0S1lYm4harNRrMyF71Homi9o0i3alHRshTHnbvI8IQwFhSgBRqRDlVddFbNUqTpub30JbqCxulvRBrhPBX26Xvy0VmYvPDmov3uD5qwYlHDaIXFr2KyDA7sQSuPUaH9OSasLvHecwXyjzJU5fBzIudp8TcmnrW5PPvboEYFeA4MyZlL1qsVPjI34KyJQu4sQ0NOWfqDD5hGR"/>
+</div>
+<div>
+<h4 class="font-bold text-on-surface text-lg">ZenDesk Minimalist Set</h4>
+<p class="text-on-surface-variant text-sm">Oak Wood • 3-Piece Module</p>
+<p class="text-primary font-bold mt-1">2 × $89.00</p>
+</div>
+</div>
+<span class="text-xl font-bold text-on-surface">$178.00</span>
+</div>
+</div>
+</section>
+<!-- Summary Section -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-tertiary-container/30 rounded-[2rem] p-8 flex flex-col justify-center">
+<h3 class="text-lg font-bold font-headline mb-4 flex items-center gap-2 text-on-tertiary-container">
+<span class="material-symbols-outlined">contact_support</span>
+                                Need help with this order?
+                            </h3>
+<p class="text-on-tertiary-fixed-variant text-sm mb-6 leading-relaxed">If you have any questions regarding your delivery, products, or need to request a return, our concierge team is available 24/7.</p>
+<button class="bg-tertiary text-on-tertiary py-3 px-6 rounded-full font-semibold self-start hover:opacity-90 transition-opacity">Contact Concierge</button>
+</div>
+<div class="bg-surface-container-low rounded-[2rem] p-8">
+<h3 class="text-xl font-bold font-headline mb-6">Order Summary</h3>
+<div class="space-y-4">
+<div class="flex justify-between text-on-surface-variant">
+<span>Subtotal</span>
+<span class="font-medium">$1,626.00</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Tax (8.25%)</span>
+<span class="font-medium">$134.15</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Shipping (Express)</span>
+<span class="font-medium">$25.00</span>
+</div>
+<div class="pt-6 mt-2 border-t border-outline-variant/20 flex justify-between items-end">
+<div>
+<p class="text-sm text-on-surface-variant font-medium">Total Amount</p>
+<p class="text-3xl font-extrabold text-primary font-headline tracking-tight">$1,785.15</p>
+</div>
+<div class="text-right">
+<span class="inline-flex items-center gap-1 bg-primary-container text-on-primary-container px-3 py-1 rounded-full text-xs font-bold">
+<span class="material-symbols-outlined text-[10px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+                                            PAID
+                                        </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- Bottom Note -->
+<footer class="mt-16 text-center text-on-surface-variant text-sm font-inter">
+<p>Transactions are secured and encrypted. <a class="underline text-primary" href="#">Privacy Policy</a> • <a class="underline text-primary" href="#">Terms of Service</a></p>
+</footer>
+</main>
+</div>
+</body></html>

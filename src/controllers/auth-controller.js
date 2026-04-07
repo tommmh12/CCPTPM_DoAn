@@ -8,7 +8,6 @@ const {
   deleteAllUserSessions,
   deleteSessionByTokenHash
 } = require("../services/session-service");
-const { getGoogleAuthConfig, verifyGoogleCredential } = require("../services/google-auth-service");
 
 async function login(req, res) {
   const { email, password, remember } = req.body;
@@ -55,102 +54,122 @@ async function login(req, res) {
   });
 }
 
-async function googleConfig(_req, res) {
-  res.json(getGoogleAuthConfig());
-}
-
-async function googleLogin(req, res) {
-  const { credential, remember } = req.body;
+async function register(req, res) {
+  const { fullName, email, password, remember } = req.body;
   const ipAddress = req.ip;
   const userAgent = req.get("user-agent");
-  const googleProfile = await verifyGoogleCredential(credential);
-
-  assertLoginAllowed(ipAddress, googleProfile.email);
-
   const connection = await pool.getConnection();
 
   try {
     await connection.beginTransaction();
 
-    const [users] = await connection.query(
+    const [existingUsers] = await connection.query(
       `
-        SELECT id, full_name, email, avatar_url
+        SELECT id
         FROM users
         WHERE email = ?
         LIMIT 1
       `,
-      [googleProfile.email]
+      [email]
     );
 
-    let user = users[0];
-
-    if (!user) {
-      const generatedPasswordHash = hashPassword(generateToken());
-      const [result] = await connection.query(
-        `
-          INSERT INTO users (full_name, email, password_hash, avatar_url)
-          VALUES (?, ?, ?, ?)
-        `,
-        [googleProfile.fullName, googleProfile.email, generatedPasswordHash, googleProfile.avatarUrl]
-      );
-
-      await connection.query(
-        `
-          INSERT INTO user_preferences (user_id)
-          VALUES (?)
-        `,
-        [result.insertId]
-      );
-
-      user = {
-        id: result.insertId,
-        full_name: googleProfile.fullName,
-        email: googleProfile.email,
-        avatar_url: googleProfile.avatarUrl
-      };
-    } else if (!user.avatar_url && googleProfile.avatarUrl) {
-      await connection.query(
-        `
-          UPDATE users
-          SET avatar_url = ?
-          WHERE id = ?
-        `,
-        [googleProfile.avatarUrl, user.id]
-      );
-
-      user.avatar_url = googleProfile.avatarUrl;
+    if (existingUsers[0]) {
+      throw httpError(409, "An account with this email already exists", {
+        code: "AUTH_EMAIL_IN_USE"
+      });
     }
+
+    const [result] = await connection.query(
+      `
+        INSERT INTO users (
+          full_name,
+          email,
+          password_hash,
+          membership_tier,
+          public_profile
+        )
+        VALUES (?, ?, ?, 'Premium Member', 1)
+      `,
+      [fullName, email, hashPassword(password)]
+    );
+
+    const userId = result.insertId;
+
+    await connection.query(
+      `
+        INSERT INTO user_preferences (
+          user_id,
+          theme,
+          accent_color,
+          language_code,
+          timezone,
+          auto_translate,
+          auto_dst
+        )
+        VALUES (?, 'light', '#3d6758', 'en-US', 'UTC', 0, 1)
+      `,
+      [userId]
+    );
 
     const rawToken = generateToken();
     const tokenHash = hashToken(rawToken);
     const sessionDays = remember ? env.sessionDays : 1;
 
-    await createSession(user.id, tokenHash, sessionDays, { ipAddress, userAgent }, connection);
-    await connection.commit();
-    clearFailures(ipAddress, googleProfile.email);
+    await createSession(userId, tokenHash, sessionDays, { ipAddress, userAgent }, connection);
 
-    res.json({
+    await connection.query(
+      `
+        INSERT INTO activity_logs (user_id, actor_user_id, entity_type, entity_id, action_type, message)
+        VALUES (?, ?, 'session', ?, 'registered', 'Created a new account')
+      `,
+      [userId, userId, userId]
+    );
+
+    await connection.commit();
+
+    res.status(201).json({
       token: rawToken,
       user: {
-        id: user.id,
-        fullName: user.full_name,
-        email: user.email,
-        avatarUrl: user.avatar_url
+        id: userId,
+        fullName,
+        email,
+        avatarUrl: null
       }
     });
   } catch (error) {
     await connection.rollback();
-
-    if (error.code === "ER_DUP_ENTRY") {
-      throw httpError(409, "This Google account is already linked to another user", {
-        code: "GOOGLE_AUTH_DUPLICATE_ACCOUNT"
-      });
-    }
-
     throw error;
   } finally {
     connection.release();
   }
+}
+
+async function forgotPassword(req, res) {
+  const { email } = req.body;
+
+  const [users] = await pool.query(
+    `
+      SELECT id
+      FROM users
+      WHERE email = ?
+      LIMIT 1
+    `,
+    [email]
+  );
+
+  if (users[0]) {
+    await pool.query(
+      `
+        INSERT INTO activity_logs (user_id, actor_user_id, entity_type, entity_id, action_type, message)
+        VALUES (?, ?, 'session', ?, 'password_reset_requested', 'Requested a password reset link')
+      `,
+      [users[0].id, users[0].id, users[0].id]
+    );
+  }
+
+  res.status(202).json({
+    message: "If an account exists for this email, a password reset link has been prepared."
+  });
 }
 
 async function session(req, res) {
@@ -175,10 +194,10 @@ async function logoutAll(req, res) {
 }
 
 module.exports = {
-  googleConfig,
-  googleLogin,
+  forgotPassword,
   login,
   logoutAll,
   logout,
+  register,
   session
 };

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Register | The Ethereal Canvas</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#737c80",
+                        "primary-dim": "#315b4d",
+                        "surface-dim": "#d2dcdf",
+                        "outline-variant": "#aab4b7",
+                        "surface-tint": "#3d6758",
+                        "surface-container": "#e8eff2",
+                        "secondary-container": "#bdeaf8",
+                        "on-primary-fixed": "#1c4739",
+                        "surface-variant": "#dae4e8",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#3d6758",
+                        "tertiary": "#486083",
+                        "secondary-fixed": "#bdeaf8",
+                        "on-primary-container": "#2f594b",
+                        "surface-container-low": "#eff4f7",
+                        "surface-container-highest": "#dae4e8",
+                        "background": "#f6fafb",
+                        "on-secondary-container": "#2c5863",
+                        "tertiary-dim": "#3b5476",
+                        "inverse-surface": "#0a0f10",
+                        "on-error": "#fff7f6",
+                        "on-tertiary-fixed-variant": "#334c6e",
+                        "inverse-on-surface": "#999d9f",
+                        "error-container": "#fa746f",
+                        "primary-container": "#beecda",
+                        "on-tertiary-fixed": "#142f4f",
+                        "on-error-container": "#6e0a12",
+                        "primary-fixed": "#beecda",
+                        "on-secondary-fixed": "#174550",
+                        "secondary-dim": "#2e5965",
+                        "on-surface": "#2b3437",
+                        "surface-container-high": "#e1e9ed",
+                        "secondary-fixed-dim": "#afdce9",
+                        "on-tertiary-container": "#2a4364",
+                        "on-primary-fixed-variant": "#396355",
+                        "surface": "#f6fafb",
+                        "tertiary-fixed-dim": "#a4bde4",
+                        "on-surface-variant": "#576164",
+                        "on-secondary-fixed-variant": "#37616d",
+                        "inverse-primary": "#cffeeb",
+                        "tertiary-fixed": "#b2cbf3",
+                        "primary-fixed-dim": "#b1decc",
+                        "on-background": "#2b3437",
+                        "on-tertiary": "#f8f8ff",
+                        "on-secondary": "#effbff",
+                        "tertiary-container": "#b2cbf3",
+                        "on-primary": "#e4fff3",
+                        "error-dim": "#67040d",
+                        "secondary": "#3a6571",
+                        "error": "#a83836",
+                        "surface-bright": "#f6fafb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-effect {
+            background: rgba(246, 250, 251, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<nav class="w-full top-0 z-50 bg-[#f6fafb] dark:bg-slate-950 font-['Manrope'] antialiased text-sm">
+<div class="flex justify-between items-center px-12 py-6 w-full max-w-[1440px] mx-auto">
+<div class="text-xl font-bold tracking-tight text-[#2b3437] dark:text-slate-100 cursor-pointer transition-all active:opacity-70">
+                The Ethereal Canvas
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#2b3437]/60 dark:text-slate-400 hover:text-[#3d6758] transition-colors duration-300 cursor-pointer" href="#">Support</a>
+<a class="text-[#2b3437]/60 dark:text-slate-400 hover:text-[#3d6758] transition-colors duration-300 cursor-pointer" href="#">Help Center</a>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-semibold hover:opacity-90 transition-all cursor-pointer">
+                    Get Started
+                </button>
+</div>
+</div>
+</nav>
+<!-- Main Registration Shell -->
+<main class="flex-grow flex items-stretch overflow-hidden">
+<!-- Left Side: Visual Brand/Imagery -->
+<div class="hidden lg:flex w-1/2 relative bg-surface-container overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="Minimalist architectural interior with soft natural light, tall windows, and a single green botanical plant in a white ceramic pot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADJZiDJ1BhD8VSxlgURdD8XG6RDXbJvz77z7y9CQP01YEnSbjtnEum84Cz2CM5gQIya5HzwabOBHB9mUBvinzd6exB9MTBIzvojLTBdMEw6nuHP9u8ndN5hwl20SMuDfrgVkVEd4HoaOCUszY0757h1uyVwpDlijOQwrACItBoqeNGbBICu_Jm_MleTcEQ4sD-x6NDYSVGALaAySNLB8oKt4mQsyYVd53nr01fE9_xpTmU3UqDfE7-uahkZBWwXm9Pbicu90Zi4w7p"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+</div>
+<div class="relative z-10 p-24 flex flex-col justify-end w-full">
+<div class="glass-effect p-12 rounded-xl max-w-lg border border-outline-variant/15">
+<h2 class="font-headline text-4xl font-extrabold text-on-surface mb-6 tracking-tight leading-tight">
+                        Your journey to clarity starts here.
+                    </h2>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-8">
+                        Join a community of focused thinkers who prioritize cognitive ease and beautiful organization.
+                    </p>
+<div class="flex items-center gap-4">
+<div class="flex -space-x-3">
+<img class="w-10 h-10 rounded-full border-2 border-surface" data-alt="Portrait of a smiling woman in soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBh6TdiMTiEzpbwLT5D8S4Gtx_u3PbJhlEMiuJHyjPW2piuLC1EJy-eWsApXefjc2GrRdqAvESOACCUlq00DQyIrOO7rqlDbDa6xrDUPMpC3vKHHwCZ5onzigSfcJv2iTbE0_bLciRFwkDAOBro_YLq3k0Brdrs5OEV5iJxXE0zGt6PiB2nqA5F9n8Vq5cSKGffPIKGXnMWyLuDEC9bm8gHoNjedEqc5oZnaVlG7vlaqpfJgBROIYd4UhLWe2FmeUJfYZEiztuNEyQF"/>
+<img class="w-10 h-10 rounded-full border-2 border-surface" data-alt="Portrait of a professional man in casual attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOhwzjf5o6Rx_zKsruMvjOaaRXM2M1q0hTDSmHLT_jLMBtRjZfLcFfCYd8939NrkE6IZ9nvOhzKCITXPizxJufcVjpXuNtM_4ivCklz0QTFfxttterBU-Hh6_fRDI6Ja4951B27jQDoWGZ9YRQDgGIHKQuthO9-03VcVz-mir4g5rfl7YdmRhlXyzkKtxQsLCu2jVtl-qNsFGzWjKBO85FGbW1fInGWop72A7V0G_IUdGdAfcCOW6J4k2tzDR0zO9w8PSh1vlKqN-Z"/>
+<img class="w-10 h-10 rounded-full border-2 border-surface" data-alt="Close-up of a young woman's face with a calm expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtgBlEVrd1Z0UT7cDqLnF1VPihZxjBgCRnDWnPJdLcPx2xHivoQHJ42ydQUzfZEQWA0SE3_YcTIkHIjsZ538idlZWn4QcNVCFEvSOcmaHR7Ns78kWNt8T0dGwzd6mNQDVAQBTEUoVgcSL6uDBXMO50_ONLMjUJrXXo6v8Hdjz5n02QCEwFbbUDp9tPw3XlNzLAT-GDxUMpWFj3dZg6zvHGt0ptYEDwH8TdUqgH06uTWZbGOShfALGSkuwyvJHydgENqxNDUH2-lS4g"/>
+</div>
+<span class="text-sm font-medium text-on-surface-variant">Over 10,000+ creators already inside.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Side: Registration Form -->
+<div class="w-full lg:w-1/2 flex items-center justify-center p-8 md:p-16 lg:p-24 bg-surface-container-lowest">
+<div class="w-full max-w-md flex flex-col gap-10">
+<header class="flex flex-col gap-3">
+<h1 class="font-headline text-3xl font-bold tracking-tight text-on-surface">Create an account</h1>
+<p class="text-on-surface-variant font-medium">Join The Ethereal Canvas ecosystem today.</p>
+</header>
+<form class="flex flex-col gap-6">
+<!-- Full Name -->
+<div class="flex flex-col gap-2">
+<label class="text-xs font-semibold uppercase tracking-wider text-on-surface-variant ml-1" for="full_name">Full Name</label>
+<input class="w-full px-5 py-4 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-highest transition-all text-on-surface placeholder:text-outline/40" id="full_name" name="full_name" placeholder="John Doe" type="text"/>
+</div>
+<!-- Email Address -->
+<div class="flex flex-col gap-2">
+<label class="text-xs font-semibold uppercase tracking-wider text-on-surface-variant ml-1" for="email">Email Address</label>
+<input class="w-full px-5 py-4 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-highest transition-all text-on-surface placeholder:text-outline/40" id="email" name="email" placeholder="name@domain.com" type="email"/>
+</div>
+<!-- Password Group -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-xs font-semibold uppercase tracking-wider text-on-surface-variant ml-1" for="password">Password</label>
+<input class="w-full px-5 py-4 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-highest transition-all text-on-surface placeholder:text-outline/40" id="password" name="password" placeholder="••••••••" type="password"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-semibold uppercase tracking-wider text-on-surface-variant ml-1" for="confirm_password">Confirm Password</label>
+<input class="w-full px-5 py-4 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-highest transition-all text-on-surface placeholder:text-outline/40" id="confirm_password" name="confirm_password" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<!-- Terms & Conditions -->
+<div class="flex items-start gap-3 mt-2">
+<div class="flex items-center h-5">
+<input class="w-5 h-5 rounded-md border-outline-variant text-primary focus:ring-primary/30 bg-surface-container-low cursor-pointer" id="terms" name="terms" type="checkbox"/>
+</div>
+<label class="text-sm text-on-surface-variant leading-tight cursor-pointer" for="terms">
+                            I agree to the <a class="text-primary font-semibold hover:underline underline-offset-4" href="#">Terms and Conditions</a> and <a class="text-primary font-semibold hover:underline underline-offset-4" href="#">Privacy Policy</a>.
+                        </label>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-6 mt-4">
+<button class="w-full bg-primary hover:bg-primary-dim text-on-primary py-4 rounded-full font-bold text-lg shadow-sm hover:shadow-md transition-all active:scale-[0.98]" type="submit">
+                            Create Account
+                        </button>
+<div class="flex items-center justify-center gap-2 text-sm">
+<span class="text-on-surface-variant">Already have an account?</span>
+<a class="text-primary font-bold hover:underline underline-offset-4" href="#">Log in</a>
+</div>
+</div>
+</form>
+<!-- Social Proof / Footer inside form -->
+<div class="mt-8 pt-8 border-t border-outline-variant/10 flex flex-col gap-6">
+<p class="text-center text-xs font-bold text-outline uppercase tracking-[0.2em]">Or Register with</p>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-3 px-6 py-3 rounded-full bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface font-semibold text-sm">
+<img alt="Google" class="w-4 h-4 opacity-70" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB41rr-SWAJrBo0PoPVZXdjDocbWKMpPBQfHAhwRFOb2ZzB0kHOBdMPKDW3YQSn2pK5eYDz_wvWNUE74EbFfUGR2ATebVumS9GGcdt603XwVxiR105au5Jovm88TGy7SzpJIPcoqDp3ki-NpTHSFI375DxAhNMnfgxaezGNXN63tI3ctGZPmO-GHSvG-p05YWLk-iXhDfFhsCil9ZQoVpnexYdI-hLghua9aDOzbehp_obRvsOOrnjZ2B-wVRVMAzNFzyyenXXNw6sR"/>
+                            Google
+                        </button>
+<button class="flex items-center justify-center gap-3 px-6 py-3 rounded-full bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface font-semibold text-sm">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">ios</span>
+                            Apple
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-transparent font-['Inter'] text-xs tracking-wide">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-8 w-full max-w-[1440px] mx-auto mt-auto">
+<div class="text-sm font-medium text-[#2b3437] mb-4 md:mb-0">
+                © 2024 The Ethereal Canvas. All rights reserved.
+            </div>
+<div class="flex gap-8 items-center">
+<a class="text-[#2b3437]/40 dark:text-slate-500 hover:text-[#3d6758] dark:hover:text-white underline-offset-4 hover:underline ease-in-out duration-200 cursor-pointer" href="#">Privacy Policy</a>
+<a class="text-[#2b3437]/40 dark:text-slate-500 hover:text-[#3d6758] dark:hover:text-white underline-offset-4 hover:underline ease-in-out duration-200 cursor-pointer" href="#">Terms of Service</a>
+<a class="text-[#2b3437]/40 dark:text-slate-500 hover:text-[#3d6758] dark:hover:text-white underline-offset-4 hover:underline ease-in-out duration-200 cursor-pointer" href="#">Security</a>
+</div>
+</div>
+</footer>
+</body></html>

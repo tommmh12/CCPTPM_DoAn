@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ZenWorkspace - Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#dae4e8",
+                    "on-primary-fixed": "#1c4739",
+                    "primary": "#3d6758",
+                    "outline-variant": "#aab4b7",
+                    "inverse-on-surface": "#999d9f",
+                    "secondary-fixed": "#bdeaf8",
+                    "surface-bright": "#f6fafb",
+                    "on-tertiary-container": "#2a4364",
+                    "surface-tint": "#3d6758",
+                    "error": "#a83836",
+                    "error-container": "#fa746f",
+                    "secondary-fixed-dim": "#afdce9",
+                    "secondary": "#3a6571",
+                    "surface-container-highest": "#dae4e8",
+                    "primary-container": "#beecda",
+                    "tertiary": "#486083",
+                    "on-tertiary-fixed-variant": "#334c6e",
+                    "on-secondary": "#effbff",
+                    "secondary-dim": "#2e5965",
+                    "primary-fixed": "#beecda",
+                    "surface-container-low": "#eff4f7",
+                    "tertiary-fixed": "#b2cbf3",
+                    "inverse-primary": "#cffeeb",
+                    "on-secondary-fixed-variant": "#37616d",
+                    "on-primary": "#e4fff3",
+                    "tertiary-fixed-dim": "#a4bde4",
+                    "inverse-surface": "#0a0f10",
+                    "tertiary-container": "#b2cbf3",
+                    "on-background": "#2b3437",
+                    "on-surface-variant": "#576164",
+                    "on-secondary-fixed": "#174550",
+                    "on-secondary-container": "#2c5863",
+                    "error-dim": "#67040d",
+                    "on-error-container": "#6e0a12",
+                    "on-tertiary": "#f8f8ff",
+                    "on-surface": "#2b3437",
+                    "on-tertiary-fixed": "#142f4f",
+                    "outline": "#737c80",
+                    "tertiary-dim": "#3b5476",
+                    "secondary-container": "#bdeaf8",
+                    "surface-container-high": "#e1e9ed",
+                    "surface-container": "#e8eff2",
+                    "primary-fixed-dim": "#b1decc",
+                    "on-primary-fixed-variant": "#396355",
+                    "surface": "#f6fafb",
+                    "surface-dim": "#d2dcdf",
+                    "on-error": "#fff7f6",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#f6fafb",
+                    "primary-dim": "#315b4d",
+                    "on-primary-container": "#2f594b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen">
+<nav class="w-full h-16 sticky top-0 bg-[#f6fafb] dark:bg-slate-950 flex justify-between items-center px-12 z-50">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold text-[#3d6758] dark:text-[#b1decc] font-manrope tracking-tight">ZenWorkspace</span>
+<div class="hidden md:flex gap-6 font-manrope text-sm tracking-tight">
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-[#3d6758] dark:hover:text-[#b1decc] transition-colors duration-200 ease-in-out" href="#">Dashboard</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-[#3d6758] dark:hover:text-[#b1decc] transition-colors duration-200 ease-in-out" href="#">Projects</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-[#3d6758] dark:hover:text-[#b1decc] transition-colors duration-200 ease-in-out" href="#">Team</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary-fixed w-64" placeholder="Search settings..." type="text"/>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined">notifications</span></button>
+<button class="text-[#3d6758] dark:text-[#b1decc] font-semibold border-b-2 border-[#3d6758] pb-1"><span class="material-symbols-outlined">settings</span></button>
+<img alt="User profile avatar" class="w-8 h-8 rounded-full object-cover ml-2" data-alt="close-up portrait of a professional man with a friendly smile, clean studio lighting, soft blurred background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn23LT92GbMYyFtQoeJeCC-dkF1ELZoJzO76GN4jyWHWcjaItZpJyCVnKKp6xascec032qWnQpqqXqnNyrrp3rj8VligqB2qUYVsru39V_gJFaW_P6ECv2ZXiUfVLYHFDIcTEoDpVqamrMc-GIilpxHgpN3CkaEkTYGEjnKw1NmV4zqnHrdH6VSm3ySVo2Q2RjUFL_WM-_Z8_8tg9m29_rJSllt02dGRsFfBbYf1jL-wbs0tnZZXaD4e8FoET8nG8RNHTJvBH8Bode"/>
+</div>
+</nav>
+<div class="flex">
+<aside class="h-[calc(100vh-4rem)] w-64 fixed left-0 top-16 bg-[#e8eff2] dark:bg-slate-900 flex flex-col py-8 px-6 space-y-4">
+<div class="flex items-center gap-3 mb-6 px-2">
+<img alt="User profile avatar" class="w-10 h-10 rounded-full object-cover" data-alt="professional male headshot with modern aesthetic, neutral lighting, soft background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAC6BvjL6_w7oCz9I_w_IN7h26VL8POHz5j3xlT_CqxfF6DSUe_2u4OJejFA4J6cwAvXG_zxQS3gF5zuF8niuywJjaX9zbMnBiHDYkAAmR2EYjwX48dzzFPc99MnAEgPUTosD0r1CRQ-WzDquzjqxaexMH7yMuYNgup9OoGEd_nZfUYkJ1Jorhxxbb7T0TlyEWO9g3BdWObvcZI2mIoBK-0KUctd41qY0Jl4d-8UBQT02cAwTO4LjQM7L7rG0YRYNrYqEyBT40mcKWn"/>
+<div>
+<p class="font-manrope font-bold text-[#2b3437] dark:text-slate-100 text-sm">Alex Rivera</p>
+<p class="text-xs text-on-surface-variant">Premium Member</p>
+</div>
+</div>
+<div class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-[#3d6758] dark:text-[#b1decc] font-bold hover:bg-[#d1dde3] dark:hover:bg-slate-800 rounded-full transition-all duration-150 scale-98 active:scale-95" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-inter text-sm antialiased">General</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#2b3437] dark:text-slate-400 hover:bg-[#d1dde3] dark:hover:bg-slate-800 rounded-full transition-all duration-150 scale-98 active:scale-95" href="#">
+<span class="material-symbols-outlined">shield</span>
+<span class="font-inter text-sm antialiased">Security</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#2b3437] dark:text-slate-400 hover:bg-[#d1dde3] dark:hover:bg-slate-800 rounded-full transition-all duration-150 scale-98 active:scale-95" href="#">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="font-inter text-sm antialiased">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#2b3437] dark:text-slate-400 hover:bg-[#d1dde3] dark:hover:bg-slate-800 rounded-full transition-all duration-150 scale-98 active:scale-95" href="#">
+<span class="material-symbols-outlined">location_on</span>
+<span class="font-inter text-sm antialiased">Addresses</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#2b3437] dark:text-slate-400 hover:bg-[#d1dde3] dark:hover:bg-slate-800 rounded-full transition-all duration-150 scale-98 active:scale-95" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-inter text-sm antialiased">Payments</span>
+</a>
+</div>
+<div class="pt-6">
+<button class="w-full py-2.5 bg-primary text-on-primary rounded-full text-xs font-semibold hover:bg-primary-dim transition-colors">Upgrade Plan</button>
+</div>
+<div class="mt-auto space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-[#2b3437] dark:text-slate-400 hover:bg-[#d1dde3] dark:hover:bg-slate-800 rounded-full transition-all duration-150" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="font-inter text-sm antialiased">Help</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#2b3437] dark:text-slate-400 hover:bg-[#d1dde3] dark:hover:bg-slate-800 rounded-full transition-all duration-150" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-inter text-sm antialiased">Sign Out</span>
+</a>
+</div>
+</aside>
+<main class="ml-64 flex-1 px-16 py-12 max-w-5xl">
+<header class="mb-12">
+<h1 class="text-4xl font-extrabold text-on-surface mb-2 tracking-tight">General Settings</h1>
+<p class="text-on-surface-variant max-w-2xl font-body">Manage your workspace preferences, visual theme, and localization settings to create your ideal environment.</p>
+</header>
+<div class="grid grid-cols-12 gap-8">
+<!-- Theme Selection Bento -->
+<div class="col-span-12 md:col-span-8 bg-surface-container-lowest rounded-full p-8 shadow-[0px_12px_32px_rgba(43,52,55,0.04)]">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-xl font-bold font-headline">Appearance</h2>
+<span class="text-xs bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-bold">New Themes Available</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="relative group cursor-pointer border-2 border-primary rounded-xl p-1 transition-all overflow-hidden">
+<div class="bg-surface h-32 rounded-lg mb-3 flex flex-col p-3 overflow-hidden relative" data-alt="minimalist user interface preview showing light mode with soft green accents and clean typography">
+<div class="w-full h-3 bg-surface-container rounded-full mb-2"></div>
+<div class="w-3/4 h-2 bg-surface-container-high rounded-full mb-1"></div>
+<div class="w-1/2 h-2 bg-surface-container-high rounded-full"></div>
+<div class="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<p class="text-center text-sm font-semibold text-primary">Light Mode</p>
+</div>
+<div class="relative group cursor-pointer border-2 border-transparent hover:border-outline-variant rounded-xl p-1 transition-all overflow-hidden">
+<div class="bg-slate-900 h-32 rounded-lg mb-3 flex flex-col p-3 overflow-hidden" data-alt="minimalist user interface preview showing dark mode with deep navy and slate tones and bright text accents">
+<div class="w-full h-3 bg-slate-800 rounded-full mb-2"></div>
+<div class="w-3/4 h-2 bg-slate-800 rounded-full mb-1"></div>
+<div class="w-1/2 h-2 bg-slate-800 rounded-full"></div>
+</div>
+<p class="text-center text-sm font-semibold text-on-surface-variant">Dark Mode</p>
+</div>
+</div>
+</div>
+<!-- Accent Color Glass Card -->
+<div class="col-span-12 md:col-span-4 bg-surface-container-low rounded-full p-8 flex flex-col justify-between">
+<div>
+<h2 class="text-xl font-bold font-headline mb-4">Accent Color</h2>
+<div class="flex flex-wrap gap-3">
+<button class="w-8 h-8 rounded-full bg-[#3d6758] ring-2 ring-offset-2 ring-[#3d6758]"></button>
+<button class="w-8 h-8 rounded-full bg-[#3a6571] hover:scale-110 transition-transform"></button>
+<button class="w-8 h-8 rounded-full bg-[#486083] hover:scale-110 transition-transform"></button>
+<button class="w-8 h-8 rounded-full bg-[#a83836] hover:scale-110 transition-transform"></button>
+<button class="w-8 h-8 rounded-full bg-secondary-fixed hover:scale-110 transition-transform"></button>
+<button class="w-8 h-8 rounded-full border-2 border-outline-variant flex items-center justify-center"><span class="material-symbols-outlined text-sm">add</span></button>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant mt-4">Personalize the primary interface elements with your brand color.</p>
+</div>
+<!-- Localization Bento -->
+<div class="col-span-12 bg-surface-container-lowest rounded-full p-10 shadow-[0px_12px_32px_rgba(43,52,55,0.04)] grid md:grid-cols-2 gap-12">
+<div>
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary">language</span>
+<h2 class="text-xl font-bold font-headline">Language</h2>
+</div>
+<div class="space-y-4">
+<div class="group relative">
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-2 px-1">Display Language</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low border-none rounded-full py-4 px-6 text-sm appearance-none focus:ring-2 focus:ring-primary-fixed cursor-pointer">
+<option selected="">English (United States)</option>
+<option>Spanish (España)</option>
+<option>French (France)</option>
+<option>German (Deutschland)</option>
+<option>Japanese (日本)</option>
+</select>
+<span class="material-symbols-outlined absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-outline">expand_more</span>
+</div>
+</div>
+<div class="flex items-center gap-3 px-2">
+<input class="w-5 h-5 rounded-md border-outline-variant text-primary focus:ring-primary-fixed" id="auto-translate" type="checkbox"/>
+<label class="text-sm text-on-surface" for="auto-translate">Enable automatic content translation</label>
+</div>
+</div>
+</div>
+<div>
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary">schedule</span>
+<h2 class="text-xl font-bold font-headline">Timezone</h2>
+</div>
+<div class="space-y-4">
+<div class="group relative">
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-2 px-1">Current Timezone</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low border-none rounded-full py-4 px-6 text-sm appearance-none focus:ring-2 focus:ring-primary-fixed cursor-pointer">
+<option selected="">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
+<option>(GMT-05:00) Eastern Time (US &amp; Canada)</option>
+<option>(GMT+00:00) UTC / London</option>
+<option>(GMT+01:00) Central European Time</option>
+<option>(GMT+08:00) Singapore Standard Time</option>
+</select>
+<span class="material-symbols-outlined absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-outline">expand_more</span>
+</div>
+</div>
+<div class="flex justify-between items-center bg-surface-container-low rounded-full py-3 px-6">
+<span class="text-sm font-medium">Automatic DST adjustments</span>
+<div class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-outline-variant rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Footer Section -->
+<div class="col-span-12 flex justify-end items-center gap-4 mt-8">
+<button class="px-8 py-3 text-secondary font-bold hover:bg-secondary-container transition-colors rounded-full">Reset to Defaults</button>
+<button class="px-10 py-3 bg-primary text-on-primary font-bold rounded-full shadow-lg shadow-primary/20 hover:bg-primary-dim transition-all">Save Changes</button>
+</div>
+</div>
+</main>
+</div>
+</body></html>

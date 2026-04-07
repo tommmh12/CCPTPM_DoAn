@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Purchase Success | The Ethereal Canvas</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#999d9f",
+                    "on-surface-variant": "#576164",
+                    "on-secondary-fixed-variant": "#37616d",
+                    "on-secondary-fixed": "#174550",
+                    "secondary-fixed-dim": "#afdce9",
+                    "on-tertiary-fixed": "#142f4f",
+                    "error-container": "#fa746f",
+                    "surface-container-highest": "#dae4e8",
+                    "surface-bright": "#f6fafb",
+                    "error": "#a83836",
+                    "secondary-fixed": "#bdeaf8",
+                    "surface-container-high": "#e1e9ed",
+                    "on-secondary": "#effbff",
+                    "secondary-dim": "#2e5965",
+                    "on-primary-fixed": "#1c4739",
+                    "tertiary-fixed-dim": "#a4bde4",
+                    "on-secondary-container": "#2c5863",
+                    "surface": "#f6fafb",
+                    "tertiary-dim": "#3b5476",
+                    "surface-container": "#e8eff2",
+                    "surface-tint": "#3d6758",
+                    "tertiary-fixed": "#b2cbf3",
+                    "background": "#f6fafb",
+                    "on-error": "#fff7f6",
+                    "on-error-container": "#6e0a12",
+                    "on-primary-container": "#2f594b",
+                    "primary-fixed-dim": "#b1decc",
+                    "outline-variant": "#aab4b7",
+                    "primary": "#3d6758",
+                    "outline": "#737c80",
+                    "error-dim": "#67040d",
+                    "on-surface": "#2b3437",
+                    "on-tertiary-container": "#2a4364",
+                    "inverse-primary": "#cffeeb",
+                    "on-primary": "#e4fff3",
+                    "primary-container": "#beecda",
+                    "primary-fixed": "#beecda",
+                    "secondary-container": "#bdeaf8",
+                    "secondary": "#3a6571",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary": "#f8f8ff",
+                    "on-background": "#2b3437",
+                    "surface-dim": "#d2dcdf",
+                    "inverse-surface": "#0a0f10",
+                    "primary-dim": "#315b4d",
+                    "on-primary-fixed-variant": "#396355",
+                    "surface-variant": "#dae4e8",
+                    "on-tertiary-fixed-variant": "#334c6e",
+                    "tertiary-container": "#b2cbf3",
+                    "surface-container-low": "#eff4f7",
+                    "tertiary": "#486083"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(246, 250, 251, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0px 12px 32px rgba(43, 52, 55, 0.06);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-[#f6fafb] dark:bg-slate-900 w-full top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-12 py-6 max-w-[1440px] mx-auto">
+<div class="text-2xl font-bold text-[#3d6758] dark:text-[#b1decc] font-headline tracking-tight">
+                The Ethereal Canvas
+            </div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-[#2b3437] dark:text-slate-400 font-medium hover:text-[#3d6758] hover:bg-[#e8eff2]/50 transition-colors px-3 py-1 rounded-xl" href="#">Dashboard</a>
+<a class="text-[#2b3437] dark:text-slate-400 font-medium hover:text-[#3d6758] hover:bg-[#e8eff2]/50 transition-colors px-3 py-1 rounded-xl" href="#">Template Store</a>
+<a class="text-[#2b3437] dark:text-slate-400 font-medium hover:text-[#3d6758] hover:bg-[#e8eff2]/50 transition-colors px-3 py-1 rounded-xl" href="#">My Library</a>
+<a class="text-[#2b3437] dark:text-slate-400 font-medium hover:text-[#3d6758] hover:bg-[#e8eff2]/50 transition-colors px-3 py-1 rounded-xl" href="#">Support</a>
+</nav>
+<div class="flex items-center space-x-4">
+<button class="p-2 rounded-full hover:bg-[#e8eff2]/50 transition-colors">
+<span class="material-symbols-outlined text-[#3d6758]">shopping_cart</span>
+</button>
+<button class="p-2 rounded-full hover:bg-[#e8eff2]/50 transition-colors">
+<span class="material-symbols-outlined text-[#3d6758]">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow flex items-center justify-center py-16 px-6 relative">
+<!-- Abstract Background Elements -->
+<div class="absolute top-20 left-10 w-64 h-64 bg-primary-container/20 rounded-full blur-3xl -z-10"></div>
+<div class="absolute bottom-20 right-10 w-96 h-96 bg-secondary-container/30 rounded-full blur-3xl -z-10"></div>
+<div class="max-w-4xl w-full">
+<div class="text-center mb-12">
+<div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary-container mb-6">
+<span class="material-symbols-outlined text-[#3d6758] text-4xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h1 class="font-headline text-5xl font-extrabold text-on-surface tracking-tight mb-4">Your Sanctuary is Ready</h1>
+<p class="text-lg text-on-surface-variant max-w-xl mx-auto">Your purchase was successful. Your new digital environment is prepared and waiting for your creative spark.</p>
+</div>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Order Summary Bento -->
+<div class="md:col-span-7 space-y-6">
+<div class="bg-surface-container-lowest p-8 rounded-xl editorial-shadow">
+<div class="flex justify-between items-start mb-8">
+<div>
+<p class="text-xs font-bold uppercase tracking-widest text-outline mb-1">ORDER NUMBER</p>
+<h3 class="font-headline text-xl font-bold text-on-surface">#EC-9928341</h3>
+</div>
+<div class="text-right">
+<p class="text-xs font-bold uppercase tracking-widest text-outline mb-1">PURCHASE DATE</p>
+<h3 class="font-headline text-xl font-bold text-on-surface">Oct 24, 2024</h3>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center p-4 bg-surface-container-low rounded-xl group hover:bg-surface-container-high transition-colors">
+<div class="w-16 h-16 rounded-lg overflow-hidden bg-surface-container-highest flex-shrink-0">
+<img alt="Minimalist Workspace" class="w-full h-full object-cover" data-alt="minimalist clean home office desk with a single lamp and a plant in soft morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEvfswbgPt5ZJRlMTqGYXluMFt4w4u8n62R7xPjOr3J7kYjOubYn-qIsjmtomQIwKf1R5vvLlzFKz_E9ymblKWaEYARkwRwuo6zAx7HC0DgPM21B9EAzyhPBPbOYrPDrvGWMHZTaP0KbIl7DBVcL4rkpqQsGrFLNot4jt6-vrq7ecZaRYvk_jX58nFuJXkEgX2rz0serKgcoIWT88HI2K8OLe_96O0gcbmLJaJfR0LfTIzXhQ3ANAJys8y8edBx0KRM_eTO91dhtBI"/>
+</div>
+<div class="ml-4 flex-grow">
+<h4 class="font-headline font-bold text-on-surface">The Deep Work Bundle</h4>
+<p class="text-sm text-on-surface-variant">3 Premium Templates</p>
+</div>
+<div class="text-right">
+<span class="font-headline font-bold text-primary">$49.00</span>
+</div>
+</div>
+<div class="flex items-center p-4 bg-surface-container-low rounded-xl group hover:bg-surface-container-high transition-colors">
+<div class="w-16 h-16 rounded-lg overflow-hidden bg-surface-container-highest flex-shrink-0">
+<img alt="Zen Stone Layout" class="w-full h-full object-cover" data-alt="smooth grey river stones stacked in a zen garden with soft shadows and neutral tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnV-WkKFq0kMGJeHbFHo7y5ZWpUX_vDBvOXrhhkZTok3WOjMTblxOe2ujnCJnB7GRaWHhWAj7NR_COptmR9fWneBB__TGh1231J852qfd1CLHd_6G3jr-6_eQTlCanKdBnRRy5vnM53KdxaAn26QbvSb4PV2wElTj3Gtj4h9fSq-3fuKamadA1ssMu3yu7zhVYhHS9XiHQXPjXqFRNfpkepPuctDHmVEw8pxZriQLCjIfpeMo7XmhU8ptdZdhRTw8sxC2ct1zeg-Sd"/>
+</div>
+<div class="ml-4 flex-grow">
+<h4 class="font-headline font-bold text-on-surface">Aesthetic Asset Pack</h4>
+<p class="text-sm text-on-surface-variant">12 High-Res Textures</p>
+</div>
+<div class="text-right">
+<span class="font-headline font-bold text-primary">$12.00</span>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-outline-variant/15 flex justify-between items-center">
+<span class="font-headline text-lg font-bold text-on-surface">Total Amount</span>
+<span class="font-headline text-3xl font-extrabold text-[#3d6758]">$61.00</span>
+</div>
+</div>
+</div>
+<!-- Actions Bento -->
+<div class="md:col-span-5 space-y-6">
+<!-- Download Card -->
+<div class="bg-primary p-8 rounded-xl editorial-shadow text-on-primary flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-5xl mb-4">download_for_offline</span>
+<h3 class="font-headline text-2xl font-bold mb-2">Get Started Now</h3>
+<p class="text-on-primary/80 mb-8 text-sm">Download your template files immediately to begin your journey.</p>
+<button class="w-full bg-primary-fixed-dim text-on-primary-fixed font-bold py-4 rounded-full hover:shadow-lg transition-all active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">download</span>
+                            Download Templates
+                        </button>
+</div>
+<!-- Dashboard Link Card -->
+<div class="bg-secondary-container p-8 rounded-xl editorial-shadow text-on-secondary-container">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined">dashboard</span>
+<h3 class="font-headline text-xl font-bold">Go to Dashboard</h3>
+</div>
+<p class="text-sm mb-6 text-on-secondary-container/80">Manage your library, track analytics, and customize your workspace.</p>
+<a class="inline-flex items-center text-[#2c5863] font-bold group" href="#">
+                            Access My Library
+                            <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Need Help? -->
+<div class="mt-16 text-center text-on-surface-variant text-sm">
+<p>Having trouble with your purchase? <a class="text-primary font-bold hover:underline" href="#">Contact Support</a> or visit our <a class="text-primary font-bold hover:underline" href="#">Help Center</a>.</p>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f6fafb] dark:bg-slate-950 w-full border-t border-[#aab4b7]/15">
+<div class="flex justify-between items-center w-full px-12 py-8 max-w-[1440px] mx-auto">
+<div class="font-headline font-semibold text-[#3d6758] dark:text-[#b1decc]">
+                The Ethereal Canvas
+            </div>
+<div class="flex space-x-8 font-body text-sm tracking-wide">
+<a class="text-[#2b3437]/70 dark:text-slate-500 hover:text-[#3d6758] dark:hover:text-[#b1decc] transition-colors" href="#">Privacy Policy</a>
+<a class="text-[#2b3437]/70 dark:text-slate-500 hover:text-[#3d6758] dark:hover:text-[#b1decc] transition-colors" href="#">Terms of Service</a>
+<a class="text-[#2b3437]/70 dark:text-slate-500 hover:text-[#3d6758] dark:hover:text-[#b1decc] transition-colors" href="#">License Agreement</a>
+<a class="text-[#2b3437]/70 dark:text-slate-500 hover:text-[#3d6758] dark:hover:text-[#b1decc] transition-colors" href="#">Contact Support</a>
+</div>
+<p class="font-body text-sm tracking-wide text-[#2b3437]/70 dark:text-slate-500">
+                © 2024 The Ethereal Canvas. All rights reserved.
+            </p>
+</div>
+</footer>
+</body></html>

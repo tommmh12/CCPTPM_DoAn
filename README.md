@@ -11,6 +11,8 @@ Ung dung nay dung `Node.js + Express + MySQL`, giu nguyen bo HTML trong `html_re
 
 ## Cai dat
 
+//
+
 1. Tao file `.env` tu `.env.example`.
 2. Tao database MySQL:
 
@@ -31,8 +33,6 @@ Neu database da ton tai tu truoc, chay them patch:
 mysql -u root -p zen_workspace < db/patches/001_session_security.sql
 ```
 
-.
-
 4. Cai package:
 
 ```bash
@@ -45,16 +45,6 @@ npm install
 npm run dev
 ```
 
-## Dang nhap Google
-
-De bat nut dang nhap Google tren man hinh `/login`, them bien sau vao file `.env`:
-
-```bash
-GOOGLE_CLIENT_ID=your_google_oauth_client_id
-```
-
-Client ID nay phai duoc tao trong Google Cloud Console va duoc phep cho domain/localhost ma ban dang dung.
-
 ## Test
 
 Chay integration test:
@@ -62,18 +52,18 @@ Chay integration test:
 ```bash
 npm test
 ```
-
+...
 Test se tao mot user rieng trong database hien tai, sau do tu dong cleanup.
 
 ## Man hinh da noi logic
-
+s
 - `/login`
 - `/dashboard`
 - `/tasks`
 - `/tasks/new`
 - `/notes`
-
+s
 ## Tai khoan mau
-
+s
 - Email: `julian@zenspace.local`
 - Password: `Password123!`

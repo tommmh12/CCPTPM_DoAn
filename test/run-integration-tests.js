@@ -6,10 +6,12 @@ const { hashPassword } = require("../src/utils/security");
 const TEST_USER_EMAIL = "integration.test@zenspace.local";
 const TEST_USER_PASSWORD = "Integration123!";
 const TEST_USER_NAME = "Integration Test User";
+const REGISTER_USER_EMAIL = "integration.register@zenspace.local";
 
 let server;
 let baseUrl;
 let testUserId;
+let registeredUserId;
 
 async function requestJson(path, options = {}) {
   const response = await fetch(`${baseUrl}${path}`, options);
@@ -85,6 +87,36 @@ async function resetTestUserState() {
   await pool.query("DELETE FROM tasks WHERE user_id = ?", [testUserId]);
   await pool.query("DELETE FROM tags WHERE user_id = ?", [testUserId]);
   await pool.query("DELETE FROM projects WHERE user_id = ?", [testUserId]);
+}
+
+async function resetRegisteredUserState() {
+  if (!registeredUserId) {
+    const [rows] = await pool.query(
+      `
+        SELECT id
+        FROM users
+        WHERE email = ?
+        LIMIT 1
+      `,
+      [REGISTER_USER_EMAIL]
+    );
+
+    registeredUserId = rows[0]?.id;
+  }
+
+  if (!registeredUserId) {
+    return;
+  }
+
+  await pool.query("DELETE FROM activity_logs WHERE user_id = ?", [registeredUserId]);
+  await pool.query("DELETE FROM user_sessions WHERE user_id = ?", [registeredUserId]);
+  await pool.query("DELETE FROM notes WHERE user_id = ?", [registeredUserId]);
+  await pool.query("DELETE FROM tasks WHERE user_id = ?", [registeredUserId]);
+  await pool.query("DELETE FROM tags WHERE user_id = ?", [registeredUserId]);
+  await pool.query("DELETE FROM projects WHERE user_id = ?", [registeredUserId]);
+  await pool.query("DELETE FROM user_preferences WHERE user_id = ?", [registeredUserId]);
+  await pool.query("DELETE FROM users WHERE id = ?", [registeredUserId]);
+  registeredUserId = null;
 }
 
 async function loginAndGetToken() {
@@ -186,6 +218,70 @@ async function main() {
       assert.equal(payload.error.code, "VALIDATION_ERROR");
       assert.ok(Array.isArray(payload.error.details));
       assert.ok(payload.message);
+    });
+
+    await runStep("register creates a new account and returns a session token", async () => {
+      await resetRegisteredUserState();
+
+      const { response, payload } = await requestJson("/api/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          fullName: "Registered Integration User",
+          email: REGISTER_USER_EMAIL,
+          password: "Register123!",
+          confirmPassword: "Register123!",
+          remember: true,
+          acceptTerms: true
+        })
+      });
+
+      assert.equal(response.status, 201);
+      assert.ok(payload.token);
+      assert.equal(payload.user.email, REGISTER_USER_EMAIL);
+
+      const [rows] = await pool.query(
+        `
+          SELECT id
+          FROM users
+          WHERE email = ?
+          LIMIT 1
+        `,
+        [REGISTER_USER_EMAIL]
+      );
+
+      assert.ok(rows[0]?.id);
+      registeredUserId = rows[0].id;
+    });
+
+    await runStep("forgot password responds safely for existing and missing accounts", async () => {
+      const existing = await requestJson("/api/auth/forgot-password", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          email: TEST_USER_EMAIL
+        })
+      });
+
+      assert.equal(existing.response.status, 202);
+      assert.match(existing.payload.message, /If an account exists/i);
+
+      const missing = await requestJson("/api/auth/forgot-password", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          email: "missing.account@zenspace.local"
+        })
+      });
+
+      assert.equal(missing.response.status, 202);
+      assert.match(missing.payload.message, /If an account exists/i);
     });
 
     await runStep("logout-all revokes every active session", async () => {
@@ -306,6 +402,8 @@ async function main() {
       await pool.query("DELETE FROM user_preferences WHERE user_id = ?", [testUserId]).catch(() => {});
       await pool.query("DELETE FROM users WHERE id = ?", [testUserId]).catch(() => {});
     }
+
+    await resetRegisteredUserState().catch(() => {});
 
     await pool.end().catch(() => {});
   }

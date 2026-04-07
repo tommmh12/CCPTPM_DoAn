@@ -16,7 +16,6 @@ const env = {
   sessionCleanupIntervalMinutes: Number(process.env.SESSION_CLEANUP_INTERVAL_MINUTES || 30),
   authRateLimitWindowMinutes: Number(process.env.AUTH_RATE_LIMIT_WINDOW_MINUTES || 15),
   authRateLimitMaxAttempts: Number(process.env.AUTH_RATE_LIMIT_MAX_ATTEMPTS || 5),
-  googleClientId: process.env.GOOGLE_CLIENT_ID || "",
   logLevel: process.env.LOG_LEVEL || "info"
 };
 

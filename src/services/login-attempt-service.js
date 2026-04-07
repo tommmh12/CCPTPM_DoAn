@@ -4,20 +4,24 @@ const { httpError } = require("../utils/http-error");
 const attempts = new Map();
 
 function buildKey(ipAddress, email) {
-  return `${ipAddress || "unknown"}:${String(email || "").trim().toLowerCase()}`;
+  return `${ipAddress || "unknown"}:${String(email || "")
+    .trim()
+    .toLowerCase()}`;
 }
 
 function getWindowMs() {
   return Math.max(1, env.authRateLimitWindowMinutes) * 60 * 1000;
 }
-
+//
 function getMaxAttempts() {
   return Math.max(1, env.authRateLimitMaxAttempts);
 }
 
 function pruneEntry(entry, now) {
   const windowStart = now - getWindowMs();
-  entry.timestamps = entry.timestamps.filter((timestamp) => timestamp >= windowStart);
+  entry.timestamps = entry.timestamps.filter(
+    (timestamp) => timestamp >= windowStart,
+  );
 
   if (entry.blockedUntil && entry.blockedUntil <= now) {
     entry.blockedUntil = null;
@@ -38,10 +42,19 @@ function assertLoginAllowed(ipAddress, email) {
   if (entry.blockedUntil && entry.blockedUntil > now) {
     const retryAfterSeconds = Math.ceil((entry.blockedUntil - now) / 1000);
 
-    throw httpError(429, "Too many failed login attempts. Please try again later.", {
-      code: "AUTH_RATE_LIMITED",
-      details: [{ field: "email", message: `Retry after ${retryAfterSeconds} seconds` }]
-    });
+    throw httpError(
+      429,
+      "Too many failed login attempts. Please try again later.",
+      {
+        code: "AUTH_RATE_LIMITED",
+        details: [
+          {
+            field: "email",
+            message: `Retry after ${retryAfterSeconds} seconds`,
+          },
+        ],
+      },
+    );
   }
 
   if (!entry.timestamps.length) {
@@ -71,5 +84,5 @@ function clearFailures(ipAddress, email) {
 module.exports = {
   assertLoginAllowed,
   clearFailures,
-  recordFailure
+  recordFailure,
 };

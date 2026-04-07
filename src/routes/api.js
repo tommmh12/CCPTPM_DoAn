@@ -1,6 +1,6 @@
 const express = require("express");
 
-const { googleConfig, googleLogin, login, logout, logoutAll, session } = require("../controllers/auth-controller");
+const { forgotPassword, login, logout, logoutAll, register, session } = require("../controllers/auth-controller");
 const { summary } = require("../controllers/dashboard-controller");
 const { options } = require("../controllers/meta-controller");
 const { list: scheduleList } = require("../controllers/schedule-controller");
@@ -34,7 +34,7 @@ const { requireAuth } = require("../middleware/require-auth");
 const { validateRequest } = require("../middleware/validate-request");
 const {
   validateChangePasswordBody,
-  validateGoogleAuthBody,
+  validateForgotPasswordBody,
   validateLoginBody,
   validateNoteCreateBody,
   validateNotePinBody,
@@ -42,6 +42,7 @@ const {
   validateNoteUpdateBody,
   validatePreferencesBody,
   validateProfileUpdateBody,
+  validateRegisterBody,
   validateScheduleQuery,
   validateSearchQuery,
   validateSubtaskIdParam,
@@ -49,16 +50,17 @@ const {
   validateTaskCreateBody,
   validateTaskIdParam,
   validateTaskStarBody,
-  validateTaskStatusBody,
+  validateTaskStatusBody
+  ,
   validateTaskUpdateBody
 } = require("../middleware/validators");
 const { asyncHandler } = require("../utils/async-handler");
 
 const apiRouter = express.Router();
 
-apiRouter.get("/auth/config", asyncHandler(googleConfig));
 apiRouter.post("/auth/login", validateRequest(validateLoginBody), asyncHandler(login));
-apiRouter.post("/auth/google", validateRequest(validateGoogleAuthBody), asyncHandler(googleLogin));
+apiRouter.post("/auth/register", validateRequest(validateRegisterBody), asyncHandler(register));
+apiRouter.post("/auth/forgot-password", validateRequest(validateForgotPasswordBody), asyncHandler(forgotPassword));
 apiRouter.get("/auth/session", asyncHandler(requireAuth), asyncHandler(session));
 apiRouter.post("/auth/logout", asyncHandler(requireAuth), asyncHandler(logout));
 apiRouter.post("/auth/logout-all", asyncHandler(requireAuth), asyncHandler(logoutAll));

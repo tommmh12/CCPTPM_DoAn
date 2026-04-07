@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Settings | Zen Workspace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, .headline {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#142f4f",
+                        "on-primary-fixed-variant": "#396355",
+                        "tertiary": "#486083",
+                        "inverse-on-surface": "#999d9f",
+                        "on-secondary-fixed": "#174550",
+                        "tertiary-fixed-dim": "#a4bde4",
+                        "on-error": "#fff7f6",
+                        "surface-tint": "#3d6758",
+                        "surface": "#f6fafb",
+                        "inverse-surface": "#0a0f10",
+                        "surface-container": "#e8eff2",
+                        "on-secondary": "#effbff",
+                        "surface-container-low": "#eff4f7",
+                        "secondary-fixed-dim": "#afdce9",
+                        "background": "#f6fafb",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#bdeaf8",
+                        "secondary-container": "#bdeaf8",
+                        "outline-variant": "#aab4b7",
+                        "error": "#a83836",
+                        "on-primary": "#e4fff3",
+                        "on-surface-variant": "#576164",
+                        "on-secondary-fixed-variant": "#37616d",
+                        "inverse-primary": "#cffeeb",
+                        "error-dim": "#67040d",
+                        "primary-container": "#beecda",
+                        "error-container": "#fa746f",
+                        "on-tertiary-container": "#2a4364",
+                        "on-primary-fixed": "#1c4739",
+                        "surface-bright": "#f6fafb",
+                        "primary": "#3d6758",
+                        "on-background": "#2b3437",
+                        "secondary": "#3a6571",
+                        "surface-dim": "#d2dcdf",
+                        "tertiary-container": "#b2cbf3",
+                        "on-surface": "#2b3437",
+                        "primary-fixed": "#beecda",
+                        "on-primary-container": "#2f594b",
+                        "tertiary-dim": "#3b5476",
+                        "outline": "#737c80",
+                        "on-tertiary-fixed-variant": "#334c6e",
+                        "on-error-container": "#6e0a12",
+                        "surface-container-highest": "#dae4e8",
+                        "surface-variant": "#dae4e8",
+                        "primary-fixed-dim": "#b1decc",
+                        "primary-dim": "#315b4d",
+                        "on-secondary-container": "#2c5863",
+                        "secondary-dim": "#2e5965",
+                        "tertiary-fixed": "#b2cbf3",
+                        "on-tertiary": "#f8f8ff",
+                        "surface-container-high": "#e1e9ed"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex overflow-hidden">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#e8eff2] dark:bg-slate-900 flex flex-col py-8 z-50 transition-all duration-300" style="box-shadow: 0px 12px 32px rgba(43,52,55,0.06);">
+<div class="px-8 mb-10 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed-dim flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="spa" style="font-variation-settings: 'FILL' 1;">spa</span>
+</div>
+<div>
+<h2 class="font-['Manrope'] text-lg font-extrabold text-[#3d6758]">The Canvas</h2>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant opacity-60">Zen Workspace</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center text-[#2b3437] dark:text-slate-400 px-8 py-3 hover:text-[#3d6758] hover:translate-x-1 transition-transform font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined mr-4" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center text-[#2b3437] dark:text-slate-400 px-8 py-3 hover:text-[#3d6758] hover:translate-x-1 transition-transform font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined mr-4" data-icon="check_circle">check_circle</span>
+                Tasks
+            </a>
+<a class="flex items-center text-[#2b3437] dark:text-slate-400 px-8 py-3 hover:text-[#3d6758] hover:translate-x-1 transition-transform font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined mr-4" data-icon="description">description</span>
+                Notes
+            </a>
+<a class="flex items-center text-[#2b3437] dark:text-slate-400 px-8 py-3 hover:text-[#3d6758] hover:translate-x-1 transition-transform font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined mr-4" data-icon="calendar_today">calendar_today</span>
+                Calendar
+            </a>
+<a class="flex items-center text-[#2b3437] dark:text-slate-400 px-8 py-3 hover:text-[#3d6758] hover:translate-x-1 transition-transform font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined mr-4" data-icon="view_kanban">view_kanban</span>
+                Kanban
+            </a>
+<a class="flex items-center text-[#3d6758] font-bold bg-[#ffffff] dark:bg-slate-800 rounded-l-full ml-4 pl-4 py-3 font-['Inter'] text-sm transition-all duration-300" href="#">
+<span class="material-symbols-outlined mr-4" data-icon="settings">settings</span>
+                Settings
+            </a>
+</nav>
+<div class="px-6 mb-8">
+<button class="w-full py-4 rounded-full bg-primary text-on-primary font-bold shadow-lg shadow-primary/20 flex items-center justify-center gap-2 hover:bg-primary-dim transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+                New Entry
+            </button>
+</div>
+<div class="pt-6 border-t border-outline-variant/10">
+<a class="flex items-center text-[#2b3437] dark:text-slate-400 px-8 py-3 hover:text-[#3d6758] transition-transform font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined mr-4" data-icon="help">help</span>
+                Help
+            </a>
+<a class="flex items-center text-[#2b3437] dark:text-slate-400 px-8 py-3 hover:text-[#3d6758] transition-transform font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined mr-4" data-icon="archive">archive</span>
+                Archive
+            </a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-64 flex flex-col h-screen overflow-y-auto">
+<!-- TopAppBar -->
+<header class="bg-[#f6fafb] dark:bg-slate-950 text-[#3d6758] dark:text-[#b1decc] flex justify-between items-center px-8 w-full h-16 shrink-0 z-40 sticky top-0">
+<div class="flex items-center gap-4 w-1/3">
+<div class="relative w-full max-w-sm">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant opacity-70" data-icon="search">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search workspace..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined p-2 hover:bg-[#e8eff2] dark:hover:bg-slate-800 rounded-full transition-colors" data-icon="notifications">notifications</button>
+<button class="material-symbols-outlined p-2 hover:bg-[#e8eff2] dark:hover:bg-slate-800 rounded-full transition-colors" data-icon="help">help</button>
+<div class="h-8 w-8 rounded-full overflow-hidden border-2 border-primary/20">
+<img alt="User Profile" data-alt="Portrait of a smiling professional man with neat hair against a blurred studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwvnVNJIlrJEPIPs-SCIqK1FnKo-QZvj0eiQSO-ic7l-ak6tla-N-LX4tIjBk-hFyD_NWAsO4ZawYVrMzA8x1X_zLkGNLPy2uWEWYpl1hvKRErh0vztWU8gfeKHz72IKX8b5X7u-vVUNVAsxK8LpliKdmxWklhX5w2WwlWsZEZhlTV51O0fFwJNyweh_8b2pZthioYVlbgGYWSkf7cNlUwFHyMA6QPGMnQoINoP7E1VDw-iswHuXugWhlzwFneVXvNnOMWc7iiN_oe"/>
+</div>
+</div>
+</header>
+<!-- Page Content: Settings Bento Grid -->
+<div class="px-12 py-10 max-w-6xl w-full mx-auto">
+<header class="mb-12">
+<h1 class="text-4xl font-extrabold text-on-surface tracking-tight mb-2">Settings</h1>
+<p class="text-on-surface-variant opacity-80">Manage your digital sanctuary and personal preferences.</p>
+</header>
+<div class="grid grid-cols-12 gap-8 items-start">
+<!-- Internal Navigation (Left Pane) -->
+<nav class="col-span-12 md:col-span-3 space-y-2">
+<button class="w-full flex items-center justify-between px-6 py-4 rounded-full bg-surface-container-highest text-primary font-bold transition-all shadow-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="person_outline">person_outline</span>
+<span>Profile</span>
+</div>
+<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between px-6 py-4 rounded-full text-on-surface-variant hover:bg-surface-container-low transition-all">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="palette">palette</span>
+<span>Appearance</span>
+</div>
+</button>
+<button class="w-full flex items-center justify-between px-6 py-4 rounded-full text-on-surface-variant hover:bg-surface-container-low transition-all">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="notifications_active">notifications_active</span>
+<span>Notifications</span>
+</div>
+</button>
+<button class="w-full flex items-center justify-between px-6 py-4 rounded-full text-on-surface-variant hover:bg-surface-container-low transition-all">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+<span>Privacy</span>
+</div>
+</button>
+<div class="pt-6 mt-6 border-t border-outline-variant/10">
+<button class="w-full flex items-center justify-between px-6 py-4 rounded-full text-error/80 hover:bg-error-container/10 transition-all">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Sign Out</span>
+</div>
+</button>
+</div>
+</nav>
+<!-- Settings Detail (Right Pane) -->
+<div class="col-span-12 md:col-span-9 bg-surface-container-lowest rounded-[2rem] p-10 shadow-sm">
+<!-- Profile Section -->
+<section>
+<div class="flex items-center justify-between mb-10">
+<div class="flex items-center gap-6">
+<div class="relative group">
+<div class="w-24 h-24 rounded-full overflow-hidden ring-4 ring-primary-fixed border-4 border-surface-container-lowest">
+<img alt="Profile Large" data-alt="Close up of professional man in high quality resolution for profile settings view" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKPlZ6RaSkUxndeWbvhdHPJs8MRa_ZGTcDH3R9fn7ljSjPODbgDNNieUGvOknFaz90P0CIVorZxHJfvuwzVdvAupZH8338oQ-l00sXAmyiIJWxB3LysGMAYIVbp2iefe24pyldgCqCd24XJZ5YXhcHoLaT9JwKHcVc4PhYRc0xXatigqW7OPUkHWZcnW9oLupjLtszPVoBlAz9f2bSrmQNkteVypNOPlWAuFUtrS7-J6qcP6RYClA5mEMNsrTqYTvMLnMHs4xj--zZ"/>
+</div>
+<button class="absolute bottom-0 right-0 p-2 bg-primary text-on-primary rounded-full shadow-lg hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-sm" data-icon="photo_camera">photo_camera</span>
+</button>
+</div>
+<div>
+<h3 class="text-2xl font-bold text-on-surface mb-1">Alex Rivers</h3>
+<p class="text-sm text-on-surface-variant">Senior Product Strategist</p>
+</div>
+</div>
+<button class="px-6 py-2.5 rounded-full bg-secondary-container text-on-secondary-container font-semibold hover:bg-secondary-fixed transition-colors">
+                                Edit Profile
+                            </button>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="space-y-6">
+<div>
+<label class="block text-xs font-bold uppercase tracking-wider text-on-surface-variant mb-2 ml-1">Full Name</label>
+<div class="bg-surface-container-low rounded-full px-6 py-4 text-on-surface font-medium">Alex Rivers</div>
+</div>
+<div>
+<label class="block text-xs font-bold uppercase tracking-wider text-on-surface-variant mb-2 ml-1">Email Address</label>
+<div class="bg-surface-container-low rounded-full px-6 py-4 text-on-surface font-medium">alex.rivers@zenworkspace.com</div>
+</div>
+</div>
+<div class="space-y-6">
+<div>
+<label class="block text-xs font-bold uppercase tracking-wider text-on-surface-variant mb-2 ml-1">Workspace ID</label>
+<div class="bg-surface-container-low rounded-full px-6 py-4 text-on-surface font-medium">zen-alex-2024</div>
+</div>
+<div>
+<label class="block text-xs font-bold uppercase tracking-wider text-on-surface-variant mb-2 ml-1">Current Focus</label>
+<div class="bg-surface-container-low rounded-full px-6 py-4 text-primary font-bold flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                                        Deep Work
+                                    </div>
+</div>
+</div>
+</div>
+<!-- Preferences Subsection -->
+<div class="mt-16 pt-10 border-t border-outline-variant/10">
+<h4 class="text-lg font-bold text-on-surface mb-6">Regional Preferences</h4>
+<div class="bg-surface-container-low rounded-3xl p-6 space-y-4">
+<div class="flex items-center justify-between px-4 py-2">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="language">language</span>
+<span class="font-medium">Language</span>
+</div>
+<div class="flex items-center gap-2 text-primary font-semibold cursor-pointer">
+                                        English (US)
+                                        <span class="material-symbols-outlined text-sm" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="flex items-center justify-between px-4 py-2">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="schedule">schedule</span>
+<span class="font-medium">Time Zone</span>
+</div>
+<div class="flex items-center gap-2 text-primary font-semibold cursor-pointer">
+                                        PST (UTC-8)
+                                        <span class="material-symbols-outlined text-sm" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Data Security Card (Asymmetric Layout element) -->
+<div class="mt-12 bg-tertiary-container/20 rounded-3xl p-8 flex items-center justify-between overflow-hidden relative group">
+<div class="z-10 relative">
+<h4 class="text-on-tertiary-container font-bold text-lg mb-2">Two-Factor Authentication</h4>
+<p class="text-on-tertiary-container opacity-80 text-sm max-w-sm mb-6">Enhance your workspace security by enabling 2FA. We recommend using an authenticator app.</p>
+<button class="px-6 py-3 rounded-full bg-on-tertiary-container text-surface font-bold text-sm hover:scale-105 transition-transform">
+                                    Setup Secure Login
+                                </button>
+</div>
+<div class="absolute right-[-20px] top-[-20px] opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[160px]" data-icon="verified_user">verified_user</span>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<!-- Floating Action Button - Only for Relevant Screens -->
+<!-- Suppressed on Settings as per UX Guidelines -->
+</main>
+<!-- Glassmorphic Focus Drawer (Simulation) -->
+<div class="fixed right-0 top-0 h-full w-80 bg-surface-bright/80 backdrop-blur-2xl translate-x-full border-l border-outline-variant/15 z-[60] shadow-2xl transition-transform duration-500 hidden md:block">
+<div class="p-8">
+<div class="flex items-center justify-between mb-8">
+<h3 class="font-bold text-lg">Activity Log</h3>
+<button class="material-symbols-outlined" data-icon="close">close</button>
+</div>
+<div class="space-y-6">
+<!-- Activity Item -->
+<div class="flex gap-4">
+<div class="w-1 h-12 bg-primary rounded-full"></div>
+<div>
+<p class="text-sm font-bold">Profile Updated</p>
+<p class="text-xs text-on-surface-variant">Today, 2:45 PM</p>
+</div>
+</div>
+<!-- Activity Item -->
+<div class="flex gap-4">
+<div class="w-1 h-12 bg-secondary rounded-full opacity-30"></div>
+<div>
+<p class="text-sm font-bold">New Device Logged In</p>
+<p class="text-xs text-on-surface-variant">Oct 24, 11:20 AM</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

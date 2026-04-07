@@ -100,25 +100,77 @@ function validateLoginBody(req) {
   };
 }
 
-function validateGoogleAuthBody(req) {
+function validateRegisterBody(req) {
   ensureObject(req.body);
 
   const issues = [];
-  const credential = parseString(req.body.credential, "credential", issues, {
+  const fullName = parseString(req.body.fullName, "fullName", issues, {
     required: true,
-    minLength: 20,
-    maxLength: 4096
+    maxLength: 120
+  });
+  const email = parseEmail(req.body.email, "email", issues, { required: true });
+  const password = parseString(req.body.password, "password", issues, {
+    required: true,
+    minLength: 8,
+    maxLength: 200
+  });
+  const confirmPassword = parseString(req.body.confirmPassword, "confirmPassword", issues, {
+    required: true,
+    minLength: 8,
+    maxLength: 200
   });
   const remember = parseBoolean(req.body.remember, "remember", issues, {
     defaultValue: false
   });
+  const acceptTerms = parseBoolean(req.body.acceptTerms, "acceptTerms", issues, {
+    required: true
+  });
+
+  if (password && !/[A-Z]/.test(password)) {
+    pushIssue(issues, "password", "Must include at least one uppercase letter");
+  }
+
+  if (password && !/[a-z]/.test(password)) {
+    pushIssue(issues, "password", "Must include at least one lowercase letter");
+  }
+
+  if (password && !/[0-9]/.test(password)) {
+    pushIssue(issues, "password", "Must include at least one number");
+  }
+
+  if (password && !/[^A-Za-z0-9]/.test(password)) {
+    pushIssue(issues, "password", "Must include at least one special character");
+  }
+
+  if (password && confirmPassword && password !== confirmPassword) {
+    pushIssue(issues, "confirmPassword", "Does not match the password");
+  }
+
+  if (!acceptTerms) {
+    pushIssue(issues, "acceptTerms", "You must accept the terms to continue");
+  }
 
   assertValid(issues);
 
   req.body = {
-    credential,
-    remember
+    fullName,
+    email,
+    password,
+    confirmPassword,
+    remember,
+    acceptTerms
   };
+}
+
+function validateForgotPasswordBody(req) {
+  ensureObject(req.body);
+
+  const issues = [];
+  const email = parseEmail(req.body.email, "email", issues, { required: true });
+
+  assertValid(issues);
+
+  req.body = { email };
 }
 
 function validateProfileUpdateBody(req) {
@@ -436,7 +488,7 @@ function validateNotePinBody(req) {
 
 module.exports = {
   validateChangePasswordBody,
-  validateGoogleAuthBody,
+  validateForgotPasswordBody,
   validateLoginBody,
   validateNoteCreateBody,
   validateNotePinBody,
@@ -444,6 +496,7 @@ module.exports = {
   validateNoteUpdateBody,
   validatePreferencesBody,
   validateProfileUpdateBody,
+  validateRegisterBody,
   validateScheduleQuery,
   validateSearchQuery,
   validateSubtaskIdParam,
@@ -451,6 +504,7 @@ module.exports = {
   validateTaskActivityBody,
   validateTaskIdParam,
   validateTaskStarBody,
-  validateTaskStatusBody,
+  validateTaskStatusBody
+,
   validateTaskUpdateBody
 };

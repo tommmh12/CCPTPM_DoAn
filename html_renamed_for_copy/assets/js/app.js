@@ -1,8 +1,9 @@
 const TOKEN_KEY = "zen-workspace-token";
-const GOOGLE_IDENTITY_SCRIPT_URL = "https://accounts.google.com/gsi/client";
 const CLIENT_NAVIGATION_ROUTES = new Set([
   "/",
   "/login",
+  "/register",
+  "/forgot-password",
   "/dashboard",
   "/schedule",
   "/tasks",
@@ -49,6 +50,7 @@ const state = {
     tags: []
   }
 };
+<<<<<<< HEAD
 let googleIdentityScriptPromise = null;
 const runtimeConfig = {
   apiBaseUrl: ""
@@ -87,6 +89,8 @@ function buildApiUrl(url) {
 
   return `${runtimeConfig.apiBaseUrl}${url.startsWith("/") ? url : `/${url}`}`;
 }
+=======
+>>>>>>> 0bc4cf3cbaefa3effd59dd40fcec691490a60326
 
 function defaultTaskComposerDraft() {
   return {
@@ -334,6 +338,16 @@ async function initializePage() {
     return;
   }
 
+  if (page === "register") {
+    await initRegisterPage();
+    return;
+  }
+
+  if (page === "forgot-password") {
+    await initForgotPasswordPage();
+    return;
+  }
+
   await ensureAuthenticated();
   await ensureProfileLoaded();
   ensurePersistentSharedChrome(page);
@@ -406,7 +420,6 @@ async function initLoginPage() {
     const submitButton = form.querySelector('button[type="submit"]');
 
     try {
-      setText("login-error", "");
       setButtonLoading(submitButton, true, "Signing In...");
 
       const payload = {
@@ -426,134 +439,113 @@ async function initLoginPage() {
       window.localStorage.setItem(TOKEN_KEY, response.token);
       await navigateTo("/dashboard", { replace: true });
     } catch (error) {
-      setText("login-error", error.message || "Login failed");
+      setFormStatus("login-error", error.message || "Login failed", "error");
     } finally {
       setButtonLoading(submitButton, false);
     }
   });
-
-  await initGoogleLogin();
 }
 
-async function initGoogleLogin() {
-  const container = document.getElementById("google-signin-render");
+async function initRegisterPage() {
+  if (state.token) {
+    try {
+      await ensureAuthenticated();
+      await navigateTo("/dashboard", { replace: true });
+      return;
+    } catch (_error) {
+      clearToken();
+    }
+  }
 
-  if (!container) {
+  const form = document.getElementById("register-form");
+
+  if (!form) {
     return;
   }
 
-  setText("google-login-status", "");
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
 
-  try {
-    const config = await apiFetch("/api/auth/config", { authenticated: false });
+    const submitButton = form.querySelector('button[type="submit"]');
 
-    if (!config.googleAuthEnabled || !config.googleClientId) {
-      setText("google-login-status", "Google sign-in is not configured yet.");
+    try {
+      setFormStatus("register-error", "", "error");
+      setButtonLoading(submitButton, true, "Creating Account...");
+
+      const payload = {
+        fullName: document.getElementById("register-full-name").value.trim(),
+        email: document.getElementById("register-email").value.trim(),
+        password: document.getElementById("register-password").value,
+        confirmPassword: document.getElementById("register-confirm-password").value,
+        remember: document.getElementById("register-remember")?.checked || false,
+        acceptTerms: document.getElementById("register-terms")?.checked || false
+      };
+
+      const response = await apiFetch("/api/auth/register", {
+        method: "POST",
+        body: payload,
+        authenticated: false
+      });
+
+      state.token = response.token;
+      state.user = response.user;
+      state.profile = null;
+      window.localStorage.setItem(TOKEN_KEY, response.token);
+      await navigateTo("/dashboard", { replace: true });
+    } catch (error) {
+      setFormStatus("register-error", error.message || "Registration failed", "error");
+    } finally {
+      setButtonLoading(submitButton, false);
+    }
+  });
+}
+
+async function initForgotPasswordPage() {
+  if (state.token) {
+    try {
+      await ensureAuthenticated();
+      await navigateTo("/dashboard", { replace: true });
       return;
+    } catch (_error) {
+      clearToken();
     }
-
-    await loadGoogleIdentityScript();
-
-    if (!window.google?.accounts?.id) {
-      throw new Error("Google sign-in library failed to load");
-    }
-
-    container.innerHTML = "";
-
-    window.google.accounts.id.initialize({
-      client_id: config.googleClientId,
-      callback: (response) => {
-        handleGoogleCredentialResponse(response).catch((error) => {
-          setText("google-login-status", "");
-          setText("login-error", error.message || "Google sign-in failed");
-        });
-      }
-    });
-
-    window.google.accounts.id.renderButton(container, {
-      theme: "outline",
-      size: "large",
-      shape: "pill",
-      text: "continue_with",
-      width: Math.max(container.clientWidth || 0, 260)
-    });
-  } catch (error) {
-    setText("google-login-status", error.message || "Unable to initialize Google sign-in.");
-  }
-}
-
-async function handleGoogleCredentialResponse(response) {
-  if (!response?.credential) {
-    throw new Error("Google did not return a valid credential");
   }
 
-  setText("login-error", "");
-  setText("google-login-status", "Signing in with Google...");
+  const form = document.getElementById("forgot-password-form");
 
-  const payload = {
-    credential: response.credential,
-    remember: document.getElementById("remember")?.checked || false
-  };
+  if (!form) {
+    return;
+  }
 
-  const authResponse = await apiFetch("/api/auth/google", {
-    method: "POST",
-    body: payload,
-    authenticated: false
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const submitButton = form.querySelector('button[type="submit"]');
+
+    try {
+      setFormStatus("forgot-password-status", "", "success");
+      setButtonLoading(submitButton, true, "Sending Link...");
+
+      const response = await apiFetch("/api/auth/forgot-password", {
+        method: "POST",
+        body: {
+          email: document.getElementById("forgot-password-email").value.trim()
+        },
+        authenticated: false
+      });
+
+      form.reset();
+      setFormStatus(
+        "forgot-password-status",
+        response.message || "If an account exists for this email, a reset link has been prepared.",
+        "success"
+      );
+    } catch (error) {
+      setFormStatus("forgot-password-status", error.message || "Could not process your request.", "error");
+    } finally {
+      setButtonLoading(submitButton, false);
+    }
   });
-
-  state.token = authResponse.token;
-  state.user = authResponse.user;
-  window.localStorage.setItem(TOKEN_KEY, authResponse.token);
-  setText("google-login-status", "");
-  await navigateTo("/dashboard", { replace: true });
-}
-
-function loadGoogleIdentityScript() {
-  if (window.google?.accounts?.id) {
-    return Promise.resolve();
-  }
-
-  if (googleIdentityScriptPromise) {
-    return googleIdentityScriptPromise;
-  }
-
-  googleIdentityScriptPromise = new Promise((resolve, reject) => {
-    const existingScript = document.querySelector(`script[src="${GOOGLE_IDENTITY_SCRIPT_URL}"]`);
-
-    if (existingScript) {
-      if (existingScript.dataset.loaded === "true") {
-        resolve();
-        return;
-      }
-
-      if (existingScript.dataset.failed === "true") {
-        existingScript.remove();
-      } else {
-        existingScript.addEventListener("load", () => resolve(), { once: true });
-        existingScript.addEventListener("error", () => reject(new Error("Unable to load Google sign-in library")), {
-          once: true
-        });
-        return;
-      }
-    }
-
-    const script = document.createElement("script");
-    script.src = GOOGLE_IDENTITY_SCRIPT_URL;
-    script.async = true;
-    script.defer = true;
-    script.onload = () => {
-      script.dataset.loaded = "true";
-      resolve();
-    };
-    script.onerror = () => {
-      script.dataset.failed = "true";
-      googleIdentityScriptPromise = null;
-      reject(new Error("Unable to load Google sign-in library"));
-    };
-    document.head.appendChild(script);
-  });
-
-  return googleIdentityScriptPromise;
 }
 
 async function ensureAuthenticated() {
@@ -4850,6 +4842,18 @@ function setText(id, value) {
   }
 }
 
+function setFormStatus(id, value, type) {
+  const element = document.getElementById(id);
+
+  if (!element) {
+    return;
+  }
+
+  element.textContent = value;
+  element.classList.remove("text-error", "text-primary");
+  element.classList.add(type === "success" ? "text-primary" : "text-error");
+}
+
 function showPageMessage(message, type) {
   const element = document.getElementById("page-feedback");
   if (!element) {
@@ -4867,14 +4871,16 @@ function setButtonLoading(button, isLoading, loadingText) {
   }
 
   if (isLoading) {
-    button.dataset.originalText = button.textContent.trim();
+    button.dataset.originalHtml = button.innerHTML;
     button.textContent = loadingText || "Loading...";
     button.disabled = true;
     button.classList.add("opacity-70");
     return;
   }
 
-  button.textContent = button.dataset.originalText || button.textContent;
+  if (button.dataset.originalHtml) {
+    button.innerHTML = button.dataset.originalHtml;
+  }
   button.disabled = false;
   button.classList.remove("opacity-70");
 }

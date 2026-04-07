@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Processing | The Ethereal Canvas</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#999d9f",
+                    "on-surface-variant": "#576164",
+                    "on-secondary-fixed-variant": "#37616d",
+                    "on-secondary-fixed": "#174550",
+                    "secondary-fixed-dim": "#afdce9",
+                    "on-tertiary-fixed": "#142f4f",
+                    "error-container": "#fa746f",
+                    "surface-container-highest": "#dae4e8",
+                    "surface-bright": "#f6fafb",
+                    "error": "#a83836",
+                    "secondary-fixed": "#bdeaf8",
+                    "surface-container-high": "#e1e9ed",
+                    "on-secondary": "#effbff",
+                    "secondary-dim": "#2e5965",
+                    "on-primary-fixed": "#1c4739",
+                    "tertiary-fixed-dim": "#a4bde4",
+                    "on-secondary-container": "#2c5863",
+                    "surface": "#f6fafb",
+                    "tertiary-dim": "#3b5476",
+                    "surface-container": "#e8eff2",
+                    "surface-tint": "#3d6758",
+                    "tertiary-fixed": "#b2cbf3",
+                    "background": "#f6fafb",
+                    "on-error": "#fff7f6",
+                    "on-error-container": "#6e0a12",
+                    "on-primary-container": "#2f594b",
+                    "primary-fixed-dim": "#b1decc",
+                    "outline-variant": "#aab4b7",
+                    "primary": "#3d6758",
+                    "outline": "#737c80",
+                    "error-dim": "#67040d",
+                    "on-surface": "#2b3437",
+                    "on-tertiary-container": "#2a4364",
+                    "inverse-primary": "#cffeeb",
+                    "on-primary": "#e4fff3",
+                    "primary-container": "#beecda",
+                    "primary-fixed": "#beecda",
+                    "secondary-container": "#bdeaf8",
+                    "secondary": "#3a6571",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary": "#f8f8ff",
+                    "on-background": "#2b3437",
+                    "surface-dim": "#d2dcdf",
+                    "inverse-surface": "#0a0f10",
+                    "primary-dim": "#315b4d",
+                    "on-primary-fixed-variant": "#396355",
+                    "surface-variant": "#dae4e8",
+                    "on-tertiary-fixed-variant": "#334c6e",
+                    "tertiary-container": "#b2cbf3",
+                    "surface-container-low": "#eff4f7",
+                    "tertiary": "#486083"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .zen-spinner {
+            border: 4px solid #e8eff2;
+            border-top: 4px solid #3d6758;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            animation: spin 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .backdrop-blur-zen {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container min-h-screen">
+<!-- Content suppressed: TopAppBar, SideNavBar, and Footer (as per Transactional suppression rule) -->
+<main class="relative w-full h-screen flex items-center justify-center overflow-hidden">
+<!-- Abstract Background Decorative Element -->
+<div class="absolute inset-0 z-0 opacity-40">
+<div class="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full bg-gradient-to-br from-primary-fixed-dim/20 to-transparent blur-3xl"></div>
+<div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-secondary-fixed-dim/20 to-transparent blur-3xl"></div>
+</div>
+<!-- Central Loading Canvas -->
+<div class="z-10 w-full max-w-2xl px-12 py-24 text-center">
+<!-- Zen Spinner Component -->
+<div class="flex flex-col items-center justify-center gap-12">
+<div class="relative w-32 h-32 flex items-center justify-center">
+<!-- Progress Path (Static) -->
+<svg class="absolute inset-0 w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle class="text-surface-container" cx="50" cy="50" fill="transparent" r="46" stroke="currentColor" stroke-width="4"></circle>
+<circle class="text-primary transition-all duration-1000 ease-in-out" cx="50" cy="50" fill="transparent" r="46" stroke="currentColor" stroke-dasharray="289" stroke-dashoffset="140" stroke-linecap="round" stroke-width="4"></circle>
+</svg>
+<!-- Decorative Icon Center -->
+<span class="material-symbols-outlined text-4xl text-primary-dim opacity-40">
+                        spa
+                    </span>
+</div>
+<!-- Editorial Messaging Hierarchy -->
+<div class="space-y-6">
+<h1 class="font-headline text-4xl font-extrabold text-on-surface tracking-tight leading-tight">
+                        Processing your purchase...
+                    </h1>
+<p class="font-body text-xl text-on-surface-variant font-medium max-w-md mx-auto">
+                        Finding clarity.
+                    </p>
+</div>
+<!-- Glassmorphism Transaction Details (Subtle) -->
+<div class="mt-16 w-full p-8 rounded-full bg-surface-bright/80 backdrop-blur-zen border border-outline-variant/15 shadow-[0px_12px_32px_rgba(43,52,55,0.06)] flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div class="text-left">
+<p class="font-label text-xs text-on-surface-variant uppercase tracking-widest font-semibold">Method</p>
+<p class="font-body text-sm font-bold text-on-surface">Digital Wallet •••• 9012</p>
+</div>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant/30"></div>
+<div class="text-right">
+<p class="font-label text-xs text-on-surface-variant uppercase tracking-widest font-semibold">Amount</p>
+<p class="font-headline text-lg font-extrabold text-primary">$189.00</p>
+</div>
+</div>
+<!-- Minimalist Navigation Out (Transactional Rule: Allow focused cancel) -->
+<button class="mt-12 group flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors duration-200">
+<span class="material-symbols-outlined text-sm group-hover:-translate-x-1 transition-transform">arrow_back</span>
+<span class="font-body text-sm font-medium">Cancel and return to store</span>
+</button>
+</div>
+</div>
+<!-- Asymmetrical Image Accent (Zen/Calming) -->
+<div class="absolute bottom-24 right-24 w-80 h-96 overflow-hidden rounded-full shadow-[0px_12px_32px_rgba(43,52,55,0.06)] hidden lg:block rotate-3 hover:rotate-0 transition-transform duration-700">
+<img alt="Zen image" class="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700" data-alt="Close-up of smooth river stones stacked in a balanced tower on a clean surface with soft morning light and mist" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkBs2gGKgaZ84afFj3JhWq2eTwtGs-Q0L3X5PR92Gu57lnPZXRovE-K12uynFv3cQ8Ra581SAFnbgwcXzOZY-giVieHIycQxkshLuCl685T9HjZUoSS5MOIa-0z0w9RzosT2w2Bwcohp160VFgNmYzVbXz0s9zLLjYrRpcihmHglLhU9VnWACP_suaW3y4LzqrpvDOTUPN7E01UEg68Sl4-TSqYZy_k-OcWnqP2xTwk5VWjbdb7VnEGEGyYajXczh2WFnZ4retSwo-"/>
+</div>
+</main>
+<!-- Invisible separation for accessibility -->
+<div class="sr-only">The Ethereal Canvas Secure Checkout. We are verifying your details. Please do not refresh the page.</div>
+</body></html>
