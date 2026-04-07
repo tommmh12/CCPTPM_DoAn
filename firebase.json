@@ -1,0 +1,56 @@
+{
+  "hosting": {
+    "public": "html_renamed_for_copy",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/login",
+        "destination": "/07-ethereal-canvas-login.html"
+      },
+      {
+        "source": "/dashboard",
+        "destination": "/04-zen-workspace-dashboard.html"
+      },
+      {
+        "source": "/schedule",
+        "destination": "/03-zen-workspace-calendar.html"
+      },
+      {
+        "source": "/tasks",
+        "destination": "/14-zen-workspace-tasks-overview.html"
+      },
+      {
+        "source": "/tasks/new",
+        "destination": "/15-zen-workspace-create-task.html"
+      },
+      {
+        "source": "/notes",
+        "destination": "/08-zen-workspace-notes-library.html"
+      },
+      {
+        "source": "/profile",
+        "destination": "/21-zen-workspace-profile.html"
+      },
+      {
+        "source": "/profile/edit",
+        "destination": "/22-zen-workspace-edit-profile.html"
+      },
+      {
+        "source": "/settings",
+        "destination": "/24-zen-workspace-settings-preferences.html"
+      },
+      {
+        "source": "/settings/preferences",
+        "destination": "/24-zen-workspace-settings-preferences.html"
+      },
+      {
+        "source": "/settings/security",
+        "destination": "/23-zen-workspace-change-password.html"
+      }
+    ]
+  }
+}
