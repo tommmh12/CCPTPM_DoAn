@@ -19,7 +19,7 @@ Ung dung nay dung `Node.js + Express + MySQL`, giu nguyen bo HTML trong `html_re
 ```sql
 CREATE DATABASE zen_workspace CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
-sdsdsd
+4
 3. Chay schema va seed:
 
 ```bash
@@ -68,4 +68,3 @@ ssss
 - Email: `julian@zenspace.local`
 - Password: `Password123!`
 a
-3
