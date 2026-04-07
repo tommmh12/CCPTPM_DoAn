@@ -5,6 +5,8 @@ dotenv.config();
 const env = {
   nodeEnv: process.env.NODE_ENV || "development",
   port: Number(process.env.PORT || 3000),
+  trustProxy: process.env.TRUST_PROXY || "false",
+  corsAllowedOrigins: process.env.CORS_ALLOWED_ORIGINS || "",
   dbHost: process.env.DB_HOST || "127.0.0.1",
   dbPort: Number(process.env.DB_PORT || 3306),
   dbName: process.env.DB_NAME || "zen_workspace",

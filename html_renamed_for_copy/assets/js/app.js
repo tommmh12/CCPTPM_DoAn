@@ -50,6 +50,47 @@ const state = {
     tags: []
   }
 };
+<<<<<<< HEAD
+let googleIdentityScriptPromise = null;
+const runtimeConfig = {
+  apiBaseUrl: ""
+};
+let runtimeConfigPromise = null;
+
+function normalizeApiBaseUrl(value) {
+  return String(value || "").trim().replace(/\/+$/, "");
+}
+
+function loadRuntimeConfig() {
+  if (!runtimeConfigPromise) {
+    runtimeConfigPromise = window
+      .fetch("/assets/app-config.json", {
+        cache: "no-store"
+      })
+      .then((response) => (response.ok ? response.json() : {}))
+      .catch(() => ({}))
+      .then((config) => {
+        runtimeConfig.apiBaseUrl = normalizeApiBaseUrl(config.apiBaseUrl);
+        return runtimeConfig;
+      });
+  }
+
+  return runtimeConfigPromise;
+}
+
+function buildApiUrl(url) {
+  if (/^https?:\/\//i.test(url)) {
+    return url;
+  }
+
+  if (!runtimeConfig.apiBaseUrl) {
+    return url;
+  }
+
+  return `${runtimeConfig.apiBaseUrl}${url.startsWith("/") ? url : `/${url}`}`;
+}
+=======
+>>>>>>> 0bc4cf3cbaefa3effd59dd40fcec691490a60326
 
 function defaultTaskComposerDraft() {
   return {
@@ -64,10 +105,12 @@ function defaultTaskComposerDraft() {
 document.addEventListener("DOMContentLoaded", () => {
   ensureGlobalInteractionStyles();
   setupClientNavigation();
-  initializePage().catch((error) => {
-    console.error(error);
-    showPageMessage(error.message || "Something went wrong.", "error");
-  });
+  loadRuntimeConfig()
+    .then(() => initializePage())
+    .catch((error) => {
+      console.error(error);
+      showPageMessage(error.message || "Something went wrong.", "error");
+    });
 });
 
 function ensureGlobalInteractionStyles() {
@@ -142,7 +185,12 @@ function setupClientNavigation() {
 
     const href = anchor.getAttribute("href");
 
-    if (!href || href.startsWith("#")) {
+    if (!href) {
+      return;
+    }
+
+    if (href === "#" || href.startsWith("#")) {
+      event.preventDefault();
       return;
     }
 
@@ -4736,7 +4784,7 @@ async function apiFetch(url, options = {}) {
     fetchOptions.body = JSON.stringify(options.body);
   }
 
-  const response = await window.fetch(url, fetchOptions);
+  const response = await window.fetch(buildApiUrl(url), fetchOptions);
 
   if (response.status === 204) {
     return null;
