@@ -99,6 +99,7 @@ async function list(req, res) {
       LEFT JOIN projects p ON p.id = t.project_id
       LEFT JOIN task_subtasks st ON st.task_id = t.id
       WHERE t.user_id = ?
+        -- Match the keyword against the task name first, then fall back to the description text.
         AND (? = '' OR t.title LIKE ? OR COALESCE(t.description, '') LIKE ?)
       GROUP BY t.id, p.id
       ORDER BY
