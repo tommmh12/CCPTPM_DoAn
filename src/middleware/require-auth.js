@@ -8,9 +8,13 @@ async function requireAuth(req, _res, next) {
   const token = authHeader.startsWith("Bearer ") ? authHeader.slice(7) : "";
 
   if (!token) {
-    return next(httpError(401, "Authentication token is required", { code: "AUTH_REQUIRED" }));
+    return next(
+      httpError(401, "Authentication token is required", {
+        code: "AUTH_REQUIRED",
+      }),
+    );
   }
-
+  //
   const tokenHash = hashToken(token);
 
   const [rows] = await pool.query(
@@ -27,18 +31,22 @@ async function requireAuth(req, _res, next) {
       WHERE s.token_hash = ? AND s.expires_at > NOW()
       LIMIT 1
     `,
-    [tokenHash]
+    [tokenHash],
   );
 
   if (!rows.length) {
-    return next(httpError(401, "Session expired or invalid", { code: "AUTH_INVALID_SESSION" }));
+    return next(
+      httpError(401, "Session expired or invalid", {
+        code: "AUTH_INVALID_SESSION",
+      }),
+    );
   }
 
   req.authToken = token;
   req.user = rows[0];
   await touchSession(req.user.session_id, {
     ipAddress: req.ip,
-    userAgent: req.get("user-agent")
+    userAgent: req.get("user-agent"),
   });
   next();
 }
