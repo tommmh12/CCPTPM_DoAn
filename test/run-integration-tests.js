@@ -411,6 +411,7 @@ async function main() {
 
         assert.equal(deleteResponse.status, 204);
 
+        // A deleted task should immediately disappear from the authenticated user's detail view.
         const deletedCheck = await fetch(`${baseUrl}/api/tasks/${taskId}`, {
           headers: {
             Authorization: `Bearer ${token}`,
