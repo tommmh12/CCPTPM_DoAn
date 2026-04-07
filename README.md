@@ -11,6 +11,8 @@ Ung dung nay dung `Node.js + Express + MySQL`, giu nguyen bo HTML trong `html_re
 
 ## Cai dat
 
+//
+
 1. Tao file `.env` tu `.env.example`.
 2. Tao database MySQL:
 
@@ -65,5 +67,4 @@ ssss
 
 - Email: `julian@zenspace.local`
 - Password: `Password123!`
-///
-...
+a

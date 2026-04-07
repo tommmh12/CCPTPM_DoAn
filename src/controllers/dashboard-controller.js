@@ -9,7 +9,7 @@ function addDays(date, days) {
   next.setDate(next.getDate() + days);
   return next;
 }
-
+//
 function startOfWeek(date) {
   const day = date.getDay();
   const diff = day === 0 ? -6 : 1 - day;
@@ -48,15 +48,8 @@ function percentageDelta(current, previous) {
 }
 
 async function buildPulsePeriod(userId, config) {
-  const {
-    key,
-    label,
-    start,
-    end,
-    previousStart,
-    previousEnd,
-    buckets
-  } = config;
+  const { key, label, start, end, previousStart, previousEnd, buckets } =
+    config;
 
   const [[currentRows], [previousRows]] = await Promise.all([
     pool.query(
@@ -75,8 +68,8 @@ async function buildPulsePeriod(userId, config) {
         formatSqlDateTime(end),
         formatSqlDateTime(start),
         formatSqlDateTime(start),
-        userId
-      ]
+        userId,
+      ],
     ),
     pool.query(
       `
@@ -94,9 +87,9 @@ async function buildPulsePeriod(userId, config) {
         formatSqlDateTime(previousEnd),
         formatSqlDateTime(previousStart),
         formatSqlDateTime(previousStart),
-        userId
-      ]
-    )
+        userId,
+      ],
+    ),
   ]);
   const currentRow = currentRows[0] || {};
   const previousRow = previousRows[0] || {};
@@ -107,10 +100,13 @@ async function buildPulsePeriod(userId, config) {
   const previousCompletedCount = Number(previousRow.completed_count || 0);
   const previousCreatedCount = Number(previousRow.created_count || 0);
   const previousCarryOverCount = Number(previousRow.carry_over_count || 0);
-  const completionRate = createdCount ? Math.round((completedCount / createdCount) * 100) : 0;
-  const focusScore = createdCount + carryOverCount
-    ? Math.round((completedCount / (createdCount + carryOverCount)) * 100)
+  const completionRate = createdCount
+    ? Math.round((completedCount / createdCount) * 100)
     : 0;
+  const focusScore =
+    createdCount + carryOverCount
+      ? Math.round((completedCount / (createdCount + carryOverCount)) * 100)
+      : 0;
   const series = await Promise.all(
     buckets.map(async (bucket) => {
       const [rows] = await pool.query(
@@ -129,31 +125,39 @@ async function buildPulsePeriod(userId, config) {
           formatSqlDateTime(bucket.end),
           formatSqlDateTime(bucket.start),
           formatSqlDateTime(bucket.start),
-          userId
-        ]
+          userId,
+        ],
       );
       const row = rows[0] || {};
 
       const bucketCreated = Number(row.created_count || 0);
       const bucketCompleted = Number(row.completed_count || 0);
       const bucketCarryOver = Number(row.carry_over_count || 0);
-      const bucketFocusScore = bucketCreated + bucketCarryOver
-        ? Math.round((bucketCompleted / (bucketCreated + bucketCarryOver)) * 100)
-        : 0;
+      const bucketFocusScore =
+        bucketCreated + bucketCarryOver
+          ? Math.round(
+              (bucketCompleted / (bucketCreated + bucketCarryOver)) * 100,
+            )
+          : 0;
 
       return {
         label: bucket.label,
         created: bucketCreated,
         completed: bucketCompleted,
         carryOver: bucketCarryOver,
-        focusScore: bucketFocusScore
+        focusScore: bucketFocusScore,
       };
-    })
+    }),
   );
 
-  const previousFocusScore = previousCreatedCount + previousCarryOverCount
-    ? Math.round((previousCompletedCount / (previousCreatedCount + previousCarryOverCount)) * 100)
-    : 0;
+  const previousFocusScore =
+    previousCreatedCount + previousCarryOverCount
+      ? Math.round(
+          (previousCompletedCount /
+            (previousCreatedCount + previousCarryOverCount)) *
+            100,
+        )
+      : 0;
 
   return {
     key,
@@ -165,7 +169,7 @@ async function buildPulsePeriod(userId, config) {
         unit: "tasks",
         caption: `${createdCount} created and ${carryOverCount} carried into this ${key}`,
         deltaLabel: percentageDelta(completedCount, previousCompletedCount),
-        seriesKey: "completed"
+        seriesKey: "completed",
       },
       created: {
         label: "Tasks Created",
@@ -173,7 +177,7 @@ async function buildPulsePeriod(userId, config) {
         unit: "tasks",
         caption: `${completedCount} completed and ${carryOverCount} carried into this ${key}`,
         deltaLabel: percentageDelta(createdCount, previousCreatedCount),
-        seriesKey: "created"
+        seriesKey: "created",
       },
       focus: {
         label: "Focus Score",
@@ -181,24 +185,24 @@ async function buildPulsePeriod(userId, config) {
         unit: "%",
         caption: "Completion efficiency based on new work plus carry-over",
         deltaLabel: percentageDelta(focusScore, previousFocusScore),
-        seriesKey: "focusScore"
-      }
+        seriesKey: "focusScore",
+      },
     },
     summary: {
       created: createdCount,
       completed: completedCount,
       carryOver: carryOverCount,
       completionRate,
-      focusScore
+      focusScore,
     },
     secondary: {
       label: "Completion Rate",
       value: `${completionRate}%`,
       caption: createdCount
         ? `${completedCount} of ${createdCount} newly created tasks finished`
-        : `No new tasks created in this ${key}`
+        : `No new tasks created in this ${key}`,
     },
-    series
+    series,
   };
 }
 
@@ -232,9 +236,9 @@ async function buildPulse(userId) {
           return {
             label: `${String(index * 4).padStart(2, "0")}:00`,
             start: bucketStart,
-            end: bucketEnd
+            end: bucketEnd,
           };
-        })
+        }),
       }),
       week: await buildPulsePeriod(userId, {
         key: "week",
@@ -247,11 +251,13 @@ async function buildPulse(userId) {
           const bucketStart = addDays(weekStart, index);
           const bucketEnd = addDays(weekStart, index + 1);
           return {
-            label: bucketStart.toLocaleDateString("en-US", { weekday: "short" }),
+            label: bucketStart.toLocaleDateString("en-US", {
+              weekday: "short",
+            }),
             start: bucketStart,
-            end: bucketEnd
+            end: bucketEnd,
           };
-        })
+        }),
       }),
       month: await buildPulsePeriod(userId, {
         key: "month",
@@ -262,13 +268,14 @@ async function buildPulse(userId) {
         previousEnd: monthStart,
         buckets: Array.from({ length: 4 }, (_, index) => {
           const bucketStart = addDays(monthStart, index * 7);
-          const bucketEnd = index === 3 ? nextMonthStart : addDays(monthStart, (index + 1) * 7);
+          const bucketEnd =
+            index === 3 ? nextMonthStart : addDays(monthStart, (index + 1) * 7);
           return {
             label: `W${index + 1}`,
             start: bucketStart,
-            end: bucketEnd
+            end: bucketEnd,
           };
-        })
+        }),
       }),
       year: await buildPulsePeriod(userId, {
         key: "year",
@@ -283,11 +290,11 @@ async function buildPulse(userId) {
           return {
             label: bucketStart.toLocaleDateString("en-US", { month: "short" }),
             start: bucketStart,
-            end: bucketEnd
+            end: bucketEnd,
           };
-        })
-      })
-    }
+        }),
+      }),
+    },
   };
 }
 
@@ -299,7 +306,7 @@ async function summary(req, res) {
     [upcomingRows],
     [recentNotesRows],
     [activityRows],
-    pulse
+    pulse,
   ] = await Promise.all([
     pool.query(
       `
@@ -310,7 +317,7 @@ async function summary(req, res) {
         FROM tasks
         WHERE user_id = ?
       `,
-      [userId]
+      [userId],
     ),
     pool.query(
       `
@@ -324,7 +331,7 @@ async function summary(req, res) {
         ORDER BY due_at ASC
         LIMIT 5
       `,
-      [userId]
+      [userId],
     ),
     pool.query(
       `
@@ -338,7 +345,7 @@ async function summary(req, res) {
         ORDER BY updated_at DESC
         LIMIT 5
       `,
-      [userId]
+      [userId],
     ),
     pool.query(
       `
@@ -354,9 +361,9 @@ async function summary(req, res) {
         ORDER BY created_at DESC
         LIMIT 6
       `,
-      [userId]
+      [userId],
     ),
-    buildPulse(userId)
+    buildPulse(userId),
   ]);
   const overviewRow = overviewRows[0] || {};
 
@@ -364,12 +371,12 @@ async function summary(req, res) {
     overview: {
       completedTasks: Number(overviewRow.completed_tasks || 0),
       openTasks: Number(overviewRow.open_tasks || 0),
-      dueToday: Number(overviewRow.due_today || 0)
+      dueToday: Number(overviewRow.due_today || 0),
     },
     upcoming: upcomingRows,
     recentNotes: recentNotesRows,
     activity: activityRows,
-    pulse
+    pulse,
   });
 }
 
