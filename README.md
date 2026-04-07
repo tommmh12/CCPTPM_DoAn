@@ -19,14 +19,14 @@ Ung dung nay dung `Node.js + Express + MySQL`, giu nguyen bo HTML trong `html_re
 ```sql
 CREATE DATABASE zen_workspace CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
-5
+6
 3. Chay schema va seed:
 
 ```bash
 mysql -u root -p zen_workspace < db/schema.sql
 mysql -u root -p zen_workspace < db/seed.sql
 ```
-aaa
+bbb
 Neu database da ton tai tu truoc, chay them patch:
 
 ```bash
