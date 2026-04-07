@@ -31,6 +31,8 @@ Neu database da ton tai tu truoc, chay them patch:
 mysql -u root -p zen_workspace < db/patches/001_session_security.sql
 ```
 
+.
+
 4. Cai package:
 
 ```bash
