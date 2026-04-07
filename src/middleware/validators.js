@@ -326,6 +326,7 @@ function validateChangePasswordBody(req) {
 function validateTaskCreateBody(req) {
   ensureObject(req.body);
 
+  // Normalize and validate the full task payload before it reaches the controller layer.
   const issues = [];
   const title = parseString(req.body.title, "title", issues, {
     required: true,
