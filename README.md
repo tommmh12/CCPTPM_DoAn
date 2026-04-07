@@ -56,7 +56,7 @@ npm test
 Test se tao mot user rieng trong database hien tai, sau do tu dong cleanup.
 
 ## Man hinh da noi logic
-
+s
 - `/login`
 - `/dashboard`
 - `/tasks`
@@ -64,6 +64,6 @@ Test se tao mot user rieng trong database hien tai, sau do tu dong cleanup.
 - `/notes`
 s
 ## Tai khoan mau
-sss
+s
 - Email: `julian@zenspace.local`
 - Password: `Password123!`
