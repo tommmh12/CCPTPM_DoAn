@@ -24,7 +24,7 @@ CREATE DATABASE zen_workspace CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 mysql -u root -p zen_workspace < db/schema.sql
 mysql -u root -p zen_workspace < db/seed.sql
 ```
-
+aaa
 Neu database da ton tai tu truoc, chay them patch:
 
 ```bash
