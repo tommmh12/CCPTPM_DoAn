@@ -200,6 +200,7 @@ async function create(req, res) {
     throw httpError(400, "Task title is required");
   }
 
+  // Default to medium when the client omits priority or sends an unexpected value.
   const normalizedPriority = ["low", "medium", "high"].includes(priority) ? priority : "medium";
   const normalizedSubtasks = Array.isArray(subtasks)
     ? subtasks.filter(Boolean).map((value) => String(value).trim()).filter(Boolean)
